@@ -1,0 +1,61 @@
+PC1 loadings on second-lineage scores (rigour+depth oriented positive):
+  rigour             +0.587
+  depth              +0.561
+  originality        +0.316
+  candour            +0.269
+  stance             -0.040
+  commercial_drive   -0.043
+  affect             -0.286
+  register           -0.287
+
+usable docs after >=30-word floor: 1029 (skipped 21 short)
+
+=== ITEM-LEVEL PC1 vs Biber D1 ===  n=1029
+  Pearson  r = -0.190
+  Spearman r = -0.191
+
+=== per-axis Pearson vs Biber D1 (positive = axis rises with INVOLVED) ===
+  rigour             -0.281
+  commercial_drive   -0.096
+  depth              -0.083
+  stance             -0.061
+  originality        -0.038
+  affect             +0.146
+  candour            +0.156
+  register           +0.277
+
+=== Biber feature vs PC1 (sign shows matter/manner side) ===
+  INF:type_token_ratio       -0.253
+  INV:first_person           -0.207
+  INV:second_person          -0.159
+  INV:questions              -0.129
+  INV:private_verbs          -0.129
+  INV:emphatics              -0.109
+  INV:wh_words               -0.054
+  INV:amplifiers             -0.046
+  INV:discourse_particles    -0.041
+  INV:causative              -0.021
+  INV:demonstratives         +0.004
+  INV:hedges                 +0.006
+  INV:contractions           +0.009
+  INV:present_bedohave       +0.011
+  INV:possibility_modals     +0.013
+  INV:neg_not                +0.042
+  INF:nominalisations        +0.089
+  INF:mean_word_len          +0.164
+  INF:prepositions           +0.172
+  INF:article_density        +0.184
+
+=== within-subreddit PC1-vs-D1 (41 subreddits n>=20) ===
+  mean r          = -0.190
+  weighted mean r = -0.190
+  median r        = -0.177
+  frac r<0        = 0.95
+
+=== between-subreddit centroids (41 subreddits, Biber's own unit) ===
+  Pearson  r = -0.256
+  Spearman r = -0.079
+
+7B baselines: genre-centroid Pearson -0.60, item-level Pearson -0.14
+
+wrote biber_crossmodel_summary.json

@@ -1,0 +1,152 @@
+{
+ "BK": {
+  "t0": "2015-08-18",
+  "aaer": 3679,
+  "company": "The Bank of New York Mellon Corporation",
+  "sic": null
+ },
+ "USB": {
+  "t0": "2015-01-28",
+  "aaer": 3622,
+  "company": "U.S. Bancorp",
+  "sic": "60"
+ },
+ "JKHY": {
+  "t0": "2016-12-21",
+  "aaer": 3835,
+  "company": "Jack Henry & Associates, Inc.",
+  "sic": "73"
+ },
+ "SPGI": {
+  "t0": "2016-03-15",
+  "aaer": 3758,
+  "company": "S&P Global Inc.",
+  "sic": "73"
+ },
+ "QCOM": {
+  "t0": "2016-03-01",
+  "aaer": 3751,
+  "company": "QUALCOMM Incorporated",
+  "sic": "36"
+ },
+ "HAL": {
+  "t0": "2017-07-27",
+  "aaer": 3884,
+  "company": "Halliburton Company",
+  "sic": "13"
+ },
+ "GM": {
+  "t0": "2017-01-18",
+  "aaer": 3850,
+  "company": "General Motors Company",
+  "sic": "37"
+ },
+ "ZBH": {
+  "t0": "2017-01-12",
+  "aaer": 3843,
+  "company": "Zimmer Biomet Holdings, Inc.",
+  "sic": "38"
+ },
+ "SYK": {
+  "t0": "2018-09-28",
+  "aaer": 3990,
+  "company": "Stryker Corporation",
+  "sic": "38"
+ },
+ "C": {
+  "t0": "2018-08-16",
+  "aaer": 3958,
+  "company": "Citigroup Inc.",
+  "sic": "60"
+ },
+ "WMB": {
+  "t0": "2019-09-30",
+  "aaer": 4097,
+  "company": "The Williams Companies, Inc.",
+  "sic": "49"
+ },
+ "FITB": {
+  "t0": "2019-09-20",
+  "aaer": 4081,
+  "company": "Fifth Third Bancorp",
+  "sic": "60"
+ },
+ "JNPR": {
+  "t0": "2019-08-29",
+  "aaer": 4069,
+  "company": "Juniper Networks, Inc.",
+  "sic": null
+ },
+ "MTB": {
+  "t0": "2019-08-22",
+  "aaer": 4065,
+  "company": "M&T Bank Corporation",
+  "sic": "60"
+ },
+ "WMT": {
+  "t0": "2019-06-20",
+  "aaer": 4054,
+  "company": "Walmart Inc.",
+  "sic": "53"
+ },
+ "AMD": {
+  "t0": "2019-05-03",
+  "aaer": 4045,
+  "company": "Advanced Micro Devices, Inc.",
+  "sic": "36"
+ },
+ "CTSH": {
+  "t0": "2019-02-15",
+  "aaer": 4021,
+  "company": "Cognizant Technology Solutions Corporation",
+  "sic": "73"
+ },
+ "ADM": {
+  "t0": "2026-01-27",
+  "aaer": 4584,
+  "company": "Archer-Daniels-Midland Company",
+  "sic": "20"
+ },
+ "BDX": {
+  "t0": "2024-12-16",
+  "aaer": 4548,
+  "company": "Becton, Dickinson and Company",
+  "sic": "38"
+ },
+ "UPS": {
+  "t0": "2024-11-22",
+  "aaer": 4543,
+  "company": "United Parcel Service, Inc.",
+  "sic": "42"
+ },
+ "GE": {
+  "t0": "2024-09-04",
+  "aaer": 4518,
+  "company": "General Electric Company",
+  "sic": "36"
+ },
+ "KHC": {
+  "t0": "2021-09-03",
+  "aaer": 4249,
+  "company": "The Kraft Heinz Company",
+  "sic": "20"
+ },
+ "ROL": {
+  "t0": "2022-04-18",
+  "aaer": 4295,
+  "company": "Rollins, Inc.",
+  "sic": "73"
+ },
+ "BAX": {
+  "t0": "2022-02-22",
+  "aaer": 4287,
+  "company": "Baxter International Inc.",
+  "sic": "38"
+ },
+ "BRO": {
+  "t0": "2022-01-31",
+  "aaer": 4281,
+  "company": "Brown & Brown, Inc.",
+  "sic": "64"
+ }
+}

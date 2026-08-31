@@ -1,0 +1,641 @@
+{
+  "n_total": 451,
+  "pc1_loadings": {
+    "rigour": 0.527,
+    "depth": 0.547,
+    "originality": 0.464,
+    "candour": -0.027,
+    "affect": -0.356,
+    "commercial_drive": 0.002,
+    "stance": 0.123,
+    "register": 0.255
+  },
+  "pc1_var_explained": 0.291,
+  "alpha_bonferroni": 0.00625,
+  "age_range": [
+    19.667,
+    73.25
+  ],
+  "blocks": {
+    "all": {
+      "n": 451,
+      "corr_age_logwc": -0.094,
+      "targets": {
+        "rigour": {
+          "raw": {
+            "age_per_decade": 0.0148,
+            "p_age": 0.00812914138915863,
+            "r2": 0.015,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0183,
+            "p_age": 0.0006737542728521968,
+            "r2": 0.11,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.0559
+            }
+          },
+          "verdict": "DRIFT"
+        },
+        "depth": {
+          "raw": {
+            "age_per_decade": 0.0202,
+            "p_age": 3.6916924062409975e-05,
+            "r2": 0.037,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.025,
+            "p_age": 7.414043412960175e-09,
+            "r2": 0.273,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.0775
+            }
+          },
+          "verdict": "DRIFT"
+        },
+        "originality": {
+          "raw": {
+            "age_per_decade": 0.0094,
+            "p_age": 0.14726630811523367,
+            "r2": 0.005,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0138,
+            "p_age": 0.024837579912494717,
+            "r2": 0.12,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.0714
+            }
+          },
+          "verdict": "weak"
+        },
+        "candour": {
+          "raw": {
+            "age_per_decade": -0.0024,
+            "p_age": 0.3518048379478656,
+            "r2": 0.002,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.003,
+            "p_age": 0.24081834627111545,
+            "r2": 0.016,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": -0.01
+            }
+          },
+          "verdict": "flat"
+        },
+        "affect": {
+          "raw": {
+            "age_per_decade": -0.0436,
+            "p_age": 1.0219819928749286e-08,
+            "r2": 0.071,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.0443,
+            "p_age": 7.014907654693248e-09,
+            "r2": 0.073,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": -0.0114
+            }
+          },
+          "verdict": "DRIFT"
+        },
+        "commercial_drive": {
+          "raw": {
+            "age_per_decade": -0.0076,
+            "p_age": 0.013256507771886462,
+            "r2": 0.014,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.0074,
+            "p_age": 0.015844455366371028,
+            "r2": 0.014,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.0026
+            }
+          },
+          "verdict": "weak"
+        },
+        "stance": {
+          "raw": {
+            "age_per_decade": 0.0113,
+            "p_age": 0.07934168057589305,
+            "r2": 0.007,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0145,
+            "p_age": 0.020822947871425107,
+            "r2": 0.069,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.0521
+            }
+          },
+          "verdict": "weak"
+        },
+        "register": {
+          "raw": {
+            "age_per_decade": 0.0198,
+            "p_age": 0.004184126963233274,
+            "r2": 0.018,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0209,
+            "p_age": 0.0025708072445025294,
+            "r2": 0.024,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.0179
+            }
+          },
+          "verdict": "DRIFT"
+        },
+        "mm": {
+          "raw": {
+            "age_per_decade": 0.0199,
+            "p_age": 0.0006627419423114835,
+            "r2": 0.026,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0231,
+            "p_age": 4.19391518664723e-05,
+            "r2": 0.103,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.053
+            }
+          },
+          "verdict": "DRIFT"
+        },
+        "pc1": {
+          "raw": {
+            "age_per_decade": 0.3037,
+            "p_age": 1.4039458647321564e-06,
+            "r2": 0.051,
+            "n": 451,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.3582,
+            "p_age": 4.1457829643849194e-10,
+            "r2": 0.235,
+            "n": 451,
+            "covar_coefs": {
+              "log_wc": 0.8866
+            }
+          },
+          "verdict": "DRIFT"
+        }
+      }
+    },
+    "J.D. HOOKER": {
+      "n": 131,
+      "corr_age_logwc": 0.007,
+      "targets": {
+        "rigour": {
+          "raw": {
+            "age_per_decade": 0.008,
+            "p_age": 0.6984715270920668,
+            "r2": 0.001,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0075,
+            "p_age": 0.703526475467986,
+            "r2": 0.103,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0722
+            }
+          },
+          "verdict": "flat"
+        },
+        "depth": {
+          "raw": {
+            "age_per_decade": 0.0036,
+            "p_age": 0.8242773983624205,
+            "r2": 0.0,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0029,
+            "p_age": 0.8329428475421198,
+            "r2": 0.272,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0927
+            }
+          },
+          "verdict": "flat"
+        },
+        "originality": {
+          "raw": {
+            "age_per_decade": 0.0332,
+            "p_age": 0.11771192834953527,
+            "r2": 0.019,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0326,
+            "p_age": 0.10351068773088867,
+            "r2": 0.132,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0787
+            }
+          },
+          "verdict": "flat"
+        },
+        "candour": {
+          "raw": {
+            "age_per_decade": 0.0174,
+            "p_age": 0.05627755211535625,
+            "r2": 0.028,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0175,
+            "p_age": 0.05423609268687645,
+            "r2": 0.042,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": -0.0121
+            }
+          },
+          "verdict": "flat"
+        },
+        "affect": {
+          "raw": {
+            "age_per_decade": -0.0086,
+            "p_age": 0.7474417833687308,
+            "r2": 0.001,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.0087,
+            "p_age": 0.742054297416334,
+            "r2": 0.009,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0261
+            }
+          },
+          "verdict": "flat"
+        },
+        "commercial_drive": {
+          "raw": {
+            "age_per_decade": 0.0022,
+            "p_age": 0.8152499779176586,
+            "r2": 0.0,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0021,
+            "p_age": 0.824632131542699,
+            "r2": 0.039,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0204
+            }
+          },
+          "verdict": "flat"
+        },
+        "stance": {
+          "raw": {
+            "age_per_decade": 0.0117,
+            "p_age": 0.5412228009327523,
+            "r2": 0.003,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0113,
+            "p_age": 0.5419200983232613,
+            "r2": 0.076,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0566
+            }
+          },
+          "verdict": "flat"
+        },
+        "register": {
+          "raw": {
+            "age_per_decade": -0.0141,
+            "p_age": 0.4869065074104739,
+            "r2": 0.004,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.0141,
+            "p_age": 0.485804205672497,
+            "r2": 0.006,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0105
+            }
+          },
+          "verdict": "flat"
+        },
+        "mm": {
+          "raw": {
+            "age_per_decade": 0.0171,
+            "p_age": 0.35941230945892677,
+            "r2": 0.007,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0167,
+            "p_age": 0.3555472116292652,
+            "r2": 0.073,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.0528
+            }
+          },
+          "verdict": "flat"
+        },
+        "pc1": {
+          "raw": {
+            "age_per_decade": 0.1434,
+            "p_age": 0.506615525534971,
+            "r2": 0.003,
+            "n": 131,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.1365,
+            "p_age": 0.49079874288504055,
+            "r2": 0.169,
+            "n": 131,
+            "covar_coefs": {
+              "log_wc": 0.9637
+            }
+          },
+          "verdict": "flat"
+        }
+      }
+    },
+    "C. LYELL": {
+      "n": 72,
+      "corr_age_logwc": -0.296,
+      "targets": {
+        "rigour": {
+          "raw": {
+            "age_per_decade": -0.0097,
+            "p_age": 0.6559104056842711,
+            "r2": 0.003,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0051,
+            "p_age": 0.8203349874874001,
+            "r2": 0.071,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0449
+            }
+          },
+          "verdict": "flat"
+        },
+        "depth": {
+          "raw": {
+            "age_per_decade": -0.0169,
+            "p_age": 0.36633426463285573,
+            "r2": 0.012,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0007,
+            "p_age": 0.9693543491777302,
+            "r2": 0.144,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0534
+            }
+          },
+          "verdict": "flat"
+        },
+        "originality": {
+          "raw": {
+            "age_per_decade": -0.0346,
+            "p_age": 0.2239467529882049,
+            "r2": 0.021,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.007,
+            "p_age": 0.7988123071509411,
+            "r2": 0.16,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0835
+            }
+          },
+          "verdict": "flat"
+        },
+        "candour": {
+          "raw": {
+            "age_per_decade": 0.0023,
+            "p_age": 0.7930913010805111,
+            "r2": 0.001,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0043,
+            "p_age": 0.6389780939413182,
+            "r2": 0.009,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0061
+            }
+          },
+          "verdict": "flat"
+        },
+        "affect": {
+          "raw": {
+            "age_per_decade": -0.066,
+            "p_age": 0.05536635701731013,
+            "r2": 0.051,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.0656,
+            "p_age": 0.07068003746277576,
+            "r2": 0.051,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0013
+            }
+          },
+          "verdict": "flat"
+        },
+        "commercial_drive": {
+          "raw": {
+            "age_per_decade": -0.0316,
+            "p_age": 0.020303569290072723,
+            "r2": 0.075,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": -0.0249,
+            "p_age": 0.07442389190471398,
+            "r2": 0.109,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0202
+            }
+          },
+          "verdict": "flat"
+        },
+        "stance": {
+          "raw": {
+            "age_per_decade": 0.0152,
+            "p_age": 0.6146019240661005,
+            "r2": 0.004,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0314,
+            "p_age": 0.31431162955264214,
+            "r2": 0.047,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0492
+            }
+          },
+          "verdict": "flat"
+        },
+        "register": {
+          "raw": {
+            "age_per_decade": 0.013,
+            "p_age": 0.660411377382318,
+            "r2": 0.003,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0264,
+            "p_age": 0.3912160222119223,
+            "r2": 0.033,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0406
+            }
+          },
+          "verdict": "flat"
+        },
+        "mm": {
+          "raw": {
+            "age_per_decade": -0.0031,
+            "p_age": 0.8996496490792433,
+            "r2": 0.0,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.0077,
+            "p_age": 0.7590411239158958,
+            "r2": 0.03,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.0328
+            }
+          },
+          "verdict": "flat"
+        },
+        "pc1": {
+          "raw": {
+            "age_per_decade": -0.0626,
+            "p_age": 0.79994554850462,
+            "r2": 0.001,
+            "n": 72,
+            "covar_coefs": {}
+          },
+          "len_ctl": {
+            "age_per_decade": 0.191,
+            "p_age": 0.42469843975652827,
+            "r2": 0.159,
+            "n": 72,
+            "covar_coefs": {
+              "log_wc": 0.7694
+            }
+          },
+          "verdict": "flat"
+        }
+      }
+    }
+  },
+  "editorial_ctl": {
+    "pc1": {
+      "age_per_decade": 0.3651,
+      "p_age": 1.9708082788913308e-10,
+      "r2": 0.241,
+      "n": 451,
+      "covar_coefs": {
+        "log_wc": 0.8824,
+        "ed_frac": -0.8165
+      }
+    },
+    "rigour": {
+      "age_per_decade": 0.0184,
+      "p_age": 0.0006711496126178088,
+      "r2": 0.11,
+      "n": 451,
+      "covar_coefs": {
+        "log_wc": 0.0559,
+        "ed_frac": -0.0081
+      }
+    },
+    "mm": {
+      "age_per_decade": 0.0237,
+      "p_age": 2.730028282505638e-05,
+      "r2": 0.108,
+      "n": 451,
+      "covar_coefs": {
+        "log_wc": 0.0527,
+        "ed_frac": -0.0697
+      }
+    }
+  }
+}

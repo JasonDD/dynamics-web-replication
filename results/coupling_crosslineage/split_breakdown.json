@@ -1,0 +1,23 @@
+{
+  "ALL key types": {
+    "n_persons_roomlevel": 32594,
+    "icc_allblocks": 0.4346211071935663,
+    "icc_roomlevel": 0.5177878716641096,
+    "trait_fraction_allblocks": 0.4346211071935663,
+    "performed_fraction_allblocks": 0.5653788928064337
+  },
+  "gravatar only": {
+    "n_persons_roomlevel": 31761,
+    "icc_allblocks": 0.43021261309954173,
+    "icc_roomlevel": 0.5051733600128896,
+    "trait_fraction_allblocks": 0.43021261309954173,
+    "performed_fraction_allblocks": 0.5697873869004583
+  },
+  "disqus+relme+profile": {
+    "n_persons_roomlevel": 841,
+    "icc_allblocks": 0.6695377193577956,
+    "icc_roomlevel": 0.7614906485033452,
+    "trait_fraction_allblocks": 0.6695377193577956,
+    "performed_fraction_allblocks": 0.3304622806422044
+  }
+}

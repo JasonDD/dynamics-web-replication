@@ -1,0 +1,430 @@
+{
+  "n": 3604,
+  "pc1_var": 0.3155,
+  "pc1_load": {
+    "rigour": 0.247,
+    "depth": 0.492,
+    "originality": 0.512,
+    "candour": 0.283,
+    "affect": 0.295,
+    "commercial_drive": 0.305,
+    "stance": 0.364,
+    "register": -0.204
+  },
+  "gender_counts": {
+    "M": 1802,
+    "F": 1802
+  },
+  "nat_counts": {
+    "Jewish": 3473,
+    "Bedouin": 28,
+    "Arab": 59,
+    "Druze": 44
+  },
+  "coal_counts": {
+    "opposition": 1586,
+    "coalition": 2008,
+    "null": 10
+  },
+  "gender": {
+    "attr": "gender",
+    "pos": "F",
+    "neg": "M",
+    "n_rooms": 304,
+    "n_pairs": 1802,
+    "axes": {
+      "rigour": {
+        "mean_diff": 0.0272,
+        "ci95": [
+          0.018,
+          0.0362
+        ],
+        "paired_d": 0.137,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.589
+      },
+      "depth": {
+        "mean_diff": 0.0059,
+        "ci95": [
+          -0.0013,
+          0.0131
+        ],
+        "paired_d": 0.038,
+        "p_perm": 0.1124,
+        "room_sign_consistency": 0.507
+      },
+      "originality": {
+        "mean_diff": -0.0011,
+        "ci95": [
+          -0.0102,
+          0.0072
+        ],
+        "paired_d": -0.005,
+        "p_perm": 0.8091,
+        "room_sign_consistency": 0.487
+      },
+      "candour": {
+        "mean_diff": 0.0132,
+        "ci95": [
+          0.0087,
+          0.0174
+        ],
+        "paired_d": 0.139,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.539
+      },
+      "affect": {
+        "mean_diff": -0.0103,
+        "ci95": [
+          -0.0224,
+          0.001
+        ],
+        "paired_d": -0.041,
+        "p_perm": 0.073,
+        "room_sign_consistency": 0.526
+      },
+      "commercial_drive": {
+        "mean_diff": -0.0227,
+        "ci95": [
+          -0.029,
+          -0.0165
+        ],
+        "paired_d": -0.166,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.599
+      },
+      "stance": {
+        "mean_diff": -0.0123,
+        "ci95": [
+          -0.0233,
+          -0.0018
+        ],
+        "paired_d": -0.055,
+        "p_perm": 0.02,
+        "room_sign_consistency": 0.49
+      },
+      "register": {
+        "mean_diff": 0.0322,
+        "ci95": [
+          0.0196,
+          0.0431
+        ],
+        "paired_d": 0.123,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.612
+      },
+      "pc1": {
+        "mean_diff": -0.0239,
+        "ci95": [
+          -0.1127,
+          0.0609
+        ],
+        "paired_d": -0.012,
+        "p_perm": 0.6022,
+        "room_sign_consistency": 0.477
+      },
+      "mm": {
+        "mean_diff": 0.0146,
+        "ci95": [
+          0.0077,
+          0.0216
+        ],
+        "paired_d": 0.101,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.592
+      }
+    }
+  },
+  "gender_per_knesset_pc1": {
+    "13": {
+      "n_rooms": 304,
+      "mean_diff": -0.0226
+    }
+  },
+  "coalition": {
+    "attr": "coal",
+    "pos": "opposition",
+    "neg": "coalition",
+    "n_rooms": 301,
+    "n_pairs": 1235,
+    "axes": {
+      "rigour": {
+        "mean_diff": -0.0386,
+        "ci95": [
+          -0.0491,
+          -0.0285
+        ],
+        "paired_d": -0.197,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.628
+      },
+      "depth": {
+        "mean_diff": -0.0023,
+        "ci95": [
+          -0.0114,
+          0.0066
+        ],
+        "paired_d": -0.014,
+        "p_perm": 0.6247,
+        "room_sign_consistency": 0.449
+      },
+      "originality": {
+        "mean_diff": 0.023,
+        "ci95": [
+          0.0126,
+          0.0345
+        ],
+        "paired_d": 0.118,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.585
+      },
+      "candour": {
+        "mean_diff": -0.0067,
+        "ci95": [
+          -0.0121,
+          -0.0016
+        ],
+        "paired_d": -0.072,
+        "p_perm": 0.0075,
+        "room_sign_consistency": 0.528
+      },
+      "affect": {
+        "mean_diff": 0.0835,
+        "ci95": [
+          0.0699,
+          0.0965
+        ],
+        "paired_d": 0.338,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.771
+      },
+      "commercial_drive": {
+        "mean_diff": -0.0027,
+        "ci95": [
+          -0.0105,
+          0.005
+        ],
+        "paired_d": -0.02,
+        "p_perm": 0.4768,
+        "room_sign_consistency": 0.492
+      },
+      "stance": {
+        "mean_diff": 0.053,
+        "ci95": [
+          0.0409,
+          0.0648
+        ],
+        "paired_d": 0.241,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.711
+      },
+      "register": {
+        "mean_diff": -0.0738,
+        "ci95": [
+          -0.0889,
+          -0.0598
+        ],
+        "paired_d": -0.289,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.734
+      },
+      "pc1": {
+        "mean_diff": 0.2906,
+        "ci95": [
+          0.1847,
+          0.402
+        ],
+        "paired_d": 0.147,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.638
+      },
+      "mm": {
+        "mean_diff": -0.0212,
+        "ci95": [
+          -0.0288,
+          -0.0133
+        ],
+        "paired_d": -0.147,
+        "p_perm": 0.0005,
+        "room_sign_consistency": 0.611
+      }
+    }
+  },
+  "coal_per_knesset_pc1": {
+    "13": {
+      "n_rooms": 301,
+      "mean_diff": 0.3446
+    }
+  },
+  "nationality": {
+    "attr": "nationality",
+    "pos": "Arab",
+    "neg": "Jewish",
+    "n_rooms": 53,
+    "n_pairs": 59,
+    "axes": {
+      "rigour": {
+        "mean_diff": -0.0288,
+        "ci95": [
+          -0.0839,
+          0.028
+        ],
+        "paired_d": -0.131,
+        "p_perm": 0.3218,
+        "room_sign_consistency": 0.472
+      },
+      "depth": {
+        "mean_diff": -0.0,
+        "ci95": [
+          -0.0441,
+          0.0458
+        ],
+        "paired_d": -0.0,
+        "p_perm": 0.9665,
+        "room_sign_consistency": 0.491
+      },
+      "originality": {
+        "mean_diff": 0.0441,
+        "ci95": [
+          -0.0085,
+          0.0932
+        ],
+        "paired_d": 0.217,
+        "p_perm": 0.1129,
+        "room_sign_consistency": 0.717
+      },
+      "candour": {
+        "mean_diff": 0.0085,
+        "ci95": [
+          -0.0119,
+          0.0314
+        ],
+        "paired_d": 0.099,
+        "p_perm": 0.5577,
+        "room_sign_consistency": 0.755
+      },
+      "affect": {
+        "mean_diff": 0.0729,
+        "ci95": [
+          0.0186,
+          0.1314
+        ],
+        "paired_d": 0.327,
+        "p_perm": 0.019,
+        "room_sign_consistency": 0.566
+      },
+      "commercial_drive": {
+        "mean_diff": 0.0254,
+        "ci95": [
+          -0.0085,
+          0.0602
+        ],
+        "paired_d": 0.189,
+        "p_perm": 0.1504,
+        "room_sign_consistency": 0.642
+      },
+      "stance": {
+        "mean_diff": 0.0102,
+        "ci95": [
+          -0.0517,
+          0.0661
+        ],
+        "paired_d": 0.045,
+        "p_perm": 0.7121,
+        "room_sign_consistency": 0.585
+      },
+      "register": {
+        "mean_diff": -0.0237,
+        "ci95": [
+          -0.0898,
+          0.0467
+        ],
+        "paired_d": -0.085,
+        "p_perm": 0.5132,
+        "room_sign_consistency": 0.547
+      },
+      "pc1": {
+        "mean_diff": 0.3764,
+        "ci95": [
+          -0.1009,
+          0.9016
+        ],
+        "paired_d": 0.187,
+        "p_perm": 0.1554,
+        "room_sign_consistency": 0.698
+      },
+      "mm": {
+        "mean_diff": -0.0153,
+        "ci95": [
+          -0.0593,
+          0.0254
+        ],
+        "paired_d": -0.092,
+        "p_perm": 0.4918,
+        "room_sign_consistency": 0.453
+      }
+    }
+  },
+  "party_eta2": {
+    "attr": "party",
+    "n": 3586,
+    "n_labels": 11,
+    "axes": {
+      "rigour": 0.0297,
+      "depth": 0.0284,
+      "originality": 0.0459,
+      "candour": 0.0125,
+      "affect": 0.0729,
+      "commercial_drive": 0.0339,
+      "stance": 0.0373,
+      "register": 0.0572,
+      "pc1": 0.048,
+      "mm": 0.0232
+    }
+  },
+  "age": {
+    "n": 3604,
+    "axes": {
+      "rigour": {
+        "slope_per_decade": 0.005,
+        "t": 1.72
+      },
+      "depth": {
+        "slope_per_decade": 0.0058,
+        "t": 2.58
+      },
+      "originality": {
+        "slope_per_decade": 0.0024,
+        "t": 0.86
+      },
+      "candour": {
+        "slope_per_decade": -0.0039,
+        "t": -2.81
+      },
+      "affect": {
+        "slope_per_decade": -0.0164,
+        "t": -4.51
+      },
+      "commercial_drive": {
+        "slope_per_decade": 0.0025,
+        "t": 1.24
+      },
+      "stance": {
+        "slope_per_decade": -0.0204,
+        "t": -6.27
+      },
+      "register": {
+        "slope_per_decade": 0.0174,
+        "t": 4.48
+      },
+      "pc1": {
+        "slope_per_decade": -0.0579,
+        "t": -2.08
+      },
+      "mm": {
+        "slope_per_decade": 0.0066,
+        "t": 3.1
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# within-source AXES — ARTICLES ONLY
+# 2026-08-28T23:58Z | 454 article-type issues 1810-1960
+
+[wsx] 454 issues, 16 qualifying titles (>= 4 issues, >= 40yr span)
+
+=== per-AXIS within-title drift (slope per century of the standardised axis, aggregated over titles) ===
+  axis              pole      mean slope/100yr       t        p   titles-up
+  rigour            matter              -1.037   -2.65    0.018   2/16
+  depth             matter              -0.884   -2.07    0.056   2/16
+  originality       matter              -0.865   -2.03    0.060   5/16
+  candour           matter              -0.683   -1.93    0.072   6/16
+  affect            manner              +0.282   +0.50    0.625   8/16
+  commercial_drive  manner              +2.305   +4.44    0.000   15/16
+  stance            matter              -1.416   -1.97    0.068   6/16
+  register          manner              -0.378   -0.82    0.427   8/16
+
+  reading: a manner-ward drift shows up as the manner-pole axes (affect, register, commercial_drive)
+  rising and the matter-pole axes (rigour, depth, candour) falling. Signs that match the plain-English
+  claim, with significant t, are the axes actually carrying the century-scale style change.

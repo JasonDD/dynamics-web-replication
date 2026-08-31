@@ -1,0 +1,14 @@
+# culture map split-half replication
+# 2026-08-28T23:39Z
+
+[sh] 33 countries present in both halves (>= 40 domains each)
+
+=== check 1: do the two halves place countries the SAME way? ===
+  corr(half-A positions, half-B positions) r=0.997 p=1.8e-288  -> the map is a population property, not outlier-driven
+
+=== checks 2+3: anglosphere tightness and AU<->NZ, in EACH half ===
+  half A: anglosphere within 2.68 vs world 3.66 (tighter); AU nearest=NZ, NZ nearest=AU (AU<->NZ mutual)
+  half B: anglosphere within 2.84 vs world 3.68 (tighter); AU nearest=NZ, NZ nearest=AU (AU<->NZ mutual)
+
+  -> replication in BOTH halves (positions correlate, anglosphere tighter, AU<->NZ mutual) = the culture
+     structure is stable under resampling; the ideal next step is a different rater lineage (32B, GPU-gated).

@@ -1,0 +1,29 @@
+# cmv_within_pair (FULL N)
+# 2026-08-28T20:31Z | cmv COMPLETE 22765
+
+[cmv] published content axes loaded from 29,215-block corpus
+      PC1 (matter/manner) loadings: rigour=+0.45, depth=+0.48, originality=+0.41, candour=+0.28, affect=+0.08, commercial_drive=-0.14, stance=+0.41, register=+0.34
+[cmv] scored args=19,430  ops=3,044
+[cmv] matched strata with both a winner and a control: 4,263 (min 1)
+
+=== within-pair persuasion test — winner minus control, across 4,263 matched strata ===
+axis                 mean Δ  Cohen d   perm p
+stance              -0.0614   -0.303   0.0002 ***
+PC1                 -0.2414   -0.245   0.0002 ***
+PC2                 +0.1744   +0.230   0.0002 ***
+rigour              -0.0305   -0.165   0.0002 ***
+affect              +0.0246   +0.142   0.0002 ***
+originality         -0.0200   -0.117   0.0002 ***
+matter              -0.0502   -0.108   0.0002 ***
+depth               -0.0145   -0.108   0.0002 ***
+commercial_drive    -0.0111   -0.104   0.0002 ***
+register            -0.0064   -0.036   0.0208 *
+candour             +0.0018   +0.030   0.0444 *
+Traceback (most recent call last):
+  File "/home/jason/projects/kronaxis/truthometer/scripts/cc_cmv_analyse.py", line 110, in <module>
+    op_plas.append(plas(od)); op_stab.append(stab(od))
+                   ~~~~^^^^
+  File "/home/jason/projects/kronaxis/truthometer/scripts/cc_cmv_analyse.py", line 30, in plas
+    def plas(d): i={a:k for k,a in enumerate(D8)}; return d[i["novelty"]]+d[i["sociability"]]
+                                                          ~^^^^^^^^^^^^^^
+KeyError: 2

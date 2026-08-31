@@ -1,0 +1,30 @@
+# within-source PER-DECADE trajectory — ARTICLES ONLY
+# 2026-08-29T00:00Z | unit = title-decade, 1810-1960
+
+[wpd] 182 title-decade cells across 16 decades (1810-1960)
+
+=== per-decade mean matter/manner (unit = title-decade; + = matter) ===
+    decade  n-titles   mean PC1   trend
+      1810         1     +7.434   ▇
+      1820         3     +4.119   ▄
+      1830         4     +3.169   ▃
+      1840         6     +2.172   ▂
+      1850        11     +3.316   ▃
+      1860        12     +3.613   ▄
+      1870        14     +3.420   ▄
+      1880        16     +2.242   ▂
+      1890        15     +1.477   ▂
+      1900        15     +1.723   ▂
+      1910        17     +2.378   ▃
+      1920        17     +0.324   ▁
+      1930        15     +0.449   ▁
+      1940        13     +1.885   ▂
+      1950        12     +1.353   ▂
+      1960        11     +0.977   ▁
+
+  sparkline 1810->1960: ▇▄▃▂▃▄▄▂▂▂▃▁▁▂▂▁
+
+=== decade-level trend ===
+  slope = -2.874 per century   r=-0.790  p=0.0003  (n=16 decades)
+  -> monotone-ish decline toward manner over the article era
+  range: +0.324 (1920) .. +7.434 (1810)

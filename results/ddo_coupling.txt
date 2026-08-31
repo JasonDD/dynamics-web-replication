@@ -1,0 +1,96 @@
+==========================================================================================
+DDO (debate.org) — WHO / coupling persuasion test:  does a voter's disposition predict which
+CHARACTER of argument persuades them?   corpus = DDO via public IESTA effectiveness labels
+==========================================================================================
+scored sides=6,325   PC1 corpus=2,648,406 blocks   + = matter (rigour/depth), - = manner
+PC1 loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
+eff_c present=4,961  eff_l present=4,985  both=3,621
+
+------------------------------------------------------------------------------------------
+1) MAIN EFFECT — character of the side that persuaded the audience vs the side that did not
+------------------------------------------------------------------------------------------
+
+[CONSERVATIVE audience]  effective sides=495  ineffective=4,466
+  axis              eff mean inef mean  Cohen d   perm p
+  rigour               0.524     0.482   +0.179   0.0005 ***
+  register             0.472     0.447   +0.149   0.0035 **
+  commercial_drive     0.233     0.211   +0.143   0.0010 ***
+  PC1                  3.160     2.766   +0.119   0.0140 *
+  affect               0.636     0.656   -0.104   0.0275 *
+  originality          0.523     0.505   +0.103   0.0315 *
+  depth                0.497     0.478   +0.100   0.0355 *
+  stance               0.783     0.763   +0.092   0.0560 
+  matter               0.484     0.455   +0.052   0.2754 
+  candour              0.804     0.809   -0.051   0.2714 
+
+[LIBERAL audience]  effective sides=452  ineffective=4,533
+  axis              eff mean inef mean  Cohen d   perm p
+  rigour               0.552     0.475   +0.334   0.0005 ***
+  PC1                  3.608     2.664   +0.286   0.0005 ***
+  depth                0.519     0.469   +0.269   0.0005 ***
+  matter               0.558     0.429   +0.231   0.0005 ***
+  affect               0.617     0.659   -0.215   0.0005 ***
+  register             0.482     0.449   +0.195   0.0005 ***
+  stance               0.802     0.768   +0.163   0.0015 **
+  originality          0.520     0.495   +0.140   0.0065 **
+  commercial_drive     0.222     0.214   +0.051   0.3043 
+  candour              0.808     0.807   +0.007   0.8851 
+
+[within-debate matched — effective minus ineffective side, per debate one side flipped the audience]
+  cons: matched pairs=450
+  lib: matched pairs=399
+
+  POOLED across audiences (the global 'what character persuades'): pairs=849
+  axis                mean Δ  Cohen d   perm p
+  rigour             +0.0751   +0.288   0.0002 ***
+  PC1                +0.9806   +0.267   0.0002 ***
+  depth              +0.0542   +0.259   0.0002 ***
+  stance             +0.0541   +0.219   0.0002 ***
+  matter             +0.1174   +0.175   0.0002 ***
+  register           +0.0316   +0.135   0.0002 ***
+  affect             -0.0278   -0.120   0.0004 ***
+  commercial_drive   +0.0098   +0.050   0.1576 
+  originality        +0.0106   +0.047   0.1742 
+  candour            +0.0016   +0.014   0.7099 
+
+------------------------------------------------------------------------------------------
+2) COUPLING — does which character persuades DEPEND on who is judging (cons vs lib)?
+------------------------------------------------------------------------------------------
+
+[A] sides effective for EXACTLY ONE audience — the clean coupling contrast
+    conservative-only effective n=110   liberal-only effective n=129   both=15   neither=3367
+    (same argument, same character; a difference here = the audience, not the argument)
+  axis              cons-only  lib-only  Cohen d   perm p
+  stance                0.788     0.817   -0.158   0.2336 
+  PC1                   2.953     3.392   -0.140   0.2791 
+  affect                0.658     0.634   +0.131   0.3293 
+  commercial_drive      0.248     0.230   +0.117   0.3649 
+  originality           0.509     0.525   -0.087   0.5315 
+  matter                0.436     0.479   -0.080   0.5447 
+  register              0.485     0.494   -0.056   0.6797 
+  rigour                0.526     0.536   -0.042   0.7379 
+  candour               0.800     0.798   +0.015   0.9540 
+  depth                 0.501     0.503   -0.012   0.9192 
+
+[B] held-out generalisation — can character predict WHICH audience a side persuaded? (cons=1 vs lib=0)
+    out-of-sample AUC(character -> which audience) = 0.447   shuffled-label null 0.482   perm p=0.7309
+    -> character does NOT predict which audience: no coupling at this granularity — effectiveness given character is audience-independent
+
+[C] audience x character interaction — standardised effect of each axis on being effective, per audience
+  axis              cons coef   lib coef   cons-lib
+  rigour              +0.0122    +0.0128    -0.0005
+  depth               -0.0105    -0.0041    -0.0064
+  originality         +0.0039    +0.0036    +0.0003
+  candour             -0.0066    -0.0059    -0.0007
+  affect              -0.0014    -0.0017    +0.0004
+  commercial_drive    +0.0074    -0.0004    +0.0079
+  stance              +0.0001    +0.0008    -0.0007
+  register            +0.0053    +0.0045    +0.0007
+  PC1 proj            -0.0036    +0.0020    -0.0056   (per-audience matter/manner tilt of what wins)
+  ||cons - lib coefficient vector|| = 0.0102   audience-swap null 0.0085   perm p=0.2392
+  -> no reliable audience difference in the winning gradient (coupling null at full scale)
+
+[D] partisan vs mixed TOPIC (proxy for audience polarisation; not a per-voter measure)
+  PARTISAN topics  winner-minus-loser STANCE(polemical) mean Δ=+0.0358  Cohen d=+0.171  n=376
+  MIXED topics     winner-minus-loser STANCE(polemical) mean Δ=+0.0687  Cohen d=+0.252  n=473
+  (if polemic wins MORE in partisan topics than mixed, that is audience polarisation moderating character)

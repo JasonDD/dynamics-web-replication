@@ -1,0 +1,49 @@
+# cross-model rater panel (Qwen 7B + Claude) on articles-only within-source items
+# 2026-08-29T00:25Z | 24 issues, 6 titles, early vs late, 1810s-1961
+
+[xm] 24 issues scored by BOTH raters across 6 titles
+
+=== rater agreement on the matter/manner axis (Claude vs 7B, same items) ===
+  corr(Claude PC1, 7B PC1) r=+0.714 p=8.9e-05  over 24 issues  -> the two families read matter/manner the SAME way
+  per-axis agreement (Claude vs 7B):
+    rigour             r=+0.780
+    depth              r=+0.794
+    originality        r=+0.512
+    candour            r=+0.279
+    affect             r=+0.567
+    commercial_drive   r=+0.882
+    stance             r=+0.164
+    register           r=-0.646
+
+=== de-substantiation replication: late-vs-early matter/manner change per title ===
+  (negative = matter pole FELL from early issues to late issues; the 7B found this)
+  title                               7B early->late  Claude early->late  agree?
+  sim_british-medical-journal                 -0.132              -2.727     yes
+  sim_contemporary-review                     +0.006              -0.539      NO
+  sim_harpers-magazine                        -5.285              -6.570     yes
+  sim_north-american-review                   +0.346              -1.458      NO
+  sim_popular-science                         -8.760             -13.467     yes
+  sim_spectator-uk                            -3.856              -4.580     yes
+
+  7B mean late-early change = -2.947 (4/6 titles fell)
+  Claude mean late-early change = -4.890 (6/6 titles fell)
+  raters agree on direction in 4/6 titles
+  -> CROSS-MODEL CONFIRMED: a different-family rater independently sees the matter pole fall within titles.
+     The de-substantiation is not a 7B artifact.
+
+=== Claude rater qualitative caveats (from reading the 24 texts) ===
+1. Strong axis agreement: Claude vs 7B on matter/manner PC1 r=+0.714 (p=9e-5); commercial_drive r=+0.882; rigour
+   r=+0.78, depth r=+0.79. The two families read the core axes the same way. Weak/negative agreement on register
+   (r=-0.65), stance (0.16), candour (0.28) — the peripheral manner axes are rater-dependent.
+2. The commercial_drive rise is substantially driven by DISPLAY ADVERTISING captured in the late-issue scan
+   windows: Harper's 1930 and Popular Science 1961 first-6000-chars are mostly ad copy (Stetson hats, AC spark
+   plugs, Lafayette catalogue). This is genuine commercialisation (the ads are part of the periodical) but it is
+   partly a text-composition effect of where the bound-volume scan begins, not purely editorial-voice change.
+3. Serious ARTICLE prose did NOT de-substantiate: BMJ 1960 (a densely referenced inflammation-biochemistry
+   lecture) is the HIGHEST-matter item in the whole set. The BMJ 'fall' comes from the 1951 window carrying drug
+   ads + contents, not from weak 1960 science. NAR and Contemporary Review held their substance too.
+4. Honest synthesis: what falls is dominated by (a) mass-market magazines (Harper's, Popular Science) genuinely
+   commercialising, and (b) ad/contents pages entering the sampled window. Cross-model CONFIRMS the direction
+   (Claude sees matter fall in 6/6 titles; 7B 4/6; both agree the axis) and STRONGLY confirms commercialisation;
+   it does NOT establish that serious-article editorial prose de-substantiated. A per-article-body extraction
+   (strip ads/contents) is the clean next control.

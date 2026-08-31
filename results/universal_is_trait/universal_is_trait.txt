@@ -1,0 +1,25 @@
+cross-site persons(>= 2 domains)=29,114  blocks=328,841  with>=2 scored blocks=28,669
+
+================ 8-AXIS TABLE ================
+axis              culture% (cctld)  culture% (all)   trait ICC  reddit room%
+rigour                        5.94            3.30       0.584          9.77
+depth                         5.33            3.50       0.601         10.12
+originality                   5.63            4.10       0.473          4.24
+candour                       5.20            1.50       0.523          6.19
+affect                       10.22            4.20       0.466         11.49
+commercial_drive              9.23            3.50       0.514          6.19
+stance                        8.55            5.90       0.458          6.64
+register                      3.22            1.60       0.364          4.37
+
+================ RANK CORRELATIONS across the 8 axes ================
+CORE: culture share  vs  trait stability (expect NEGATIVE = universal is trait):
+  culture(cctld) vs trait ICC        Spearman rho=-0.071 (p=0.867)   Pearson r=+0.082 (p=0.847)
+  culture(all)   vs trait ICC        Spearman rho=-0.323 (p=0.435)   Pearson r=+0.072 (p=0.866)
+Cross-check: culture share vs reddit ROOM/performance share (expect POSITIVE — same 'performed' axes):
+  culture(cctld) vs room%            Spearman rho=+0.429 (p=0.289)   Pearson r=+0.439 (p=0.277)
+  culture(all)   vs room%            Spearman rho=+0.263 (p=0.528)   Pearson r=+0.250 (p=0.550)
+Cross-check: trait stability vs reddit ROOM share (expect NEGATIVE — trait axes vary least by room):
+  trait ICC vs room%                 Spearman rho=+0.357 (p=0.385)   Pearson r=+0.565 (p=0.144)
+
+wrote /tmp/universal_is_trait_stats.json
+DONE_EXIT=0

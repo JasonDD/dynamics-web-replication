@@ -1,0 +1,23 @@
+# se_arbiter_where
+# generated 2026-08-28T18:19Z | data state: se_scores 16361 lines
+
+[arbiter] scored args=16,360 ops=0  usable strata=2,390
+[arbiter] global winning direction on PC1(matter/manner): +0.320  (negative = manner beats matter)
+
+=== A) only 0 multi-pair threads scored — rerun when advanced ===
+
+=== B) SAME-USER across different topics (269 users >=2 threads) — the confound-free person test ===
+  within-user cohesion = +0.568  vs shuffled-identity null +0.573  perm p=0.7016
+  -> no within-person consistency across topics beyond chance = ROOM/topic arbitrates
+
+=== C) only 0 threads have a scored OP disposition — the coupling fork needs the OP pass (runs last). rerun then ===
+
+=== D) CROSS-ROOM: winning-character norm per room (5 rooms >=30 strata) ===
+  history      PC1(matter/manner) +0.380  n=236
+  law          PC1(matter/manner) +0.431  n=240
+  philosophy   PC1(matter/manner) +0.319  n=1518
+  politics     PC1(matter/manner) +0.227  n=308
+  skeptics     PC1(matter/manner) +0.203  n=88
+  between-room vs within F=1.45  perm p=0.0905  -> no room difference beyond chance
+
+[arbiter] verdict = read A (topic+person), B (person alone, thin), C (person generalises), D (rooms differ) together; strong main effect + weak/null B,C + significant D = the ROOM sets the norm; significant B and/or C = the person individuates it.

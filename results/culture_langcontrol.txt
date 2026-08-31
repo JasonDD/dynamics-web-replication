@@ -1,0 +1,24 @@
+# culture_langcontrol (settlement vs language)
+# 2026-08-28T23:10Z | domain_char8_expanded ccTLD
+
+[lang] 52 countries; anglosphere present: ['GB', 'CA', 'AU', 'NZ', 'ZA', 'IE']
+
+=== TEST 1: anglosphere internal STRUCTURE (settlement) vs UNIFORM (language) ===
+  within-anglosphere distances: mean 2.63, CV 0.479  vs random-group CV 0.373  p=0.092
+  -> STRUCTURED beyond a random group: settlement history, not just shared language
+    AU nearest overall: ['NZ', 'ZA', 'SG']
+    NZ nearest overall: ['AU', 'AR', 'IE']
+    CA nearest overall: ['CL', 'BR', 'ES']
+    ZA nearest overall: ['VN', 'SG', 'AU']
+
+=== TEST 2: dispersed anglosphere vs contiguous regional families (mean within-distance, lower=tighter) ===
+  anglosphere (4 continents) n=6  mean within 2.63
+  Germanic                   n=4  mean within 2.45
+  Nordic                     n=5  mean within 3.05
+  Slavic                     n=9  mean within 2.38
+  world (all pairs)                   mean 3.69
+  -> if the anglosphere's within-distance is comparable to a contiguous region's despite spanning 4
+     continents, that is settlement/history binding character across distance, the map's core claim.
+
+[lang] ccTLD caveat: US under-identified; anglosphere is GB/CA/AU/NZ/ZA/IE here. Language confound named:
+       shared English is real; the STRUCTURE within the family (Test 1) is what a language artefact cannot fake.

@@ -1,0 +1,84 @@
+======================================================================
+PART 1 — TRUTH PRIOR (LIAR / PolitiFact)
+======================================================================
+LIAR items scored: n=4000
+verdict distribution: {'pants-fire': 330, 'false': 740, 'barely-true': 620, 'half-true': 822, 'mostly-true': 833, 'true': 655}
+binary falsity: false-ish(pants-fire/false/barely-true)=1690  true-ish(half/mostly/true)=2310
+
+--- Correlation of each feature with the 6-way ordinal verdict (higher = MORE TRUE) ---
+    a NEGATIVE correlation => the feature marks FALSITY (higher feature, lower truth)
+    feature               Pearson r         p   Spearman
+    rigour                   +0.178    0.0000     +0.199
+    depth                    +0.185    0.0000     +0.189
+    originality              +0.003    0.8427     +0.017
+    candour                  +0.165    0.0000     +0.162
+    affect                   -0.100    0.0000     -0.114
+    commercial_drive         +0.086    0.0000     +0.082
+    stance                   -0.062    0.0001     -0.091
+    register                 +0.094    0.0000     +0.077
+    manner_inflation         -0.138    0.0000     -0.140
+    matter/manner PC1        +0.089    0.0000     +0.080
+
+--- Logistic AUC for predicting FALSITY from character alone (5-fold CV, falsity=1) ---
+    feature                  AUC     +/-
+    rigour                 0.587   0.019
+    depth                  0.583   0.028
+    candour                0.576   0.022
+    affect                 0.549   0.008
+    stance                 0.543   0.013
+    register               0.538   0.014
+    commercial_drive       0.530   0.009
+    originality            0.482   0.019
+    manner_inflation       0.571   0.018
+    matter/manner PC1      0.540   0.007
+    ALL 8 axes             0.624   0.023
+    standardised logistic coefficients on all-8 model (+ => raises falsity odds):
+      register          -0.225
+      depth             -0.188
+      stance            +0.179
+      originality       +0.167
+      candour           -0.152
+      commercial_drive  -0.117
+      rigour            -0.103
+      affect            +0.055
+
+--- sensitivity: extremes-only binary (pants-fire/false vs mostly-true/true, n=2558, drop middle) ---
+    manner_inflation AUC = 0.587 +/- 0.034   ALL-8 AUC = 0.663 +/- 0.011
+
+======================================================================
+PART 2 — AXIS ANATOMY (which axes carry the deception signal)
+======================================================================
+
+--- IRA deception vs sincere CMV  (IRA=1 vs baseline=0, balanced n=8000/class) ---
+    axis                  univ AUC
+    depth                    0.917
+    rigour                   0.906
+    affect                   0.827
+    candour                  0.807
+    register                 0.728
+    originality              0.586
+    stance                   0.579
+    commercial_drive         0.544
+    manner_inflation         0.852   (best single axis: depth 0.917)
+    ALL 8 (CV)               0.956 +/- 0.002   -> multi-axis gain over best single = +0.039
+    candour~affect correlation (redundancy check) r = -0.297
+
+--- LIAR false vs true (PolitiFact)  (FALSE=1 vs baseline=0, balanced n=1690/class) ---
+    axis                  univ AUC
+    rigour                   0.582
+    depth                    0.580
+    candour                  0.576
+    affect                   0.544
+    register                 0.542
+    stance                   0.539
+    commercial_drive         0.532
+    originality              0.502
+    manner_inflation         0.566   (best single axis: rigour 0.582)
+    ALL 8 (CV)               0.619 +/- 0.025   -> multi-axis gain over best single = +0.036
+    candour~affect correlation (redundancy check) r = -0.168
+
+[scope] Only IRA (deception) + LIAR (fact-checked) + CMV (sincere) are in the
+        scored output. Ott deceptive reviews / phishing were NOT scored, so the
+        anatomy is limited to political deception + fact-checked falsity.
+[caveat] scorer is a web-tuned 7B on the 8-axis instrument; LIAR is single-sentence
+         politician claims (short, may under-inform some axes); one fact-checker.

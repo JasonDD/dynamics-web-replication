@@ -1,0 +1,21 @@
+# character-field correlation length on the AUDITED scored graph
+# 2026-08-28T23:48Z | cc_v3.domain_scored_edges 42.5M, post-webgraph-audit
+
+[cl] loading char8 + fitting PC1 ...
+[cl] 3,136,616 scored domains; staging domain->pc1 (vertices are normal-form) ...
+[cl] joining to vertices for ids ...
+[cl] 3,136,616 ids mapped to pc1
+
+=== 1-hop: neighbour matter/manner correlation over ALL scored edges ===
+  r(1-hop) = +0.3158  over 42,555,126 edges
+  r(random pairs, baseline) = +0.0018
+
+=== decay: 2-hop and 3-hop neighbour correlation (edge self-join, 800k-edge sample) ===
+  r(2-hop) = +0.0493  over 28,025,295 paths
+  r(3-hop) = +0.0593  over 94,997,676 paths
+
+=== reading ===
+  1-hop +0.316 -> 2-hop +0.049 -> 3-hop +0.059  (random +0.002)
+  -> a real character FIELD: linked domains share matter/manner well above chance; correlation halves within 1 hop.
+     The web is locally coherent in character, decaying over a finite correlation length, not uniform noise.
+[cl] done

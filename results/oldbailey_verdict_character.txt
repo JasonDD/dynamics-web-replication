@@ -1,0 +1,69 @@
+OLD BAILEY ONLINE (1674-1913) — verdict vs advocacy character | the persuasion funnel CONVICTION ANCHOR
+====================================================================================================
+matter/manner PC1 from 2,648,406-row cross-site corpus (cc_v3.domain_char8_expanded), + = toward MATTER
+  PC1 loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
+
+sample: 568 trials, 1674-1910 | guilty 404 (71.1%) notGuilty 164 (28.9%)
+offence mix: theft=412, other=60, violentTheft=39, deception=29, kill=28
+era mix:     1_pre1730_self_rep=131, 2_1730_1836_counsel_enters=291, 3_1837_1913_professionalised=146
+
+====================================================================================================
+STEP 2 — character -> verdict, controlling for the evidence (offence + trial length + persons)
+====================================================================================================
+
+A  controls only            : McFadden R2 = 0.0460  (LL=-325.7)
+B  + matter/manner PC1       : McFadden R2 = 0.0518  (LL=-323.7)
+C  + all 8 raw axes          : McFadden R2 = 0.0678  (LL=-318.2)
+
+Does character add beyond the evidence?
+  LR test  B vs A (PC1 only) : chi2=3.92  df=1  p=0.0476
+  LR test  C vs A (8 axes)   : chi2=14.89  df=8  p=0.0613
+
+Standardised log-odds coefficients (per 1 SD; |coef| = strength on the verdict):
+  predictor                      coef   odds/SD         p
+  EVIDENCE: log(words)         +0.590     1.804  1.82e-05 ***
+  EVIDENCE: n_persons          -0.267     0.766    0.0438 *
+  MATTER/MANNER PC1 (in B)     +0.205     1.228    0.0482 *
+
+  per-axis in model C (raw character axes, evidence held):
+     rigour                    +0.314     1.369    0.0116 *
+     depth                     -0.384     0.681    0.0354 *
+     originality               +0.213     1.238      0.21 
+     candour                   +0.123     1.131     0.266 
+     affect                    -0.065     0.937     0.702 
+     commercial_drive          -0.003     0.997     0.982 
+     stance                    +0.166     1.181     0.278 
+     register                  -0.107     0.898     0.407 
+
+  |evidence coef|=0.590  vs  |PC1 coef|=0.205  ->  EVIDENCE dominates: the visible weight of evidence moves the verdict more than rhetorical character — conviction anchor CONFIRMED
+
+====================================================================================================
+STEP 3 — temporal natural experiment: did manner start to matter as advocacy professionalised?
+====================================================================================================
+  eras: pre-1730 (defendant self-represents) | 1730-1836 (defence counsel enters) | 1837-1913 (professionalised)
+
+  era                                     n  guilty%   PC1 coef        p
+  1_pre1730_self_rep                    131   (fit failed: Error evaluating factor: TypeError: 'Bin)
+  2_1730_1836_counsel_enters            291   (fit failed: Error evaluating factor: TypeError: 'Bin)
+  3_1837_1913_professionalised          146   (fit failed: Error evaluating factor: TypeError: 'Bin)
+
+  PC1 x era interaction (does the character effect on the verdict change across eras?):
+    LR test interaction vs additive: chi2=0.26  df=2  p=0.876
+    z_PC1                                      +0.283  p=0.0987
+    z_PC1:C(era)[T.2_1730_1836_counsel_enters]   -0.113  p=0.609
+    z_PC1:C(era)[T.3_1837_1913_professionalised]   -0.068  p=0.818
+    -> no significant era shift: the character effect on the verdict is stable across the span
+
+====================================================================================================
+HONEST CONFOUNDS
+====================================================================================================
+  - No clean EVIDENCE/ADVOCACY split. Old Bailey markup does not reliably role-tag witness testimony vs
+    defence/prosecution framing (persName type=witnessName is largely absent), so whole-trial character
+    is scored and evidence is CONTROLLED (offence + word count + n persons), not removed. Character still
+    partly reflects how strong the evidence reads, so any residual character effect is an UPPER bound on
+    rhetoric, not a clean estimate.
+  - The account is a published clerk/shorthand REPORT, not a transcript; early trials are terse summaries,
+    later ones near-verbatim. That composition change is itself the temporal signal AND a confound with era.
+  - The 8-axis instrument is web/periodical-tuned; 17-19thC legal English is out of its training domain.
+  - OCR quality improves over the span; word count as an evidence proxy is coarse.
+  - guilty base rate is high; not-guilty is the minority class, so acquittal signal is the harder half.

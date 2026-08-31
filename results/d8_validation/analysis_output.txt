@@ -1,0 +1,69 @@
+=== DYNAMICS-8 PERSON instrument vs personality gold labels (PANDORA/MBTI) ===
+corpus: Kaggle datasnaek/mbti-type (PersonalityCafe posts + self reported four letter type)
+posts scored: 11164   authors: 450   mean posts/author: 24.8
+instrument: DYNAMICS-8 person prompt (disp_d8_behav), qwen2.5-7b-atlas, temp 0
+
+=== TIER 1  PER TEXT (single post = a performed state; predicted attenuated)  (Pearson point biserial r; * p<.01  ** p<1e-4)  n=11164 ===
+  D8 axis            Extraversion(E/I)         Openness(N/S)    Agreeableness(F/T)    Conscientious(J/P)
+  discipline                 -0.010                -0.013                -0.046**              +0.070**D
+  yielding                   +0.003                +0.021                +0.124**D             -0.055** 
+  novelty                    +0.031*               +0.059**D             -0.002                -0.053** 
+  acuity                     +0.001                +0.028*               -0.117**              +0.017   
+  mercuriality               +0.075**              -0.009                +0.022                -0.052** 
+  impulsivity                +0.060**              -0.044**              -0.030*               -0.037** 
+  candour                    -0.021                -0.000                +0.073**              +0.018   
+  sociability                +0.096**D             -0.011                +0.089**              -0.015   
+
+--- PER TEXT: convergent (diagonal) vs discriminant (off diagonal) ---
+  Extraversion(E/I)    convergent=sociability  r=+0.096  95%CI[+0.078,+0.115]  WINS column
+  Openness(N/S)        convergent=novelty      r=+0.059  95%CI[+0.041,+0.078]  WINS column
+  Agreeableness(F/T)   convergent=yielding     r=+0.124  95%CI[+0.106,+0.142]  WINS column
+  Conscientious(J/P)   convergent=discipline   r=+0.070  95%CI[+0.052,+0.089]  WINS column
+  MEAN convergent |r| = 0.088   MEAN discriminant |r| = 0.034   ratio = 2.57x
+  convergent axis WINS its column in 4/4 labels
+
+=== TIER 2  PERSON (mean of the author's per post readings; room averaged out)  (Pearson point biserial r; * p<.01  ** p<1e-4)  n=450 ===
+  D8 axis            Extraversion(E/I)         Openness(N/S)    Agreeableness(F/T)    Conscientious(J/P)
+  discipline                 -0.036                -0.037                -0.147*               +0.228**D
+  yielding                   +0.013                +0.067                +0.395**D             -0.174*  
+  novelty                    +0.102                +0.176* D             -0.004                -0.163*  
+  acuity                     +0.003                +0.086                -0.360**              +0.051   
+  mercuriality               +0.257**              -0.038                +0.072                -0.177*  
+  impulsivity                +0.195**              -0.152*               -0.098                -0.118   
+  candour                    -0.076                +0.002                +0.235**              +0.063   
+  sociability                +0.302**D             -0.039                +0.277**              -0.048   
+
+--- PERSON: convergent (diagonal) vs discriminant (off diagonal) ---
+  Extraversion(E/I)    convergent=sociability  r=+0.302  95%CI[+0.215,+0.383]  WINS column
+  Openness(N/S)        convergent=novelty      r=+0.176  95%CI[+0.085,+0.265]  WINS column
+  Agreeableness(F/T)   convergent=yielding     r=+0.395  95%CI[+0.314,+0.470]  WINS column
+  Conscientious(J/P)   convergent=discipline   r=+0.228  95%CI[+0.138,+0.314]  WINS column
+  MEAN convergent |r| = 0.275   MEAN discriminant |r| = 0.110   ratio = 2.49x
+  convergent axis WINS its column in 4/4 labels
+
+label base rates (frac=1, author level): E=0.23  O=0.87  A=0.56  C=0.39
+posts per author: min=6 median=25 max=25
+
+=== TIER 3  r vs k: mean convergent diagonal r as k of the author's posts are averaged ===
+  (per author, take the mean of a random k of their posts, correlate the 4 convergent axes vs their labels, average |r| over the 4 factors; authors with < k posts are dropped for that k)
+  (each k averages the diagonal r over 40 random draws of k posts per author)
+     k   authors  meanDiag|r|   sociability<->E  novelty<->O  yielding<->A  discipline<->C
+     1       450        0.089       +0.097      +0.052      +0.120      +0.086
+     2       450        0.123       +0.128      +0.090      +0.170      +0.105
+     3       450        0.145       +0.146      +0.112      +0.209      +0.115
+     5       450        0.176       +0.186      +0.116      +0.248      +0.154
+     8       449        0.211       +0.238      +0.131      +0.291      +0.182
+    13       447        0.239       +0.262      +0.162      +0.341      +0.192
+    21       442        0.263       +0.290      +0.172      +0.379      +0.212
+
+=== SUMMARY ===
+  PER TEXT  mean convergent |r| = 0.088   diagonal wins column 4/4
+  PERSON    mean convergent |r| = 0.275   diagonal wins column 4/4
+  k curve   k=1 meanDiag|r|=0.089  ->  k=21 meanDiag|r|=0.263   (climb = +0.175)
+  content baseline (prior run, wrong instrument): mean multiple-R 0.16-0.21, best single r~0.14-0.16
+
+UNTESTABLE on this corpus (flagged honestly):
+  mercuriality Emotionality/Neuroticism (no MBTI axis)
+  candour      Honesty-Humility (no MBTI axis)
+  acuity       new lever, no gold label
+  impulsivity  new lever, no gold label

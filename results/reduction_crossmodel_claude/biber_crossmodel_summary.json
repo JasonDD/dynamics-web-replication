@@ -1,0 +1,64 @@
+{
+  "scorer": "independent frontier model family (second lineage)",
+  "n_docs": 1029,
+  "item_level": {
+    "pearson_r": -0.18980687154281387,
+    "spearman_r": -0.19051253954902847
+  },
+  "between_subreddit_centroid": {
+    "n_subreddits": 41,
+    "pearson_r": -0.2561736142338996,
+    "spearman_r": -0.07926829268292683
+  },
+  "within_subreddit": {
+    "n_subreddits": 41,
+    "mean_r": -0.19041739197259927,
+    "weighted_mean_r": -0.19031239028856728,
+    "median_r": -0.17703956541518842,
+    "frac_negative": 0.9512195121951219
+  },
+  "pc1_loadings": {
+    "rigour": 0.5872618474749163,
+    "depth": 0.5614855174701272,
+    "originality": 0.3160977725211608,
+    "candour": 0.2688305019441858,
+    "affect": -0.2858750060864925,
+    "commercial_drive": -0.04295552235263232,
+    "stance": -0.040416766263929135,
+    "register": -0.28717013180774265
+  },
+  "per_axis_vs_d1": {
+    "rigour": -0.2805270246784831,
+    "depth": -0.08278848752760352,
+    "originality": -0.03812561098351133,
+    "candour": 0.1560716899919397,
+    "affect": 0.14558709735085784,
+    "commercial_drive": -0.09615781676931245,
+    "stance": -0.06119113640446077,
+    "register": 0.27719210602423955
+  },
+  "biber_feature_vs_pc1": {
+    "INV:first_person": -0.2069105553358914,
+    "INV:second_person": -0.1586192014782425,
+    "INV:private_verbs": -0.1286492210877226,
+    "INV:contractions": 0.009498946779871238,
+    "INV:present_bedohave": 0.010951605616940368,
+    "INV:demonstratives": 0.003576573958064582,
+    "INV:emphatics": -0.1087119387956422,
+    "INV:amplifiers": -0.04565932610591803,
+    "INV:hedges": 0.006348893520379626,
+    "INV:discourse_particles": -0.041159188068354204,
+    "INV:neg_not": 0.04236096268704052,
+    "INV:causative": -0.021436931271733163,
+    "INV:wh_words": -0.053668228021266265,
+    "INV:possibility_modals": 0.012610615790799374,
+    "INV:questions": -0.12944734399994554,
+    "INF:mean_word_len": 0.16444902368067,
+    "INF:type_token_ratio": -0.252716774082573,
+    "INF:prepositions": 0.1716311593558328,
+    "INF:nominalisations": 0.0885636764319384,
+    "INF:article_density": 0.18429881357988592
+  },
+  "qwen7b_genre_centroid_pearson": -0.6,
+  "qwen7b_item_pearson": -0.14
+}

@@ -1,0 +1,52 @@
+[pc1] reference n=2648406  loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
+bases scored: 180  complete (all 6 cells): 180
+
+====================================================================================================
+PAIRED MEAN SHIFT (variant - base), 95% bootstrap CI  [* = CI excludes 0]
+====================================================================================================
+axis              matter_insert  placebo_inser  affect_insert  affect_rewrit  matter_rewrit
+rigour                  +0.290*        -0.059*        -0.081*        -0.149*        +0.003 
+depth                   +0.182*        -0.047*        +0.001         -0.099*        -0.006 
+originality             +0.016         -0.091*        +0.037*        +0.046*        +0.006 
+candour                 +0.023*        -0.071*        +0.044*        -0.007         -0.012*
+affect                  -0.137*        -0.122*        +0.291*        +0.166*        -0.035*
+commercial_drive        +0.024*        -0.050*        -0.007         -0.006         -0.004 
+stance                  -0.026         -0.093*        -0.004         -0.026         +0.016 
+register                +0.104*        -0.118*        -0.147*        -0.056*        -0.004 
+MATTER                  +0.236*        -0.053*        -0.040*        -0.124*        -0.002 
+MANNER                  -0.019         -0.111*        +0.046*        +0.028*        -0.008 
+PC1                     +2.224*        -0.699*        -0.993*        -1.771*        +0.256*
+
+====================================================================================================
+LENGTH CONTROL: matter_insert vs placebo_insert  (both add ~equal words) -> is it MARKER or LENGTH?
+====================================================================================================
+  rigour         matter - placebo = +0.349*  CI[+0.316,+0.381]
+  depth          matter - placebo = +0.229*  CI[+0.206,+0.253]
+  MATTER         matter - placebo = +0.289*  CI[+0.264,+0.314]
+  PC1            matter - placebo = +2.923*  CI[+2.449,+3.393]
+
+====================================================================================================
+ASYMMETRY (zero added words): affect_rewrite moves AFFECT while matter_rewrite fails to move MATTER?
+====================================================================================================
+  affect_rewrite -> affect   shift = +0.166*  CI[+0.139,+0.192]
+  affect_rewrite -> MANNER   shift = +0.028*  CI[+0.007,+0.049]
+  matter_rewrite -> rigour   shift = +0.003   CI[-0.013,+0.018]
+  matter_rewrite -> depth    shift = -0.006   CI[-0.017,+0.004]
+  matter_rewrite -> MATTER   shift = -0.002   CI[-0.013,+0.010]
+  matter_rewrite -> register shift = -0.004   CI[-0.029,+0.021]
+  matter_rewrite -> PC1      shift = +0.256*  CI[+0.020,+0.506]
+  affect_rewrite -> PC1      shift = -1.771*  CI[-2.150,-1.401]
+
+====================================================================================================
+MATTER-NEEDS-BANDWIDTH: matter_insert MATTER-shift by BASE length (short bases have less room)
+====================================================================================================
+  short (<=median base wc)   n= 90  matter_insert ->MATTER  +0.372* CI[+0.338,+0.404]
+  short (<=median base wc)   n= 90  matter_rewrite->MATTER  +0.002  CI[-0.013,+0.019]
+  short (<=median base wc)   n= 90  affect_insert ->affect  +0.296* CI[+0.251,+0.341]
+  short (<=median base wc)   n= 90  affect_rewrite->affect  +0.134* CI[+0.099,+0.172]
+  long  (> median base wc)   n= 90  matter_insert ->MATTER  +0.100* CI[+0.072,+0.129]
+  long  (> median base wc)   n= 90  matter_rewrite->MATTER  -0.006  CI[-0.021,+0.010]
+  long  (> median base wc)   n= 90  affect_insert ->affect  +0.286* CI[+0.248,+0.321]
+  long  (> median base wc)   n= 90  affect_rewrite->affect  +0.197* CI[+0.159,+0.233]
+
+wrote /mnt/nas/kronaxis/corpora/controlled_edit/stats.json

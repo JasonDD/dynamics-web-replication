@@ -1,0 +1,20 @@
+# matter/manner axis invariance across the 4 CC snapshots
+# 2026-08-28T23:32Z
+
+=== per-epoch matter/manner axis (PC1 computed independently per snapshot) ===
+  epoch            n PC1 var%   loadings rigo dept orig cand affe comm stan regi
+  cc2020       50855    56.5%   +0.44 +0.40 +0.23 +0.40 -0.34 -0.26 +0.36 -0.35
+  cc2022       56330    56.8%   +0.44 +0.40 +0.24 +0.40 -0.34 -0.26 +0.36 -0.35
+  cc2024       73935    57.0%   +0.44 +0.40 +0.25 +0.40 -0.33 -0.26 +0.36 -0.35
+  cc2026       94677    55.6%   +0.44 +0.40 +0.26 +0.40 -0.32 -0.25 +0.36 -0.35
+
+=== axis STABILITY: cosine similarity of PC1 loading vectors between epochs ===
+  (1.00 = identical axis; a drifting instrument would fall well below)
+  cc2020 vs cc2022: cos=1.0000
+  cc2020 vs cc2024: cos=0.9998
+  cc2020 vs cc2026: cos=0.9993
+  cc2022 vs cc2024: cos=1.0000
+  cc2022 vs cc2026: cos=0.9995
+  cc2024 vs cc2026: cos=0.9997
+
+  min pairwise cosine over 6 epoch-pairs = 0.9993  -> the matter/manner axis is STABLE across time: the ruler does not move, so the when drift is the web moving, not the instrument

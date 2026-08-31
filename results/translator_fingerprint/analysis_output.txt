@@ -1,0 +1,78 @@
+[EUROPARL] complete items 800 x 8 langs
+
+[EUROPARL] per-axis language main-effect share (item x lang two-way):
+axis              content%  lang%  resid%    p_lang
+rigour                33.3    6.2    60.4  3.3e-116
+depth                 26.0    7.1    66.9  2.2e-118
+originality           31.5    3.8    64.6   1.6e-67
+candour               20.5    2.4    77.1   2.2e-35
+affect                32.2    1.8    65.9   4.3e-31
+commercial_drive      25.6    3.4    71.1   1.2e-53
+stance                48.1    0.7    51.2   3.5e-16
+register              38.1    0.6    61.4   2.0e-10
+_PC1                  32.4    3.7    63.9   2.0e-65
+
+[EUROPARL] FINGERPRINT: per-language 8-axis offset vs ENGLISH (z units, pooled axis SD)
+lang    rigou   depth   origi   cando   affec   comme   stanc   regis   ||len
+en      +0.00   +0.00   +0.00   +0.00   +0.00   +0.00   +0.00   +0.00    0.00
+de      +0.25   +0.30   +0.49   -0.08   -0.07   +0.32   -0.12   +0.14    0.73
+fr      +0.18   +0.35   +0.63   -0.06   -0.03   +0.40   -0.25   -0.02    0.88
+es      -0.05   +0.07   +0.35   -0.06   +0.21   +0.59   -0.18   +0.04    0.75
+it      -0.06   +0.07   +0.32   -0.12   +0.04   +0.41   -0.22   +0.01    0.58
+fi      -0.36   -0.26   +0.20   -0.31   +0.30   +0.53   -0.14   -0.08    0.85
+pl      -0.37   -0.23   +0.21   -0.33   +0.06   +0.45   -0.07   +0.00    0.74
+el      -0.41   -0.40   +0.15   -0.43   +0.23   +0.55   -0.26   -0.14    0.99
+
+[EUROPARL] GENERIC translationese vector (mean over 7 targets, z units) + its share:
+           rigou   depth   origi   cando   affec   comme   stanc   regis   ||len
+GENERIC    -0.12   -0.01   +0.33   -0.20   +0.11   +0.46   -0.18   -0.01    0.65
+  share of total offset energy: GENERIC(common)=66%  LANGUAGE-SPECIFIC=34%
+
+[EUROPARL] LANGUAGE-SPECIFIC residual fingerprint (offset minus generic translationese):
+lang    rigou   depth   origi   cando   affec   comme   stanc   regis   ||len
+de      +0.36   +0.31   +0.15   +0.12   -0.18   -0.14   +0.05   +0.14    0.59
+fr      +0.29   +0.37   +0.29   +0.14   -0.14   -0.06   -0.07   -0.02    0.60
+es      +0.07   +0.08   +0.02   +0.14   +0.10   +0.13   -0.00   +0.05    0.25
+it      +0.05   +0.09   -0.01   +0.08   -0.07   -0.06   -0.04   +0.02    0.16
+fi      -0.24   -0.24   -0.13   -0.11   +0.20   +0.06   +0.03   -0.07    0.44
+pl      -0.25   -0.22   -0.13   -0.14   -0.05   -0.02   +0.11   +0.01    0.40
+el      -0.29   -0.39   -0.19   -0.23   +0.13   +0.09   -0.08   -0.13    0.61
+
+[EUROPARL] raw mean per axis per language (0-1 scale):
+lang    rigou   depth   origi   cando   affec   comme   stanc   regis
+en      0.729   0.604   0.405   0.812   0.435   0.208   0.660   0.651
+de      0.760   0.626   0.459   0.805   0.427   0.244   0.639   0.679
+fr      0.752   0.630   0.475   0.807   0.432   0.252   0.618   0.646
+es      0.723   0.609   0.445   0.806   0.456   0.273   0.629   0.659
+it      0.721   0.609   0.441   0.801   0.439   0.253   0.623   0.653
+fi      0.684   0.585   0.427   0.784   0.465   0.266   0.635   0.635
+pl      0.683   0.587   0.428   0.781   0.441   0.257   0.648   0.652
+el      0.677   0.574   0.422   0.773   0.458   0.269   0.615   0.622
+
+[BIBLE] scored versions loaded, verse-cells 1354
+
+[BIBLE] FINGERPRINT: paired (target - English) 8-axis offset (z units, pooled bible SD)
+lang     rigou   depth   origi   cando   affec   comme   stanc   regis   ||len  nPairs
+de       +0.71   +0.74   +0.21   +0.30   -0.01   +0.17   +0.21   +0.11    1.12     198
+fr       +0.69   +0.79   +0.53   +0.01   +0.13   +0.43   +0.18   +0.32    1.31     198
+es       +0.22   +0.24   +0.49   -0.16   +0.31   +0.79   +0.39   +0.17    1.13     197
+pt       +0.13   +0.21   +0.76   -0.25   +0.28   +0.77   +0.32   +0.11    1.22     198
+ar       +0.70   +0.56   +1.18   +0.08   +0.07   +0.93   +0.64   +0.60    1.96     197
+zh       -0.31   -0.29   +0.04   -0.69   -0.03   +0.11   +0.16   -0.22    0.86     168
+sw       -0.79   -0.65   +0.66   -0.74   +0.64   +1.04   +0.72   +0.14    2.01     198
+
+[CROSS-CORPUS] per-language fingerprint agreement Europarl vs Bible (both vs English, 8-axis z-vectors)
+lang    cosine  pearson_r
+de       0.627      0.341
+fr       0.736      0.686
+es       0.776      0.740
+POOL     0.716      0.596   (langs de,fr,es, 24 axis-cells)
+
+[EUROPARL] between-language fingerprint distinctness (cosine of vs-English offset vectors, non-en):
+  de: +1.00 +0.96 +0.71 +0.77 +0.18 +0.21 +0.08
+  fr: +0.96 +1.00 +0.78 +0.85 +0.30 +0.30 +0.21
+  es: +0.71 +0.78 +1.00 +0.95 +0.76 +0.69 +0.65
+  it: +0.77 +0.85 +0.95 +1.00 +0.73 +0.72 +0.67
+  fi: +0.18 +0.30 +0.76 +0.73 +1.00 +0.95 +0.97
+  pl: +0.21 +0.30 +0.69 +0.72 +0.95 +1.00 +0.95
+  el: +0.08 +0.21 +0.65 +0.67 +0.97 +0.95 +1.00

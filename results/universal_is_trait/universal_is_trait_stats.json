@@ -1,0 +1,81 @@
+{
+  "n_persons": 29114,
+  "n_blocks": 328841,
+  "n_multi_block_persons": 28669,
+  "mindom": 2,
+  "axes": [
+    "rigour",
+    "depth",
+    "originality",
+    "candour",
+    "affect",
+    "commercial_drive",
+    "stance",
+    "register"
+  ],
+  "culture_pct_cctld": {
+    "rigour": 5.93926588582506,
+    "depth": 5.325829099905813,
+    "originality": 5.627062587928267,
+    "candour": 5.199440752109384,
+    "affect": 10.218667977672478,
+    "commercial_drive": 9.22982864491849,
+    "stance": 8.547040077463437,
+    "register": 3.2214328562673034
+  },
+  "culture_pct_all": {
+    "rigour": 3.3,
+    "depth": 3.5,
+    "originality": 4.1,
+    "candour": 1.5,
+    "affect": 4.2,
+    "commercial_drive": 3.5,
+    "stance": 5.9,
+    "register": 1.6
+  },
+  "trait_icc": {
+    "rigour": 0.5842211906340944,
+    "depth": 0.6009008024128122,
+    "originality": 0.473252991762332,
+    "candour": 0.5230097339535213,
+    "affect": 0.4663390791760524,
+    "commercial_drive": 0.5140527001645756,
+    "stance": 0.45774486359502775,
+    "register": 0.3637292022804903
+  },
+  "reddit_room_pct": {
+    "rigour": 9.772780906909004,
+    "depth": 10.118576489776238,
+    "originality": 4.237161855739424,
+    "candour": 6.191731593326457,
+    "affect": 11.494244258811458,
+    "commercial_drive": 6.191191574959646,
+    "stance": 6.642403501802291,
+    "register": 4.37103591211642
+  },
+  "mean_trait_icc": 0.4979063204973633,
+  "culture_cctld_vs_trait": {
+    "spearman_rho": -0.07142857142857144,
+    "spearman_p": 0.8665262706759088,
+    "pearson_r": 0.08183036073219002,
+    "pearson_p": 0.8472516390629898
+  },
+  "culture_all_vs_trait": {
+    "spearman_rho": -0.3233590907165799,
+    "spearman_p": 0.4346394485508573,
+    "pearson_r": 0.07164996970503629,
+    "pearson_p": 0.8661153871139649
+  },
+  "culture_cctld_vs_room": {
+    "spearman_rho": 0.4285714285714286,
+    "spearman_p": 0.2894032248467901,
+    "pearson_r": 0.43895232918452765,
+    "pearson_p": 0.2765745021572483
+  },
+  "trait_vs_room": {
+    "spearman_rho": 0.3571428571428572,
+    "spearman_p": 0.38512064355625636,
+    "pearson_r": 0.5652761066237546,
+    "pearson_p": 0.14424679854479727
+  }
+}

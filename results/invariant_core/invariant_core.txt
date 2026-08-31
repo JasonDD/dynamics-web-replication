@@ -1,0 +1,121 @@
+==========================================================================================
+PART A — the shared CENTRE and the global matter/manner axis
+==========================================================================================
+[load] cc_v3.domain_char8_expanded ...
+[load] 2,648,406 domains x 8 axes
+[pc1] PC1 var%=56.1  PC2 var%=21.2  (top-2 = 77.3%)
+[pc1] loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
+
+--- THE CENTRE: grand-mean character profile (raw 0-1 units), the character every culture is a small perturbation of ---
+    rigour             0.469  (sd 0.108) [matter] ##################
+    depth              0.422  (sd 0.106) [matter] ################
+    originality        0.321  (sd 0.068) [matter] ############
+    candour            0.566  (sd 0.058) [matter] ######################
+    affect             0.393  (sd 0.064) [manner] ###############
+    commercial_drive   0.466  (sd 0.125) [manner] ##################
+    stance             0.526  (sd 0.050) [matter] #####################
+    register           0.282  (sd 0.095) [manner] ###########
+    matter-pole axes mean = 0.461   manner-pole axes mean = 0.380   -> MATTER-leaning
+
+==========================================================================================
+PART B — CULTURE (country): the invariant share + the shared geometry
+==========================================================================================
+
+=== COUNTRY (ccTLD only): variance partition (63 groups, n=1,240,410, min 40) ===
+  between-group MULTIVARIATE (8-axis) =  6.825%   within = 93.175%   perm p=0.001 (null 0.005%)
+  between-group PC1 (matter/manner)   =  5.317%   within = 94.683%
+  cultures/rooms as a perturbation: between-group SD / total SD  PC1 = 0.231  (mv 0.261)
+  per-axis between-group eta^2 (%), most-invariant LAST:
+      affect             10.219%   within 89.781%
+      commercial_drive    9.230%   within 90.770%
+      stance              8.547%   within 91.453%
+      rigour              5.939%   within 94.061%
+      originality         5.627%   within 94.373%
+      depth               5.326%   within 94.674%
+      candour             5.199%   within 94.801%
+      register            3.221%   within 96.779%
+
+=== COUNTRY (ccTLD + propagated): variance partition (63 groups, n=2,609,697, min 40) ===
+  between-group MULTIVARIATE (8-axis) =  3.452%   within = 96.548%   perm p=0.001 (null 0.002%)
+  between-group PC1 (matter/manner)   =  2.583%   within = 97.417%
+  cultures/rooms as a perturbation: between-group SD / total SD  PC1 = 0.161  (mv 0.186)
+  per-axis between-group eta^2 (%), most-invariant LAST:
+      stance              5.890%   within 94.110%
+      affect              4.204%   within 95.796%
+      originality         4.139%   within 95.861%
+      depth               3.549%   within 96.451%
+      commercial_drive    3.474%   within 96.526%
+      rigour              3.275%   within 96.725%
+      register            1.609%   within 98.391%
+      candour             1.486%   within 98.514%
+
+=== CONTINENT (all sources): variance partition (6 groups, n=2,609,697, min 200) ===
+  between-group MULTIVARIATE (8-axis) =  0.882%   within = 99.118%   perm p=0.001 (null 0.000%)
+  between-group PC1 (matter/manner)   =  0.857%   within = 99.143%
+  cultures/rooms as a perturbation: between-group SD / total SD  PC1 = 0.093  (mv 0.094)
+  per-axis between-group eta^2 (%), most-invariant LAST:
+      originality         1.836%   within 98.164%
+      depth               1.537%   within 98.463%
+      rigour              1.342%   within 98.658%
+      stance              1.098%   within 98.902%
+      commercial_drive    0.494%   within 99.506%
+      candour             0.321%   within 99.679%
+      affect              0.240%   within 99.760%
+      register            0.190%   within 99.810%
+
+--- SPREAD of national character around the shared centre (ccTLD countries) ---
+    mean distance of a national character from the grand centre = 0.589 SD (max 1.843)
+    i.e. the whole spread of 63 national characters is ~0.26x the spread of individual domains within one nation
+
+--- SHARED GEOMETRY: per-country matter/manner PC1 vs the global axis (cosine; 1.0 = same ruler) ---
+    62 countries with >= 500 domains: PC1 cosine to global = mean 0.977, min 0.937, median 0.979
+    lowest 5: AE=0.937(n=1410), TR=0.939(n=9392), MY=0.951(n=3595), KE=0.951(n=680), PK=0.954(n=974)
+    -> if mean cosine ~1, every culture organises character along the SAME matter/manner axis; culture moves the POSITION on the axis, not the axis itself
+
+==========================================================================================
+PART C — ROOMS (reddit communities): partition + noise separation
+==========================================================================================
+[load] 80,138 reddit comments across 400 subreddits
+[pc1] reddit PC1 loadings: rigour=+0.60, depth=+0.58, originality=+0.12, candour=+0.19, affect=-0.44, commercial_drive=+0.06, stance=+0.21, register=+0.11
+[pc1] cosine( reddit PC1 , web PC1 ) = 0.778  -> is the matter/manner ruler the same in a totally different corpus?
+
+=== ROOM (subreddit): variance partition (400 groups, n=80,138, min 150) ===
+  between-group MULTIVARIATE (8-axis) =  7.377%   within = 92.623%   perm p=0.001 (null 0.498%)
+  between-group PC1 (matter/manner)   = 11.178%   within = 88.822%
+  cultures/rooms as a perturbation: between-group SD / total SD  PC1 = 0.334  (mv 0.272)
+  per-axis between-group eta^2 (%), most-invariant LAST:
+      affect             11.494%   within 88.506%
+      depth              10.119%   within 89.881%
+      rigour              9.773%   within 90.227%
+      stance              6.642%   within 93.358%
+      candour             6.192%   within 93.808%
+      commercial_drive    6.191%   within 93.809%
+      register            4.371%   within 95.629%
+      originality         4.237%   within 95.763%
+
+--- NOISE SEPARATION: split-half of subreddit means (reliable fraction of between-room variance) ---
+    400 rooms with >=20 comments in each half
+    split-half reliability of a room's PC1 position = 0.928
+    => reliable between-room PC1 share ~= r * observed = 10.368% (noise-corrected); observed was 11.178%
+    per-axis split-half reliability of room means (high = the between-room signal on that axis is real, not noise):
+      affect             r=+0.932   reliable between-room share ~= 10.713%  (observed 11.494%)
+      depth              r=+0.915   reliable between-room share ~= 9.255%  (observed 10.119%)
+      rigour             r=+0.909   reliable between-room share ~= 8.885%  (observed 9.773%)
+      stance             r=+0.887   reliable between-room share ~= 5.895%  (observed 6.642%)
+      candour            r=+0.869   reliable between-room share ~= 5.379%  (observed 6.192%)
+      commercial_drive   r=+0.868   reliable between-room share ~= 5.376%  (observed 6.191%)
+      register           r=+0.815   reliable between-room share ~= 3.565%  (observed 4.371%)
+      originality        r=+0.810   reliable between-room share ~= 3.431%  (observed 4.237%)
+
+[json] wrote /home/jason/invariant_core_stats.json
+
+==========================================================================================
+HEADLINE
+==========================================================================================
+  Culture is real but small: only 6.8% of character (8-axis) is between-country (5.3% on matter/manner);
+  the invariant share of the character LEVEL is 93.2%. National characters sit on average 0.59 SD from a shared centre.
+  Most-invariant (universal core) axes: register, candour, depth.  Most culture-carrying: affect, commercial_drive, stance.
+  The shared centre is MATTER-leaning (matter 0.46 vs manner 0.38).
+  The matter/manner axis is the SAME ruler everywhere: per-country PC1 cosine mean 0.977; reddit-vs-web PC1 cosine 0.778.
+[done]
+

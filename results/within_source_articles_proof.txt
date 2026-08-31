@@ -1,0 +1,32 @@
+# within-source PROOF READ — ARTICLES ONLY (index/supplement volumes removed)
+# 2026-08-28T23:57Z | 454 article-type issues, span ~1810-1960 (no clean article text post-1960)
+
+[wsrc] 454 scored issues across 19 titles
+[wsrc] 16 titles with >= 4 issues spanning >= 40 years
+
+=== per-title matter/manner drift (slope /yr, + = toward matter) ===
+  title                                          n        span  slope/yr       p
+  sim_new-england-journal-of-medicine           31   1851-1956   +0.0106   0.338
+  sim_punch                                     31   1838-1961   -0.0009   0.969
+  sim_westminster-review                        20   1825-1913   -0.0027   0.769
+  sim_north-american-review                     31   1815-1935   -0.0056   0.662
+  sim_scientific-american                       25   1847-1925   -0.0064   0.845
+  sim_british-medical-journal                   18   1857-1960   -0.0069   0.683
+  sim_mind                                      24   1876-1960   -0.0127   0.082
+  sim_cornhill-magazine                         27   1860-1961   -0.0193   0.360
+  sim_nation                                    25   1865-1947   -0.0198   0.567
+  sim_spectator-uk                              45   1828-1961   -0.0202   0.085
+  sim_london-quarterly-and-holborn-review       25   1855-1960   -0.0217   0.052
+  sim_notes-and-queries                         30   1852-1960   -0.0224   0.311
+  sim_harpers-magazine                          22   1852-1930   -0.0300   0.264
+  sim_economist                                 30   1844-1961   -0.0317   0.071
+  sim_science                                   26   1884-1961   -0.0503   0.045
+  sim_popular-science                           29   1874-1961   -0.1375   0.000
+
+=== THE PROOF READ: within-title drift, genre + source held fixed (n=16 titles) ===
+  mean within-title slope = -0.0236/yr   one-sample t=-2.80 p=0.01334
+  titles drifting toward MATTER: 1/16  (sign test p=0.0005188)
+  cross-section slope (different texts each year, confounded) = -0.0262/yr
+  -> within-source drift toward MANNER (opposes the cross-section)
+
+[wsrc] caveat: OCR quality still improves within a title over time, and the instrument is web-tuned; these are smaller within a single title than across the whole archive, but not zero.

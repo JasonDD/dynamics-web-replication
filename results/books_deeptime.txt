@@ -1,0 +1,41 @@
+# BOOKS deep-time control vs periodicals
+# 2026-08-29T00:24Z | 71 books 1810-1960, same 7B DWEB rubric, index/catalog + prose filter applied
+
+[books] 71 scored books
+
+=== per-decade mean matter/manner PC1 (unit = decade) ===
+    decade    n   meanPC1
+      1810    5    +1.492  ######
+      1820    5    +0.950  ####
+      1830    5    +0.813  ###
+      1840    5    +2.601  ##########
+      1850    5    +1.359  #####
+      1860    5    +2.281  #########
+      1870    5    +3.989  ################
+      1880    5    +4.005  ################
+      1890    5    +4.315  #################
+      1900    5    -1.097  
+      1910    5    +4.770  ###################
+      1920    5    +3.199  #############
+      1930    2    +0.766  ###
+      1940    5    +1.867  #######
+      1950    2    +4.565  ##################
+      1960    2    +3.124  ############
+
+=== books trend: decade-mean PC1 ~ decade ===
+  slope = +1.131/century, r=+0.322, p=0.2240
+  direction: toward MATTER (OPPOSITE to periodicals -> corroborates Scheffer)
+  (periodicals articles-only: -2.87/century, r=-0.79, p=0.0003)
+
+=== per-axis decade slope (books) — commercial_drive is the discriminator ===
+  axis               slope/century      r       p
+  rigour                    +0.356  +0.15   0.583
+  depth                     -0.075  -0.04   0.888
+  originality               +0.255  +0.08   0.758
+  candour                   +2.110  +0.64   0.008
+  affect                    -1.874  -0.69   0.003
+  commercial_drive          +0.451  +0.18   0.494  <- FLAT in books = commercialisation is periodical-specific
+  stance                    -1.141  -0.25   0.347
+  register                  +0.014  +0.01   0.984
+
+[books] periodical per-axis for contrast: commercial_drive +2.30/century p<0.001 (15/16 titles); rigour -1.04 p=0.018; affect flat

@@ -1,0 +1,2 @@
+item,theme,n_countries,pearson_r,pearson_p,spearman_r,spearman_p,higher_wvs_means
+immigration_restrictiveness,IMMIGRATION,11,-0.684,0.0049,-0.702,0.0031,more restrictive on immigration

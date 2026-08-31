@@ -1,0 +1,28 @@
+======================================================================
+EXPERIMENT A2 — manipulation signature in earnings CALLS before fraud exposure
+======================================================================
+  fraud pre-exposure calls 143 (24 firms)
+  same-firm earlier baseline calls 143 (24 firms)
+  sector-matched control calls 274 (46 firms)
+
+  mean axis (fraud_pre / fraud_base / control):
+    axis                 pre    base    ctrl  d(pre-ctl)      p  d(pre-base)      p
+    rigour             0.763   0.767   0.770       -0.14  0.170        -0.08  0.501
+    depth              0.685   0.666   0.685       -0.00  0.991         0.27  0.024
+    originality        0.543   0.529   0.553       -0.11  0.274         0.17  0.139
+    candour            0.840   0.841   0.854       -0.20  0.060        -0.02  0.882
+    affect             0.481   0.465   0.476        0.11  0.263         0.32  0.007
+    commercial_drive   0.605   0.578   0.584        0.08  0.450         0.10  0.410
+    stance             0.624   0.603   0.609        0.14  0.161         0.20  0.090
+    register           0.657   0.632   0.661       -0.03  0.760         0.19  0.107
+    cred_index         1.202   1.232   1.250       -0.14  0.183        -0.08  0.490
+
+  WITHIN-FIRM paired (pre vs own earlier baseline): n=24 firms
+    affect           mean(pre-base) +0.016   14/24 firms in predicted direction
+    candour          mean(pre-base) -0.001   14/24 firms in predicted direction
+    commercial_drive mean(pre-base) +0.029   13/24 firms in predicted direction
+    cred_index       mean(pre-base) -0.032   14/24 firms in predicted direction
+
+  Prediction: fraud_pre shows affect UP, candour DOWN, commercial_drive UP, cred_index DOWN.
+  Caveats: large-cap S&P500 respondents (localized restatements / some FCPA books-and-records),
+  a harder testbed than small-cap built-on-fraud firms; first 6000 chars (prepared remarks) scored.

@@ -1,0 +1,14 @@
+# se_when_drift
+# generated 2026-08-28T18:19Z | data state: se_scores 16464 lines
+
+[when] 2,404 dated matched questions across 5 rooms, years 2011-2024
+
+=== WHEN: does each room's winning matter/manner norm drift over the years? (PC1 ~ year) ===
+  room             years      n   slope/yr        p
+  history     2011-2024    238    +0.0522   0.0038 <-- drift
+  law         2015-2024    243    +0.0470   0.0201 <-- drift
+  philosophy  2011-2024   1521    +0.0306   0.0001 <-- drift
+  politics    2012-2024    311    +0.0138   0.4454 
+  skeptics    2011-2024     91    +0.0290   0.2354 
+  POOLED      2011-2024   2404    +0.0225   0.0000
+  -> the winning norm DRIFTS over time = WHEN is a real state variable (norm is not fixed)

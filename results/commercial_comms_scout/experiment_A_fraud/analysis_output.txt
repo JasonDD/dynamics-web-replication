@@ -1,0 +1,26 @@
+======================================================================
+EXPERIMENT A — fraud pre-signature in 10-K filings
+======================================================================
+  fraud-active filings 90 | same-firm clean filings 31 | control-firm filings 44
+  distinct fraud firms 22 | control firms 12
+
+  mean axis by group (fraud-active / same-firm clean / control):
+    axis               fraud   clean control   d(fr-cl)      p
+    rigour             0.816   0.819   0.807      -0.07  0.679
+    depth              0.709   0.710   0.689      -0.01  0.947
+    originality        0.566   0.568   0.518      -0.03  0.875
+    candour            0.824   0.839   0.827      -0.15  0.484
+    affect             0.478   0.474   0.448       0.08  0.729
+    commercial_drive   0.499   0.435   0.591       0.26  0.183
+    stance             0.541   0.542   0.525      -0.01  0.959
+    register           0.690   0.706   0.682      -0.17  0.330
+    cred_index         1.372   1.458   1.284      -0.33  0.101
+
+  WITHIN-FIRM paired (firms with both fraud and clean filings): n=18 firms
+    affect           mean(fraud-clean) +0.007  6/18 firms positive
+    candour          mean(fraud-clean) -0.005  7/18 firms positive
+    commercial_drive mean(fraud-clean) +0.061  12/18 firms positive
+    cred_index       mean(fraud-clean) -0.077  5/18 firms positive
+
+  Prediction: fraud filings show affect UP, candour DOWN, cred_index DOWN vs clean/control.
+  Caveat: 10-K prose is dry and boilerplate-heavy; affect range is compressed; n is feasibility-scale.

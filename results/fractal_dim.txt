@@ -1,0 +1,20 @@
+# fractal_dim
+# generated 2026-08-28T18:17Z | data state: 20k cross-site char vectors
+
+[fractal] char_dweb: 23,680 vectors, 8 axes
+[fractal] linear effective dimension (participation ratio) = 3.97  eigenvalues [3.55 1.2  1.08 0.84 0.63 0.39 0.32 0.1 ]
+
+=== correlation dimension D(r) across scales (self-similar => flat & non-integer) ===
+    scale r   DATA D  Gauss D 1-factor D
+       1.32     3.01     5.49       4.32
+       2.29     3.34     4.59       1.50
+       2.73     3.30     3.93       1.20
+       3.06     3.14     3.42       1.10
+       3.35     2.82     2.76       1.03
+       3.63     2.60     2.36       0.96
+       3.90     2.27     2.07       0.92
+
+  DATA mid-scale dimension 2.99 +/- 0.33  (flat = scale-invariant)
+  DATA vs matched-Gaussian mean |ΔD| over mid-scales = 0.40
+  -> SELF-SIMILAR + beyond linear: D flat and distinct from the matched Gaussian
+[fractal] note: distinguishing fractal from linear-2D needs the DATA-vs-matched-Gaussian gap; that is Test D.

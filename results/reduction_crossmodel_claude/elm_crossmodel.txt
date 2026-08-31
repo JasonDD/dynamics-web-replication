@@ -1,0 +1,40 @@
+IBM ArgQ ELM reduction — second-lineage re-score  n=460
+quality label range 0.180..1.000  mean 0.793  sd 0.191
+length rho with quality = +0.232
+PC1 built on cc_v3.domain_char8_expanded n=2648406
+matter axes (PC1 positive): rigour, depth, originality, candour, stance
+manner axes (PC1 negative): affect, commercial_drive, register
+
+== PER AXIS (second-lineage scores vs human quality) ==
+| feature | Spearman rho | Pearson r | partial rho (ctrl length) |
+|---|---|---|---|
+| rigour | +0.339*** | +0.330*** | +0.255 |
+| register | -0.314*** | -0.306*** | -0.309 |
+| matter_manner_PC1 | +0.283*** | +0.312*** | +0.183 |
+| depth | +0.277*** | +0.305*** | +0.156 |
+| text_length | +0.232*** | +0.242*** | +0.000 |
+| originality | +0.159*** | +0.162*** | +0.019 |
+| affect | +0.116* | +0.104* | +0.073 |
+| stance | +0.075 | +0.063 | +0.064 |
+| candour | -0.069 | -0.075 | -0.052 |
+| commercial_drive | +0.005 | +0.016 | -0.002 |
+
+== COMPOSITES / ELM CENTRAL vs PERIPHERAL ==
+| feature | Spearman rho | Pearson r | partial rho (ctrl length) |
+|---|---|---|---|
+| MATTER composite (rigour+depth+originality+candour+stance) | +0.266*** | +0.275*** | +0.144 |
+| MANNER composite (affect+commercial_drive+register) | -0.098* | -0.103* | -0.123 |
+| central pair (rigour+depth) | +0.314*** | +0.325*** | +0.219 |
+| peripheral cue (affect) | +0.116* | +0.104* | +0.073 |
+
+== INTER-LINEAGE AGREEMENT (second lineage vs 7B, shared ids n=460) ==
+| axis | Pearson | Spearman | mean abs diff | mean 2nd / mean 7B |
+|---|---|---|---|---|
+| rigour | +0.404 | +0.424 | 0.132 | 0.20 / 0.33 |
+| depth | +0.463 | +0.436 | 0.098 | 0.32 / 0.41 |
+| originality | +0.273 | +0.266 | 0.110 | 0.29 / 0.28 |
+| candour | +0.202 | +0.203 | 0.159 | 0.62 / 0.78 |
+| affect | +0.347 | +0.339 | 0.157 | 0.43 / 0.52 |
+| commercial_drive | +0.399 | +0.129 | 0.074 | 0.05 / 0.12 |
+| stance | +0.076 | +0.240 | 0.204 | 0.64 / 0.65 |
+| register | -0.117 | -0.153 | 0.290 | 0.34 / 0.50 |

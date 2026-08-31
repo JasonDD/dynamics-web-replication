@@ -1,0 +1,51 @@
+# AUTHORITY x CHARACTER — full source table
+source | type | culture | n | rigo dept orig cand affe comm stan regi | PC1(matter+)
+cicero       | ancient_oratory      | greco_roman |    14 | 0.79 0.72 0.55 0.84 0.54 0.16 0.81 0.53 | +0.80
+demosthenes  | ancient_oratory      | greco_roman |    20 | 0.80 0.82 0.59 0.79 0.45 0.17 0.77 0.56 | +1.13
+zhanguo_ce   | ancient_strategic    | sinic       |   445 | 0.65 0.65 0.36 0.75 0.33 0.15 0.57 0.45 | -0.25
+openiti      | sacred               | islamic     |   140 | 0.60 0.67 0.34 0.72 0.39 0.14 0.51 0.42 | -0.66
+quran        | sacred               | islamic     |   280 | 0.69 0.58 0.28 0.77 0.40 0.11 0.40 0.41 | -0.72
+analects     | sacred               | sinic       |   110 | 0.70 0.67 0.29 0.78 0.39 0.13 0.50 0.47 | -0.32
+bible        | sacred               | western     |   180 | 0.60 0.55 0.25 0.73 0.42 0.12 0.45 0.34 | -1.17
+echr         | secular_judicial     | western     |   700 | 0.88 0.77 0.42 0.78 0.41 0.30 0.46 0.78 | -0.21
+oldbailey    | secular_judicial     | western     |   568 | 0.75 0.54 0.28 0.86 0.32 0.10 0.37 0.53 | -0.35
+scotus       | secular_judicial     | western     |   800 | 0.81 0.72 0.56 0.84 0.42 0.19 0.76 0.69 | +0.73
+parlamint    | secular_legislative  | islamic     |    55 | 0.39 0.47 0.36 0.75 0.68 0.16 0.75 0.47 | -2.23
+parlamint    | secular_legislative  | western     |  1620 | 0.63 0.58 0.41 0.82 0.50 0.19 0.72 0.59 | -0.67
+ungd         | secular_state        | islamic     |  2086 | 0.78 0.68 0.53 0.82 0.45 0.22 0.72 0.61 | +0.32
+ungd         | secular_state        | sinic       |    76 | 0.78 0.68 0.53 0.83 0.43 0.23 0.76 0.60 | +0.45
+ungd         | secular_state        | western     |  1929 | 0.80 0.70 0.56 0.84 0.45 0.23 0.69 0.61 | +0.46
+
+# SACRED vs SECULAR — per-axis mean and Cohen's d (secular = all non-sacred authority)
+n_sacred=710  n_secular=8313
+axis | sacred_mean | secular_mean | diff(sac-sec) | Cohen_d
+rigour           | 0.650 | 0.753 | -0.103 | d=-0.57
+depth            | 0.602 | 0.664 | -0.062 | d=-0.48
+originality      | 0.288 | 0.481 | -0.193 | d=-1.50
+candour          | 0.753 | 0.822 | -0.069 | d=-0.55
+affect           | 0.400 | 0.439 | -0.039 | d=-0.28
+commercial_drive | 0.121 | 0.208 | -0.087 | d=-0.95
+stance           | 0.450 | 0.665 | -0.215 | d=-1.11
+register         | 0.400 | 0.612 | -0.212 | d=-0.92
+sacred PC1(matter+) mean = -0.76   secular = +0.06
+centroid separation ||Δ||=0.396  perm p=0.0005
+
+# LENGTH CONTROL
+corr(log nchars, PC1) over 4932 records with known length = +0.337
+(sacred passages were chunked to ~1200 chars, so within-sacred length is controlled by design)
+
+# CULTURE vs TYPE — balanced two-way partition (sacred vs secular_state x western/islamic/sinic)
+balanced n=4801  (per cell: western/sac=180, western/sec=1929, islamic/sac=420, islamic/sec=2086, sinic/sac=110, sinic/sec=76)
+eta^2 CULTURE (3 groups) = 0.0156
+eta^2 TYPE    (2 groups) = 0.1755
+-> the LARGER eta^2 is the dimension authority character varies more along
+
+# NEAREST-NEIGHBOUR: is a culture's SCRIPTURE closer to its OWN state voice or another culture's SCRIPTURE?
+western  scripture -> nearest: islamic-scripture       | islamic-scripture=1.08 sinic-scripture=1.87 OWN-state (western)=4.22
+islamic  scripture -> nearest: sinic-scripture         | sinic-scripture=0.90 western-scripture=1.08 OWN-state (islamic)=3.11
+sinic    scripture -> nearest: islamic-scripture       | islamic-scripture=0.90 western-scripture=1.87 OWN-state (sinic)=2.77
+
+# TRANSLATION CONFOUND — same scripture, English translation vs original language
+quran: en-trans(n=160) vs ar(n=120)  ||Δ8axis||=0.176  ΔPC1=-0.80
+analects: en-trans(n=80) vs zh-classical(n=30)  ||Δ8axis||=0.238  ΔPC1=-0.91
+(compare these within-scripture translation deltas to the sacred-vs-secular gap above: if the translation delta is a large fraction of the gap, the English matrix is the safer comparison)

@@ -1,0 +1,98 @@
+scored posts: 1624
+ENABLER 567 (vendor 479, staff 88) | USER 1057
+
+=== per axis: ENABLER vs USER  [TIER0 pooled raw (both forums)]  (n_en=567, n_us=1057) ===
+axis              en_mean  us_mean  cohen_d    auc
+rigour              0.251    0.161     0.58  0.638
+depth               0.265    0.167     0.60  0.661
+originality         0.343    0.222     0.58  0.667
+candour             0.804    0.636     0.65  0.674
+affect              0.670    0.514     0.63  0.686
+commercial_drive    0.617    0.744    -0.38  0.345
+stance              0.327    0.206     0.47  0.685
+register            0.298    0.196     0.40  0.629
+pc1                 0.221   -0.119     0.67  0.686
+
+=== per axis: ENABLER vs USER  [TIER1+2 forum=abraxas length-matched (paired n=479, en_all=479)]  (n_en=479, n_us=479) ===
+axis              en_mean  us_mean  cohen_d    auc
+rigour              0.223    0.174     0.36  0.556
+depth               0.236    0.157     0.54  0.650
+originality         0.330    0.239     0.45  0.629
+candour             0.799    0.575     0.80  0.709
+affect              0.686    0.403     1.11  0.802
+commercial_drive    0.686    0.797    -0.39  0.397
+stance              0.288    0.258     0.11  0.591
+register            0.247    0.237     0.04  0.551
+pc1                 0.134   -0.154     0.60  0.641
+
+=== per axis: ENABLER vs USER  [TIER1+2 forum=andromeda length-matched (paired n=88, en_all=88)]  (n_en=88, n_us=88) ===
+axis              en_mean  us_mean  cohen_d    auc
+rigour              0.406    0.252     0.75  0.699
+depth               0.423    0.275     0.94  0.695
+originality         0.415    0.341     0.36  0.602
+candour             0.833    0.763     0.44  0.431
+affect              0.583    0.641    -0.29  0.384
+commercial_drive    0.243    0.585    -1.13  0.195
+stance              0.536    0.309     0.90  0.723
+register            0.575    0.284     1.11  0.752
+pc1                 0.694    0.205     1.29  0.795
+
+=== per axis: ENABLER vs USER  [TIER2 pooled length-matched (paired n=567)]  (n_en=567, n_us=567) ===
+axis              en_mean  us_mean  cohen_d    auc
+rigour              0.251    0.224     0.18  0.540
+depth               0.265    0.231     0.21  0.557
+originality         0.343    0.314     0.15  0.539
+candour             0.804    0.745     0.30  0.555
+affect              0.670    0.607     0.28  0.600
+commercial_drive    0.617    0.619    -0.01  0.501
+stance              0.327    0.320     0.02  0.529
+register            0.298    0.289     0.04  0.497
+pc1                 0.221    0.152     0.16  0.537
+
+mixed-role threads (same-thread control): 58 threads, 112 enabler posts vs 129 user posts
+
+=== per axis: ENABLER vs USER  [TIER3 same-thread (strongest room control)]  (n_en=112, n_us=129) ===
+axis              en_mean  us_mean  cohen_d    auc
+rigour              0.343    0.313     0.17  0.354
+depth               0.364    0.347     0.11  0.476
+originality         0.378    0.422    -0.24  0.427
+candour             0.825    0.827    -0.02  0.320
+affect              0.631    0.674    -0.24  0.415
+commercial_drive    0.387    0.371     0.05  0.411
+stance              0.454    0.442     0.05  0.461
+register            0.482    0.422     0.22  0.525
+pc1                 0.519    0.513     0.02  0.527
+
+=== per axis: ENABLER vs USER  [TIER3 same-thread length-matched (n=112)]  (n_en=112, n_us=112) ===
+axis              en_mean  us_mean  cohen_d    auc
+rigour              0.343    0.310     0.18  0.373
+depth               0.364    0.346     0.12  0.471
+originality         0.378    0.427    -0.25  0.424
+candour             0.825    0.827    -0.01  0.296
+affect              0.631    0.686    -0.32  0.397
+commercial_drive    0.387    0.370     0.05  0.408
+stance              0.454    0.398     0.21  0.500
+register            0.482    0.379     0.36  0.563
+pc1                 0.519    0.484     0.09  0.546
+
+=== per axis: ENABLER vs USER  [vendor-only vs user, length-matched (n=479)]  (n_en=479, n_us=479) ===
+axis              en_mean  us_mean  cohen_d    auc
+rigour              0.223    0.222     0.01  0.499
+depth               0.237    0.229     0.05  0.535
+originality         0.334    0.312     0.11  0.531
+candour             0.800    0.752     0.24  0.567
+affect              0.694    0.600     0.41  0.648
+commercial_drive    0.692    0.647     0.14  0.539
+stance              0.291    0.320    -0.11  0.487
+register            0.249    0.297    -0.20  0.472
+pc1                 0.137    0.139    -0.01  0.492
+
+=== ACCOUNT LEVEL early-warning k-sweep (min posts per account) ===
+min_k n_en_acc n_us_acc  post_auc  acct_auc
+    1      125      249     0.656     0.634
+    2       78       96     0.783     0.654
+    3       54       61     0.740     0.651
+    5       28       31     0.812     0.566
+   10       16       10     0.860     0.417
+
+summary written

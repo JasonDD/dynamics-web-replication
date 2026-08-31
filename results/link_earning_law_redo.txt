@@ -1,0 +1,23 @@
+# link_earning_law_REDO (verified full-graph in-degree)
+# 2026-08-28T22:09Z | 2.67M domains, domain_indegree+pagerank_hostfull (built when webgraph_edges=4.34B)
+
+[redo] 2,670,467 domains with character + full-graph in-degree (2,670,467 also have authority)
+
+=== link-earning law REDO: character axis vs log(full in-degree) ===
+  axis                     r         p
+  rigour              +0.072  0.00e+00
+  depth               +0.074  0.00e+00
+  originality         +0.083  0.00e+00
+  candour             +0.025  0.00e+00
+  affect              -0.013  1.84e-97
+  commercial_drive    -0.099  0.00e+00
+  stance              +0.076  0.00e+00
+  register            -0.020 1.69e-232
+  PC1(matter/manner)  +0.078  0.00e+00
+  matter contrast     +0.077  0.00e+00
+
+=== does character earn links BEYOND authority? (PC1 vs in-degree | PageRank, n=2,670,467) ===
+  partial r = +0.078  p=0.00e+00  -> character predicts link acquisition beyond authority (law HOLDS on full graph)
+
+[redo] uses STORED full-graph in-degree/authority (computed when webgraph_edges=4.34B). The current
+       42.5M webgraph_edges subset was NOT used. The paper's link result is confirmed on verified data.

@@ -1,0 +1,28 @@
+# causal_claude
+# generated 2026-08-28T18:20Z | data state: claude persuadee panel (80 judgements)
+
+[causal] 80 judgements | 5 views x 4 coords x 4 personas
+
+=== persuasion by content coordinate (pooled) ===
+  A (matter/balanced):  persuaded 0.323
+  B (matter/polemical):  persuaded 0.227
+  C (manner/balanced):  persuaded 0.249
+  D (manner/polemical):  persuaded 0.149
+
+=== CAUSAL MAIN EFFECT A: matter vs manner (view-paired, n=5) ===
+  manner(C,D) 0.199  vs  matter(A,B) 0.275  Δ(manner-matter)=-0.076  paired t=-12.22 p=0.0003
+  -> MATTER beats manner (opposes observational)
+
+=== CAUSAL MAIN EFFECT B: balanced vs polemical (view-paired) ===
+  balanced(A,C) 0.286  vs  polemical(B,D) 0.188  Δ(bal-pol)=+0.098  paired t=+31.08 p=0.0000
+
+=== CAUSAL INTERACTION: manner-advantage by persuadee disposition (the room-vs-person answer) ===
+  persona           manner adv balance adv
+  stabHi_plasHi         -0.170      +0.124
+  stabHi_plasLo         -0.125      +0.105
+  stabLo_plasHi         +0.030      +0.032
+  stabLo_plasLo         -0.039      +0.129
+
+  manner-advantage: high-plasticity -0.070 vs low-plasticity -0.082  Δ=+0.012
+  manner-advantage: high-stability  -0.148 vs low-stability  -0.004  Δ=-0.143
+  -> a non-zero Δ = the winning content coordinate DEPENDS on the persuadee's disposition = PERSON individuates (causal); ~0 = the effect is uniform (norm/room)

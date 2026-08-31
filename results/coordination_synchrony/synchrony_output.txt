@@ -1,0 +1,39 @@
+IRA posts 9000  accounts 206
+CMV posts 18964  authors  6197
+
+================= METRIC A: ACCOUNT-IDENTITY INDEX =================
+I = between-account dispersion / within-pool-shuffle dispersion.  I~1 => interchangeable accounts (coordinated).  I>>1 => individual identities (organic).
+  IRA k= 5  accts= 151  obsD=1.558  permD=1.293  I=1.205  p(perm>=obs)=0.000
+  CMV k= 5  accts=1001  obsD=1.245  permD=0.968  I=1.286  p(perm>=obs)=0.000
+  IRA k=10  accts= 124  obsD=1.321  permD=0.917  I=1.440  p(perm>=obs)=0.000
+  CMV k=10  accts= 257  obsD=0.934  permD=0.657  I=1.421  p(perm>=obs)=0.000
+  per-axis obs/perm between-account variance ratio (k=5): 1=interchangeable, >1=individual
+    IRA: rigour=1.58  depth=1.54  originality=1.57  candour=1.51  affect=1.88  commercial_drive=1.25  stance=1.58  register=1.33
+    CMV: rigour=2.22  depth=2.14  originality=1.55  candour=1.38  affect=1.75  commercial_drive=1.29  stance=1.62  register=1.20
+
+================= METRIC B: CROSS-POOL clustering tightness =================
+  k= 5  IRA pool N=151  IRA_D=1.558  organic-null D=1.240+-0.034  z=9.39  IRA percentile=100.0%
+  k=10  IRA pool N=124  IRA_D=1.314  organic-null D=0.930+-0.027  z=14.04  IRA percentile=100.0%
+
+================= METRIC C: TOPIC/TIME-conditioned cross-account synchrony =================
+  [affect] cross-account SD within a shared context:
+     IRA/day (n=193) median=0.769   CMV/thread (n=581) median=0.623   CMV/day (n=809) median=0.736
+     Cohen d IRA-day vs CMV-thread = +0.71   AUC(low-SD=>coordinated, IRA-day vs CMV-thread) = 0.343
+     Cohen d IRA-day vs CMV-day    = +0.29   AUC(IRA-day vs CMV-day) = 0.464
+  [PC1] cross-account SD within a shared context:
+     IRA/day (n=193) median=0.701   CMV/thread (n=581) median=0.870   CMV/day (n=809) median=1.058
+     Cohen d IRA-day vs CMV-thread = -0.34   AUC(low-SD=>coordinated, IRA-day vs CMV-thread) = 0.608
+     Cohen d IRA-day vs CMV-day    = -1.16   AUC(IRA-day vs CMV-day) = 0.781
+
+  temporal co-movement: IRA high-activity days ranked by LOW cross-account affect SD (many accounts, same affect):
+     2015-11-27  accounts= 10  mean affect(z)=+0.98  cross-account SD=0.205
+     2017-08-14  accounts= 38  mean affect(z)=+1.12  cross-account SD=0.251
+     2017-08-18  accounts= 54  mean affect(z)=+1.08  cross-account SD=0.303
+     2017-08-16  accounts= 40  mean affect(z)=+1.07  cross-account SD=0.323
+     2017-08-17  accounts= 48  mean affect(z)=+1.10  cross-account SD=0.344
+     2017-08-12  accounts= 52  mean affect(z)=+1.03  cross-account SD=0.345
+
+  convergent-spike day test (>=10 accts; spike = mean affect >= organic P90 [-0.07] AND cross-acct SD <= organic P10 [0.584]):
+     IRA busy-days n=39  spike-fraction=48.7%
+     CMV busy-days n=573  spike-fraction=0.5%  (organic self-reference ~ few %)
+     IRA busy-day mean affect(z)=+0.76 vs CMV=-0.36; IRA affect-SD median=0.606 vs CMV=0.736

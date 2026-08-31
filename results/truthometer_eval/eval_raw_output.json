@@ -1,0 +1,163 @@
+LEG A: coverage over public fact-check corpora ...
+  claim_label_train: 2/66957 = 0.0030% register-checkable
+  claimreview_claim: 0/92357 = 0.0000% register-checkable
+LEG B: verifiability gate classifier ...
+  gate P=1.0000 R=0.9997 F1=0.9998  (TP=40347 FP=2 FN=12 TN=159312)
+LEG C: verdict accuracy vs Companies House (held-out) ...
+  register-join agreement (held-out) = 100.0000% over 7994 verdicts
+  bridge floor: 1239/7281 MATCH have domain~name token overlap = 17.02%
+{
+  "legA": {
+    "claim_label_train": {
+      "n": 66957,
+      "attemptable": 2,
+      "coverage": 2.9869916513583344e-05,
+      "by_key": {
+        "company_number": 2
+      }
+    },
+    "claimreview_claim": {
+      "n": 92357,
+      "attemptable": 0,
+      "coverage": 0.0,
+      "by_key": {}
+    },
+    "by_gold_klass": {
+      "EMPIRICAL": {
+        "n": 36724,
+        "attemptable": 0
+      },
+      "VERIFIABLE_FACT": {
+        "n": 19234,
+        "attemptable": 2
+      },
+      "OPINION": {
+        "n": 7369,
+        "attemptable": 0
+      },
+      "FALSIFIABLE_SUPERLATIVE": {
+        "n": 1970,
+        "attemptable": 0
+      },
+      "PUFFERY": {
+        "n": 1370,
+        "attemptable": 0
+      },
+      "TRIVIAL": {
+        "n": 266,
+        "attemptable": 0
+      },
+      "VERIFIABILE_FACT": {
+        "n": 12,
+        "attemptable": 0
+      },
+      "PUFFRY": {
+        "n": 4,
+        "attemptable": 0
+      },
+      "EMPIRIAL": {
+        "n": 3,
+        "attemptable": 0
+      },
+      "NONE": {
+        "n": 1,
+        "attemptable": 0
+      },
+      "": {
+        "n": 1,
+        "attemptable": 0
+      },
+      "INVALID": {
+        "n": 1,
+        "attemptable": 0
+      },
+      "YMYL": {
+        "n": 1,
+        "attemptable": 0
+      },
+      "VERIFIABI_FACT": {
+        "n": 1,
+        "attemptable": 0
+      }
+    }
+  },
+  "legB": {
+    "tp": 40347,
+    "fp": 2,
+    "fn": 12,
+    "tn": 159312,
+    "precision": 0.9999504324766413,
+    "recall": 0.9997026685497659,
+    "f1": 0.9998265351638004,
+    "specificity": 0.9999874461754774,
+    "note": "positives = deployed register-key claims; negatives = public fact-check corpora",
+    "false_positive_samples": []
+  },
+  "legC": {
+    "total_company_number_verdicts": 40359,
+    "held_out_n": 7994,
+    "confusion_matrix_verdict_vs_freshCH": {
+      "MATCH": {
+        "MATCH": 7281,
+        "DISSOLVED": 0,
+        "NONEXISTENT": 0
+      },
+      "DISSOLVED": {
+        "MATCH": 0,
+        "DISSOLVED": 103,
+        "NONEXISTENT": 0
+      },
+      "NONEXISTENT": {
+        "MATCH": 0,
+        "DISSOLVED": 0,
+        "NONEXISTENT": 610
+      }
+    },
+    "per_class": {
+      "MATCH": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7281
+      },
+      "DISSOLVED": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 103
+      },
+      "NONEXISTENT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 610
+      }
+    },
+    "overall_agreement": 1.0,
+    "bridge_floor": {
+      "match_with_name_n": 7281,
+      "domain_name_token_overlap": 1239,
+      "ownership_consistent_rate": 0.17016893283889575,
+      "note": "proxy: fraction of MATCH where the domain shares a token with the CH registered name. KEY_RESOLVES does NOT assert ownership; this is the ceiling if it were (mis)read as ownership."
+    },
+    "accusatory": {
+      "nonexistent_held_out": 610,
+      "stated_identity_v2_cols": [
+        "pld",
+        "company_number",
+        "ch_name",
+        "ch_status",
+        "stated_name",
+        "source_url",
+        "tier",
+        "is_new"
+      ],
+      "stated_identity_v2_tiers": {
+        "number_name_mismatch": 17087,
+        "valid_number": 12468,
+        "corroborated": 7225,
+        "number_not_found": 4142
+      }
+    }
+  }
+}

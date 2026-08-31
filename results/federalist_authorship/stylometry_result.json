@@ -1,0 +1,116 @@
+{
+  "train": {
+    "hamilton": 51,
+    "madison": 14
+  },
+  "loo_cv": {
+    "delta": 1.0,
+    "nb": 1.0,
+    "logreg": 0.9846153846153847
+  },
+  "disputed": [
+    {
+      "paper": 49,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 0.9999,
+      "logreg": "MADISON",
+      "lr_pmad": 0.8356
+    },
+    {
+      "paper": 50,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.9988
+    },
+    {
+      "paper": 51,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.9974
+    },
+    {
+      "paper": 52,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.9435
+    },
+    {
+      "paper": 53,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.9924
+    },
+    {
+      "paper": 54,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.8825
+    },
+    {
+      "paper": 55,
+      "delta": "HAMILTON",
+      "nb": "MADISON",
+      "nb_pmad": 0.9978,
+      "logreg": "MADISON",
+      "lr_pmad": 0.7767
+    },
+    {
+      "paper": 56,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.9984
+    },
+    {
+      "paper": 57,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.9949
+    },
+    {
+      "paper": 58,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.6325
+    },
+    {
+      "paper": 62,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.7758
+    },
+    {
+      "paper": 63,
+      "delta": "MADISON",
+      "nb": "MADISON",
+      "nb_pmad": 1.0,
+      "logreg": "MADISON",
+      "lr_pmad": 0.9126
+    }
+  ],
+  "disputed_madison_counts": {
+    "delta": 11,
+    "nb": 12,
+    "logreg": 12,
+    "of": 12
+  },
+  "all_three_unanimous_madison": false
+}

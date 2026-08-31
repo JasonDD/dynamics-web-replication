@@ -1,0 +1,191 @@
+[cov] loading + fitting per-domain 8x8 correlation matrices ...
+  web_open         n=200,000  genre=web
+  reddit_social    n=  2,377  genre=social
+  cmv_args         n= 19,430  genre=argument
+  stackexchange    n= 66,543  genre=argument
+  ddo_debate       n=  6,325  genre=argument
+  ungd_speeches    n= 10,556  genre=institutional
+  parlamint        n=  1,675  genre=institutional
+  oldbailey_court  n=    568  genre=institutional
+  historical_text  n=  2,340  genre=historical
+  classical_persu  n=    479  genre=historical
+  ira_trolls       n=  9,000  genre=deception
+  liar_claims      n=  1,100  genre=deception
+  phishing         n=  1,400  genre=deception
+  toxic_comments   n=  3,600  genre=deception
+  kickstarter      n=  6,000  genre=commercial
+  darknet_market   n=    545  genre=commercial
+
+[cov] 16 domains with usable correlation matrices
+
+==============================================================================
+AXIS-PAIR COUPLINGS ACROSS DOMAINS  (Pearson r within each domain)
+==============================================================================
+pair       mean_r     sd    min    max  sign%   verdict
+rig~dep    +0.743  0.147  +0.33  +0.89   100%   UNIVERSAL
+dep~ori    +0.489  0.191  +0.22  +0.79   100%   weak/mixed
+rig~can    +0.377  0.186  +0.10  +0.71   100%   weak/mixed
+rig~ori    +0.354  0.162  +0.10  +0.65   100%   UNIVERSAL
+dep~sta    +0.327  0.205  -0.05  +0.66    94%   DOMAIN-SPECIFIC
+rig~aff    -0.294  0.251  -0.57  +0.29    88%   DOMAIN-SPECIFIC
+dep~can    +0.291  0.196  -0.03  +0.60    94%   weak/mixed
+sta~reg    +0.260  0.348  -0.80  +0.70    94%   DOMAIN-SPECIFIC
+dep~reg    +0.257  0.300  -0.52  +0.66    88%   DOMAIN-SPECIFIC
+rig~reg    +0.246  0.302  -0.63  +0.68    88%   DOMAIN-SPECIFIC
+ori~can    +0.236  0.167  -0.15  +0.51    88%   weak/mixed
+rig~sta    +0.212  0.229  -0.16  +0.66    81%   DOMAIN-SPECIFIC
+aff~com    +0.198  0.201  -0.12  +0.58    81%   DOMAIN-SPECIFIC
+ori~sta    +0.169  0.185  -0.08  +0.57    81%   weak/mixed
+ori~aff    +0.149  0.155  -0.11  +0.59    81%   weak/mixed
+dep~aff    -0.123  0.308  -0.47  +0.62    69%   DOMAIN-SPECIFIC
+can~com    -0.123  0.217  -0.71  +0.12    69%   DOMAIN-SPECIFIC
+ori~com    +0.076  0.325  -0.43  +0.64    56%   DOMAIN-SPECIFIC
+ori~reg    +0.064  0.229  -0.20  +0.51    62%   DOMAIN-SPECIFIC
+can~aff    -0.056  0.202  -0.71  +0.17    56%   DOMAIN-SPECIFIC
+aff~reg    -0.055  0.304  -0.46  +0.71    69%   DOMAIN-SPECIFIC
+com~reg    -0.050  0.233  -0.49  +0.31    50%   DOMAIN-SPECIFIC
+aff~sta    +0.048  0.292  -0.70  +0.66    56%   DOMAIN-SPECIFIC
+can~sta    +0.047  0.200  -0.24  +0.45    56%   DOMAIN-SPECIFIC
+can~reg    +0.045  0.209  -0.43  +0.42    50%   DOMAIN-SPECIFIC
+rig~com    -0.034  0.294  -0.51  +0.40    56%   DOMAIN-SPECIFIC
+com~sta    +0.024  0.236  -0.41  +0.50    69%   DOMAIN-SPECIFIC
+dep~com    -0.004  0.330  -0.55  +0.44    62%   DOMAIN-SPECIFIC
+
+--- UNIVERSAL couplings (hold sign+magnitude nearly everywhere) ---
+            rigour ~ depth            r=+0.743 (sd 0.147, sign 100%, range +0.33..+0.89)
+            rigour ~ originality      r=+0.354 (sd 0.162, sign 100%, range +0.10..+0.65)
+
+--- DOMAIN-SPECIFIC couplings (re-wire by context) ---
+            stance ~ register         sd=0.348 range -0.80..+0.70 sign 94%
+      lowest : web_open(-0.80), parlamint(+0.04), stackexchange(+0.05)
+      highest: phishing(+0.70), darknet_market(+0.59), toxic_comments(+0.55)
+             depth ~ commercial_drive sd=0.330 range -0.55..+0.44 sign 62%
+      lowest : darknet_market(-0.55), phishing(-0.53), historical_text(-0.51)
+      highest: oldbailey_court(+0.44), liar_claims(+0.42), classical_persu(+0.33)
+       originality ~ commercial_drive sd=0.325 range -0.43..+0.64 sign 56%
+      lowest : historical_text(-0.43), darknet_market(-0.36), phishing(-0.34)
+      highest: oldbailey_court(+0.64), classical_persu(+0.57), liar_claims(+0.48)
+             depth ~ affect           sd=0.308 range -0.47..+0.62 sign 69%
+      lowest : ddo_debate(-0.47), reddit_social(-0.44), toxic_comments(-0.39)
+      highest: oldbailey_court(+0.62), classical_persu(+0.45), ungd_speeches(+0.17)
+            affect ~ register         sd=0.304 range -0.46..+0.71 sign 69%
+      lowest : parlamint(-0.46), ira_trolls(-0.36), toxic_comments(-0.31)
+      highest: web_open(+0.71), oldbailey_court(+0.51), classical_persu(+0.26)
+            rigour ~ register         sd=0.302 range -0.63..+0.68 sign 88%
+      lowest : web_open(-0.63), cmv_args(-0.02), liar_claims(+0.00)
+      highest: historical_text(+0.68), phishing(+0.63), classical_persu(+0.50)
+             depth ~ register         sd=0.300 range -0.52..+0.66 sign 88%
+      lowest : web_open(-0.52), cmv_args(-0.05), reddit_social(+0.02)
+      highest: historical_text(+0.66), phishing(+0.66), oldbailey_court(+0.59)
+            rigour ~ commercial_drive sd=0.294 range -0.51..+0.40 sign 56%
+      lowest : phishing(-0.51), web_open(-0.50), historical_text(-0.45)
+      highest: liar_claims(+0.40), classical_persu(+0.28), toxic_comments(+0.27)
+            affect ~ stance           sd=0.292 range -0.70..+0.66 sign 56%
+      lowest : web_open(-0.70), kickstarter(-0.22), phishing(-0.13)
+      highest: oldbailey_court(+0.66), liar_claims(+0.31), ungd_speeches(+0.30)
+            rigour ~ affect           sd=0.251 range -0.57..+0.29 sign 88%
+      lowest : reddit_social(-0.57), ddo_debate(-0.56), web_open(-0.54)
+      highest: classical_persu(+0.29), oldbailey_court(+0.18), historical_text(-0.11)
+  commercial_drive ~ stance           sd=0.236 range -0.41..+0.50 sign 69%
+      lowest : phishing(-0.41), historical_text(-0.32), darknet_market(-0.31)
+      highest: oldbailey_court(+0.50), cmv_args(+0.25), toxic_comments(+0.20)
+  commercial_drive ~ register         sd=0.233 range -0.49..+0.31 sign 50%
+      lowest : phishing(-0.49), darknet_market(-0.48), historical_text(-0.39)
+      highest: classical_persu(+0.31), oldbailey_court(+0.31), toxic_comments(+0.15)
+       originality ~ register         sd=0.229 range -0.20..+0.51 sign 62%
+      lowest : liar_claims(-0.20), reddit_social(-0.19), cmv_args(-0.16)
+      highest: historical_text(+0.51), oldbailey_court(+0.50), phishing(+0.33)
+            rigour ~ stance           sd=0.229 range -0.16..+0.66 sign 81%
+      lowest : ungd_speeches(-0.16), liar_claims(-0.15), stackexchange(-0.02)
+      highest: web_open(+0.66), phishing(+0.53), darknet_market(+0.47)
+           candour ~ commercial_drive sd=0.217 range -0.71..+0.12 sign 69%
+      lowest : web_open(-0.71), phishing(-0.39), darknet_market(-0.36)
+      highest: parlamint(+0.12), ungd_speeches(+0.11), classical_persu(+0.10)
+           candour ~ register         sd=0.209 range -0.43..+0.42 sign 50%
+      lowest : web_open(-0.43), ungd_speeches(-0.15), toxic_comments(-0.15)
+      highest: historical_text(+0.42), phishing(+0.39), darknet_market(+0.31)
+             depth ~ stance           sd=0.205 range -0.05..+0.66 sign 94%
+      lowest : liar_claims(-0.05), stackexchange(+0.08), ungd_speeches(+0.12)
+      highest: phishing(+0.66), web_open(+0.59), darknet_market(+0.58)
+           candour ~ affect           sd=0.202 range -0.71..+0.17 sign 56%
+      lowest : web_open(-0.71), phishing(-0.30), liar_claims(-0.13)
+      highest: ungd_speeches(+0.17), darknet_market(+0.16), classical_persu(+0.08)
+            affect ~ commercial_drive sd=0.201 range -0.12..+0.58 sign 81%
+      lowest : toxic_comments(-0.12), reddit_social(-0.02), historical_text(-0.02)
+      highest: oldbailey_court(+0.58), phishing(+0.50), web_open(+0.44)
+           candour ~ stance           sd=0.200 range -0.24..+0.45 sign 56%
+      lowest : oldbailey_court(-0.24), liar_claims(-0.19), toxic_comments(-0.18)
+      highest: web_open(+0.45), historical_text(+0.34), phishing(+0.29)
+
+==============================================================================
+COVARIANCE-STRUCTURE SIMILARITY  (corr between domains' 28-coupling vectors)
+==============================================================================
+grammar-universality index = mean pairwise structural similarity = +0.487
+  (range -0.005 .. +0.959 over 120 domain pairs)
+  1.00 = every domain wires its axes identically (one universal grammar);
+  ~0   = structures unrelated (grammar fully re-wires by context).
+
+per-domain mean similarity to all other domains (how typical its wiring is):
+  ddo_debate       +0.625   (argument)
+  ira_trolls       +0.623   (deception)
+  reddit_social    +0.618   (social)
+  stackexchange    +0.605   (argument)
+  parlamint        +0.571   (institutional)
+  cmv_args         +0.568   (argument)
+  phishing         +0.525   (deception)
+  kickstarter      +0.524   (commercial)
+  toxic_comments   +0.522   (deception)
+  darknet_market   +0.483   (commercial)
+  historical_text  +0.472   (historical)
+  liar_claims      +0.450   (deception)
+  ungd_speeches    +0.399   (institutional)
+  web_open         +0.347   (web)
+  classical_persu  +0.304   (historical)
+  oldbailey_court  +0.161   (institutional)
+
+==============================================================================
+HIERARCHICAL CLUSTERING of domains by covariance structure (average linkage)
+  merge distance = 1 - structural similarity; small = wired alike
+==============================================================================
+  merge @ dist 0.041: {historical_text} + {darknet_market}
+  merge @ dist 0.046: {reddit_social} + {ddo_debate}
+  merge @ dist 0.086: {historical_text,darknet_market} + {phishing}
+  merge @ dist 0.111: {reddit_social,ddo_debate} + {cmv_args}
+  merge @ dist 0.134: {ira_trolls} + {toxic_comments}
+  merge @ dist 0.179: {stackexchange} + {parlamint}
+  merge @ dist 0.182: {reddit_social,ddo_debate,cmv_args} + {ira_trolls,toxic_comments}
+  merge @ dist 0.216: {historical_text,darknet_market,phishing} + {kickstarter}
+  merge @ dist 0.266: {stackexchange,parlamint} + {liar_claims}
+  merge @ dist 0.314: {reddit_social,ddo_debate,cmv_args,ira_trolls,toxic_comments} + {stackexchange,parlamint,liar_claims}
+  merge @ dist 0.506: {reddit_social,ddo_debate,cmv_args,ira_trolls,toxic_comments,stackexchange,parlamint,liar_claims} + {historical_text,darknet_market,phishing,kickstarter}
+  merge @ dist 0.582: {reddit_social,ddo_debate,cmv_args,ira_trolls,toxic_comments,stackexchange,parlamint,liar_claims,historical_text,darknet_market,phishing,kickstarter} + {ungd_speeches}
+  merge @ dist 0.590: {oldbailey_court} + {classical_persu}
+  merge @ dist 0.626: {web_open} + {reddit_social,ddo_debate,cmv_args,ira_trolls,toxic_comments,stackexchange,parlamint,liar_claims,historical_text,darknet_market,phishing,kickstarter,ungd_speeches}
+  merge @ dist 0.780: {web_open,reddit_social,ddo_debate,cmv_args,ira_trolls,toxic_comments,stackexchange,parlamint,liar_claims,historical_text,darknet_market,phishing,kickstarter,ungd_speeches} + {oldbailey_court,classical_persu}
+
+clusters at cut dist<0.3 (7 groups):
+  [argument,deception,social]  reddit_social, cmv_args, ddo_debate, ira_trolls, toxic_comments
+  [commercial,deception,historical]  historical_text, phishing, kickstarter, darknet_market
+  [argument,deception,institutional]  stackexchange, parlamint, liar_claims
+  [web]  web_open
+  [institutional]  ungd_speeches
+  [institutional]  oldbailey_court
+  [historical]  classical_persu
+
+clusters at cut dist<0.5 (6 groups):
+  [argument,deception,institutional,social]  reddit_social, cmv_args, stackexchange, ddo_debate, parlamint, ira_trolls, liar_claims, toxic_comments
+  [commercial,deception,historical]  historical_text, phishing, kickstarter, darknet_market
+  [web]  web_open
+  [institutional]  ungd_speeches
+  [institutional]  oldbailey_court
+  [historical]  classical_persu
+
+clusters at cut dist<0.7 (2 groups):
+  [argument,commercial,deception,historical,institutional,social,web]  web_open, reddit_social, cmv_args, stackexchange, ddo_debate, ungd_speeches, parlamint, historical_text, ira_trolls, liar_claims, phishing, toxic_comments, kickstarter, darknet_market
+  [historical,institutional]  oldbailey_court, classical_persu
+
+=== MACHINE ===
+DOMAINS_N {"web_open": 200000, "reddit_social": 2377, "cmv_args": 19430, "stackexchange": 66543, "ddo_debate": 6325, "ungd_speeches": 10556, "parlamint": 1675, "oldbailey_court": 568, "historical_text": 2340, "classical_persu": 479, "ira_trolls": 9000, "liar_claims": 1100, "phishing": 1400, "toxic_comments": 3600, "kickstarter": 6000, "darknet_market": 545}
+PAIR_STATS {"rigour~depth": {"mean": 0.7428, "sd": 0.1466, "min": 0.328, "max": 0.8922, "sign": 1.0, "tag": "UNIVERSAL"}, "rigour~originality": {"mean": 0.3537, "sd": 0.1622, "min": 0.1021, "max": 0.6533, "sign": 1.0, "tag": "UNIVERSAL"}, "rigour~candour": {"mean": 0.3774, "sd": 0.1857, "min": 0.1023, "max": 0.7056, "sign": 1.0, "tag": "weak/mixed"}, "rigour~affect": {"mean": -0.2944, "sd": 0.251, "min": -0.5684, "max": 0.2932, "sign": 0.875, "tag": "DOMAIN-SPECIFIC"}, "rigour~commercial_drive": {"mean": -0.0335, "sd": 0.2938, "min": -0.5055, "max": 0.4036, "sign": 0.562, "tag": "DOMAIN-SPECIFIC"}, "rigour~stance": {"mean": 0.2117, "sd": 0.229, "min": -0.1604, "max": 0.6567, "sign": 0.812, "tag": "DOMAIN-SPECIFIC"}, "rigour~register": {"mean": 0.2461, "sd": 0.3019, "min": -0.6324, "max": 0.6833, "sign": 0.875, "tag": "DOMAIN-SPECIFIC"}, "depth~originality": {"mean": 0.4894, "sd": 0.1907, "min": 0.2241, "max": 0.7855, "sign": 1.0, "tag": "weak/mixed"}, "depth~candour": {"mean": 0.2905, "sd": 0.1961, "min": -0.0303, "max": 0.6046, "sign": 0.938, "tag": "weak/mixed"}, "depth~affect": {"mean": -0.1234, "sd": 0.3084, "min": -0.4741, "max": 0.6205, "sign": 0.688, "tag": "DOMAIN-SPECIFIC"}, "depth~commercial_drive": {"mean": -0.0043, "sd": 0.3304, "min": -0.5457, "max": 0.4431, "sign": 0.625, "tag": "DOMAIN-SPECIFIC"}, "depth~stance": {"mean": 0.3274, "sd": 0.2051, "min": -0.0488, "max": 0.6629, "sign": 0.938, "tag": "DOMAIN-SPECIFIC"}, "depth~register": {"mean": 0.2571, "sd": 0.3004, "min": -0.5168, "max": 0.6623, "sign": 0.875, "tag": "DOMAIN-SPECIFIC"}, "originality~candour": {"mean": 0.2361, "sd": 0.1673, "min": -0.149, "max": 0.5077, "sign": 0.875, "tag": "weak/mixed"}, "originality~affect": {"mean": 0.1494, "sd": 0.155, "min": -0.1126, "max": 0.5904, "sign": 0.812, "tag": "weak/mixed"}, "originality~commercial_drive": {"mean": 0.0756, "sd": 0.3255, "min": -0.4275, "max": 0.642, "sign": 0.562, "tag": "DOMAIN-SPECIFIC"}, "originality~stance": {"mean": 0.1688, "sd": 0.1846, "min": -0.0766, "max": 0.5747, "sign": 0.812, "tag": "weak/mixed"}, "originality~register": {"mean": 0.064, "sd": 0.2294, "min": -0.1974, "max": 0.5111, "sign": 0.625, "tag": "DOMAIN-SPECIFIC"}, "candour~affect": {"mean": -0.0562, "sd": 0.2025, "min": -0.7144, "max": 0.1684, "sign": 0.562, "tag": "DOMAIN-SPECIFIC"}, "candour~commercial_drive": {"mean": -0.1226, "sd": 0.2173, "min": -0.7123, "max": 0.1191, "sign": 0.688, "tag": "DOMAIN-SPECIFIC"}, "candour~stance": {"mean": 0.047, "sd": 0.1997, "min": -0.2373, "max": 0.4532, "sign": 0.562, "tag": "DOMAIN-SPECIFIC"}, "candour~register": {"mean": 0.0452, "sd": 0.2086, "min": -0.4335, "max": 0.4217, "sign": 0.5, "tag": "DOMAIN-SPECIFIC"}, "affect~commercial_drive": {"mean": 0.1982, "sd": 0.2013, "min": -0.1208, "max": 0.5814, "sign": 0.812, "tag": "DOMAIN-SPECIFIC"}, "affect~stance": {"mean": 0.0479, "sd": 0.2919, "min": -0.6983, "max": 0.6612, "sign": 0.562, "tag": "DOMAIN-SPECIFIC"}, "affect~register": {"mean": -0.0553, "sd": 0.3038, "min": -0.4614, "max": 0.7078, "sign": 0.688, "tag": "DOMAIN-SPECIFIC"}, "commercial_drive~stance": {"mean": 0.0243, "sd": 0.2362, "min": -0.4053, "max": 0.5047, "sign": 0.688, "tag": "DOMAIN-SPECIFIC"}, "commercial_drive~register": {"mean": -0.05, "sd": 0.2326, "min": -0.4884, "max": 0.3102, "sign": 0.5, "tag": "DOMAIN-SPECIFIC"}, "stance~register": {"mean": 0.2604, "sd": 0.3477, "min": -0.7992, "max": 0.7021, "sign": 0.938, "tag": "DOMAIN-SPECIFIC"}}
+GRAMMAR_INDEX 0.4874 -0.0051 0.9595
+[cov] done

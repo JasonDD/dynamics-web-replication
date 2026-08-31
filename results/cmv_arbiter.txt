@@ -1,0 +1,21 @@
+# cmv_arbiter (FULL N + coupling fork)
+# 2026-08-28T20:31Z | cmv COMPLETE, 3044 OPs scored
+
+[arbiter] scored args=19,430 ops=3,044  usable strata=4,263
+[arbiter] global winning direction on PC1(matter/manner): -0.241  (negative = manner beats matter)
+
+=== A) WITHIN-THREAD consistency (same OP + topic, 803 threads >=2 pairs) ===
+  within-thread direction cohesion = +0.709  vs shuffled null +0.627  perm p=0.0010
+  -> winners within a thread share a character signature (topic+person specific)
+
+=== B) SAME-USER across different topics (262 users >=2 threads) — the confound-free person test ===
+  within-user cohesion = +0.602  vs shuffled-identity null +0.614  perm p=0.8791
+  -> no within-person consistency across topics beyond chance = ROOM/topic arbitrates
+
+=== C) HELD-OUT: does OP disposition predict the winning direction? (n=3044 OPs scored, 5-fold) ===
+  out-of-sample r(pred, actual PC1) = +0.050  vs shuffled-disposition null -0.009  perm p=0.0199
+  -> OP disposition GENERALISES to unseen people: different people, different winning combinations
+
+=== D) cross-room: 0 tagged rooms with enough strata (need the SE corpus scored) — rerun on the combined CMV+SE scores ===
+
+[arbiter] verdict = read A (topic+person), B (person alone, thin), C (person generalises), D (rooms differ) together; strong main effect + weak/null B,C + significant D = the ROOM sets the norm; significant B and/or C = the person individuates it.

@@ -1,0 +1,238 @@
+{
+  "disposition": {
+    "all": {
+      "estimator": "all",
+      "n_persons": 37378,
+      "n_occasions": 418113,
+      "per_axis": {
+        "discipline": {
+          "s2_between": 0.02658805778384074,
+          "s2_within": 0.024034382947658778,
+          "trait_share": 0.5252227549608542,
+          "situation_share": 0.47477724503914576
+        },
+        "yielding": {
+          "s2_between": 0.010940890702981208,
+          "s2_within": 0.015517108399020527,
+          "trait_share": 0.41351920305090084,
+          "situation_share": 0.5864807969490992
+        },
+        "novelty": {
+          "s2_between": 0.011539474919611341,
+          "s2_within": 0.02004733116188204,
+          "trait_share": 0.3653257910863069,
+          "situation_share": 0.6346742089136931
+        },
+        "acuity": {
+          "s2_between": 0.00970252874350804,
+          "s2_within": 0.015813258954745227,
+          "trait_share": 0.38025589718212954,
+          "situation_share": 0.6197441028178705
+        },
+        "mercuriality": {
+          "s2_between": 0.007412873314325496,
+          "s2_within": 0.01097945914165739,
+          "trait_share": 0.4030415028689928,
+          "situation_share": 0.5969584971310071
+        },
+        "impulsivity": {
+          "s2_between": 0.023340801780229594,
+          "s2_within": 0.025857933433435395,
+          "trait_share": 0.47441873614967783,
+          "situation_share": 0.5255812638503221
+        },
+        "candour": {
+          "s2_between": 0.018125913122064945,
+          "s2_within": 0.019855184750052927,
+          "trait_share": 0.47723510213145465,
+          "situation_share": 0.5227648978685453
+        },
+        "sociability": {
+          "s2_between": 0.01391100354996808,
+          "s2_within": 0.01912662068986754,
+          "trait_share": 0.4210654933593765,
+          "situation_share": 0.5789345066406235
+        }
+      },
+      "trait_share": 0.4325105600987117,
+      "situation_share": 0.5674894399012883
+    },
+    "room": {
+      "estimator": "room",
+      "n_persons": 37321,
+      "n_occasions": 132956,
+      "per_axis": {
+        "discipline": {
+          "s2_between": 0.029448349586667862,
+          "s2_within": 0.018691716100217113,
+          "trait_share": 0.6117222560145076,
+          "situation_share": 0.3882777439854924
+        },
+        "yielding": {
+          "s2_between": 0.012947477930689446,
+          "s2_within": 0.012879508641492851,
+          "trait_share": 0.501315857911,
+          "situation_share": 0.498684142089
+        },
+        "novelty": {
+          "s2_between": 0.010920480546137108,
+          "s2_within": 0.0177574393898829,
+          "trait_share": 0.3807975114827201,
+          "situation_share": 0.6192024885172799
+        },
+        "acuity": {
+          "s2_between": 0.011223768208149295,
+          "s2_within": 0.012292412118237455,
+          "trait_share": 0.4772785398126696,
+          "situation_share": 0.5227214601873305
+        },
+        "mercuriality": {
+          "s2_between": 0.009676855933443172,
+          "s2_within": 0.009944933439664204,
+          "trait_share": 0.49316888227868644,
+          "situation_share": 0.5068311177213136
+        },
+        "impulsivity": {
+          "s2_between": 0.03218564276793168,
+          "s2_within": 0.01893659626108186,
+          "trait_share": 0.6295820249513187,
+          "situation_share": 0.37041797504868135
+        },
+        "candour": {
+          "s2_between": 0.02113689739328105,
+          "s2_within": 0.017091728491221994,
+          "trait_share": 0.5529075896460467,
+          "situation_share": 0.4470924103539533
+        },
+        "sociability": {
+          "s2_between": 0.014374280338513186,
+          "s2_within": 0.01563551975665299,
+          "trait_share": 0.4789862076031796,
+          "situation_share": 0.5210137923968203
+        }
+      },
+      "trait_share": 0.5157198587125161,
+      "situation_share": 0.48428014128748387
+    }
+  },
+  "character": {
+    "all": {
+      "estimator": "all",
+      "n_persons": 37378,
+      "n_occasions": 418113,
+      "per_axis": {
+        "rigour": {
+          "s2_between": 0.027583626498154108,
+          "s2_within": 0.018822840644525555,
+          "trait_share": 0.5943918638181717,
+          "situation_share": 0.40560813618182834
+        },
+        "depth": {
+          "s2_between": 0.02364019548774214,
+          "s2_within": 0.014725718078729154,
+          "trait_share": 0.6161770511937388,
+          "situation_share": 0.3838229488062612
+        },
+        "originality": {
+          "s2_between": 0.017596646545078382,
+          "s2_within": 0.01853149100450481,
+          "trait_share": 0.48706210003015765,
+          "situation_share": 0.5129378999698424
+        },
+        "candour": {
+          "s2_between": 0.015850039840112788,
+          "s2_within": 0.014986825265824353,
+          "trait_share": 0.5139964709662111,
+          "situation_share": 0.48600352903378885
+        },
+        "affect": {
+          "s2_between": 0.021666559349114767,
+          "s2_within": 0.02441573779075944,
+          "trait_share": 0.4701709917661,
+          "situation_share": 0.5298290082339
+        },
+        "commercial_drive": {
+          "s2_between": 0.060535770090578214,
+          "s2_within": 0.054632486409679056,
+          "trait_share": 0.5256289530652309,
+          "situation_share": 0.47437104693476906
+        },
+        "stance": {
+          "s2_between": 0.025645179805448025,
+          "s2_within": 0.02860205847341513,
+          "trait_share": 0.47274627463275654,
+          "situation_share": 0.5272537253672435
+        },
+        "register": {
+          "s2_between": 0.02444148396842959,
+          "s2_within": 0.04131128966081192,
+          "trait_share": 0.37171791575283447,
+          "situation_share": 0.6282820842471655
+        }
+      },
+      "trait_share": 0.5064864526531502,
+      "situation_share": 0.4935135473468498
+    },
+    "room": {
+      "estimator": "room",
+      "n_persons": 37321,
+      "n_occasions": 132956,
+      "per_axis": {
+        "rigour": {
+          "s2_between": 0.022656744072880163,
+          "s2_within": 0.018508098264698538,
+          "trait_share": 0.5503906437216498,
+          "situation_share": 0.4496093562783502
+        },
+        "depth": {
+          "s2_between": 0.021989069504467468,
+          "s2_within": 0.013088737723395392,
+          "trait_share": 0.6268655666424098,
+          "situation_share": 0.3731344333575902
+        },
+        "originality": {
+          "s2_between": 0.01887780331699891,
+          "s2_within": 0.016178174440474945,
+          "trait_share": 0.538504544006741,
+          "situation_share": 0.46149545599325903
+        },
+        "candour": {
+          "s2_between": 0.0141869142005208,
+          "s2_within": 0.011738567834368623,
+          "trait_share": 0.5472189169493029,
+          "situation_share": 0.4527810830506971
+        },
+        "affect": {
+          "s2_between": 0.02296746809341557,
+          "s2_within": 0.019150952252622252,
+          "trait_share": 0.5453069679422622,
+          "situation_share": 0.4546930320577378
+        },
+        "commercial_drive": {
+          "s2_between": 0.07094769331607337,
+          "s2_within": 0.03969292679685773,
+          "trait_share": 0.6412445378890403,
+          "situation_share": 0.35875546211095966
+        },
+        "stance": {
+          "s2_between": 0.026274132980152094,
+          "s2_within": 0.024973782633251524,
+          "trait_share": 0.5126868608345944,
+          "situation_share": 0.48731313916540564
+        },
+        "register": {
+          "s2_between": 0.03100257475305493,
+          "s2_within": 0.03622278399351775,
+          "trait_share": 0.4611738089777843,
+          "situation_share": 0.5388261910222156
+        }
+      },
+      "trait_share": 0.552923980870473,
+      "situation_share": 0.447076019129527
+    }
+  },
+  "headline": {
+    "pooled_trait_share": 0.5343219197914946,
+    "pooled_situation_share": 0.46567808020850543
+  }
+}

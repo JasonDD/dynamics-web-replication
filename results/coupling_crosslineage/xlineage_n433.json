@@ -1,0 +1,46 @@
+{
+  "n_dual_blocks": 1237,
+  "n_persons": 433,
+  "split_7b": 0.5067865001516607,
+  "split_27b": 0.57663623086963,
+  "icc_axis_pattern_corr": 0.5328129040398372,
+  "icc_7b": {
+    "discipline": 0.6490970890923807,
+    "yielding": 0.481449096090045,
+    "novelty": 0.34155597280291283,
+    "acuity": 0.4434774139976141,
+    "mercuriality": 0.49648574088394254,
+    "impulsivity": 0.6078073417313933,
+    "candour": 0.5548914095129812,
+    "sociability": 0.47952793710201624
+  },
+  "icc_27b": {
+    "discipline": 0.6274005096509185,
+    "yielding": 0.4464887131003369,
+    "novelty": 0.4944627705127153,
+    "acuity": 0.6327063326536659,
+    "mercuriality": 0.4731153424838053,
+    "impulsivity": 0.6500921846524225,
+    "candour": 0.6681878152662475,
+    "sociability": 0.620636178636928
+  },
+  "bridge_7b_legs": {
+    "plasticity->PC1": -0.05654413627995773,
+    "plasticity->PC2": -0.027432470004526536,
+    "stability->PC1": -0.49838988801201894,
+    "stability->PC2": 0.09756260541613268
+  },
+  "bridge_27b_legs": {
+    "plasticity->PC1": -0.3278361049341096,
+    "plasticity->PC2": -0.14362724748746825,
+    "stability->PC1": -0.20142981833233614,
+    "stability->PC2": 0.1359635388306647
+  },
+  "bridge_7b_best": 0.49838988801201894,
+  "bridge_27b_best": 0.3278361049341096,
+  "person_plasticity_corr": 0.3620299911702555,
+  "person_pc1_corr": 0.767978754763688,
+  "n_shared_persons": 433,
+  "both_split_quarter": false,
+  "both_bridge_half": true
+}

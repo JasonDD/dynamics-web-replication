@@ -1,0 +1,79 @@
+{
+  "full_persons": 32569,
+  "full_blocks": 365549,
+  "mindom": 2,
+  "ladder": [
+    {
+      "persons": 250,
+      "blocks": 2286,
+      "reps": 12,
+      "mean_disp_icc": 0.4712605738228071,
+      "mean_disp_icc_sd": 0.045273139293343936,
+      "bridge_best_r": 0.48876160296767895,
+      "bridge_best_r_sd": 0.058688173020744416
+    },
+    {
+      "persons": 500,
+      "blocks": 6611,
+      "reps": 12,
+      "mean_disp_icc": 0.44291827197129935,
+      "mean_disp_icc_sd": 0.05001519414244583,
+      "bridge_best_r": 0.4749260172456597,
+      "bridge_best_r_sd": 0.0408732051442542
+    },
+    {
+      "persons": 859,
+      "blocks": 11188,
+      "reps": 12,
+      "mean_disp_icc": 0.4363636840210409,
+      "mean_disp_icc_sd": 0.07100925776092851,
+      "bridge_best_r": 0.4712617524840214,
+      "bridge_best_r_sd": 0.019704985544111
+    },
+    {
+      "persons": 2000,
+      "blocks": 20580,
+      "reps": 12,
+      "mean_disp_icc": 0.46017821868202974,
+      "mean_disp_icc_sd": 0.030938723008289763,
+      "bridge_best_r": 0.4688120701836042,
+      "bridge_best_r_sd": 0.018279699632139004
+    },
+    {
+      "persons": 5000,
+      "blocks": 56866,
+      "reps": 12,
+      "mean_disp_icc": 0.42957165870009634,
+      "mean_disp_icc_sd": 0.03461847872459617,
+      "bridge_best_r": 0.46703362477237303,
+      "bridge_best_r_sd": 0.0101914790796253
+    },
+    {
+      "persons": 10000,
+      "blocks": 109147,
+      "reps": 12,
+      "mean_disp_icc": 0.43934272965455806,
+      "mean_disp_icc_sd": 0.030365774181789266,
+      "bridge_best_r": 0.46033444524058725,
+      "bridge_best_r_sd": 0.009547218992274094
+    },
+    {
+      "persons": 20000,
+      "blocks": 227521,
+      "reps": 12,
+      "mean_disp_icc": 0.4361173680772432,
+      "mean_disp_icc_sd": 0.015202477066655489,
+      "bridge_best_r": 0.4659396646498208,
+      "bridge_best_r_sd": 0.006290505335153127
+    },
+    {
+      "persons": 32569,
+      "blocks": 365549,
+      "reps": 1,
+      "mean_disp_icc": 0.43465914850759624,
+      "mean_disp_icc_sd": 0.0,
+      "bridge_best_r": 0.46358821878232137,
+      "bridge_best_r_sd": 0.0
+    }
+  ]
+}

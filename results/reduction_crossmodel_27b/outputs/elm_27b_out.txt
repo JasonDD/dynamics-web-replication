@@ -1,0 +1,22 @@
+IBM ArgQ ELM reduction (27B) n=2500
+quality label range 0.017..1.000 mean 0.791 sd 0.194
+length rho with quality = +0.212
+
+== PER AXIS ==
+| feature | Spearman rho | Pearson r | partial rho (ctrl length) |
+|---|---|---|---|
+| text_length | +0.212*** | +0.209*** | +0.000 |
+| register | -0.185*** | -0.154*** | -0.211 |
+| depth | +0.184*** | +0.185*** | +0.073 |
+| rigour | +0.174*** | +0.175*** | +0.075 |
+| candour | +0.099*** | +0.157*** | +0.040 |
+| commercial_drive | +0.077*** | +0.046* | +0.066 |
+| affect | +0.055** | +0.039* | -0.005 |
+| originality | +0.049* | +0.010 | -0.051 |
+| stance | -0.020 | +0.027 | -0.015 |
+
+== ELM CENTRAL vs PERIPHERAL ==
+| feature | Spearman rho | Pearson r | partial rho (ctrl length) |
+|---|---|---|---|
+| central pair (rigour+depth) | +0.187*** | +0.188*** | +0.077 |
+| peripheral cue (affect) | +0.055** | +0.039* | -0.005 |

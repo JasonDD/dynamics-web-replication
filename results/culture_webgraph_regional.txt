@@ -1,0 +1,165 @@
+[load] reading cc_v3.domain_char8_expanded ...
+[load] 2,648,406 domains x 8 axes
+[pc1] PC1 loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
+
+=== COUNTRY (ccTLD): variance decomposition (63 groups, n=1,241,013, min 40) ===
+  PC1 between-region share (eta^2)  =  2.930%   perm p=0.001   (null mean 0.005%, F=604.2)
+  MULTIVARIATE 8-axis between share =  5.619%   perm p=0.001   (null mean 0.005%)
+  per-axis between-region eta^2 (%): rigour=2.90, depth=4.93, originality=5.90, candour=3.36, affect=9.47, commercial_drive=7.34, stance=7.55, register=2.40
+
+=== CONTINENT (ccTLD): variance decomposition (6 groups, n=1,241,013, min 200) ===
+  PC1 between-region share (eta^2)  =  0.146%   perm p=0.001   (null mean 0.000%, F=362.9)
+  MULTIVARIATE 8-axis between share =  0.294%   perm p=0.001   (null mean 0.000%)
+  per-axis between-region eta^2 (%): rigour=0.12, depth=0.10, originality=0.36, candour=0.37, affect=0.37, commercial_drive=0.29, stance=0.46, register=0.24
+
+=== CONTINENT: PC1 ordering (matter <- ... -> manner is sign of PC1; low=toward one pole) ===
+    Africa     PC1=+0.426  n=6,364
+    N.America  PC1=+0.329  n=30,306
+    Asia       PC1=+0.150  n=171,087
+    S.America  PC1=+0.088  n=46,715
+    Europe     PC1=+0.010  n=957,309
+    Oceania    PC1=-0.109  n=29,232
+  ward leaf order: Africa Oceania Europe S.America Asia N.America
+
+=== CONTINENT distance matrix (standardised 8-axis means, euclidean) ===
+                Africa      Asia    Europe  N.Americ   Oceania  S.Americ
+    Africa          0.00      5.09      5.75      3.61      6.13      5.16
+    Asia            5.09      0.00      4.07      3.19      4.47      2.38
+    Europe          5.75      4.07      0.00      3.93      4.27      2.09
+    N.America       3.61      3.19      3.93      0.00      5.78      3.10
+    Oceania         6.13      4.47      4.27      5.78      0.00      4.28
+    S.America       5.16      2.38      2.09      3.10      4.28      0.00
+
+=== COUNTRY nearest neighbours (character space, top 3) ===
+    AE: SG, AU, ZA
+    AR: IT, BR, IE
+    AT: DE, CH, IT
+    AU: NZ, ZA, SG
+    BD: ID, EG, PH
+    BE: NL, JP, NO
+    BG: CL, FI, UA
+    BR: ES, CA, AR
+    BY: RU, HU, LV
+    CA: CL, BR, ES
+    CH: DE, FR, AT
+    CL: ES, CA, PT
+    CN: IE, CZ, AR
+    CZ: LV, SK, LT
+    DE: CH, AT, ES
+    DK: NO, SE, HU
+    EE: PL, LT, SI
+    EG: SA, BD, PH
+    ES: CL, DE, BR
+    FI: US, PL, HR
+    FR: CH, AT, DE
+    GB: SG, IL, AU
+    GR: ID, LK, KE
+    HK: IN, TW, CL
+    HR: RS, TR, SI
+    HU: SE, LV, RU
+    ID: BD, EG, PH
+    IE: CA, CN, ZA
+    IL: FR, BE, JP
+    IN: HK, TR, VN
+    IS: EE, PL, UA
+    IT: AR, AT, BR
+    JP: NL, BE, NO
+    KE: PH, LK, BD
+    KR: PT, MX, TW
+    LK: PK, PH, KE
+    LT: EE, PL, CZ
+    LV: CZ, SK, HU
+    MX: PT, KR, NG
+    MY: IN, RO, VN
+    NG: MX, SA, EG
+    NL: BE, JP, NO
+    NO: DK, SE, NL
+    NZ: AU, AR, IE
+    PH: KE, EG, BD
+    PK: LK, IN, PH
+    PL: EE, LT, FI
+    PT: ES, KR, MX
+    RO: LT, CZ, PL
+    RS: HR, SI, US
+    RU: BY, LV, HU
+    SA: EG, MX, HK
+    SE: HU, DK, NO
+    SG: ZA, AU, AE
+    SI: RS, HR, US
+    SK: CZ, LV, LT
+    TH: LT, PL, CZ
+    TR: HR, RS, IN
+    TW: KR, HK, FI
+    UA: BG, FI, PL
+    US: FI, HR, PL
+    VN: ZA, CL, IN
+    ZA: VN, SG, AU
+
+=== KIN-REGION test: anglosphere ['IE', 'GB', 'CA', 'AU', 'NZ', 'ZA', 'US'] ===
+    within-anglo mean distance = 2.999   to-rest = 3.744   ratio=0.80
+    perm p (anglo tighter than a random 7-country set) = 0.1294
+
+[ext] loading cc_v3.domain_linkcc_full (link-geo, resolves US/.com) ...
+[ext] 357,403 resolved domains; US cell = 67,235
+
+=== COUNTRY (link-geo, +US/.com): variance decomposition (63 groups, n=357,403, min 40) ===
+  PC1 between-region share (eta^2)  =  2.328%   perm p=0.001   (null mean 0.017%, F=137.4)
+  MULTIVARIATE 8-axis between share =  3.489%   perm p=0.001   (null mean 0.017%)
+  per-axis between-region eta^2 (%): rigour=3.33, depth=3.30, originality=4.39, candour=2.90, affect=4.22, commercial_drive=3.18, stance=4.35, register=1.78
+
+=== CONTINENT (link-geo, +US/.com): variance decomposition (6 groups, n=357,403, min 200) ===
+  PC1 between-region share (eta^2)  =  0.250%   perm p=0.001   (null mean 0.001%, F=179.3)
+  MULTIVARIATE 8-axis between share =  0.839%   perm p=0.001   (null mean 0.001%)
+  per-axis between-region eta^2 (%): rigour=1.25, depth=0.79, originality=1.55, candour=0.23, affect=1.18, commercial_drive=0.65, stance=0.65, register=0.19
+
+[ext] DELTA country between-share PC1: ccTLD 2.930% -> link 2.328%
+[ext] DELTA continent between-share PC1: ccTLD 0.146% -> link 0.250%
+[ext] US PC1 = +0.777  (anglosphere neighbours check)
+
+=== CONTINENT (link-geo): PC1 ordering (matter <- ... -> manner is sign of PC1; low=toward one pole) ===
+    Africa     PC1=+0.789  n=1,975
+    N.America  PC1=+0.656  n=83,079
+    Asia       PC1=+0.445  n=45,853
+    S.America  PC1=+0.428  n=9,767
+    Europe     PC1=+0.418  n=205,256
+    Oceania    PC1=+0.305  n=11,473
+  ward leaf order: Europe Asia S.America Oceania Africa N.America
+
+[parl] scoring ParlaMint country positions ...
+[parl] countries in BOTH web and parliament: 25 -> ['AT', 'BE', 'BG', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IS', 'IT', 'LV', 'NL', 'NO', 'PL', 'PT', 'RS', 'SE', 'SI', 'TR', 'UA']
+
+=== CROSS-DOMAIN PROOF: web PC1 vs parliament PC1 across 25 shared countries ===
+    Spearman rho = -0.550 (p=0.004395)   Pearson r = -0.463 (p=0.01983)
+    Mantel r (8-axis country distance web vs parliament) = +0.136  perm p=0.1338
+    per-country PC1 (web , parliament):
+      AT: web +0.050   parl +0.114
+      BE: web -0.600   parl +0.980
+      BG: web +0.404   parl -0.720
+      CZ: web +0.148   parl -0.420
+      DK: web -0.394   parl -0.911
+      EE: web +0.321   parl +0.138
+      ES: web +0.252   parl +0.797
+      FI: web +0.488   parl -0.177
+      FR: web -0.041   parl +0.638
+      GB: web -0.104   parl +0.771
+      GR: web +1.539   parl -0.108
+      HR: web +0.725   parl -0.705
+      HU: web -0.038   parl -0.365
+      IS: web +0.326   parl -1.430
+      IT: web +0.045   parl +0.922
+      LV: web +0.020   parl +0.235
+      NL: web -0.650   parl +0.465
+      NO: web -0.404   parl +0.674
+      PL: web +0.413   parl -0.575
+      PT: web +0.460   parl -0.382
+      RS: web +0.700   parl -0.261
+      SE: web -0.213   parl +0.291
+      SI: web +0.626   parl +0.172
+      TR: web +0.751   parl -1.847
+      UA: web +0.465   parl -0.788
+
+[confounds] ccTLD under-identifies the US (only .us; the link-geo run corrects this) and drops generic TLDs;
+[confounds] language co-varies with region and the scorer is web-tuned; parliament is a different medium and register,
+[confounds] so web<->parliament agreement is a conservative cross-medium check, not a like-for-like comparison.
+
+[done]

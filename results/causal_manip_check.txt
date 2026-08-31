@@ -1,0 +1,14 @@
+# causal_manip_check
+# generated 2026-08-28T18:20Z | data state: authored stimuli (5 views x 4 coords)
+
+=== Gap 1 MANIPULATION CHECK (published 7B instrument on the authored variants) ===
+  Factor A matter/manner:  matter variants(A,B) matter-contrast +1.210  vs  manner variants(C,D) +0.670  Δ=+0.540
+  Factor B stance:         polemical(B,D) stance 0.830  vs  balanced(A,C) stance 0.570  Δ=+0.260
+    rigour     A,B 0.790 | C,D 0.610
+    depth      A,B 0.730 | C,D 0.680
+    affect     A,B 0.470 | C,D 0.750
+    register   A,B 0.500 | C,D 0.460
+    stance     A,B 0.710 | C,D 0.690
+  per-view matter separation held in 5/5 views
+  -> MANIPULATION OK: variants sit where intended, causal test is valid
+[wrote] /mnt/nas/kronaxis/corpora/causal/causal_char.jsonl

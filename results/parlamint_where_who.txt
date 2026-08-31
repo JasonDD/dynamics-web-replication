@@ -1,0 +1,41 @@
+# ParlaMint European parliaments — where (country) + who (left-right orientation)
+# 2026-08-29T06:14Z | 1675 speeches, 26 countries, scored on the 7B
+
+[pm] 1675 scored speeches, 26 countries
+
+=== WHERE: countries ordered on matter/manner PC1 (>= 15 speeches) ===
+  TR    PC1=+1.260  (n=55)
+  IS    PC1=+1.659  (n=55)
+  DK    PC1=+2.239  (n=55)
+  BA    PC1=+2.397  (n=55)
+  PL    PC1=+2.483  (n=55)
+  UA    PC1=+2.656  (n=55)
+  BG    PC1=+2.860  (n=55)
+  HR    PC1=+2.946  (n=55)
+  CZ    PC1=+3.004  (n=55)
+  EE    PC1=+3.320  (n=55)
+  HU    PC1=+3.358  (n=55)
+  GR    PC1=+3.405  (n=55)
+  RS    PC1=+3.409  (n=55)
+  FI    PC1=+3.459  (n=55)
+  SI    PC1=+3.601  (n=55)
+  PT    PC1=+3.688  (n=55)
+  AT    PC1=+3.991  (n=55)
+  GB    PC1=+3.992  (n=300)
+  FR    PC1=+4.047  (n=55)
+  SE    PC1=+4.187  (n=55)
+  LV    PC1=+4.215  (n=55)
+  BE    PC1=+4.228  (n=55)
+  NL    PC1=+4.239  (n=55)
+  ES    PC1=+4.437  (n=55)
+  NO    PC1=+4.686  (n=55)
+  IT    PC1=+4.771  (n=55)
+  between-country mean distance (standardised) = 3.81 over 26 countries
+
+=== WHO: does left-right orientation (lr, low=left high=right) predict character? n=1395 ===
+  corr(lr, matter/manner PC1) = -0.109  p=0.000
+  corr(lr, stance (polemical)) = -0.098  p=0.000
+  corr(lr, affect) = -0.019  p=0.482
+
+[pm] confounds: 7B scores multilingual speeches unevenly (language confounds character); orientation
+     is Wikipedia-sourced and coarse; parliamentary register has a high manner floor across all parties.

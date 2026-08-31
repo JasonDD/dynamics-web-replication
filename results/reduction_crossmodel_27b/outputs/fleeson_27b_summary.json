@@ -1,0 +1,56 @@
+{
+  "n_persons": 2373,
+  "n_occasions": 6695,
+  "trait_share_icc1": 0.588030190935872,
+  "situation_share": 0.41196980906412795,
+  "per_axis": {
+    "discipline": {
+      "s2_between": 0.0531693986494754,
+      "s2_within": 0.030548685022366195,
+      "trait_share": 0.6351005221033125,
+      "situation_share": 0.36489947789668753
+    },
+    "yielding": {
+      "s2_between": 0.02003638487693431,
+      "s2_within": 0.01846352961591857,
+      "trait_share": 0.5204267370685683,
+      "situation_share": 0.47957326293143165
+    },
+    "novelty": {
+      "s2_between": 0.011784349182572278,
+      "s2_within": 0.013289497532006787,
+      "trait_share": 0.4699856913347215,
+      "situation_share": 0.5300143086652784
+    },
+    "acuity": {
+      "s2_between": 0.022538380817171046,
+      "s2_within": 0.015078088847755666,
+      "trait_share": 0.5991625747427768,
+      "situation_share": 0.4008374252572232
+    },
+    "mercuriality": {
+      "s2_between": 0.01728065821209155,
+      "s2_within": 0.016685996066635816,
+      "trait_share": 0.5087536167173838,
+      "situation_share": 0.49124638328261616
+    },
+    "impulsivity": {
+      "s2_between": 0.04151554374126609,
+      "s2_within": 0.01980230024679933,
+      "trait_share": 0.6770548512655868,
+      "situation_share": 0.32294514873441316
+    },
+    "candour": {
+      "s2_between": 0.027488232812312028,
+      "s2_within": 0.01426602267468765,
+      "trait_share": 0.6583336833983443,
+      "situation_share": 0.3416663166016557
+    },
+    "sociability": {
+      "s2_between": 0.02161379249970135,
+      "s2_within": 0.012400971772327627,
+      "trait_share": 0.6354238508562825,
+      "situation_share": 0.3645761491437175
+    }
+  }
+}

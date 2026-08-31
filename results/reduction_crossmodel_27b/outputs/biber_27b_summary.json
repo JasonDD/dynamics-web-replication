@@ -1,0 +1,22 @@
+{
+  "n_docs": 8014,
+  "item_level": {
+    "pearson_r": -0.15104246495929363,
+    "spearman_r": -0.11669284928696272
+  },
+  "between_subreddit_centroid": {
+    "n_subreddits": 321,
+    "pearson_r": -0.3133913518028879,
+    "spearman_r": -0.2999923811458757
+  },
+  "pc1_loadings": {
+    "rigour": 0.583122712267079,
+    "depth": 0.5422029939316427,
+    "originality": 0.21293607763930938,
+    "candour": 0.009970465170155186,
+    "affect": -0.40311412757769094,
+    "commercial_drive": -0.017433176046724227,
+    "stance": -0.21895511282482455,
+    "register": -0.3313553614502035
+  }
+}

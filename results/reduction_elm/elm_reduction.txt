@@ -1,0 +1,28 @@
+IBM ArgQ ELM reduction  n=2500
+quality label range 0.017..1.000  mean 0.791  sd 0.194
+length rho with quality = +0.212
+
+matter axes (PC1 positive): rigour, depth, originality, candour, stance
+manner axes (PC1 negative): affect, commercial_drive, register
+
+== PER AXIS ==
+| feature | Spearman rho | Pearson r | partial rho (ctrl length) |
+|---|---|---|---|
+| text_length | +0.212*** | +0.209*** | +0.000 |
+| depth | +0.208*** | +0.191*** | +0.162 |
+| rigour | +0.200*** | +0.131*** | +0.161 |
+| register | +0.109*** | +0.128*** | +0.091 |
+| matter_manner_PC1 | +0.102*** | +0.108*** | +0.067 |
+| affect | -0.072*** | -0.045* | -0.087 |
+| stance | +0.068*** | +0.097*** | +0.033 |
+| candour | +0.052** | +0.063** | +0.054 |
+| commercial_drive | +0.030 | +0.013 | -0.018 |
+| originality | -0.029 | -0.041* | -0.062 |
+
+== COMPOSITES / ELM CENTRAL vs PERIPHERAL ==
+| feature | Spearman rho | Pearson r | partial rho (ctrl length) |
+|---|---|---|---|
+| MATTER composite (rigour+depth+originality+candour+stance) | +0.131*** | +0.146*** | +0.081 |
+| MANNER composite (affect+commercial_drive+register) | +0.047* | +0.056** | +0.008 |
+| central pair (rigour+depth) | +0.205*** | +0.171*** | +0.159 |
+| peripheral cue (affect) | -0.072*** | -0.045* | -0.087 |

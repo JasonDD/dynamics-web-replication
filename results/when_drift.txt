@@ -1,0 +1,41 @@
+# when_drift
+# generated 2026-08-28T18:17Z | data state: 4 CC snapshots 2020-2026
+
+[when] 2020: 50,855 domains
+[when] 2022: 56,330 domains
+[when] 2024: 73,935 domains
+[when] 2026: 94,677 domains
+
+=== 1. does the web's mean character drift? (matter/manner PC1 per snapshot) ===
+  2020: mean PC1 +0.032  (n=50,855)
+  2022: mean PC1 +0.015  (n=56,330)
+  2024: mean PC1 -0.021  (n=73,935)
+  2026: mean PC1 -0.010  (n=94,677)
+  trend -0.0080/yr  r=-0.87  (composition changes as the crawl grows, so read the within-domain test below as primary)
+
+=== 2. WITHIN-DOMAIN drift 2020->2026 (same domains, controls for crawl composition) ===
+  50,462 domains in both 2020 & 2026: mean PC1 +0.031 -> +0.106  Δ=+0.075  paired t=+11.55 p=7.904e-31
+  -> the SAME domains drift toward matter over 6 years = WHEN is real within-domain
+
+=== 3. does the drift differ by country? (within-domain Δ PC1 by ccTLD) ===
+  country       n    mean Δ
+  RU         4274    -0.041
+  DE         2077    +0.095
+  PL         1467    +0.048
+  JP         1259    +0.047
+  GB         1180    +0.087
+  FR          731    -0.033
+  BR          714    +0.118
+  NL          629    +0.120
+  CA          450    -0.020
+  AU          439    -0.014
+  ES          436    +0.088
+  IT          405    -0.016
+  SE          371    -0.064
+  DK          360    +0.074
+  IN          233    +0.068
+  NO          194    +0.160
+  NZ          112    +0.032
+  US           82    -0.024
+  IE           74    +0.137
+  ZA           68    +0.098

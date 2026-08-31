@@ -1,0 +1,85 @@
+{
+  "n_domains": 2648406,
+  "n_countries_cctld": 63,
+  "pc1_var_pct": 56.07847081163351,
+  "pc12_var_pct": 77.2547848451035,
+  "pc1_loadings": {
+    "rigour": 0.4424974957931084,
+    "depth": 0.39739583011091606,
+    "originality": 0.22523744305543353,
+    "candour": 0.39228133325589937,
+    "affect": -0.35236058713733354,
+    "commercial_drive": -0.2563748772125108,
+    "stance": 0.36966128649186925,
+    "register": -0.33929403544387216
+  },
+  "centre_raw": {
+    "rigour": 0.46934622847804286,
+    "depth": 0.4216375968735301,
+    "originality": 0.32052237270964573,
+    "candour": 0.5662149657659405,
+    "affect": 0.3933658516933449,
+    "commercial_drive": 0.46649777538937337,
+    "stance": 0.5259241512096657,
+    "register": 0.28153321336719883
+  },
+  "centre_matter_mean": 0.460729063007365,
+  "centre_manner_mean": 0.3804656134833057,
+  "country_between_mv_pct": {
+    "cctld": 6.824950516614608,
+    "all": 3.4518522131217075
+  },
+  "country_between_pc1_pct": {
+    "cctld": 5.316774981594086,
+    "all": 2.582873680010877
+  },
+  "country_invariant_share_mv_pct": {
+    "cctld": 93.1750494833854,
+    "all": 96.54814778687829
+  },
+  "country_between_axis_pct": {
+    "rigour": 5.93926588582506,
+    "depth": 5.325829099905813,
+    "originality": 5.627062587928267,
+    "candour": 5.199440752109384,
+    "affect": 10.218667977672478,
+    "commercial_drive": 9.22982864491849,
+    "stance": 8.547040077463437,
+    "register": 3.2214328562673034
+  },
+  "continent_between_mv_pct": 0.8818380246408374,
+  "natl_mean_dist_to_centre_sd": 0.5894114028826525,
+  "percountry_pc1_cosine": {
+    "mean": 0.976709676821165,
+    "min": 0.9366202058736481,
+    "median": 0.978609596732877,
+    "n": 62
+  },
+  "reddit_n_comments": 80138,
+  "reddit_n_rooms": 400,
+  "reddit_pc1_cos_to_web": 0.7781157450971783,
+  "room_between_mv_pct": 7.37739076429722,
+  "room_between_pc1_pct": 11.178013683657792,
+  "room_between_axis_pct": {
+    "rigour": 9.772780906909004,
+    "depth": 10.118576489776238,
+    "originality": 4.237161855739424,
+    "candour": 6.191731593326457,
+    "affect": 11.494244258811458,
+    "commercial_drive": 6.191191574959646,
+    "stance": 6.642403501802291,
+    "register": 4.37103591211642
+  },
+  "room_pc1_splithalf_reliability": 0.9275118439775414,
+  "room_reliable_between_pc1_pct": 10.367740083735628,
+  "room_axis_splithalf_reliability": {
+    "rigour": 0.9091916982594758,
+    "depth": 0.9146843246798587,
+    "originality": 0.8097990333620898,
+    "candour": 0.8688080794694716,
+    "affect": 0.9320520064273579,
+    "commercial_drive": 0.8682580837014466,
+    "stance": 0.8874372402969762,
+    "register": 0.8154975440958964
+  }
+}

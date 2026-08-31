@@ -1,0 +1,183 @@
+{
+  "pc1": {
+    "pooled_age_per_decade": 0.4202,
+    "pooled_p": 4.192859725723114e-14,
+    "fe_age_per_decade": 0.1474,
+    "fe_p": 0.14853421741066614,
+    "n_pooled": 453,
+    "n_fe": 322,
+    "n_correspondents_fe": 7
+  },
+  "mm": {
+    "pooled_age_per_decade": 0.0415,
+    "pooled_p": 4.247111436114641e-09,
+    "fe_age_per_decade": 0.0161,
+    "fe_p": 0.22345426914423552,
+    "n_pooled": 453,
+    "n_fe": 322,
+    "n_correspondents_fe": 7
+  },
+  "rigour": {
+    "pooled_age_per_decade": 0.0648,
+    "pooled_p": 1.1288756614240382e-10,
+    "fe_age_per_decade": 0.0286,
+    "fe_p": 0.13977283950891026,
+    "n_pooled": 453,
+    "n_fe": 322,
+    "n_correspondents_fe": 7
+  },
+  "depth": {
+    "pooled_age_per_decade": 0.0444,
+    "pooled_p": 1.4676874722556687e-08,
+    "fe_age_per_decade": 0.0259,
+    "fe_p": 0.07438476154381737,
+    "n_pooled": 453,
+    "n_fe": 322,
+    "n_correspondents_fe": 7
+  },
+  "affect": {
+    "pooled_age_per_decade": -0.0458,
+    "pooled_p": 1.7628270744403945e-11,
+    "fe_age_per_decade": -0.0151,
+    "fe_p": 0.2504270614456472,
+    "n_pooled": 453,
+    "n_fe": 322,
+    "n_correspondents_fe": 7
+  },
+  "register": {
+    "pooled_age_per_decade": -0.0204,
+    "pooled_p": 1.0888592074216973e-05,
+    "fe_age_per_decade": 0.0077,
+    "fe_p": 0.20323465030294388,
+    "n_pooled": 453,
+    "n_fe": 322,
+    "n_correspondents_fe": 7
+  },
+  "between_correspondent": {
+    "corr_age_mm": 0.787,
+    "corr_age_pc1": 0.868,
+    "table": [
+      {
+        "recipient": "J.S. HENSLOW",
+        "n": 14,
+        "mean_age": 26.9,
+        "mean_mm": 0.195,
+        "mean_pc1": -1.194
+      },
+      {
+        "recipient": "W.D. FOX",
+        "n": 23,
+        "mean_age": 37.4,
+        "mean_mm": 0.243,
+        "mean_pc1": -1.131
+      },
+      {
+        "recipient": "J.D. HOOKER",
+        "n": 131,
+        "mean_age": 49.4,
+        "mean_mm": 0.279,
+        "mean_pc1": -0.268
+      },
+      {
+        "recipient": "C. LYELL",
+        "n": 72,
+        "mean_age": 49.7,
+        "mean_mm": 0.314,
+        "mean_pc1": 0.335
+      },
+      {
+        "recipient": "ASA GRAY",
+        "n": 45,
+        "mean_age": 54.2,
+        "mean_mm": 0.355,
+        "mean_pc1": 0.388
+      },
+      {
+        "recipient": "T.H. HUXLEY",
+        "n": 16,
+        "mean_age": 56.2,
+        "mean_mm": 0.252,
+        "mean_pc1": -0.228
+      },
+      {
+        "recipient": "A.R. WALLACE",
+        "n": 21,
+        "mean_age": 57.1,
+        "mean_mm": 0.372,
+        "mean_pc1": 0.776
+      }
+    ]
+  },
+  "decade_trajectory": [
+    {
+      "age_band": "10s",
+      "n": 1,
+      "rigour": 0.2,
+      "depth": 0.6,
+      "affect": 0.2,
+      "register": 0.9,
+      "mm": 0.267,
+      "pc1": -1.358
+    },
+    {
+      "age_band": "20s",
+      "n": 33,
+      "rigour": 0.339,
+      "depth": 0.5,
+      "affect": 0.479,
+      "register": 0.876,
+      "mm": 0.178,
+      "pc1": -1.376
+    },
+    {
+      "age_band": "30s",
+      "n": 30,
+      "rigour": 0.473,
+      "depth": 0.683,
+      "affect": 0.333,
+      "register": 0.84,
+      "mm": 0.282,
+      "pc1": 0.032
+    },
+    {
+      "age_band": "40s",
+      "n": 85,
+      "rigour": 0.525,
+      "depth": 0.722,
+      "affect": 0.356,
+      "register": 0.875,
+      "mm": 0.332,
+      "pc1": 0.022
+    },
+    {
+      "age_band": "50s",
+      "n": 213,
+      "rigour": 0.506,
+      "depth": 0.7,
+      "affect": 0.308,
+      "register": 0.86,
+      "mm": 0.297,
+      "pc1": 0.027
+    },
+    {
+      "age_band": "60s",
+      "n": 75,
+      "rigour": 0.585,
+      "depth": 0.695,
+      "affect": 0.259,
+      "register": 0.797,
+      "mm": 0.35,
+      "pc1": 0.388
+    },
+    {
+      "age_band": "70s",
+      "n": 16,
+      "rigour": 0.597,
+      "depth": 0.719,
+      "affect": 0.25,
+      "register": 0.825,
+      "mm": 0.347,
+      "pc1": 0.564
+    }
+  ]
+}

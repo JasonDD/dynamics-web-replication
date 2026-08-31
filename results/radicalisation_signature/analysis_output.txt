@@ -1,0 +1,75 @@
+# Radicalisation content signature — measured
+
+scored n by tier: {'benign': 650, 'partisan': 520, 'idw': 390, 'gateway': 650, 'extremist': 650} 
+
+## Per-tier character (mean)
+| tier | n | med words | matter | manner | affect | affect_gap | residual |
+|---|---|---|---|---|---|---|---|
+| benign | 650 | 67 | 0.460 | 0.520 | 0.587 | 0.127 | 0.060 |
+| partisan | 520 | 57 | 0.434 | 0.553 | 0.652 | 0.218 | 0.119 |
+| idw | 390 | 68 | 0.436 | 0.572 | 0.677 | 0.242 | 0.137 |
+| gateway | 650 | 54 | 0.338 | 0.550 | 0.645 | 0.308 | 0.213 |
+| extremist | 650 | 59 | 0.372 | 0.548 | 0.713 | 0.341 | 0.176 |
+
+## Per-tier, all 8 axes (mean)
+| tier | rigour | depth | originality | candour | affect | commercial_drive | stance | register |
+|---|---|---|---|---|---|---|---|---|
+| benign | 0.442 | 0.479 | 0.482 | 0.846 | 0.587 | 0.202 | 0.492 | 0.482 |
+| partisan | 0.399 | 0.468 | 0.520 | 0.824 | 0.652 | 0.205 | 0.574 | 0.434 |
+| idw | 0.398 | 0.473 | 0.522 | 0.833 | 0.677 | 0.175 | 0.598 | 0.442 |
+| gateway | 0.305 | 0.370 | 0.467 | 0.804 | 0.645 | 0.263 | 0.600 | 0.406 |
+| extremist | 0.333 | 0.411 | 0.533 | 0.838 | 0.713 | 0.194 | 0.524 | 0.406 |
+
+## Effect size vs benign control (Cohen's d)
+| tier | d(affect_gap) | d(residual) | d(matter) | d(affect) |
+|---|---|---|---|---|
+| partisan | +0.292 | +0.265 | -0.150 | +0.348 |
+| idw | +0.369 | +0.347 | -0.137 | +0.505 |
+| gateway | +0.627 | +0.715 | -0.690 | +0.276 |
+| extremist | +0.726 | +0.555 | -0.529 | +0.712 |
+
+## Separability (Mann-Whitney AUC; 8-axis is 5-fold CV logistic)
+| contrast | 8 axes (CV) | affect_gap alone | residual alone |
+|---|---|---|---|
+| extremist vs benign | 0.713 | 0.712 | 0.648 |
+| extremist vs partisan | 0.638 | 0.620 | 0.569 |
+| gateway vs benign | 0.777 | 0.658 | 0.694 |
+| idw vs benign | 0.688 | 0.618 | 0.596 |
+
+## Manipulation spectrum: absolute affect_gap (affect - matter), same 7B scale, sorted
+| corpus | n | mean affect_gap | median |
+|---|---|---|---|
+| phishing emails | 700 | +0.584 | +0.700 |
+| IRA trolls (Right+Left+Fear) | 8000 | +0.489 | +0.550 |
+| reddit:extremist | 650 | +0.341 | +0.350 |
+| reddit:gateway | 650 | +0.308 | +0.350 |
+| dark patterns (UI) | 1168 | +0.250 | +0.150 |
+| reddit:idw | 390 | +0.242 | +0.350 |
+| reddit:partisan | 520 | +0.218 | +0.350 |
+| reddit:benign | 650 | +0.127 | +0.250 |
+
+## Per-subreddit affect_gap (mean), ranked
+| subreddit | tier | n | affect_gap | matter | affect |
+|---|---|---|---|---|---|
+| mgtow | extremist | 130 | +0.432 | 0.331 | 0.762 |
+| louderwithcrowder | gateway | 130 | +0.390 | 0.361 | 0.751 |
+| pussypassdenied | extremist | 130 | +0.382 | 0.358 | 0.741 |
+| joerogan | idw | 130 | +0.348 | 0.382 | 0.730 |
+| nonewnormal | extremist | 130 | +0.347 | 0.381 | 0.728 |
+| tumblrinaction | gateway | 130 | +0.313 | 0.384 | 0.697 |
+| theredpill | extremist | 130 | +0.305 | 0.357 | 0.662 |
+| conservative | partisan | 130 | +0.300 | 0.407 | 0.706 |
+| askthe_donald | gateway | 130 | +0.291 | 0.233 | 0.524 |
+| walkaway | gateway | 130 | +0.275 | 0.288 | 0.564 |
+| kotakuinaction | gateway | 130 | +0.268 | 0.422 | 0.691 |
+| askreddit | benign | 130 | +0.267 | 0.391 | 0.658 |
+| jordanpeterson | idw | 130 | +0.243 | 0.430 | 0.673 |
+| conspiracy | extremist | 130 | +0.240 | 0.433 | 0.673 |
+| politics | partisan | 130 | +0.200 | 0.443 | 0.644 |
+| worldnews | partisan | 130 | +0.197 | 0.454 | 0.651 |
+| neoliberal | partisan | 130 | +0.174 | 0.432 | 0.605 |
+| nostupidquestions | benign | 130 | +0.169 | 0.438 | 0.607 |
+| todayilearned | benign | 130 | +0.140 | 0.468 | 0.608 |
+| samharris | idw | 130 | +0.133 | 0.496 | 0.629 |
+| personalfinance | benign | 130 | +0.080 | 0.482 | 0.562 |
+| explainlikeimfive | benign | 130 | -0.022 | 0.522 | 0.500 |

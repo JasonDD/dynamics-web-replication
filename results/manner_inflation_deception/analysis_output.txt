@@ -1,0 +1,101 @@
+==============================================================================
+MANNER-INFLATION DECEPTION TEST  —  8-axis DWEB character scorer (qwen2.5-7b-atlas)
+==============================================================================
+
+=== domain sizes (deceptive / honest) ===
+  IRA trolls vs CMV                deceptive= 8000  honest= 2000
+  phishing vs safe email           deceptive=  700  honest=  700
+  dark patterns vs neutral UI      deceptive= 1168  honest= 1076
+  LIAR false vs true               deceptive=  550  honest=  550
+
+=== per-domain matter / manner / affect / residual / affect_gap (mean) ===
+  domain                        grp    matter manner affect  resid aff_gap
+  IRA trolls vs CMV             deceptive  0.277  0.528  0.766  0.250   0.489
+  IRA trolls vs CMV             honest  0.587  0.544  0.539 -0.043  -0.047
+  phishing vs safe email        deceptive  0.151  0.361  0.736  0.209   0.584
+  phishing vs safe email        honest  0.481  0.465  0.473 -0.016  -0.007
+  dark patterns vs neutral UI   deceptive  0.140  0.205  0.390  0.065   0.250
+  dark patterns vs neutral UI   honest  0.274  0.345  0.406  0.071   0.132
+  LIAR false vs true            deceptive  0.410  0.550  0.519  0.140   0.110
+  LIAR false vs true            honest  0.479  0.543  0.487  0.064   0.009
+
+  matter=mean(rigour,depth)  manner=mean(affect,stance,register)
+  resid=manner-matter   aff_gap=affect-matter  (the precise 'high affect + starved matter' form)
+
+=== deception gap (deceptive minus honest): residual vs affect_gap ===
+  domain                            resid d  resid gap  affgap d  affgap gap
+  IRA trolls vs CMV                   +1.61     +0.293     +2.18      +0.537
+  phishing vs safe email              +1.23     +0.225     +2.08      +0.592
+  dark patterns vs neutral UI         -0.04     -0.006     +0.39      +0.118
+  LIAR false vs true                  +0.32     +0.076     +0.43      +0.101
+
+=== within-domain AUC (balanced, 5-fold CV) ===
+  domain                              8-axis   residual-only
+  IRA trolls vs CMV                0.958+-0.01     0.856+-0.01
+  phishing vs safe email           0.973+-0.01     0.793+-0.02
+  dark patterns vs neutral UI      0.861+-0.02     0.520+-0.02
+  LIAR false vs true               0.654+-0.04     0.592+-0.03
+
+=== cross-domain AUC matrix (row=train domain, col=test domain), 8-axis logistic ===
+  train\test          ira    phish     dark     liar
+  ira               0.956    0.966    0.462    0.644
+  phish             0.945    0.974    0.567    0.632
+  dark              0.802    0.820    0.862    0.507
+  liar              0.891    0.773    0.410    0.665
+
+=== cross-domain AUC, RESIDUAL-ONLY score (manner-matter), no training ===
+  (residual used directly as deception score; same sign across all domains)
+  IRA trolls vs CMV                AUC=0.860
+  phishing vs safe email           AUC=0.792
+  dark patterns vs neutral UI      AUC=0.479
+  LIAR false vs true               AUC=0.593
+
+=== leave-one-domain-out: train on other 3 domains (pooled), test on held-out ===
+  held-out IRA trolls vs CMV                AUC=0.918
+  held-out phishing vs safe email           AUC=0.877
+  held-out dark patterns vs neutral UI      AUC=0.428
+  held-out LIAR false vs true               AUC=0.628
+
+=== PCAA gate: block rate on deceptive at 5%/10% false-positive on honest control ===
+  (score = pooled model trained on the OTHER 3 domains; threshold set on that domain's honest)
+  domain                            block@5%FPR  block@10%FPR
+  IRA trolls vs CMV                      65.8%        76.0%
+  phishing vs safe email                 36.4%        63.7%
+  dark patterns vs neutral UI             8.2%        21.2%
+  LIAR false vs true                     15.5%        26.2%
+
+==============================================================================
+MATHUR 2019 per-surface-form signature  (does each pattern carry the predicted form?)
+==============================================================================
+
+  neutral-UI baseline: matter=0.274  affect=0.406  (n=1076)
+
+  surface type                    n  wrd  matter  affect aff-mat vs base: aff    mat
+  Confirmshaming                169    7   0.286   0.707   0.421       +0.301 +0.012
+  Pressured Selling              45    7   0.200   0.553   0.353       +0.147 -0.074
+  Limited-time Message           88    8   0.076   0.367   0.291       -0.039 -0.198
+  High-demand Message            47   15   0.229   0.502   0.273       +0.096 -0.045
+  Low-stock Message             631    4   0.030   0.293   0.263       -0.113 -0.244
+  Countdown Timer               138    7   0.106   0.364   0.258       -0.042 -0.168
+  Visual Interference            14    5   0.218   0.393   0.175       -0.013 -0.056
+  Hidden Subscription             6   38   0.217   0.367   0.150       -0.039 -0.057
+  Activity Notification         313    8   0.183   0.288   0.105       -0.118 -0.091
+  Trick Questions                 8   32   0.319   0.375   0.056       -0.031 +0.045
+  Hard to Cancel                 30   50   0.443   0.293  -0.150       -0.113 +0.169
+
+  PREDICTION: urgency/scarcity/social-proof types => affect inflated, matter starved (aff-mat high).
+  EXCEPTION (illusion-of-control analog): types that FAKE rigour — Hidden Costs (fabricated
+  itemised totals), Testimonials (fake authority) — should read HIGHER matter, LOWER affect.
+
+  faked-matter types  (Hidden Costs/Testimonials/Pressured): matter=0.190  affect=0.527  n=49
+  affect-weapon types (Countdown/Low-stock/Limited/High-demand): matter=0.056  affect=0.322  n=904
+
+=== text length by domain (median words), deceptive class ===
+  dark patterns vs neutral UI      deceptive median=     6 w   honest median=     3 w
+  LIAR false vs true               deceptive median=    16 w   honest median=    17 w
+  phishing vs safe email           deceptive median=   150 w   honest median=   186 w
+  IRA trolls (raw tweets)          deceptive median=    13 w   (sample n=9748)
+
+[caveats] one 7B scorer; IRA control is cross-genre (CMV long-form) so its gap is
+          confounded by length; LIAR 'deception' = fact-check falsity, not intent to
+          manipulate; dark/phish/liar honest controls are same-genre and same-source.

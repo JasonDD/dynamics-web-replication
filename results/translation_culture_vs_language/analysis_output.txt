@@ -1,0 +1,49 @@
+scored items with all 8 langs: 800  (raw items seen 800)
+
+=== (A) DOES CHARACTER SURVIVE TRANSLATION? (item = same content across 8 langs) ===
+axis              ICC(item)  meanXlangR  en~transl
+rigour                0.328       0.394      0.562
+depth                 0.254       0.288      0.518
+originality           0.312       0.328      0.581
+candour               0.203       0.213      0.397
+affect                0.321       0.334      0.537
+commercial_drive      0.253       0.265      0.474
+stance                0.480       0.489      0.598
+register              0.380       0.387      0.507
+PC1                   0.321       0.337      0.497
+
+=== (B) VARIANCE SPLIT: content(item) vs target-language vs residual ===
+axis              content%   lang%  resid%   p_item   p_lang
+rigour                33.3     6.2    60.4 2.3e-319 3.3e-116
+depth                 26.0     7.1    66.9 2.0e-213 2.2e-118
+originality           31.5     3.8    64.6 8.6e-279  1.6e-67
+candour               20.5     2.4    77.1 2.6e-132  2.2e-35
+affect                32.2     1.8    65.9 4.1e-279  4.3e-31
+commercial_drive      25.6     3.4    71.1 3.6e-194  1.2e-53
+stance                48.1     0.7    51.2  0.0e+00  3.5e-16
+register              38.1     0.6    61.4  0.0e+00  2.0e-10
+PC1                   32.4     3.7    63.9 3.5e-291  2.0e-65
+
+=== headline content-vs-language split (residual/noise excluded, so content%+lang%=100) ===
+axis               CONTENT%  LANGUAGE%
+rigour                 84.2       15.8
+depth                  78.7       21.3
+originality            89.1       10.9
+candour                89.5       10.5
+affect                 94.7        5.3
+commercial_drive       88.4       11.6
+stance                 98.5        1.5
+register               98.5        1.5
+PC1                    89.8       10.2
+
+=== target-language baselines: mean PC1 (matter/manner) per language ===
+  en: mean PC1 = +3.666  sd=2.131
+  de: mean PC1 = +3.720  sd=2.023
+  fr: mean PC1 = +3.678  sd=2.009
+  es: mean PC1 = +3.243  sd=1.833
+  it: mean PC1 = +3.299  sd=1.999
+  fi: mean PC1 = +2.881  sd=1.937
+  pl: mean PC1 = +3.055  sd=2.137
+  el: mean PC1 = +2.649  sd=2.019
+
+PC1 content% 95CI = [28.7, 36.4]  lang% 95CI = [2.9, 4.7]  (bootstrap over items, B=1000)

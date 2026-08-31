@@ -1,0 +1,44 @@
+============================================================================================
+CROSS-LINGUAL MANIPULATION SIGNATURE  -  8-axis DWEB character (qwen2.5-7b-atlas :8301)
+============================================================================================
+
+lang       baseline       n_troll   n_sinc
+English    Europarl          8000      800
+German     Europarl           800      800
+Italian    Europarl           800      800
+French     Europarl           687      800
+Spanish    Europarl           594      800
+Persian    Persian news       168      800
+Russian    (none)             800        0
+
+--------------------------------------------------------------------------------------------
+PER-LANGUAGE SIGNATURE  (troll vs sincere; d>0 and AUC>0.5 = troll more manner-inflated)
+--------------------------------------------------------------------------------------------
+lang        d(aff_gap)  AUC(aff_gap)   d(resid)  AUC(resid)  AUC(8ax cv)
+English           3.13         0.975       1.91       0.926        0.989
+German            2.39         0.930       1.40       0.844        0.986
+Italian           2.36         0.917       1.46       0.851        0.986
+French            2.88         0.953       1.80       0.897        0.991
+Spanish           3.04         0.955       1.91       0.906        0.987
+Persian           3.28         0.970       1.79       0.891        0.994
+
+--------------------------------------------------------------------------------------------
+RUSSIAN (descriptive; no matched Russian sincere baseline on hand)
+--------------------------------------------------------------------------------------------
+Russian troll aff_gap: mean=0.162 sd=0.259  residual mean=0.087  (n=800)
+pooled Europarl sincere aff_gap mean=-0.240  -> gap=+0.402
+
+============================================================================================
+TRANSFER: detector trained on ENGLISH deception, tested on NON-ENGLISH troll vs sincere
+============================================================================================
+trained on English: 800 troll + 800 sincere
+English self-AUC (train=test, optimistic): 0.987
+
+target lang   n_troll   n_sinc  transfer AUC(8ax)  AUC(aff_gap)
+German            800      800              0.977         0.930
+Italian           800      800              0.984         0.917
+French            687      800              0.988         0.953
+Spanish           594      800              0.985         0.955
+Persian           168      800              0.995         0.970
+
+WROTE summary.json

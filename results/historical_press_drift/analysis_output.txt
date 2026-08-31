@@ -1,0 +1,121 @@
+loaded 1717 scored issues: EN=454, FR=1059, NO=204
+
+=== COUNTRY x DECADE MATRIX — mean matter/manner M (+=matter), title-balanced ===
+    (cell = mean over titles of that title's mean M in the decade; n = issues)
+  decade           EN          FR          NO
+    1800           --   +3.91( 4)          --
+    1810    -0.15( 1)   +3.82( 4)          --
+    1820    -0.21( 8)   +3.02(14)          --
+    1830    -0.68( 8)   +0.06(22)          --
+    1840    -0.12(14)   -0.45(22)          --
+    1850    -0.33(26)   -0.38(24)          --
+    1860    -0.37(29)   -0.04(34)          --
+    1870    -0.05(35)   +1.04(51)          --
+    1880    -0.07(43)   +0.34(103)          --
+    1890    -0.27(38)   +0.72(126)          --
+    1900    -0.06(41)   +0.31(138)          --
+    1910    -0.16(45)   +0.61(154)          --
+    1920    -0.80(42)   +0.01(146)          --
+    1930    -0.73(37)   +0.59(141)          --
+    1940    -0.69(34)   +0.95(61)   -1.96(23)
+    1950    -0.70(33)   -0.65( 9)   -1.66(29)
+    1960    -0.45(20)   -0.07( 4)   -1.52(37)
+    1970           --   -3.71( 1)   -2.01(28)
+    1980           --   +0.95( 1)   -0.99(15)
+    1990           --          --   -1.26(23)
+    2000           --          --   -1.29(22)
+    2010           --          --   -1.40(27)
+
+=== WITHIN-TITLE DRIFT: per-title slope of M vs year, then aggregated per country ===
+    (+ slope = title drifts toward MATTER over its life; - = toward MANNER)
+
+  EN: 16 titles | mean within-title slope = -0.0062/yr | one-sample t=-1.42 p=0.1759 | toward-matter 6/16 sign p=0.4545
+     sim_popular-science                      n= 29 1874-1961 slope=-0.0616/yr p=0.000
+     sim_westminster-review                   n= 20 1825-1913 slope=-0.0161/yr p=0.143
+     sim_notes-and-queries                    n= 30 1852-1960 slope=-0.0125/yr p=0.268
+     sim_scientific-american                  n= 25 1847-1925 slope=-0.0103/yr p=0.377
+     sim_north-american-review                n= 31 1815-1935 slope=-0.0093/yr p=0.339
+     sim_punch                                n= 31 1838-1961 slope=-0.0091/yr p=0.301
+     sim_economist                            n= 30 1844-1961 slope=-0.0090/yr p=0.363
+     sim_mind                                 n= 24 1876-1960 slope=-0.0072/yr p=0.259
+     sim_cornhill-magazine                    n= 27 1860-1961 slope=-0.0017/yr p=0.863
+     sim_nation                               n= 25 1865-1947 slope=-0.0007/yr p=0.960
+     sim_spectator-uk                         n= 45 1828-1961 slope=+0.0003/yr p=0.963
+     sim_london-quarterly-and-holborn-review  n= 25 1855-1960 slope=+0.0026/yr p=0.716
+     sim_new-england-journal-of-medicine      n= 31 1851-1956 slope=+0.0028/yr p=0.721
+     sim_science                              n= 26 1884-1961 slope=+0.0043/yr p=0.682
+     sim_british-medical-journal              n= 18 1857-1960 slope=+0.0059/yr p=0.242
+     sim_harpers-magazine                     n= 22 1852-1930 slope=+0.0223/yr p=0.146
+
+  FR: 48 titles | mean within-title slope = -0.0009/yr | one-sample t=-0.16 p=0.8727 | toward-matter 28/48 sign p=0.3123
+     le petit oranais                         n= 10 1906-1937 slope=-0.1250/yr p=0.097
+     gil blas                                 n= 13 1880-1910 slope=-0.0881/yr p=0.128
+     feuilleton                               n= 16 1876-1936 slope=-0.0578/yr p=0.091
+     rapport...                               n=  8 1885-1933 slope=-0.0538/yr p=0.042
+     bulletin municipal officiel de la ville  n= 22 1890-1969 slope=-0.0469/yr p=0.049
+     l'humanité                               n=  6 1911-1944 slope=-0.0402/yr p=0.586
+     cours authentique                        n= 23 1803-1891 slope=-0.0379/yr p=0.088
+     le courrier de la rochelle               n= 10 1867-1916 slope=-0.0329/yr p=0.482
+     la charente                              n= 25 1873-1932 slope=-0.0324/yr p=0.038
+     le petit parisien                        n= 27 1882-1940 slope=-0.0315/yr p=0.142
+     la liberté                               n= 20 1866-1939 slope=-0.0249/yr p=0.171
+     rapports et délibérations                n= 13 1869-1937 slope=-0.0240/yr p=0.207
+     journal agricole d'alsace-lorraine       n=  7 1903-1934 slope=-0.0184/yr p=0.361
+     le pays                                  n= 22 1849-1903 slope=-0.0147/yr p=0.464
+     la semaine religieuse du diocèse d'alby  n=  7 1898-1937 slope=-0.0135/yr p=0.866
+     journal des débats politiques et littéra n= 34 1822-1944 slope=-0.0115/yr p=0.130
+     le gaulois                               n= 15 1869-1925 slope=-0.0086/yr p=0.821
+     le progrès                               n=  9 1900-1942 slope=-0.0083/yr p=0.798
+     le temps                                 n=  7 1861-1942 slope=-0.0039/yr p=0.874
+     l'ouest-éclair                           n= 20 1904-1943 slope=-0.0004/yr p=0.991
+     journal général de l'algérie et de la tu n=  6 1890-1920 slope=+0.0000/yr p=0.999
+     la dépêche de brest                      n= 23 1892-1944 slope=+0.0001/yr p=0.998
+     l'indépendant des basses-pyrénées        n= 27 1874-1943 slope=+0.0012/yr p=0.955
+     archives commerciales de la france       n=  8 1877-1934 slope=+0.0012/yr p=0.969
+     impressions                              n= 15 1872-1931 slope=+0.0015/yr p=0.965
+     le xixe siècle                           n= 21 1872-1921 slope=+0.0019/yr p=0.943
+     le tintamarre                            n=  7 1846-1884 slope=+0.0043/yr p=0.927
+     le courrier du gard                      n=  8 1835-1866 slope=+0.0046/yr p=0.885
+     la presse                                n= 17 1838-1935 slope=+0.0063/yr p=0.684
+     le matin                                 n= 20 1884-1937 slope=+0.0069/yr p=0.803
+     le constitutionnel                       n= 15 1824-1898 slope=+0.0074/yr p=0.664
+     en avant                                 n=  6 1916-1970 slope=+0.0075/yr p=0.899
+     le petit journal                         n= 13 1865-1939 slope=+0.0087/yr p=0.703
+     l'auto-vélo                              n= 15 1902-1942 slope=+0.0114/yr p=0.741
+     feuilletons                              n= 13 1881-1933 slope=+0.0131/yr p=0.677
+     le tell                                  n= 13 1893-1950 slope=+0.0145/yr p=0.423
+     l'argus                                  n=  8 1850-1934 slope=+0.0187/yr p=0.470
+     l'univers                                n= 17 1867-1917 slope=+0.0242/yr p=0.331
+     la lanterne                              n= 22 1877-1926 slope=+0.0262/yr p=0.315
+     la dépêche                               n= 19 1880-1942 slope=+0.0278/yr p=0.120
+     le grand écho du nord de la france       n= 11 1905-1935 slope=+0.0295/yr p=0.537
+     figaro                                   n= 13 1838-1915 slope=+0.0344/yr p=0.191
+     le journal                               n= 23 1895-1941 slope=+0.0374/yr p=0.107
+     le rappel                                n= 24 1873-1927 slope=+0.0408/yr p=0.171
+     le journal des transports                n=  6 1881-1915 slope=+0.0592/yr p=0.511
+     le radical                               n= 14 1883-1929 slope=+0.0768/yr p=0.070
+     le charivari                             n= 16 1835-1876 slope=+0.0804/yr p=0.009
+     journal officiel de la république frança n= 28 1882-1947 slope=+0.0850/yr p=0.002
+
+  NO: 3 titles | mean within-title slope = +0.0171/yr | one-sample t=+0.94 p=0.4453 | toward-matter 2/3 sign p=1.0000
+     hardanger                                n= 28 1947-1990 slope=-0.0192/yr p=0.565
+     firdafolkeblad                           n= 45 1940-1992 slope=+0.0346/yr p=0.071
+     friheten                                 n= 35 1947-2018 slope=+0.0360/yr p=0.006
+
+=== PER-AXIS within-title mean slope per country (raw 0-1 axis vs year) ===
+  country     rigour     depth    affect    stance  register  original   candour  commerci
+  EN          -0.112    -0.094    +0.018    -0.070    -0.036    -0.059    -0.040    +0.288   (x100 /yr)
+  FR          +0.019    -0.015    -0.094    +0.024    +0.096    -0.009    +0.013    -0.047   (x100 /yr)
+  NO          +0.094    +0.053    -0.195    -0.108    +0.105    +0.110    +0.006    +0.078   (x100 /yr)
+
+=== OCR CONFOUND: is the drift explained by rising OCR quality? (FR/NO) ===
+  FR: corr(ocr,year)=+0.09 corr(ocr,M)=+0.07 | pooled M~year slope=-0.0049/yr (p=0.044) | M~year+ocr partial year-slope=-0.0055/yr, ocr-coef=+0.0273
+      high-OCR half (ocr>=p50=99): M~year slope=-0.0112/yr p=0.003
+  NO: corr(ocr,year)=+0.14 corr(ocr,M)=-0.00 | pooled M~year slope=+0.0059/yr (p=0.371) | M~year+ocr partial year-slope=+0.0061/yr, ocr-coef=-0.0023
+      high-OCR half (ocr>=p50=75): M~year slope=+0.0009/yr p=0.918
+
+=== CROSS-COUNTRY CONSISTENCY of within-title drift direction ===
+  EN: mean within-title slope -0.0062/yr over 16 titles -> toward MANNER
+  FR: mean within-title slope -0.0009/yr over 48 titles -> toward MANNER
+  NO: mean within-title slope +0.0171/yr over 3 titles -> toward MATTER
+  countries with >=3 titles: ['EN', 'FR', 'NO'] -> drift direction DIVERGENT

@@ -1,0 +1,33 @@
+# within-source temporal drift PROOF READ
+# 2026-08-28T23:22Z | curated century-spanning periodicals, genre+source held fixed
+
+[wsrc] 636 scored issues across 17 titles
+[wsrc] 17 titles with >= 4 issues spanning >= 40 years
+
+=== per-title matter/manner drift (slope /yr, + = toward matter) ===
+  title                                          n        span  slope/yr       p
+  sim_notes-and-queries                         42   1852-2011   +0.0233   0.071
+  sim_scientific-american                       42   1847-2002   +0.0099   0.525
+  sim_mind                                      45   1876-2012   +0.0059   0.117
+  sim_new-england-journal-of-medicine           24   1851-1956   +0.0043   0.706
+  sim_london-quarterly-and-holborn-review       36   1855-1967   +0.0003   0.985
+  sim_punch                                     43   1838-1982   -0.0010   0.943
+  sim_westminster-review                        30   1825-1913   -0.0041   0.829
+  sim_cornhill-magazine                         33   1860-1961   -0.0095   0.671
+  sim_north-american-review                     54   1815-2010   -0.0175   0.016
+  sim_british-medical-journal                   41   1857-1998   -0.0249   0.007
+  sim_economist                                 39   1844-1981   -0.0288   0.036
+  sim_spectator-uk                              48   1828-1985   -0.0317   0.004
+  sim_science                                   36   1884-1996   -0.0359   0.022
+  sim_nation                                    33   1865-1971   -0.0377   0.068
+  sim_harpers-magazine                          37   1852-1982   -0.0640   0.000
+  sim_contemporary-review                       20   1956-2012   -0.0944   0.002
+  sim_popular-science                           33   1874-1994   -0.0968   0.000
+
+=== THE PROOF READ: within-title drift, genre + source held fixed (n=17 titles) ===
+  mean within-title slope = -0.0237/yr   one-sample t=-2.83 p=0.01218
+  titles drifting toward MATTER: 5/17  (sign test p=0.1435)
+  cross-section slope (different texts each year, confounded) = -0.0126/yr
+  -> within-source drift toward MANNER (opposes the cross-section)
+
+[wsrc] caveat: OCR quality still improves within a title over time, and the instrument is web-tuned; these are smaller within a single title than across the whole archive, but not zero.

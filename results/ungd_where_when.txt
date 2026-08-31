@@ -1,0 +1,81 @@
+[ungd] 1594 scored speeches loaded (matter/manner PC1 = web instrument)
+[ungd] PC1 loadings (+ = matter): rigour+0.44, depth+0.40, originality+0.23, candour+0.39, affect-0.35, commercial_drive-0.26, stance+0.37, register-0.34
+[ungd] span 1946-2022, 200 countries
+
+=== WHERE: 199 countries with >= 4 scored speeches ===
+  ward dendrogram leaf order (adjacent = similar rhetoric):
+   DNK DOM LIE URY AUT MEX JAM PLW KGZ FJI NAM TON KOR JPN SSD WSM FIN ITA SMR FSM MDA BEN SVK MCO SLE BIH HRV NER CPV ISL TLS CMR BRA NZL CZE EST TUV DJI LUX CAN ERI IND PRY PAN SYC COM KNA DDR ROU IDN JOR MNG SVN CIV ZAF THA BHS LKA MUS ETH LBR LVA CHE NRU GUY MWI FRA SDN GIN UZB USA MDV SUR CHL KIR LTU BRN KAZ SRB MYS TZA ZMB ECU ATG PAK CHN GEO ZWE PHL BRB ARM BEL RWA BLZ COL SGP SWE AND NLD BTN ESP AZE AUS NOR DZA DMA LAO PER CRI GBR CUB PSE VAT MHL DEU IRL POL YEM SAU PRK YMD COD RUS BLR BOL ISR LCA SYR UKR CSK YUG MDG SOM LBN VEN ALB EGY NIC COG IRN AGO CYP MOZ VCT HND TUR KEN AFG MAR ARE KWT MMR GRC TTO ARG BGR GMB VNM KHM MKD GRD STP NGA TUN QAT GAB LSO PNG PRT LBY MLI GHA SLV NPL SWZ TGO HUN TJK VUT BFA IRQ SLB UGA MLT BGD HTI SEN GNB MNE GNQ MRT CAF TCD TKM GTM BWA OMN BDI BHR
+
+  anglosphere ['CAN', 'NZL', 'IRL', 'AUS', 'GBR', 'USA', 'ZAF']: within-dist 3.14 vs to-rest 3.83 -> CLUSTERS (affinity over geography)
+
+=== WHERE: region mean matter/manner (PC1; + = matter, - = manner) ===
+  OTHER                  n=  42  PC1 +5.709  (sd 1.87)
+  ANGLO_SETTLER          n=  32  PC1 +5.701  (sd 1.51)
+  S_AMERICA              n=  96  PC1 +5.453  (sd 1.46)
+  W_N_EUROPE             n= 112  PC1 +5.380  (sd 1.35)
+  E_EUROPE               n= 160  PC1 +5.370  (sd 1.70)
+  E_AFRICA               n=  88  PC1 +5.269  (sd 1.76)
+  C_ASIA_CAUCASUS        n=  64  PC1 +5.242  (sd 1.43)
+  E_ASIA                 n=  40  PC1 +5.237  (sd 1.50)
+  CARIB_C_AMERICA        n= 168  PC1 +5.228  (sd 1.79)
+  MIDDLE_EAST            n= 120  PC1 +5.143  (sd 1.97)
+  SE_ASIA                n=  88  PC1 +5.111  (sd 1.63)
+  N_AFRICA               n=  48  PC1 +4.945  (sd 2.01)
+  SOUTHERN_AFRICA        n= 112  PC1 +4.935  (sd 1.72)
+  S_ASIA                 n=  64  PC1 +4.882  (sd 1.75)
+  PACIFIC                n=  96  PC1 +4.865  (sd 1.69)
+  S_EUROPE               n=  80  PC1 +4.843  (sd 1.60)
+  W_C_AFRICA             n= 184  PC1 +4.509  (sd 1.84)
+  [unmapped -> OTHER: CSK, CZK, DDR, LIE, YMD, YUG]
+
+=== WHERE: bloc mean matter/manner ===
+  OTHER                  n=  42  PC1 +5.709  (sd 1.87)
+  POST_SOVIET_E_EUR      n= 224  PC1 +5.333  (sd 1.63)
+  LATIN_AMERICA          n= 264  PC1 +5.310  (sd 1.68)
+  WEST                   n= 248  PC1 +5.204  (sd 1.51)
+  ASIA                   n= 176  PC1 +5.095  (sd 1.66)
+  MENA                   n= 160  PC1 +5.071  (sd 2.00)
+  PACIFIC                n=  96  PC1 +4.865  (sd 1.69)
+  SUB_SAHARAN_AFRICA     n= 384  PC1 +4.807  (sd 1.81)
+
+  one-way ANOVA of PC1 across 16 regions: F=3.04 p=7.19e-05  eta^2=0.029
+  -> region EXPLAINS character (national rhetorics cluster geographically)
+
+=== WHEN: matter/manner drift 1946-2022 ===
+  cross-section: PC1 slope = +0.00520/yr  (r=+0.063, p=0.0121, n=1594)
+  -> UN rhetoric drifts toward MATTER over 1946-2022 [significant]
+
+  per-decade mean PC1:
+    1940s  n=  52  PC1 +5.644
+    1950s  n=  71  PC1 +5.050
+    1960s  n= 120  PC1 +4.728
+    1970s  n= 156  PC1 +4.813
+    1980s  n= 189  PC1 +5.320
+    1990s  n= 230  PC1 +4.892
+    2000s  n= 298  PC1 +4.920
+    2010s  n= 280  PC1 +5.108
+    2020s  n= 198  PC1 +5.812
+
+  within-country drift (country held fixed, n=180 countries >= 6 speeches / 30y span):
+    mean within-country slope = +0.00880/yr  one-sample t=+2.93 p=0.00384
+    countries drifting toward MATTER: 99/180  (sign test p=0.205)
+    -> WITHIN-COUNTRY drift confirms the trend is not composition of who joins the UN
+
+  per-axis slope vs year (raw 0-1 units, + = rising):
+    rigour             +0.00032/yr  (r=+0.138, p=3.3e-08)
+    depth              +0.00035/yr  (r=+0.104, p=3.1e-05)
+    originality        +0.00024/yr  (r=+0.050, p=0.045)
+    candour            +0.00040/yr  (r=+0.083, p=0.00095)
+    affect             -0.00006/yr  (r=-0.010, p=0.7)
+    commercial_drive   +0.00004/yr  (r=+0.010, p=0.69)
+    stance             -0.00030/yr  (r=-0.039, p=0.12)
+    register           -0.00031/yr  (r=-0.034, p=0.18)
+
+=== COMPARISON ===
+  web when-drift (within-domain, 2020-2026): toward MATTER (p=8e-31)
+  deep-time print (1800-2020): toward MATTER (r=0.79)
+  UN general debate (1946-2022): toward MATTER (cross-section p=0.012)
+
+[ungd] CONFOUNDS: speeches are written to be read aloud (diplomatic register, high manner floor); many are
+  translated into English (translation flattens voice); the instrument is web-tuned; membership grows over
+  time (more small states post-1960 decolonisation) — the within-country test controls that last one.

@@ -1,0 +1,128 @@
+=== PANDORA/MBTI character->personality mapping ===
+dataset: Kaggle datasnaek/mbti-type (HF mirror jingjietan/kaggle-mbti); PANDORA form gated, this is the instructed fallback
+users scored: 1500   PC1 fit on cc_v3.domain_char8_expanded rows: 2648406
+label base rates (frac=1): E(Extraversion(E/I))=0.23  O(Openness(N/S))=0.87  A(Agreeableness(F/T))=0.54  C(Conscientious(J/P))=0.39
+
+=== axis distribution (mean / sd across users) ===
+  rigour               mean=+0.257 sd=0.141 min=0.00 max=0.80
+  depth                mean=+0.304 sd=0.130 min=0.00 max=0.70
+  originality          mean=+0.628 sd=0.146 min=0.00 max=0.90
+  candour              mean=+0.859 sd=0.064 min=0.50 max=0.90
+  affect               mean=+0.801 sd=0.085 min=0.10 max=0.90
+  commercial_drive     mean=+0.176 sd=0.137 min=0.10 max=0.90
+  stance               mean=+0.444 sd=0.125 min=0.00 max=0.80
+  register             mean=+0.463 sd=0.194 min=0.00 max=0.90
+  PC1_matter_manner    mean=-1.221 sd=1.896 min=-11.05 max=7.22
+
+=== Pearson r  (character feature x personality label), * p<.01  ** p<1e-4 ===
+  feature                Extraversion(E/I)       Openness(N/S)  Agreeableness(F/T)  Conscientious(J/P)
+  rigour                          -0.104**            +0.060              -0.024              +0.104**
+  depth                           -0.131**            +0.099*             -0.025              +0.121**
+  originality                     -0.065              +0.142**            -0.046              -0.043  
+  candour                         +0.021              -0.068*             +0.058              -0.043  
+  affect                          +0.077*             -0.011              +0.158**            -0.039  
+  commercial_drive                +0.070*             -0.019              -0.040              +0.021  
+  stance                          +0.045              +0.032              -0.075*             +0.084* 
+  register                        +0.037              +0.022              +0.066              +0.016  
+  PC1_matter_manner               -0.098*             +0.078*             -0.106**            +0.084* 
+
+=== Spearman rho (robustness) ===
+  feature                Extraversion(E/I)       Openness(N/S)  Agreeableness(F/T)  Conscientious(J/P)
+  rigour                          -0.087*             +0.042              -0.033              +0.102**
+  depth                           -0.122**            +0.089*             -0.030              +0.120**
+  originality                     -0.064              +0.130**            -0.056              -0.054  
+  candour                         +0.018              -0.062              +0.055              -0.049  
+  affect                          +0.077*             -0.003              +0.158**            -0.028  
+  commercial_drive                +0.066              -0.013              -0.028              +0.014  
+  stance                          +0.056              +0.013              -0.082*             +0.089* 
+  register                        +0.041              +0.019              +0.073*             +0.009  
+  PC1_matter_manner               -0.088*             +0.062              -0.120**            +0.077* 
+
+=== strongest character->personality mappings (|Pearson r|, top 12) ===
+  affect               x Agreeableness(F/T)   r=+0.158  p=8.29e-10
+  originality          x Openness(N/S)        r=+0.142  p=3.04e-08
+  depth                x Extraversion(E/I)    r=-0.131  p=3.75e-07
+  depth                x Conscientious(J/P)   r=+0.121  p=2.40e-06
+  PC1_matter_manner    x Agreeableness(F/T)   r=-0.106  p=3.63e-05
+  rigour               x Conscientious(J/P)   r=+0.104  p=5.12e-05
+  rigour               x Extraversion(E/I)    r=-0.104  p=5.30e-05
+  depth                x Openness(N/S)        r=+0.099  p=1.23e-04
+  PC1_matter_manner    x Extraversion(E/I)    r=-0.098  p=1.40e-04
+  PC1_matter_manner    x Conscientious(J/P)   r=+0.084  p=1.09e-03
+  stance               x Conscientious(J/P)   r=+0.084  p=1.13e-03
+  PC1_matter_manner    x Openness(N/S)        r=+0.078  p=2.50e-03
+
+=== joint signal: multiple R^2 of the 8 axes predicting each label (OLS) ===
+  Extraversion(E/I)    R^2=0.0329  multiple_r=0.181  F(8,1491)=6.3  p=4.24e-08
+  Openness(N/S)        R^2=0.0280  multiple_r=0.167  F(8,1491)=5.4  p=1.16e-06
+  Agreeableness(F/T)   R^2=0.0441  multiple_r=0.210  F(8,1491)=8.6  p=1.62e-11
+  Conscientious(J/P)   R^2=0.0257  multiple_r=0.160  F(8,1491)=4.9  p=5.09e-06
+
+[note] scored users used: 1500  (jsonl lines total 1500; 0 had scoring errors)
+
+================================================================
+INTERPRETATION AND VERDICT
+================================================================
+
+CLAIM UNDER TEST: our eight content character axes carry recoverable signal about the
+AUTHOR disposition (grounding the person side of the coupling in labelled humans).
+
+RESULT: WEAK BUT REAL AND DIRECTIONALLY INTERPRETABLE. All four MBTI dimensions are
+predicted above chance by the eight axes taken together (OLS F tests all p < 1e-5;
+multiple R between 0.16 and 0.21, so the axes jointly explain 2.6 to 4.4 per cent of the
+variance in each dimension). This is a faint author signal, not a personality classifier.
+The rubric recovers a trace of who wrote the text, well above chance and stable across
+Pearson and Spearman, but small in absolute terms.
+
+STRONGEST, MOST INTERPRETABLE MAPPINGS:
+  affect      x Agreeableness (Feeling)     r = +0.158   Feeling types write with more
+                                                          emotional, sensational affect.
+  originality x Openness (iNtuition)        r = +0.142   iNtuitive authors read as more
+                                                          original. Openness is the trait
+                                                          tied to novelty and ideas, so
+                                                          this is the cleanest hit.
+  depth       x Extraversion                r = -0.131   Introverts write with more depth
+                                                          (negative with Extraversion).
+  depth       x Conscientious (Judging)     r = +0.121   Judging types read as deeper.
+  rigour      x Conscientious (Judging)     r = +0.104   Judging types read as more rigorous.
+  rigour      x Extraversion                r = -0.104   Introverts read as more rigorous.
+
+  PC1 (matter versus manner): negative with Agreeableness (-0.106) and Extraversion
+  (-0.098), positive with Conscientious/Judging (+0.084) and Openness (+0.078). The matter
+  pole aligns with the disposition cluster you would expect to write substantively:
+  Thinking, Introverted, Judging, iNtuitive. A coherent, single story across all four axes.
+
+AGAINST THE PRE-STATED HYPOTHESES IN THE BRIEF:
+  "does rigour/depth track Openness/Conscientiousness" — CONFIRMED. Both rigour and depth
+  correlate positively with Conscientiousness (Judging) and with Openness (depth x Openness
+  +0.099, depth x Conscientious +0.121, rigour x Conscientious +0.104). This is the cleanest
+  confirmation of the stated prediction.
+  "does affect track Extraversion/Neuroticism" — PARTIAL. affect tracks Extraversion
+  positively but weakly (+0.077); its strongest partner is Agreeableness/Feeling (+0.158).
+  Neuroticism could not be tested: MBTI has no Neuroticism axis, so that Big Five factor is
+  simply absent from this dataset.
+
+HONEST CONFOUNDS (why the ceiling is low, and why even this signal is soft):
+  1. Labels are self reported MBTI self typing on a personality hobby forum, noisier than an
+     administered Big Five instrument, and MBTI dichotomises continuous traits into binaries,
+     which throws away information and caps any achievable correlation.
+  2. The four label columns are deterministic dichotomisations of the sixteen MBTI types
+     mapped to Big Five poles (E/I to Extraversion, N/S to Openness, F/T to Agreeableness,
+     J/P to Conscientiousness). They are four binary MBTI axes, not continuous OCEAN, and
+     there is no Neuroticism.
+  3. Heavy self selection: PersonalityCafe skews wildly (iNtuitive base rate 0.87 against
+     roughly a quarter to a third in the general population; Extraversion only 0.23). The
+     sample is not representative, which compresses variance on some axes.
+  4. Topic leakage: the forum is ABOUT personality and the posts openly discuss type. The
+     scorer targets the voice, not type words, which limits but does not remove the leak.
+  5. Off instrument use: the scorer was tuned on publication and domain character, then
+     applied to individual forum authors, a distribution it was never fitted on.
+  6. Small effect sizes. Read these as evidence of a faint but genuine person side signal,
+     not as a working predictor of anyone's type.
+
+BOTTOM LINE: the content character rubric does carry a recoverable, statistically robust,
+directionally sensible trace of the author disposition, and the specific rigour/depth to
+Openness/Conscientiousness mapping predicted in advance holds. The magnitude is small and
+bounded by noisy binary self report labels and a heavily self selected sample, so the honest
+statement is "recoverable signal, not recovery": enough to ground the person side of the
+coupling in labelled humans, not enough to classify a person from their prose.

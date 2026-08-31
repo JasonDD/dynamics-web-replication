@@ -1,0 +1,147 @@
+# culture_map_global
+# generated 2026-08-28T18:16Z | data state: domain_char8_expanded (2.6M, ccTLD)
+
+[culture] domain_char8_expanded: 63 countries with >= 40 domains (ccTLD-resolved)
+  N per country: GB=331354, DE=135155, RU=66154, FR=59703, IT=58526, CN=50186, NL=40853, JP=40010, CZ=35081, BR=34876, PL=33678, AU=23442, CA=20280, ES=19975, CH=19129, BE=16987, AT=16157, SE=15872, IN=13214, KR=11972, SK=11467, DK=10456, HU=10006, RO=9989, TW=9607, TR=9386, GR=9065, ID=8948, FI=8319, NO=8108, UA=7093, AR=6926, PT=6298, NZ=5790, VN=5703, MX=5043, US=4983, CL=4913, IL=4879, ZA=4578, IE=3898, LT=3749, MY=3592, SI=3531, HR=3166, RS=3052, TH=3049, HK=3041, EE=2650, BG=2613, SG=2279, LV=2272, BY=1869, AE=1410, IS=1084, PH=1071, PK=973, NG=790, KE=677, SA=622, LK=600, BD=545, EG=319
+
+=== nearest neighbours in character space (top 3) ===
+  AE: SG, AU, ZA
+  AR: IT, BR, IE
+  AT: DE, CH, IT
+  AU: NZ, ZA, SG
+  BD: ID, EG, PH
+  BE: NL, JP, NO
+  BG: CL, FI, UA
+  BR: ES, CA, AR
+  BY: RU, HU, LV
+  CA: CL, BR, ES
+  CH: DE, FR, AT
+  CL: ES, CA, PT
+  CN: IE, CZ, AR
+  CZ: LV, SK, LT
+  DE: CH, AT, ES
+  DK: NO, SE, HU
+  EE: PL, LT, SI
+  EG: SA, BD, PH
+  ES: CL, DE, BR
+  FI: US, PL, HR
+  FR: CH, AT, DE
+  GB: SG, IL, AU
+  GR: ID, LK, KE
+  HK: IN, TW, CL
+  HR: RS, TR, SI
+  HU: SE, LV, RU
+  ID: BD, EG, PH
+  IE: CA, CN, ZA
+  IL: FR, BE, JP
+  IN: HK, TR, VN
+  IS: EE, PL, UA
+  IT: AR, AT, BR
+  JP: NL, BE, NO
+  KE: PH, LK, BD
+  KR: PT, MX, TW
+  LK: PK, PH, KE
+  LT: EE, PL, CZ
+  LV: CZ, SK, HU
+  MX: PT, KR, NG
+  MY: IN, RO, VN
+  NG: MX, SA, EG
+  NL: BE, JP, NO
+  NO: DK, SE, NL
+  NZ: AU, AR, IE
+  PH: KE, EG, BD
+  PK: LK, IN, PH
+  PL: EE, LT, FI
+  PT: ES, KR, MX
+  RO: LT, CZ, PL
+  RS: HR, SI, US
+  RU: BY, LV, HU
+  SA: EG, MX, HK
+  SE: HU, DK, NO
+  SG: ZA, AU, AE
+  SI: RS, HR, US
+  SK: CZ, LV, LT
+  TH: LT, PL, CZ
+  TR: HR, RS, IN
+  TW: KR, HK, FI
+  UA: BG, FI, PL
+  US: FI, HR, PL
+  VN: ZA, CL, IN
+  ZA: VN, SG, AU
+
+=== hierarchical culture map (ward leaf order) ===
+  TW HK IN MX KR PT NG EG SA GR BD ID KE PH LK PK RO TH LT EE PL BY RU SK CZ LV IS BG UA FI US TR SI HR RS JP BE NL DK NO HU SE AU NZ AE SG MY VN ZA CN IE FR AT CH DE AR IT BR CA CL ES GB IL
+=== 2D map coordinates (cc x y) ===
+    AE -1.601 -2.439
+    AR -1.648 +0.004
+    AT -1.059 +0.069
+    AU -1.790 -1.452
+    BD +3.380 -0.628
+    BE -4.091 -0.571
+    BG +0.314 +0.250
+    BR -1.078 -0.866
+    BY -1.738 +1.366
+    CA -0.524 -0.969
+    CH -0.826 -0.806
+    CL +0.036 -0.638
+    CN -0.698 +0.138
+    CZ -0.808 +1.293
+    DE -0.366 -0.272
+    DK -3.146 +1.242
+    EE +0.016 +2.036
+    EG +2.894 -1.087
+    ES -0.239 -0.705
+    FI +0.824 +0.768
+    FR -1.446 -1.041
+    GB -1.913 -4.707
+    GR +5.672 +0.411
+    HK +1.272 -0.715
+    HR +1.854 +1.374
+    HU -1.641 +2.134
+    ID +3.473 -0.451
+    IE -0.769 -0.272
+    IL -3.038 -2.573
+    IN +1.476 -0.226
+    IS +0.119 +2.433
+    IT -1.214 +0.322
+    JP -4.819 -0.545
+    KE +4.290 -1.307
+    KR +1.470 -0.395
+    LK +3.663 +0.119
+    LT -0.177 +1.722
+    LV -1.371 +1.443
+    MX +1.731 -1.305
+    MY +0.440 +0.378
+    NG +1.712 -1.596
+    NL -4.351 -0.144
+    NO -3.183 +1.174
+    NZ -2.420 -0.927
+    PH +3.305 -1.249
+    PK +3.021 -0.264
+    PL +0.455 +1.577
+    PT +0.738 -0.935
+    RO +0.174 +1.992
+    RS +1.697 +1.673
+    RU -1.685 +1.379
+    SA +1.964 -1.441
+    SE -2.364 +1.650
+    SG -0.782 -2.548
+    SI +1.407 +2.142
+    SK -1.366 +1.995
+    TH -0.286 +1.298
+    TR +1.968 +0.802
+    TW +1.567 -0.012
+    UA +0.508 +0.846
+    US +1.163 +1.270
+    VN +0.275 -0.913
+    ZA -0.443 -1.297
+
+=== affinity predictions (smaller = closer) ===
+  anglosphere ['US', 'ZA', 'IE', 'CA', 'AU', 'GB', 'NZ']: within 3.00 vs to-rest 3.74
+  Canada->US/UK: CA nearest -> CL, BR, ES, CH, IE
+  South Africa->NL/Africa: ZA nearest -> VN, SG, AU, IE, CA
+  Australia->NZ: AU nearest -> NZ, ZA, SG, IE, AE
+  NZ->Australia: NZ nearest -> AU, AR, IE, ZA, CN
+  UK->anglosphere: GB nearest -> SG, IL, AU, AE, BR
+
+[culture] ccTLD caveat: US under-identified (.us only); generic TLDs (.com/.org/.net) dropped as country-ambiguous.

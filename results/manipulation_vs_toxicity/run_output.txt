@@ -1,0 +1,63 @@
+=== corpus sizes (8-axis scored) ===
+  IRA political (train+)   n=8000
+  CMV sincere  (train-)    n=19430
+  dark patterns            n=2244  (dark=1168, normal=1076)
+  phishing                 n=1400 (phish=700, safe=700)
+  toxicity (civil comments) n=3600 (gold toxic=1800)
+
+======================================================================
+TASK 1 — MANIPULATION DETECTION (deceptive vs matched honest control)
+======================================================================
+OURS = leave-one-domain-out product detector (trained on the OTHER manipulation domains)
+domain                      n     OURS  Detoxify    s-nlp
+dark patterns            2244    0.435     0.477    0.366
+phishing                 1400    0.956     0.794    0.701
+POOLED dark+phish        3644    0.617     0.611    0.514
+
+IRA political trolls (flagship manipulation), n=2000 with toxicity scores:
+  mean OUR manip prob = 0.402 | mean Detoxify = 0.098 | mean s-nlp = 0.087
+
+IRA in-domain flagship (5-fold CV, IRA vs CMV sincere): AUC = 0.956 +/- 0.002
+--- transfer of the IRA-only flagship detector (cross-domain, target domain unseen) ---
+  IRA-only model on dark vs normal   AUC = 0.446
+  IRA-only model on phish vs safe    AUC = 0.965
+
+--- incumbent MISS RATE: fraction of manipulation content below toxicity flag 0.5 ---
+  dark patterns (dark)       Detoxify<0.5:  99.9%   s-nlp<0.5:  99.9%   (n=1168)
+  phishing (phish)           Detoxify<0.5:  95.1%   s-nlp<0.5:  97.1%   (n=700)
+  IRA political trolls       Detoxify<0.5:  92.7%   s-nlp<0.5:  91.6%   (n=2000)
+  ALL manipulation pooled    Detoxify<0.5:  95.3%   s-nlp<0.5:  95.1%   (n=3868)
+
+======================================================================
+TASK 2 — TOXICITY DETECTION (civil_comments gold labels) — their home turf
+======================================================================
+tool                            AUC
+OURS (manip prob)             0.747
+Detoxify                      0.948
+s-nlp roberta                 0.987
+  (n=3600, gold toxic=1800)
+
+======================================================================
+TASK 3 — ORTHOGONALITY (our manipulation axis vs their toxicity axis)
+======================================================================
+combined pool n=9244
+  Pearson  corr(OUR manip, Detoxify) = +0.213 | corr(OUR manip, s-nlp) = +0.143
+  Spearman corr(OUR manip, Detoxify) = +0.325 | corr(OUR manip, s-nlp) = +0.243
+
+2x2 on the COMBINED pool (toxicity>=0.5 = flagged toxic; our manip prob>=0.5 = flagged manipulative):
+  Detoxify: low-tox/low-manip 3244 (35.1%) | LOW-TOX/HIGH-MANIP 5044 (54.6%) [the gap only we catch] | high-tox/low-manip 105 (1.1%) | high-tox/high-manip 851 (9.2%)
+  s-nlp: low-tox/low-manip 3041 (32.9%) | LOW-TOX/HIGH-MANIP 4599 (49.8%) [the gap only we catch] | high-tox/low-manip 308 (3.3%) | high-tox/high-manip 1296 (14.0%)
+
+2x2 restricted to MANIPULATION content (dark+phish deceptive + IRA), the product surface:
+  Detoxify: LOW-TOX/HIGH-MANIP 2995 of 3868 = 77.4% caught by us + missed by them | both flag 163 (4.2%) | we miss too (low-manip) 710 (18.4%)
+  s-nlp: LOW-TOX/HIGH-MANIP 2986 of 3868 = 77.2% caught by us + missed by them | both flag 172 (4.4%) | we miss too (low-manip) 710 (18.4%)
+
+=== mean scores per corpus (0-1) ===
+corpus                      OUR manip  Detoxify    s-nlp
+dark patterns (dark)            0.727     0.004    0.001
+normal microcopy                0.841     0.019    0.001
+phishing (phish)                0.853     0.075    0.030
+safe email                      0.214     0.008    0.009
+IRA political trolls            0.402     0.098    0.087
+toxicity: toxic (gold)          0.635     0.425    0.764
+toxicity: clean (gold)          0.384     0.019    0.014

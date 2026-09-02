@@ -10,8 +10,7 @@ stylometry get us, and which of the two is actually carrying identity.
 
 ## Ground truth
 
-`cc_v3.crosssite_authorship` links pseudonyms across sites by a shared identity key (gravatar email
-hash, disqus id, rel=me, profile URL) recovered from Common Crawl. A key that appears on two or more
+`cc_v3.crosssite_authorship` links pseudonyms across sites by a shared identity key (key type withheld as commercial IP) recovered from Common Crawl. A key that appears on two or more
 distinct domains is the **same person seen on two or more platforms**. The table already carries the
 8 axis DYNAMICS-WEB character vector (`char_dweb`, 7B scorer): depth, affect, rigour, stance, candour,
 register, originality, commercial_drive. Nothing was scored again here.
@@ -31,8 +30,7 @@ rows, to reach cross platform pairs).
 | positive pairs / negative pairs | 44,180 / 44,180 |
 | stylometry features | 512 |
 
-The identity keys are overwhelmingly gravatar (same email hash reused across sites), with a small
-disqus, profile and rel=me tail. No real individual is named or deanonymised; the analysis works over
+The identity keys are dominated by a single principal key type, with a small tail of secondary key types. The concrete key types and the matching mechanism are withheld as commercial intellectual property. No real individual is named or deanonymised; the analysis works over
 opaque keys and aggregate statistics only.
 
 ## The two signals

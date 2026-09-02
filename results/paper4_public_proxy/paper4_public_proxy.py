@@ -2,7 +2,7 @@
 """
 Paper 4 PUBLIC proxy coupling: run the two core analyses on the public
 journalists-across-editorial-sections corpus (cc_v3.news_topic), the reviewable
-substitute for the internally held gravatar cross-site corpus.
+substitute for the internally held cross site corpus (linkage method withheld).
 
 Analyses:
   A. Trait vs performance split (ICC): decompose each DYNAMICS-8 disposition

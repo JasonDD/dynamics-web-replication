@@ -78,7 +78,7 @@ scoring model. The honest reading separates what reproduces cleanly from what do
 The documented outcome (fabric #18985) was measured at 859 multi site people and 8,658 blocks. The corpus has
 since grown on its own to 32,569 people with two or more blocks across two or more sites (365,549 scored
 blocks), a thirty seven fold increase, so the scale check needs no new crawl: the increment is already banked.
-The multi key builder (`cc_crosssite_corpus.py`, gravatar, disqus, relme and profile keys) can add more people
+The multi key builder (the held multi key builder, method withheld as commercial IP) can add more people
 by processing further Common Crawl WARCs, but with the sample already spanning 250 to 32,569 people that is
 unnecessary for this check and was not run, to avoid starving the live scoring jobs.
 
@@ -111,11 +111,11 @@ site first, so the within person term is purely across rooms, and is the faithfu
 | subset | people | ICC all blocks | ICC room level |
 |---|---|---|---|
 | all key types | 32,594 | 0.435 | 0.518 |
-| gravatar only | 31,761 | 0.430 | 0.505 |
-| disqus, relme, profile (comment and link) | 841 | 0.670 | 0.761 |
+| principal key only | 31,761 | 0.430 | 0.505 |
+| secondary keys (comment and link) | 841 | 0.670 | 0.761 |
 
 No current cell reproduces 0.24. The comment thread subset, the closest in kind to the corpus the documented
-number came from, reads even MORE trait like (0.67 to 0.76), not less, so a composition shift toward gravatar
+number came from, reads even MORE trait like (0.67 to 0.76), not less, so a composition shift toward the principal key type
 authors does not explain the earlier low value away either. The vectorised ICC used throughout was checked to
 match the paper's own `icc1` to nine decimal places on a controlled sample, so the gap is not an estimator bug.
 The most likely account is that the original n = 859 read, on the first small corpus, was a small sample or

@@ -13,7 +13,7 @@ Two papers measured two different splits of the same eight DYNAMICS-WEB characte
   `results/invariant_core/invariant_core_stats.json`.
 - **Paper 4 (the person to content coupling)** measured how much of a person's writing is a stable trait versus a
   performed room state, using a corpus where the SAME pseudonymous person is seen writing on several separate
-  sites (the gravatar metatrait bridge, `cc_v3.crosssite_authorship`).
+  sites (the cross site authorship bridge, `cc_v3.crosssite_authorship`).
 
 The unification hypothesis: **the least cultural axes are the trait axes, and the most cultural axes are the
 performance axes.** If true, an axis's culture share (Paper 3) should run OPPOSITE to its within person stability

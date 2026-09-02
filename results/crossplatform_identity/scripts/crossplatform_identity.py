@@ -4,8 +4,7 @@
 Question: given two pieces of writing from two DIFFERENT platforms, can we decide
 whether they are the same pseudonymous person, from the writing alone?
 
-Ground truth: cc_v3.crosssite_authorship. A cross site identity key (gravatar / disqus /
-relme / profile) that appears on 2+ distinct domains is the SAME person seen on 2+ platforms.
+Ground truth: cc_v3.crosssite_authorship. A cross site identity key (type withheld as commercial IP) that appears on 2+ distinct domains is the SAME person seen on 2+ platforms.
 The table already carries the 8 axis DYNAMICS-WEB character vector (char_dweb, 7B scorer).
 
 Signals compared:

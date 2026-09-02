@@ -14,8 +14,7 @@ no identity resolution.
 ## The boundary that keeps this in the public tier
 
 The proxy identifies a person by the published byline in the news corpus. It never uses
-the held cross site linkage mechanism (the avatar hash join that resolves one pseudonymous
-person across unrelated sites); that linkage method is the factory and is not in this pack.
+the held cross site linkage mechanism (withheld as commercial intellectual property); that linkage method is the factory and is not in this pack.
 The byline proxy is the recipe: a reviewer reproduces the coupling geometry without it. No
 production scorer weights, no training corpus, no operational calibration is present here.
 

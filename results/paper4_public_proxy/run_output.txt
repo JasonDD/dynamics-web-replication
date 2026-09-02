@@ -1,0 +1,26 @@
+rows pulled: 33920
+usable scored articles: 33920  authors: 1367
+multi-context (>=2 sections) authors: 1355  articles: 33785
+
+=== A. Trait-vs-performance split (ICC(1), between-author share) ===
+axis            article-level   section-mean-level
+acuity                 0.125          0.139
+candour                0.117          0.140
+novelty                0.141          0.194
+yielding               0.065          0.072
+discipline             0.150          0.148
+impulsivity            0.117          0.099
+sociability            0.069          0.084
+mercuriality           0.145          0.097
+MEAN                   0.116          0.122
+
+=== B. Metatrait bridge (person-level, authors averaged over sections) ===
+n persons: 1355
+plasticity -> originality       r=+0.390  p=0.0e+00  n=1355
+plasticity -> matter/manner     r=+0.014  p=6.1e-01  n=1355
+stability  -> matter/manner     r=+0.127  p=2.4e-06  n=1355
+stability  -> originality       r=-0.225  p=0.0e+00  n=1355
+
+(article-level, for contrast; inflated by performed state)
+plasticity -> originality       r=+0.178  p=0.0e+00  n=33785
+plasticity -> matter/manner     r=-0.035  p=9.7e-11  n=33785

@@ -5,7 +5,7 @@ Reproducibility material for the Distinct Fields programme (the DYNAMICS-WEB cha
 Start with `REPLICATION_PACK.md`: the shared measuring apparatus, the manifest of about ninety analyses with data source and headline result, the recipe to regenerate the scored data, and the release governance (public science, held data, government restricted, and the commercial moat).
 
 - `REPLICATION_PACK.md` the pack itself.
-- `results/` the per experiment write ups and their analysis scripts.
+- `results/` the per experiment write ups and their analysis scripts, including `results/paper4_public_proxy/`, the public journalist substrate that reproduces the Paper 4 coupling (plasticity to originality r about +0.39) without the held cross site corpus, added for the v70 reviewability reframe.
 - `external/` the external validity study and the pre registered genre state test.
 - `scripts/` the shared scoring and analysis scripts.
 - `CC_ROLLING_RELEASE_PLAN.md` the web map rolling release plan and cost.

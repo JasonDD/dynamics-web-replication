@@ -1,0 +1,62 @@
+{
+ "n_persons_multi": 58858,
+ "n_two_reader": 45502,
+ "split_half": {
+  "discipline": {
+   "half_r": 0.6940107342896948,
+   "reliability": 0.8193699369687834
+  },
+  "yielding": {
+   "half_r": 0.6074592840763271,
+   "reliability": 0.7558005233400152
+  },
+  "novelty": {
+   "half_r": 0.5255688767612858,
+   "reliability": 0.6890136325762557
+  },
+  "acuity": {
+   "half_r": 0.608491759284277,
+   "reliability": 0.7565991628766997
+  },
+  "mercuriality": {
+   "half_r": 0.5976199955642153,
+   "reliability": 0.7481378515836112
+  },
+  "impulsivity": {
+   "half_r": 0.6987380919741484,
+   "reliability": 0.8226554702875079
+  },
+  "candour": {
+   "half_r": 0.6521718309152751,
+   "reliability": 0.7894721586603773
+  },
+  "sociability": {
+   "half_r": 0.5875394147914794,
+   "reliability": 0.7401887591794396
+  }
+ },
+ "metatrait_split_half": {
+  "plasticity": {
+   "half_r": 0.5735830785651612,
+   "reliability": 0.7290153108257506
+  },
+  "stability": {
+   "half_r": 0.6448184822061361,
+   "reliability": 0.7840603558166056
+  }
+ },
+ "two_reader": {
+  "discipline": 0.4925039171666187,
+  "yielding": -0.05709499692281717,
+  "novelty": 0.36054878973351595,
+  "acuity": 0.20246183094912376,
+  "mercuriality": 0.07978947336398624,
+  "impulsivity": 0.23138707384296425,
+  "candour": 0.4921462579942373,
+  "sociability": 0.4802512717292988
+ },
+ "metatrait_two_reader": {
+  "plasticity": 0.4198206364986623,
+  "stability": 0.4334513194762499
+ }
+}

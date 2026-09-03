@@ -163,29 +163,9 @@ Five things are held for commercial protection, and none of them is in the paper
 
 The tension this resolves. Making the science reproducible for reviewers does not thin the moat, because a reviewer who reproduces a headline on a public benchmark obtains none of the five: not the production scorer, not the scored web, not the coordinates, not the platform, not the roadmap. Publishing the science is therefore safe for the business exactly as long as those five stay held. This pack ships reproducible science and holds all five by construction; a release decision should weigh all four axes at once, public science, privacy held data, government sword, and commercial moat, and confirm that the five commercial holds remain out of whatever is shipped.
 
----
 
-## Addendum, 3 September 2026: the competitor test, the reduction net, and the third corpus
+### Addendum, later 3 September 2026: the keystone re-survey
 
-New result directories added this release, all public tier (recipe and numbers; the held corpora and the
-scorer stay out):
-
-- `results/equation_of_state/competitor_test/` the preregistered competitor test and its three amendments:
-  the constrained architecture against gradient boosted trees and a room identity perceptron, pass mark
-  committed before the run. Subreddits pass; the web domains fail on the rank two state constraint, which is
-  withdrawn; the three part model without it sits on the pass boundary.
-- `results/equation_of_state/within_room_differencing/`, `room_is_community/`, `second_corpus_replication/`,
-  `ablation_permutation_reverse/`, `selection_vs_treatment/` the differencing test that removed the
-  invariance claim, its attribution to community identity, the second corpus where the rotation did not
-  travel, the ablation and permutation null, and the selection against treatment tests.
-- `results/reduction_cohmetrix/`, `reduction_grice/`, `reduction_biber_within/`, `reduction_manner_mirror/`,
-  `reduction_synthesis/` the four framework reductions and the manner pole mirror, read together as one
-  nomological net. `reduction_synthesis/RESULT.md` carries the canonical summary: convergent and
-  discriminant validity across four frameworks, a double dissociation across the two poles, and the explicit
-  statement that this does not by itself establish a generative substrate.
-- `results/second_reader_lineage/` the coupling and its bend re read by an independent model family.
-- `results/char_map_rebuild/` the held out validation of the two hop character propagation (r 0.42, sized by
-  evidence band) and the discard of the first, faulty full propagation.
-- `results/effect_side_within_room/` the five persuasion clauses of Paper 4B put through the within unit test.
-
-Naming: the coupling paper is Paper 4A from this version, so the series reads 4A, 4B, 4C.
+- `results/ashlar_atlas/` the full eight by eight disposition to character coupling (the Ashlar map), within room differenced, with a per cell interval and two cross reader legs; richer than the single matter against manner slice and stable across a reader swap.
+- `results/d8_robustness/` the disposition instrument's reliability: split half per axis and two reader agreement across model families, with the four reader dependent axes named.
+- `results/scale_invariance_matrix/` the four scale test behind the directionally fractal verdict.

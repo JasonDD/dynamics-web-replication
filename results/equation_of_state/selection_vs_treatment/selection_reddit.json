@@ -1,0 +1,35 @@
+{
+ "table": "reddit_wide",
+ "rooms": 400,
+ "records": 50346,
+ "persons": 47514,
+ "kfold": 5,
+ "seed": 20260903,
+ "lam": 100.0,
+ "B1_residual_variance_shares": {
+  "person_share": 0.9535129772649391,
+  "room_share": 3.694502540171584e-05,
+  "person_share_multiroom_only": 0.5268350213193089,
+  "note": "room share is near zero by construction (the shift is fitted per room); person share is the unobserved person component that selection would carry"
+ },
+ "B1_room_pair_predicts_within_person_difference": {
+  "heldout_r2": -0.045728083417037046,
+  "lam": 1000.0,
+  "null_mean": -0.00024054576054190148,
+  "null_p95": -0.00017962524448120746,
+  "p": 1.0,
+  "reading": "treatment: the room pair predicts how the same person's residual differs between rooms (r2 above the null); selection: it does not (r2 at the null), because a person level unobserved cancels within the person"
+ },
+ "B4_tail_predicts_membership": {
+  "pairs": 161046,
+  "tail_heldout_r2": 0.0010455976884850005,
+  "tail_null_mean": -0.00010588923580178821,
+  "tail_null_p95": -3.761103396073831e-05,
+  "tail_p": 0.0196078431372549,
+  "plane_heldout_r2": 0.0006578833728621003,
+  "plane_null_mean": -5.6710283656045136e-05,
+  "plane_null_p95": 6.482358806175751e-06,
+  "plane_p": 0.0196078431372549,
+  "reading": "a person's residual on the tail in one room predicting the tail coordinate of their OTHER rooms is homophily on the tail: the tail carries who a room selects. The plane row is the comparison on the dominant axes."
+ }
+}

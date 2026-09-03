@@ -1,0 +1,253 @@
+=== PANEL A: rooms >=10 persons, capped at 40 ===
+[    0.1s] building the canonical matter against manner ruler ...
+[   23.3s] PC1 loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
+[   23.3s] ruler rows=2,648,406
+[   23.3s] pulling rows (disp=disp_d8 char=char_dweb) ...
+[   49.9s] usable rows=668,365  persons=59,084  domains=40,774
+[   49.9s] aggregating each person WITHIN each room ...
+[   56.3s] person room records=214,004  (rows with >=2 posts contribute df=454,361 to S_w)
+[   56.6s] rooms with >=5 persons: 1,723   person room records kept: 166,393   distinct persons: 49,787
+[   56.7s] forming within room pairs (cap 200 unordered per room, both orderings kept) ...
+[   57.1s] pooled pairs: 364,072 ordered rows (182,036 unordered) across 1,723 rooms
+[   57.3s] POOLED W (rows = dPlasticity, dStability ; cols = dMatterManner, dOriginality):
+[   57.3s]    [[-0.0233  0.1637]
+ [ 0.1459 -0.0166]]
+[   57.3s]    in sample rmse=1.0440 r2=0.0328
+[   57.3s] room block bootstrap for the pooled W (400 draws) ...
+[   70.4s]    W[dPlasticity->dMatterManner ] = -0.0233  se 0.0063  95% CI [-0.0349, -0.0122]
+[   70.4s]    W[dPlasticity->dOriginality  ] = +0.1637  se 0.0052  95% CI [+0.1537, +0.1731]
+[   70.4s]    W[dStability ->dMatterManner ] = +0.1459  se 0.0075  95% CI [+0.1330, +0.1608]
+[   70.4s]    W[dStability ->dOriginality  ] = -0.0166  se 0.0077  95% CI [-0.0320, -0.0009]
+[   83.4s]    curvature model in sample rmse=1.0410 r2=0.0385 (linear r2=0.0328)
+[   83.4s]    curvature term dPlas*Pbar_plas      -> MM -0.0173 (se 0.0074)   Orig +0.0786 (se 0.0073)
+[   83.4s]    curvature term dPlas*Pbar_stab      -> MM +0.0548 (se 0.0057)   Orig +0.0289 (se 0.0061)
+[   83.4s]    curvature term dStab*Pbar_plas      -> MM +0.0574 (se 0.0059)   Orig +0.0283 (se 0.0063)
+[   83.4s]    curvature term dStab*Pbar_stab      -> MM +0.0482 (se 0.0072)   Orig +0.0231 (se 0.0062)
+[   83.4s]    scalar comparison  dPlasticity -> dMatterManner = -0.0404
+[   83.4s] INTERCEPT CHECK (both orderings, algebraically exact zero): [1.01199713e-18 3.67998955e-19]
+[   93.6s] INTERCEPT CHECK (single arbitrary ordering, a real test): [-2.31100849e-04  4.08112469e-05] se [0.00233928 0.00261286]
+[   93.6s] shuffle null: permuting P across persons WITHIN each room, characters left in place ...
+[   93.8s]    shuffled W:
+[[0.0015 0.0033]
+ [0.0057 0.0005]]
+[   93.8s]    shuffled in sample rmse=1.0616 r2=0.0000  (real r2=0.0328)
+[   94.0s] room grouped CV, K=5, WITH person leakage (diagnostic) ...
+[  103.0s]    leaky K=5: pooled held out rmse=1.0458 r2=0.0313 | invariant but nonlinear g: r2=0.0367 (kept 100.0% of held out pair mass, 364,028 ordered pairs)
+[  103.1s]       halves >=5 persons: 1950 splits, 524,176 pairs | room specific W r2=-0.0372  pooled W r2=+0.0308  | best blend a=0.3 r2=+0.0430
+[  103.1s]          blend(linear pooled, room) r2 by a: 0.0:+0.0308 0.1:+0.0380 0.2:+0.0421 0.3:+0.0430 0.4:+0.0409 0.5:+0.0357 0.6:+0.0273 0.7:+0.0159 0.8:+0.0013 0.9:-0.0164 1.0:-0.0372
+[  103.1s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0368 0.1:+0.0437 0.2:+0.0473 0.3:+0.0478 0.4:+0.0452 0.5:+0.0394 0.6:+0.0304 0.7:+0.0182 0.8:+0.0029 0.9:-0.0155 1.0:-0.0372
+[  103.1s]          -> curved invariant alone r2=+0.0368; best with room term a=0.3 r2=+0.0478
+[  103.1s]       halves >=15 persons: 1222 splits, 474,476 pairs | room specific W r2=+0.0144  pooled W r2=+0.0299  | best blend a=0.4 r2=+0.0478
+[  103.1s]          blend(linear pooled, room) r2 by a: 0.0:+0.0299 0.1:+0.0374 0.2:+0.0429 0.3:+0.0463 0.4:+0.0478 0.5:+0.0472 0.6:+0.0447 0.7:+0.0401 0.8:+0.0335 0.9:+0.0250 1.0:+0.0144
+[  103.1s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0365 0.1:+0.0436 0.2:+0.0486 0.3:+0.0515 0.4:+0.0524 0.5:+0.0512 0.6:+0.0480 0.7:+0.0427 0.8:+0.0353 0.9:+0.0259 1.0:+0.0144
+[  103.1s]          -> curved invariant alone r2=+0.0365; best with room term a=0.4 r2=+0.0524
+[  103.1s]       halves >=40 persons: 884 splits, 353,600 pairs | room specific W r2=+0.0261  pooled W r2=+0.0269  | best blend a=0.5 r2=+0.0440
+[  103.1s]          blend(linear pooled, room) r2 by a: 0.0:+0.0269 0.1:+0.0331 0.2:+0.0379 0.3:+0.0414 0.4:+0.0434 0.5:+0.0440 0.6:+0.0432 0.7:+0.0411 0.8:+0.0375 0.9:+0.0325 1.0:+0.0261
+[  103.1s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0350 0.1:+0.0408 0.2:+0.0450 0.3:+0.0478 0.4:+0.0492 0.5:+0.0490 0.6:+0.0474 0.7:+0.0443 0.8:+0.0397 0.9:+0.0337 1.0:+0.0261
+[  103.1s]          -> curved invariant alone r2=+0.0350; best with room term a=0.4 r2=+0.0492
+[  103.1s] room grouped CV, K=5, person leakage REMOVED ...
+[  107.2s]    clean K=5: pooled held out rmse=1.0927 r2=0.0205 | invariant but nonlinear g: r2=0.0323 (kept 25.1% of held out pair mass, 92,624 ordered pairs)
+[  107.2s]       halves >=5 persons: 577 splits, 83,054 pairs | room specific W r2=-0.2120  pooled W r2=+0.0228  | best blend a=0.2 r2=+0.0308
+[  107.2s]          blend(linear pooled, room) r2 by a: 0.0:+0.0228 0.1:+0.0302 0.2:+0.0308 0.3:+0.0245 0.4:+0.0113 0.5:-0.0088 0.6:-0.0357 0.7:-0.0694 0.8:-0.1101 0.9:-0.1576 1.0:-0.2120
+[  107.2s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0371 0.1:+0.0428 0.2:+0.0416 0.3:+0.0337 0.4:+0.0190 0.5:-0.0025 0.6:-0.0308 0.7:-0.0659 0.8:-0.1078 0.9:-0.1565 1.0:-0.2120
+[  107.2s]          -> curved invariant alone r2=+0.0371; best with room term a=0.1 r2=+0.0428
+[  107.2s]       halves >=15 persons: 156 splits, 56,224 pairs | room specific W r2=-0.0392  pooled W r2=+0.0292  | best blend a=0.3 r2=+0.0392
+[  107.2s]          blend(linear pooled, room) r2 by a: 0.0:+0.0292 0.1:+0.0354 0.2:+0.0388 0.3:+0.0392 0.4:+0.0368 0.5:+0.0314 0.6:+0.0231 0.7:+0.0119 0.8:-0.0022 0.9:-0.0192 1.0:-0.0392
+[  107.2s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0443 0.1:+0.0493 0.2:+0.0514 0.3:+0.0505 0.4:+0.0466 0.5:+0.0398 0.6:+0.0299 0.7:+0.0171 0.8:+0.0013 0.9:-0.0174 1.0:-0.0392
+[  107.2s]          -> curved invariant alone r2=+0.0443; best with room term a=0.2 r2=+0.0514
+[  107.2s]       halves >=40 persons: 44 splits, 17,600 pairs | room specific W r2=-0.0094  pooled W r2=+0.0222  | best blend a=0.3 r2=+0.0280
+[  107.2s]          blend(linear pooled, room) r2 by a: 0.0:+0.0222 0.1:+0.0256 0.2:+0.0275 0.3:+0.0280 0.4:+0.0270 0.5:+0.0246 0.6:+0.0207 0.7:+0.0154 0.8:+0.0086 0.9:+0.0003 1.0:-0.0094
+[  107.2s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0258 0.1:+0.0291 0.2:+0.0308 0.3:+0.0311 0.4:+0.0299 0.5:+0.0271 0.6:+0.0228 0.7:+0.0170 0.8:+0.0098 0.9:+0.0010 1.0:-0.0094
+[  107.2s]          -> curved invariant alone r2=+0.0258; best with room term a=0.3 r2=+0.0311
+[  107.2s] room grouped CV, K=2 (50/50 rooms) x 5 repeats, person leakage REMOVED ...
+[  127.4s]    clean K=2 x5: pooled held out rmse=1.1070 r2=0.0243 | invariant but nonlinear g: r2=0.0322 (kept 57.5% of held out pair mass, 1,048,082 ordered pairs)
+[  127.4s]       halves >=5 persons: 5819 splits, 1,300,570 pairs | room specific W r2=-0.1197  pooled W r2=+0.0234  | best blend a=0.2 r2=+0.0311
+[  127.4s]          blend(linear pooled, room) r2 by a: 0.0:+0.0234 0.1:+0.0295 0.2:+0.0311 0.3:+0.0282 0.4:+0.0207 0.5:+0.0087 0.6:-0.0079 0.7:-0.0290 0.8:-0.0547 0.9:-0.0849 1.0:-0.1197
+[  127.4s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0326 0.1:+0.0382 0.2:+0.0392 0.3:+0.0355 0.4:+0.0272 0.5:+0.0143 0.6:-0.0033 0.7:-0.0254 0.8:-0.0523 0.9:-0.0837 1.0:-0.1197
+[  127.4s]          -> curved invariant alone r2=+0.0326; best with room term a=0.2 r2=+0.0392
+[  127.4s]       halves >=15 persons: 2919 splits, 1,081,526 pairs | room specific W r2=-0.0315  pooled W r2=+0.0229  | best blend a=0.3 r2=+0.0349
+[  127.4s]          blend(linear pooled, room) r2 by a: 0.0:+0.0229 0.1:+0.0296 0.2:+0.0336 0.3:+0.0349 0.4:+0.0335 0.5:+0.0294 0.6:+0.0226 0.7:+0.0131 0.8:+0.0009 0.9:-0.0139 1.0:-0.0315
+[  127.4s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0321 0.1:+0.0383 0.2:+0.0416 0.3:+0.0422 0.4:+0.0401 0.5:+0.0351 0.6:+0.0273 0.7:+0.0168 0.8:+0.0035 0.9:-0.0126 1.0:-0.0315
+[  127.4s]          -> curved invariant alone r2=+0.0321; best with room term a=0.3 r2=+0.0422
+[  127.4s]       halves >=40 persons: 1070 splits, 428,000 pairs | room specific W r2=+0.0199  pooled W r2=+0.0284  | best blend a=0.5 r2=+0.0468
+[  127.4s]          blend(linear pooled, room) r2 by a: 0.0:+0.0284 0.1:+0.0357 0.2:+0.0412 0.3:+0.0449 0.4:+0.0468 0.5:+0.0468 0.6:+0.0451 0.7:+0.0415 0.8:+0.0361 0.9:+0.0289 1.0:+0.0199
+[  127.4s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0370 0.1:+0.0438 0.2:+0.0488 0.3:+0.0518 0.4:+0.0530 0.5:+0.0522 0.6:+0.0495 0.7:+0.0450 0.8:+0.0385 0.9:+0.0301 1.0:+0.0199
+[  127.4s]          -> curved invariant alone r2=+0.0370; best with room term a=0.4 r2=+0.0530
+[  127.4s] per room W panel + PERMUTATION heterogeneity null (rooms >=10 persons, capped at 40) ...
+[  127.5s]    panel rooms=1,008  persons in panel=30,643
+[  127.6s]    usable panel rooms=986
+[  167.1s]    wild bootstrap draws=200  (pooled panel W=
+[[-0.0263  0.1732]
+ [ 0.1393 -0.0145]])
+[  201.0s]    per room reliability lambda: plasticity mean=0.336 sd=0.247; stability mean=0.369 sd=0.274
+[  201.0s]    dPlasticity->dMatterManner     rooms=  986 meanW=-0.0119 sd(obs)=0.2615 sd(wild null)=0.2272 p=0.0050 excess tau=0.1296 | reliability controlled: sd=3.8418 vs null 3.3742 p=0.0149 tau=1.8369
+[  201.0s]    dPlasticity->dOriginality      rooms=  986 meanW=+0.1887 sd(obs)=0.2681 sd(wild null)=0.2609 p=0.2189 excess tau=0.0616 | reliability controlled: sd=4.1379 vs null 4.2395 p=0.6468 tau=0.0000
+[  201.0s]    dStability->dMatterManner      rooms=  986 meanW=+0.1433 sd(obs)=0.3448 sd(wild null)=0.2582 p=0.0050 excess tau=0.2285 | reliability controlled: sd=5.6652 vs null 4.1973 p=0.0050 tau=3.8049
+[  201.0s]    dStability->dOriginality       rooms=  986 meanW=+0.0055 sd(obs)=0.3282 sd(wild null)=0.2698 p=0.0050 excess tau=0.1870 | reliability controlled: sd=5.0574 vs null 4.0685 p=0.0050 tau=3.0041
+[  201.0s]    corr(log mean rows per person in room, W_r[dPlasticity->dMatterManner]) = +0.005
+[  201.0s]    corr(log mean rows per person in room, W_r[dPlasticity->dOriginality]) = +0.111
+[  201.0s]    corr(log mean rows per person in room, W_r[dStability->dMatterManner]) = +0.116
+[  201.0s]    corr(log mean rows per person in room, W_r[dStability->dOriginality]) = +0.124
+[  201.0s] reliability of person room P and disattenuated W ...
+[  201.1s]    observed cov(dP)=
+[[ 1.4406 -0.1686]
+ [-0.1686  1.5042]]
+[  201.1s]    error    cov(dP)=
+[[ 0.8676 -0.1483]
+ [-0.1483  0.7972]]
+[  201.1s]    reliability lambda: plasticity=0.398 stability=0.470
+[  201.1s]    disattenuated W=
+[[-0.0905  0.4143]
+ [ 0.3134 -0.0626]]
+[  201.1s] within room (differencing) against between room (room mean) slopes ...
+[  201.2s]    naive pooled LEVEL slope (no room term)=
+[[-0.0232  0.2223]
+ [ 0.3668  0.1994]]
+[  201.2s]    BETWEEN room slope (room means)=
+[[0.115  0.5723]
+ [0.8695 0.7484]]
+[  201.2s]    WITHIN room slope (this test)=
+[[-0.0233  0.1637]
+ [ 0.1459 -0.0166]]
+[  201.2s] exact room centred fit (all persons, no pair cap) as a cross check on the pair sampling ...
+[  201.5s]    exact within room W=
+[[-0.0389  0.1751]
+ [ 0.1452 -0.0263]]
+[  201.5s] circularity check: P read ONLY from the person's OTHER rooms, C from this room ...
+[  203.1s]    leave room out records=163,582 in 1,503 rooms
+[  203.1s]    leave room out W=
+[[-0.0356  0.1142]
+ [ 0.1183 -0.0053]]
+[  203.2s]    POWER dPlasticity->dMatterManner: sampling sd=0.2272  min detectable tau=0.1048  observed excess=0.1296  (to halve the floor: 160 persons per room at 986 rooms, or 15776 rooms at 40 persons)
+[  203.2s]    POWER dPlasticity->dOriginality: sampling sd=0.2609  min detectable tau=0.1156  observed excess=0.0616  (to halve the floor: 160 persons per room at 986 rooms, or 15776 rooms at 40 persons)
+[  203.2s]    POWER dStability->dMatterManner: sampling sd=0.2582  min detectable tau=0.1353  observed excess=0.2285  (to halve the floor: 160 persons per room at 986 rooms, or 15776 rooms at 40 persons)
+[  203.2s]    POWER dStability->dOriginality: sampling sd=0.2698  min detectable tau=0.1209  observed excess=0.1870  (to halve the floor: 160 persons per room at 986 rooms, or 15776 rooms at 40 persons)
+[  203.2s] wrote /tmp/cc_state_diff_invariance.json
+[  203.2s] done
+=== PANEL B: rooms >=60 persons, capped at 200 ===
+[    0.0s] building the canonical matter against manner ruler ...
+[   18.7s] PC1 loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
+[   18.7s] ruler rows=2,648,406
+[   18.7s] pulling rows (disp=disp_d8 char=char_dweb) ...
+[   46.7s] usable rows=668,365  persons=59,084  domains=40,774
+[   46.7s] aggregating each person WITHIN each room ...
+[   58.3s] person room records=214,004  (rows with >=2 posts contribute df=454,361 to S_w)
+[   59.3s] rooms with >=5 persons: 1,723   person room records kept: 166,393   distinct persons: 49,787
+[   60.0s] forming within room pairs (cap 200 unordered per room, both orderings kept) ...
+[   60.7s] pooled pairs: 364,072 ordered rows (182,036 unordered) across 1,723 rooms
+[   62.0s] POOLED W (rows = dPlasticity, dStability ; cols = dMatterManner, dOriginality):
+[   62.0s]    [[-0.0221  0.1626]
+ [ 0.1464 -0.016 ]]
+[   62.0s]    in sample rmse=1.0427 r2=0.0326
+[   62.0s] room block bootstrap for the pooled W (400 draws) ...
+[  109.6s]    W[dPlasticity->dMatterManner ] = -0.0221  se 0.0062  95% CI [-0.0342, -0.0108]
+[  109.6s]    W[dPlasticity->dOriginality  ] = +0.1626  se 0.0053  95% CI [+0.1525, +0.1727]
+[  109.6s]    W[dStability ->dMatterManner ] = +0.1464  se 0.0075  95% CI [+0.1329, +0.1613]
+[  109.6s]    W[dStability ->dOriginality  ] = -0.0160  se 0.0075  95% CI [-0.0305, +0.0003]
+[  154.4s]    curvature model in sample rmse=1.0398 r2=0.0379 (linear r2=0.0326)
+[  154.4s]    curvature term dPlas*Pbar_plas      -> MM -0.0178 (se 0.0081)   Orig +0.0760 (se 0.0076)
+[  154.4s]    curvature term dPlas*Pbar_stab      -> MM +0.0552 (se 0.0064)   Orig +0.0253 (se 0.0056)
+[  154.4s]    curvature term dStab*Pbar_plas      -> MM +0.0540 (se 0.0056)   Orig +0.0220 (se 0.0058)
+[  154.4s]    curvature term dStab*Pbar_stab      -> MM +0.0499 (se 0.0066)   Orig +0.0221 (se 0.0059)
+[  154.4s]    scalar comparison  dPlasticity -> dMatterManner = -0.0391
+[  154.4s] INTERCEPT CHECK (both orderings, algebraically exact zero): [4.59998694e-19 1.10399687e-18]
+[  160.4s] INTERCEPT CHECK (single arbitrary ordering, a real test): [-3.69656376e-04  5.74990560e-05] se [0.002242   0.00232306]
+[  160.4s] shuffle null: permuting P across persons WITHIN each room, characters left in place ...
+[  160.4s]    shuffled W:
+[[0.0045 0.0019]
+ [0.0027 0.003 ]]
+[  160.4s]    shuffled in sample rmse=1.0601 r2=0.0000  (real r2=0.0326)
+[  160.7s] room grouped CV, K=5, WITH person leakage (diagnostic) ...
+[  167.8s]    leaky K=5: pooled held out rmse=1.0425 r2=0.0315 | invariant but nonlinear g: r2=0.0372 (kept 100.0% of held out pair mass, 364,064 ordered pairs)
+[  167.8s]       halves >=5 persons: 1953 splits, 524,658 pairs | room specific W r2=-0.0239  pooled W r2=+0.0312  | best blend a=0.3 r2=+0.0459
+[  167.8s]          blend(linear pooled, room) r2 by a: 0.0:+0.0312 0.1:+0.0390 0.2:+0.0439 0.3:+0.0459 0.4:+0.0448 0.5:+0.0408 0.6:+0.0338 0.7:+0.0239 0.8:+0.0109 0.9:-0.0050 1.0:-0.0239
+[  167.8s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0377 0.1:+0.0452 0.2:+0.0496 0.3:+0.0510 0.4:+0.0494 0.5:+0.0447 0.6:+0.0371 0.7:+0.0264 0.8:+0.0126 0.9:-0.0041 1.0:-0.0239
+[  167.8s]          -> curved invariant alone r2=+0.0377; best with room term a=0.3 r2=+0.0510
+[  167.8s]       halves >=15 persons: 1224 splits, 475,128 pairs | room specific W r2=+0.0165  pooled W r2=+0.0293  | best blend a=0.4 r2=+0.0481
+[  167.8s]          blend(linear pooled, room) r2 by a: 0.0:+0.0293 0.1:+0.0370 0.2:+0.0427 0.3:+0.0464 0.4:+0.0481 0.5:+0.0478 0.6:+0.0455 0.7:+0.0412 0.8:+0.0350 0.9:+0.0267 1.0:+0.0165
+[  167.8s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0367 0.1:+0.0438 0.2:+0.0489 0.3:+0.0519 0.4:+0.0530 0.5:+0.0520 0.6:+0.0489 0.7:+0.0439 0.8:+0.0368 0.9:+0.0276 1.0:+0.0165
+[  167.8s]          -> curved invariant alone r2=+0.0367; best with room term a=0.4 r2=+0.0530
+[  167.8s]       halves >=40 persons: 886 splits, 354,400 pairs | room specific W r2=+0.0221  pooled W r2=+0.0270  | best blend a=0.5 r2=+0.0428
+[  167.8s]          blend(linear pooled, room) r2 by a: 0.0:+0.0270 0.1:+0.0331 0.2:+0.0377 0.3:+0.0409 0.4:+0.0426 0.5:+0.0428 0.6:+0.0416 0.7:+0.0389 0.8:+0.0348 0.9:+0.0291 1.0:+0.0221
+[  167.8s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0351 0.1:+0.0406 0.2:+0.0447 0.3:+0.0472 0.4:+0.0482 0.5:+0.0476 0.6:+0.0456 0.7:+0.0420 0.8:+0.0369 0.9:+0.0302 1.0:+0.0221
+[  167.8s]          -> curved invariant alone r2=+0.0351; best with room term a=0.4 r2=+0.0482
+[  167.8s] room grouped CV, K=5, person leakage REMOVED ...
+[  171.1s]    clean K=5: pooled held out rmse=1.0903 r2=0.0195 | invariant but nonlinear g: r2=0.0319 (kept 25.1% of held out pair mass, 92,624 ordered pairs)
+[  171.1s]       halves >=5 persons: 577 splits, 83,054 pairs | room specific W r2=-0.2385  pooled W r2=+0.0204  | best blend a=0.1 r2=+0.0257
+[  171.1s]          blend(linear pooled, room) r2 by a: 0.0:+0.0204 0.1:+0.0257 0.2:+0.0240 0.3:+0.0154 0.4:-0.0001 0.5:-0.0225 0.6:-0.0519 0.7:-0.0881 0.8:-0.1314 0.9:-0.1815 1.0:-0.2385
+[  171.1s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0346 0.1:+0.0382 0.2:+0.0349 0.3:+0.0248 0.4:+0.0078 0.5:-0.0161 0.6:-0.0468 0.7:-0.0845 0.8:-0.1289 0.9:-0.1803 1.0:-0.2385
+[  171.1s]          -> curved invariant alone r2=+0.0346; best with room term a=0.1 r2=+0.0382
+[  171.1s]       halves >=15 persons: 156 splits, 56,224 pairs | room specific W r2=-0.0476  pooled W r2=+0.0278  | best blend a=0.3 r2=+0.0378
+[  171.1s]          blend(linear pooled, room) r2 by a: 0.0:+0.0278 0.1:+0.0343 0.2:+0.0376 0.3:+0.0378 0.4:+0.0350 0.5:+0.0290 0.6:+0.0199 0.7:+0.0077 0.8:-0.0077 0.9:-0.0261 1.0:-0.0476
+[  171.1s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0436 0.1:+0.0492 0.2:+0.0514 0.3:+0.0505 0.4:+0.0462 0.5:+0.0387 0.6:+0.0280 0.7:+0.0139 0.8:-0.0033 0.9:-0.0239 1.0:-0.0476
+[  171.1s]          -> curved invariant alone r2=+0.0436; best with room term a=0.2 r2=+0.0514
+[  171.1s]       halves >=40 persons: 44 splits, 17,600 pairs | room specific W r2=-0.0391  pooled W r2=+0.0229  | best blend a=0.2 r2=+0.0256
+[  171.1s]          blend(linear pooled, room) r2 by a: 0.0:+0.0229 0.1:+0.0252 0.2:+0.0256 0.3:+0.0242 0.4:+0.0208 0.5:+0.0156 0.6:+0.0084 0.7:-0.0006 0.8:-0.0115 0.9:-0.0244 1.0:-0.0391
+[  171.1s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0298 0.1:+0.0319 0.2:+0.0321 0.3:+0.0302 0.4:+0.0263 0.5:+0.0205 0.6:+0.0126 0.7:+0.0027 0.8:-0.0092 0.9:-0.0232 1.0:-0.0391
+[  171.1s]          -> curved invariant alone r2=+0.0298; best with room term a=0.2 r2=+0.0321
+[  171.1s] room grouped CV, K=2 (50/50 rooms) x 5 repeats, person leakage REMOVED ...
+[  189.3s]    clean K=2 x5: pooled held out rmse=1.1066 r2=0.0248 | invariant but nonlinear g: r2=0.0326 (kept 57.5% of held out pair mass, 1,048,082 ordered pairs)
+[  189.3s]       halves >=5 persons: 5819 splits, 1,299,816 pairs | room specific W r2=-0.1197  pooled W r2=+0.0236  | best blend a=0.2 r2=+0.0311
+[  189.3s]          blend(linear pooled, room) r2 by a: 0.0:+0.0236 0.1:+0.0296 0.2:+0.0311 0.3:+0.0280 0.4:+0.0205 0.5:+0.0084 0.6:-0.0082 0.7:-0.0293 0.8:-0.0549 0.9:-0.0851 1.0:-0.1197
+[  189.3s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0329 0.1:+0.0383 0.2:+0.0391 0.3:+0.0353 0.4:+0.0269 0.5:+0.0140 0.6:-0.0036 0.7:-0.0257 0.8:-0.0525 0.9:-0.0838 1.0:-0.1197
+[  189.3s]          -> curved invariant alone r2=+0.0329; best with room term a=0.2 r2=+0.0391
+[  189.3s]       halves >=15 persons: 2919 splits, 1,081,366 pairs | room specific W r2=-0.0319  pooled W r2=+0.0233  | best blend a=0.3 r2=+0.0353
+[  189.3s]          blend(linear pooled, room) r2 by a: 0.0:+0.0233 0.1:+0.0300 0.2:+0.0340 0.3:+0.0353 0.4:+0.0338 0.5:+0.0297 0.6:+0.0228 0.7:+0.0132 0.8:+0.0009 0.9:-0.0142 1.0:-0.0319
+[  189.3s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0323 0.1:+0.0384 0.2:+0.0418 0.3:+0.0424 0.4:+0.0402 0.5:+0.0351 0.6:+0.0273 0.7:+0.0167 0.8:+0.0033 0.9:-0.0129 1.0:-0.0319
+[  189.3s]          -> curved invariant alone r2=+0.0323; best with room term a=0.3 r2=+0.0424
+[  189.3s]       halves >=40 persons: 1070 splits, 428,000 pairs | room specific W r2=+0.0219  pooled W r2=+0.0294  | best blend a=0.5 r2=+0.0483
+[  189.3s]          blend(linear pooled, room) r2 by a: 0.0:+0.0294 0.1:+0.0368 0.2:+0.0424 0.3:+0.0462 0.4:+0.0482 0.5:+0.0483 0.6:+0.0467 0.7:+0.0432 0.8:+0.0379 0.9:+0.0308 1.0:+0.0219
+[  189.3s]          blend(CURVED pooled, room) r2 by a: 0.0:+0.0384 0.1:+0.0454 0.2:+0.0504 0.3:+0.0536 0.4:+0.0548 0.5:+0.0541 0.6:+0.0515 0.7:+0.0470 0.8:+0.0406 0.9:+0.0322 1.0:+0.0219
+[  189.3s]          -> curved invariant alone r2=+0.0384; best with room term a=0.4 r2=+0.0548
+[  189.3s] per room W panel + PERMUTATION heterogeneity null (rooms >=60 persons, capped at 200) ...
+[  189.3s]    panel rooms=478  persons in panel=77,780
+[  189.4s]    usable panel rooms=478
+[  208.7s]    wild bootstrap draws=200  (pooled panel W=
+[[-0.0421  0.1592]
+ [ 0.1226 -0.0446]])
+[  228.0s]    per room reliability lambda: plasticity mean=0.419 sd=0.174; stability mean=0.392 sd=0.209
+[  228.0s]    dPlasticity->dMatterManner     rooms=  478 meanW=-0.0248 sd(obs)=0.1161 sd(wild null)=0.0818 p=0.0050 excess tau=0.0824 | reliability controlled: sd=1.0515 vs null 0.6917 p=0.0050 tau=0.7920
+[  228.0s]    dPlasticity->dOriginality      rooms=  478 meanW=+0.1712 sd(obs)=0.1151 sd(wild null)=0.0843 p=0.0050 excess tau=0.0784 | reliability controlled: sd=1.1885 vs null 0.9501 p=0.0149 tau=0.7140
+[  228.0s]    dStability->dMatterManner      rooms=  478 meanW=+0.1305 sd(obs)=0.1894 sd(wild null)=0.0980 p=0.0050 excess tau=0.1621 | reliability controlled: sd=2.2836 vs null 1.3213 p=0.0050 tau=1.8625
+[  228.0s]    dStability->dOriginality       rooms=  478 meanW=-0.0380 sd(obs)=0.1795 sd(wild null)=0.0991 p=0.0050 excess tau=0.1496 | reliability controlled: sd=1.7565 vs null 1.0709 p=0.0100 tau=1.3923
+[  228.0s]    corr(log mean rows per person in room, W_r[dPlasticity->dMatterManner]) = +0.072
+[  228.0s]    corr(log mean rows per person in room, W_r[dPlasticity->dOriginality]) = +0.113
+[  228.0s]    corr(log mean rows per person in room, W_r[dStability->dMatterManner]) = +0.339
+[  228.0s]    corr(log mean rows per person in room, W_r[dStability->dOriginality]) = +0.448
+[  228.0s] reliability of person room P and disattenuated W ...
+[  228.0s]    observed cov(dP)=
+[[ 1.4352 -0.1666]
+ [-0.1666  1.5021]]
+[  228.0s]    error    cov(dP)=
+[[ 0.8678 -0.1484]
+ [-0.1484  0.7974]]
+[  228.0s]    reliability lambda: plasticity=0.395 stability=0.469
+[  228.0s]    disattenuated W=
+[[-0.0887  0.4139]
+ [ 0.3151 -0.0618]]
+[  228.0s] within room (differencing) against between room (room mean) slopes ...
+[  228.1s]    naive pooled LEVEL slope (no room term)=
+[[-0.0232  0.2223]
+ [ 0.3668  0.1994]]
+[  228.1s]    BETWEEN room slope (room means)=
+[[0.115  0.5723]
+ [0.8695 0.7484]]
+[  228.1s]    WITHIN room slope (this test)=
+[[-0.0221  0.1626]
+ [ 0.1464 -0.016 ]]
+[  228.1s] exact room centred fit (all persons, no pair cap) as a cross check on the pair sampling ...
+[  228.3s]    exact within room W=
+[[-0.0389  0.1751]
+ [ 0.1452 -0.0263]]
+[  228.3s] circularity check: P read ONLY from the person's OTHER rooms, C from this room ...
+[  230.8s]    leave room out records=163,582 in 1,503 rooms
+[  230.8s]    leave room out W=
+[[-0.0356  0.1142]
+ [ 0.1183 -0.0053]]
+[  230.8s]    POWER dPlasticity->dMatterManner: sampling sd=0.0818  min detectable tau=0.0370  observed excess=0.0824  (to halve the floor: 776 persons per room at 478 rooms, or 7648 rooms at 194 persons)
+[  230.8s]    POWER dPlasticity->dOriginality: sampling sd=0.0843  min detectable tau=0.0359  observed excess=0.0784  (to halve the floor: 776 persons per room at 478 rooms, or 7648 rooms at 194 persons)
+[  230.8s]    POWER dStability->dMatterManner: sampling sd=0.0980  min detectable tau=0.0545  observed excess=0.1621  (to halve the floor: 776 persons per room at 478 rooms, or 7648 rooms at 194 persons)
+[  230.8s]    POWER dStability->dOriginality: sampling sd=0.0991  min detectable tau=0.0560  observed excess=0.1496  (to halve the floor: 776 persons per room at 478 rooms, or 7648 rooms at 194 persons)
+[  230.8s] wrote /tmp/cc_state_diff_invariance_large.json
+[  230.8s] done
+=== ALLDONE ===

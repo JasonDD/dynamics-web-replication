@@ -16,8 +16,6 @@ Every result directory named below lives at `docs/papers/dynamics_web_series/res
 
 **Where the data lives.** Public benchmark corpora and the internal crawl derivatives sit either on the NAS at `/mnt/nas/kronaxis/corpora/<name>/` or in the `cc_v3` schema of the internal Postgres (`cc_v3.domain_char8_expanded`, `cc_v3.reddit_wide`, `cc_v3.crosssite_authorship`, and the labelled tables named per experiment). The reference ruler table and the internal crawl tables are the internal hold set (Section 2).
 
-**The full link graph propagation method.** The character and authority scores are carried from the scored seed across the whole crawl link graph (about 118.76 million domains) by an in propagation over the edge arrays, materialising an indegree, a pagerank and an eight axis character for any linked domain. The method is a public recipe (`scripts/fullgraph_propagate.py` in the main repository, a resumable CPU job over the edge arrays); the pre computed national and sector maps it produces are the commercial asset and are held (Section 7, item 2). Publishing how to propagate does not hand over the propagated map.
-
 **Environment.** python3 with numpy, scipy, statsmodels, pandas, psycopg2, pyarrow; the two scorer endpoints served locally; the Postgres reachable on the internal host. Heavy scoring runs under `kx-daemon` (write as you go, self healing). Nothing needs a GPU at analysis time; scoring does.
 
 ---
@@ -107,7 +105,6 @@ The 54 above are the experiments packaged with their own `results/<name>/RESULT.
 
 | experiment | location | data source | scripts | headline result |
 |---|---|---|---|---|
-| **Paper 4 public journalist proxy** | `results/paper4_public_proxy/` | public news, journalists across editorial sections (`cc_v3.news_topic`) | paper4_public_proxy.py | The reviewable public substitute for the held cross site corpus: the Paper 4 coupling reproduces on a public journalist substrate. plasticity to originality r = +0.390 at person level (n = 1,355 authors seen across two or more sections), trait fraction (mean disposition ICC) about 0.12. Identifies the person by byline only; does NOT use the held cross site linkage method. Added for the v70 reviewability reframe. |
 | **external validity** | `truthometer/results/instrument_external_validity/` | ASAP essay scores, IBM ArgQ, PERSUADE | cc_extval_prep.py, cc_extval_analyse.py | The substance axes have external validity against human quality labels: rigour and depth correlate positively with every human quality measure, holding after the length control (partial +0.18 to +0.23 on PERSUADE); length dominates the raw essay correlation and the partial is the honest, smaller number. |
 | **genre state pre registration** | `truthometer/results/prereg_genre_PF-4B/` | reddit communities, frozen genre taxonomy (hash 2d701e0c) | cc_genre_state_fit.py | The first pinned term of the equation of state: on a pre registered, frozen genre assignment with leave communities out cross validation, genre enters as a strong level effect (a location), confirmed on the 27B lineage. This is the foundation the equation of state thread builds on. |
 | country affinity floor | `truthometer/results/RESULT_affinity_floor.md` | the scored web, web graph | clean_country_affinity.py | Per country link affinity partners by lift, with honest pass and drop lists; the national link neighbourhoods recover linguistic and historical families. |
@@ -116,7 +113,7 @@ The 54 above are the experiments packaged with their own `results/<name>/RESULT.
 
 **The analyser outputs behind the figures.** The top level of `docs/papers/dynamics_web_series/results/` holds about thirty three saved analyser output files (the `.txt` artifacts named in `results/README.md`), which are the exact numbers behind the figures in the papers: the where and when analyses (`where_when`, `se_when_drift`, `ungd_where_when`, `parlamint_where_who`), the deep time within source proofs (`within_source_*`), the ChangeMyView arbiter analyses, the culture map and its controls, the classical and ancient persuasion read, the fractal dimension, the link earning regularity, and more. These are committed as artifacts, each stamped with its generation time and data state, and all of them regenerate with one script, `truthometer/scripts/run_all_results.sh`, against the scores on the NAS and the `cc_v3` tables. They are analyses that feed the papers rather than standalone packaged experiments, which is why they are artifacts and a regeneration script rather than 33 separate manifest rows.
 
-**So the honest total.** About 91 distinct analyses underlie the programme: the 54 packaged experiments above, the six further studies in this section (the Paper 4 public journalist proxy added for the v70 reviewability reframe, external validity, genre pre registration, country affinity, character to personality, and the Upworthy causal anchor), and the roughly 33 figure output analyses regenerable from one script. The 54 was the count of one directory, not of the whole; the external validity study, the genre pre registration and the Paper 4 public proxy in particular are central, not peripheral, and are now in the pack.
+**So the honest total.** About 90 distinct analyses underlie the programme: the 54 packaged experiments above, the five further studies in this section, and the roughly 33 figure output analyses regenerable from one script. The 54 was the count of one directory, not of the whole; the external validity study and the genre pre registration in particular are central, not peripheral, and are now in the pack.
 
 ---
 
@@ -165,3 +162,30 @@ Five things are held for commercial protection, and none of them is in the paper
 5. **The acquisition strategy.** The gap list and the compass that says where to extend coverage next. Knowing where to expand is itself an edge and appears in no paper.
 
 The tension this resolves. Making the science reproducible for reviewers does not thin the moat, because a reviewer who reproduces a headline on a public benchmark obtains none of the five: not the production scorer, not the scored web, not the coordinates, not the platform, not the roadmap. Publishing the science is therefore safe for the business exactly as long as those five stay held. This pack ships reproducible science and holds all five by construction; a release decision should weigh all four axes at once, public science, privacy held data, government sword, and commercial moat, and confirm that the five commercial holds remain out of whatever is shipped.
+
+---
+
+## Addendum, 3 September 2026: the competitor test, the reduction net, and the third corpus
+
+New result directories added this release, all public tier (recipe and numbers; the held corpora and the
+scorer stay out):
+
+- `results/equation_of_state/competitor_test/` the preregistered competitor test and its three amendments:
+  the constrained architecture against gradient boosted trees and a room identity perceptron, pass mark
+  committed before the run. Subreddits pass; the web domains fail on the rank two state constraint, which is
+  withdrawn; the three part model without it sits on the pass boundary.
+- `results/equation_of_state/within_room_differencing/`, `room_is_community/`, `second_corpus_replication/`,
+  `ablation_permutation_reverse/`, `selection_vs_treatment/` the differencing test that removed the
+  invariance claim, its attribution to community identity, the second corpus where the rotation did not
+  travel, the ablation and permutation null, and the selection against treatment tests.
+- `results/reduction_cohmetrix/`, `reduction_grice/`, `reduction_biber_within/`, `reduction_manner_mirror/`,
+  `reduction_synthesis/` the four framework reductions and the manner pole mirror, read together as one
+  nomological net. `reduction_synthesis/RESULT.md` carries the canonical summary: convergent and
+  discriminant validity across four frameworks, a double dissociation across the two poles, and the explicit
+  statement that this does not by itself establish a generative substrate.
+- `results/second_reader_lineage/` the coupling and its bend re read by an independent model family.
+- `results/char_map_rebuild/` the held out validation of the two hop character propagation (r 0.42, sized by
+  evidence band) and the discard of the first, faulty full propagation.
+- `results/effect_side_within_room/` the five persuasion clauses of Paper 4B put through the within unit test.
+
+Naming: the coupling paper is Paper 4A from this version, so the series reads 4A, 4B, 4C.

@@ -1,0 +1,152 @@
+{
+  "n": 77182,
+  "n_rooms": 400,
+  "indices": [
+    "mean_word_len",
+    "type_token",
+    "rare_word_rate",
+    "polysyllable_rate",
+    "words_per_sentence",
+    "connective_rate",
+    "causal_connective",
+    "logical_connective",
+    "subordinator_rate",
+    "fk_grade",
+    "flesch_ease",
+    "referential_cohesion"
+  ],
+  "pc1_vs_index": {
+    "mean_word_len": {
+      "item": 0.2096526668202043,
+      "within": 0.15831994716039965,
+      "within_disattenuated_ruler": 0.24400267545003218
+    },
+    "type_token": {
+      "item": -0.28779444499726675,
+      "within": -0.2940898321868797,
+      "within_disattenuated_ruler": -0.4532511990011486
+    },
+    "rare_word_rate": {
+      "item": 0.004656973786653335,
+      "within": -0.0315326480069027,
+      "within_disattenuated_ruler": -0.04859811170801657
+    },
+    "polysyllable_rate": {
+      "item": 0.2077575086836278,
+      "within": 0.16322228608069553,
+      "within_disattenuated_ruler": 0.2515581593544269
+    },
+    "words_per_sentence": {
+      "item": 0.1830845589393788,
+      "within": 0.17505623865328698,
+      "within_disattenuated_ruler": 0.2697966450326444
+    },
+    "connective_rate": {
+      "item": -0.03315280230380367,
+      "within": -0.00793541985478389,
+      "within_disattenuated_ruler": -0.012230067721187883
+    },
+    "causal_connective": {
+      "item": -0.04738015184130069,
+      "within": -0.025826449584634866,
+      "within_disattenuated_ruler": -0.039803719676850174
+    },
+    "logical_connective": {
+      "item": 0.010374180138988156,
+      "within": 0.02281425812018261,
+      "within_disattenuated_ruler": 0.03516133070769859
+    },
+    "subordinator_rate": {
+      "item": 0.09342672914389613,
+      "within": 0.09834150864097188,
+      "within_disattenuated_ruler": 0.15156391627568444
+    },
+    "fk_grade": {
+      "item": 0.2629793479074989,
+      "within": 0.23377293193974297,
+      "within_disattenuated_ruler": 0.3602908026700201
+    },
+    "flesch_ease": {
+      "item": -0.26998727457780525,
+      "within": -0.23455243822202795,
+      "within_disattenuated_ruler": -0.361492177618781
+    },
+    "referential_cohesion": {
+      "item": 0.06929172972676777,
+      "within": 0.06289242752404987,
+      "within_disattenuated_ruler": 0.09692979852922706
+    }
+  },
+  "axes_vs_index": {
+    "depth": {
+      "mean_word_len": 0.1839862182959252,
+      "type_token": -0.32081620820089296,
+      "rare_word_rate": -0.00976349274760189,
+      "polysyllable_rate": 0.19590802931520118,
+      "words_per_sentence": 0.20983807303887536,
+      "connective_rate": 0.010189585588842615,
+      "causal_connective": -0.03249095281256562,
+      "logical_connective": 0.05564956681876274,
+      "subordinator_rate": 0.09081231642199938,
+      "fk_grade": 0.27815718852000776,
+      "flesch_ease": -0.2707316360583044,
+      "referential_cohesion": 0.04266768617387331
+    },
+    "rigour": {
+      "mean_word_len": 0.20327551916480915,
+      "type_token": -0.27540021390505715,
+      "rare_word_rate": 0.02188257960321258,
+      "polysyllable_rate": 0.2046588445023356,
+      "words_per_sentence": 0.14485093245080058,
+      "connective_rate": -0.020812356128149006,
+      "causal_connective": -0.04201996108018046,
+      "logical_connective": 0.03287732382228203,
+      "subordinator_rate": 0.06943085522703896,
+      "fk_grade": 0.22844951128257784,
+      "flesch_ease": -0.2475486430418405,
+      "referential_cohesion": 0.06877879364752308
+    },
+    "originality": {
+      "mean_word_len": -0.05654979070291174,
+      "type_token": -0.08411701923794793,
+      "rare_word_rate": -0.07723880719443837,
+      "polysyllable_rate": -0.0423151052672072,
+      "words_per_sentence": 0.11733462371315626,
+      "connective_rate": 0.07577988440958189,
+      "causal_connective": 0.04972195097419835,
+      "logical_connective": 0.04877014456636929,
+      "subordinator_rate": 0.05627455739389004,
+      "fk_grade": 0.07166180168380185,
+      "flesch_ease": -0.011747491692335466,
+      "referential_cohesion": -0.031212257695108762
+    },
+    "affect": {
+      "mean_word_len": -0.23085557761298386,
+      "type_token": 0.1090327235375342,
+      "rare_word_rate": -0.09993637633486095,
+      "polysyllable_rate": -0.205621503840743,
+      "words_per_sentence": -0.0822278083724433,
+      "connective_rate": 0.0669654702886834,
+      "causal_connective": 0.08535159315487263,
+      "logical_connective": 0.004314295575137263,
+      "subordinator_rate": -0.011874006610861137,
+      "fk_grade": -0.1908273580107625,
+      "flesch_ease": 0.24231894255107098,
+      "referential_cohesion": -0.11079904938122495
+    },
+    "register": {
+      "mean_word_len": -0.048850546180432115,
+      "type_token": 0.03685037561648412,
+      "rare_word_rate": -0.0588786094710198,
+      "polysyllable_rate": -0.0255928565778485,
+      "words_per_sentence": 0.018499091041587947,
+      "connective_rate": 0.04906892812741868,
+      "causal_connective": 0.007788469758655194,
+      "logical_connective": 0.06214647441768864,
+      "subordinator_rate": 0.024349663070053193,
+      "fk_grade": -0.006243588665265877,
+      "flesch_ease": 0.027352048801732972,
+      "referential_cohesion": 0.021689770968858383
+    }
+  }
+}

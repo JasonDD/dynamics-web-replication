@@ -1,0 +1,41 @@
+{
+  "n": 77182,
+  "n_rooms": 400,
+  "grice_n": 14461,
+  "predictions": {
+    "matter": {
+      "Complexity": "UP",
+      "Cohesion": "~0",
+      "Affective_social": "DOWN",
+      "grice_QR": "UP",
+      "grice_manner": "~0"
+    },
+    "manner": {
+      "Complexity": "~0",
+      "Cohesion": "~0",
+      "Affective_social": "UP",
+      "grice_QR": "~0/down",
+      "grice_manner": "~0"
+    }
+  },
+  "matter": {
+    "Complexity": 0.2156745870949104,
+    "Cohesion": 0.01616973146902136,
+    "Affective_social": -0.0975188960424168,
+    "grice_QR": 0.33986749534532545,
+    "grice_manner": 0.06120979991005312
+  },
+  "manner": {
+    "Complexity": -0.1528268567886637,
+    "Cohesion": 0.00217350826776299,
+    "Affective_social": 0.07765590576776069,
+    "grice_QR": -0.13899651946207525,
+    "grice_manner": -0.035016489886606404
+  },
+  "double_dissociation": {
+    "matter_complexity": 0.2156745870949104,
+    "manner_affective": 0.07765590576776069,
+    "manner_complexity": -0.1528268567886637,
+    "matter_affective": -0.0975188960424168
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "n_comments": 79794,
+  "n_rooms": 399,
+  "r_item": -0.13855816157010872,
+  "r_within_pooled": -0.08091768622595451,
+  "perm_null_mean": -0.00016222672324302112,
+  "perm_null_sd": 0.0033812160767352026,
+  "d1_split_half_r": 0.36087890570812364,
+  "d1_reliability": 0.5303615247388126,
+  "pc1_two_reader_r_raw": 0.5385745738837813,
+  "pc1_two_reader_r_within": 0.4210049241168542,
+  "r_within_disattenuated": -0.17124340826468373,
+  "r_item_disattenuated": -0.29322602927496466,
+  "r_centroid": -0.6033409962348673,
+  "reading": "the reduction as it holds inside a room, one comment against one comment, corrected for the noise of a single read on both sides"
+}

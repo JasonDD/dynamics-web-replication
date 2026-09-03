@@ -1,0 +1,49 @@
+{
+ "table": "crosssite_authorship",
+ "rooms": 1008,
+ "records": 161867,
+ "persons": 48293,
+ "kfold": 5,
+ "seed": 20260903,
+ "ablation": {
+  "room_mean_only": 0.0,
+  "map_only_no_room": -0.2872990977205603,
+  "shift_only_linear_map": 0.036352131283827305,
+  "shift_curved_map": 0.040643530854510446,
+  "shift_curved_map_bend": 0.06542337195038272,
+  "shift_curved_map_bend_rank2": 0.002999047976162683
+ },
+ "permutation_null": {
+  "gains": [
+   -3.526933884012706e-05,
+   -4.342998065687276e-05,
+   -3.430970169571168e-05,
+   -3.4908787254428475e-05,
+   -5.0792182050507506e-05,
+   -2.3264408913092893e-05,
+   -4.628411584484127e-05,
+   -5.179043122605087e-05,
+   -5.3057808679479734e-05,
+   -5.4801622912936665e-05,
+   -3.605849203824896e-05,
+   -2.9587336120462382e-05,
+   -5.619027071568361e-05,
+   -2.9144923789248267e-05,
+   -2.891362430923472e-05,
+   -4.747964912366065e-05,
+   -1.82444893024325e-05,
+   -4.261239606551115e-05,
+   -3.756980262981102e-05,
+   -4.7296939457153186e-05
+  ],
+  "mean": -4.005031508127477e-05,
+  "sd": 1.0674949047858923e-05,
+  "p95": -2.301341293255987e-05,
+  "real": 0.06542337195038272
+ },
+ "reverse_prediction": {
+  "gain_C_to_P": 0.12643077070867015,
+  "gain_P_to_C_linear": 0.036352131283827305,
+  "note": "both are within room linear maps with a room shift; C has 8 inputs, P has 2, so equal gains are not expected; a C to P gain far above P to C flags the reader reading both from the same text"
+ }
+}

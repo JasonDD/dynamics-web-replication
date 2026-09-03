@@ -2,7 +2,7 @@
 
 Reproducibility material for the Distinct Fields programme (the DYNAMICS-WEB character instrument, the person to content coupling, the manipulation signature, and the equation of state). Private for now.
 
-Start with `REPLICATION_PACK.md`: the shared measuring apparatus, the manifest of about ninety analyses with data source and headline result, the recipe to regenerate the scored data, and the release governance (public science, held data, government restricted, and the commercial moat).
+Start with `REPLICATION_PACK.md`: the shared measuring apparatus, the manifest of about a hundred analyses with data source and headline result, the recipe to regenerate the scored data, and the release governance (public science, held data, government restricted, and the commercial moat).
 
 - `REPLICATION_PACK.md` the pack itself.
 - `results/` the per experiment write ups and their analysis scripts, including `results/paper4_public_proxy/`, the public journalist substrate that reproduces the Paper 4 coupling (plasticity to originality r about +0.39) without the held cross site corpus, added for the v70 reviewability reframe.

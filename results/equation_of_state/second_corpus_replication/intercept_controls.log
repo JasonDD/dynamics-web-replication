@@ -1,0 +1,87 @@
+###### NEWS intercept controls 2026-09-03T13:04:44+00:00
+[    0.0s] building the canonical matter against manner ruler ...
+[   21.2s] ruler rows=2,648,406
+[   21.2s] pulling rows (table=news_topic person=author room=topic disp=disp_d8 char=char_dweb) ...
+[   23.0s] usable rows=33,920  persons=1,367  rooms=24
+[   23.2s] rooms with >=5 persons: 24   person room records: 4,043   distinct persons: 1,367
+[   23.2s] pooled pairs: 9,590 ordered rows (4,795 unordered) across 24 rooms
+[   23.2s] POOLED W on the untouched data (rows = dPlasticity, dStability ; cols = dMatterManner, dOriginality):
+[   23.2s]    [[ 0.0955  0.2885]
+ [ 0.0805 -0.166 ]]
+[   23.2s] 
+[   23.2s] A. WHY THE ORIGINAL INTERCEPT CHECK IS VACUOUS (three variants, all zero) ...
+[   23.5s]    variant 1  both orderings              intercept = [4.53482902e-18 6.14899549e-18]  (antisymmetric by construction)
+[   23.6s]    variant 2  every second row (original) intercept = [-0.00094413 -0.00522403]  se [0.02164 0.02002]
+[   23.7s]    variant 3  one random ordering per pair intercept = [-0.02331855 -0.02031381]  se [0.02078 0.02012]
+[   23.7s]    variants 1 and 2 are zero to machine precision because both subsamples are exactly
+[   23.7s]    antisymmetric; variant 3 is a real draw but has expectation zero under EVERY model, so
+[   23.7s]    none of the three can fail. The check carries no evidence. Controls B and C replace it.
+[   23.7s] 
+[   23.7s] B. CONTROL 1 -- LOCATION INJECTION (does differencing really remove the room term?) ...
+[   23.7s]    room shift sd=0.5: max |change| in WITHIN room W = 2.776e-17   in the naive LEVEL slope (no room term) = 0.0705
+[   23.7s]    room shift sd=1.0: max |change| in WITHIN room W = 2.776e-17   in the naive LEVEL slope (no room term) = 0.1519
+[   23.7s]    room shift sd=2.0: max |change| in WITHIN room W = 0.000e+00   in the naive LEVEL slope (no room term) = 0.2285
+[   23.7s]    CONTROL 1 PASS: differencing is blind to an injected room location term while a level fit is not.
+[   23.7s] 
+[   23.7s] C. CONTROL 2 -- ROTATION INJECTION (would we detect a rotation of the claimed size?) ...
+[   23.7s]    panel rooms (>=60 persons) = 20
+[   23.8s]    untouched data: best blend weight a=0.4  curve={0.0: 0.04291, 0.1: 0.04629, 0.2: 0.04863, 0.3: 0.04996, 0.4: 0.05027, 0.5: 0.04955, 0.6: 0.04781, 0.7: 0.04505, 0.8: 0.04127, 0.9: 0.03647, 1.0: 0.03064}
+[   24.8s]    untouched dispersion dPlas->dMM     sd(obs)=0.1224 sd(null)=0.1063 p=0.2289 excess tau=0.0608
+[   24.8s]    untouched dispersion dPlas->dOrig   sd(obs)=0.1589 sd(null)=0.1124 p=0.0398 excess tau=0.1123
+[   24.8s]    untouched dispersion dStab->dMM     sd(obs)=0.1067 sd(null)=0.1004 p=0.3682 excess tau=0.0361
+[   24.8s]    untouched dispersion dStab->dOrig   sd(obs)=0.1264 sd(null)=0.1064 p=0.1741 excess tau=0.0682
+[   25.8s]    injected rotation tau=0.060: best blend weight a=0.3 (untouched 0.4)  dispersion p=[0.2587, 0.01, 0.4428, 0.1493]
+[   25.8s]       -> NOT DETECTED at tau=0.060
+[   26.7s]    injected rotation tau=0.150: best blend weight a=0.6 (untouched 0.4)  dispersion p=[0.005, 0.005, 0.005, 0.005]
+[   26.7s]       -> DETECTED at tau=0.150
+[   26.7s] 
+[   26.7s] VERDICT ON THE CONTROLS:
+[   26.7s]    location control: PASS
+[   26.7s]    rotation control tau=0.060: FAIL (underpowered)
+[   26.7s]    rotation control tau=0.150: PASS (has power)
+[   27.1s] wrote /mnt/nas/kronaxis/corpora/exp_diff_invariance_rep/icheck_news.json
+[   27.1s] done
+###### REDDIT intercept controls 2026-09-03T13:05:12+00:00
+[    0.1s] building the canonical matter against manner ruler ...
+[   21.7s] ruler rows=2,648,406
+[   21.7s] pulling rows (table=reddit_wide person=author room=subreddit disp=disp_d8_behav_27b char=char) ...
+[   28.6s] usable rows=77,078  persons=47,512  rooms=400
+[   30.0s] rooms with >=5 persons: 400   person room records: 49,863   distinct persons: 47,512
+[   30.2s] pooled pairs: 160,000 ordered rows (80,000 unordered) across 400 rooms
+[   30.2s] POOLED W on the untouched data (rows = dPlasticity, dStability ; cols = dMatterManner, dOriginality):
+[   30.2s]    [[-0.1076  0.2723]
+ [ 0.2165 -0.0884]]
+[   30.2s] 
+[   30.2s] A. WHY THE ORIGINAL INTERCEPT CHECK IS VACUOUS (three variants, all zero) ...
+[   35.0s]    variant 1  both orderings              intercept = [ 5.55111512e-19 -3.33066907e-18]  (antisymmetric by construction)
+[   37.0s]    variant 2  every second row (original) intercept = [ 7.85046229e-19 -1.96261557e-19]  se [0.00423 0.0047 ]
+[   38.9s]    variant 3  one random ordering per pair intercept = [-0.00735713 -0.00609145]  se [0.00459 0.00505]
+[   38.9s]    variants 1 and 2 are zero to machine precision because both subsamples are exactly
+[   38.9s]    antisymmetric; variant 3 is a real draw but has expectation zero under EVERY model, so
+[   38.9s]    none of the three can fail. The check carries no evidence. Controls B and C replace it.
+[   38.9s] 
+[   38.9s] B. CONTROL 1 -- LOCATION INJECTION (does differencing really remove the room term?) ...
+[   39.0s]    room shift sd=0.5: max |change| in WITHIN room W = 0.000e+00   in the naive LEVEL slope (no room term) = 0.0135
+[   39.0s]    room shift sd=1.0: max |change| in WITHIN room W = 1.110e-16   in the naive LEVEL slope (no room term) = 0.0331
+[   39.0s]    room shift sd=2.0: max |change| in WITHIN room W = 2.776e-17   in the naive LEVEL slope (no room term) = 0.0291
+[   39.0s]    CONTROL 1 PASS: differencing is blind to an injected room location term while a level fit is not.
+[   39.0s] 
+[   39.0s] C. CONTROL 2 -- ROTATION INJECTION (would we detect a rotation of the claimed size?) ...
+[   39.0s]    panel rooms (>=60 persons) = 387
+[   39.4s]    untouched data: best blend weight a=0.2  curve={0.0: 0.07697, 0.1: 0.07827, 0.2: 0.07877, 0.3: 0.07847, 0.4: 0.07739, 0.5: 0.0755, 0.6: 0.07282, 0.7: 0.06934, 0.8: 0.06507, 0.9: 0.06001, 1.0: 0.05414}
+[   54.5s]    untouched dispersion dPlas->dMM     sd(obs)=0.1197 sd(null)=0.1019 p=0.0050 excess tau=0.0628
+[   54.5s]    untouched dispersion dPlas->dOrig   sd(obs)=0.1191 sd(null)=0.1057 p=0.0100 excess tau=0.0549
+[   54.5s]    untouched dispersion dStab->dMM     sd(obs)=0.1382 sd(null)=0.1056 p=0.0050 excess tau=0.0892
+[   54.5s]    untouched dispersion dStab->dOrig   sd(obs)=0.1356 sd(null)=0.1142 p=0.0050 excess tau=0.0732
+[   71.5s]    injected rotation tau=0.060: best blend weight a=0.3 (untouched 0.2)  dispersion p=[0.005, 0.005, 0.005, 0.005]
+[   71.5s]       -> DETECTED at tau=0.060
+[   88.3s]    injected rotation tau=0.150: best blend weight a=0.6 (untouched 0.2)  dispersion p=[0.005, 0.005, 0.005, 0.005]
+[   88.3s]       -> DETECTED at tau=0.150
+[   88.3s] 
+[   88.3s] VERDICT ON THE CONTROLS:
+[   88.3s]    location control: PASS
+[   88.3s]    rotation control tau=0.060: PASS (has power)
+[   88.3s]    rotation control tau=0.150: PASS (has power)
+[   88.7s] wrote /mnt/nas/kronaxis/corpora/exp_diff_invariance_rep/icheck_reddit.json
+[   88.7s] done
+ICHECKDONE

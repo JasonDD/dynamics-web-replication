@@ -1,0 +1,31 @@
+{
+ "n": 1012,
+ "emb_dim": 50,
+ "donated_base_rate": 0.5375,
+ "primary_donated_binary": {
+  "blocks": {
+   "baseline": 0.0263,
+   "+embedding": 0.033,
+   "+content": 0.031,
+   "+interaction": 0.0302
+  },
+  "interaction_delta": -0.0008,
+  "boot_lo": -0.0031,
+  "boot_hi": 0.0015,
+  "perm_p": 0.4378,
+  "verdict": "NULL: the interaction is redundant given person + content + embedding"
+ },
+ "secondary_log_donation": {
+  "blocks": {
+   "baseline": 0.0076,
+   "+embedding": 0.0208,
+   "+content": 0.0193,
+   "+interaction": 0.018
+  },
+  "interaction_delta": -0.0013,
+  "boot_lo": -0.0026,
+  "boot_hi": -0.0002,
+  "perm_p": 0.6318,
+  "verdict": "NULL: the interaction is redundant given person + content + embedding"
+ }
+}

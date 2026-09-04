@@ -1,0 +1,127 @@
+{
+ "n": 2000,
+ "workers": 80,
+ "A_insample": {
+  "reference_bigfive_x_ff_simple_baseline": {
+   "r2_base": 0.0829,
+   "r2_full": 0.0842,
+   "incr": 0.0013,
+   "F": 0.565,
+   "p": 0.727
+  },
+  "reference_bigfive_x_ff_full_baseline": {
+   "r2_base": 0.0829,
+   "r2_full": 0.0842,
+   "incr": 0.0013,
+   "F": 0.567,
+   "p": 0.72554
+  },
+  "dynamics_interaction_full_baseline": {
+   "r2_base": 0.0829,
+   "r2_full": 0.0849,
+   "incr": 0.002,
+   "F": 1.074,
+   "p": 0.36758
+  }
+ },
+ "B_reference_heldout": {
+  "reference_heldout_delta": -0.0034,
+  "reference_heldout_boot_lo": -0.0104
+ },
+ "C_power_curves": {
+  "frozen_coupling": {
+   "0.0": {
+    "power": 0.0,
+    "mean_delta_hat": -0.0029
+   },
+   "0.005": {
+    "power": 0.058,
+    "mean_delta_hat": 0.0027
+   },
+   "0.008": {
+    "power": 0.133,
+    "mean_delta_hat": 0.006
+   },
+   "0.01": {
+    "power": 0.258,
+    "mean_delta_hat": 0.0075
+   },
+   "0.015": {
+    "power": 0.658,
+    "mean_delta_hat": 0.0141
+   },
+   "0.02": {
+    "power": 0.867,
+    "mean_delta_hat": 0.0188
+   },
+   "0.03": {
+    "power": 0.992,
+    "mean_delta_hat": 0.0299
+   }
+  },
+  "sparse_single_axis": {
+   "0.0": {
+    "power": 0.0,
+    "mean_delta_hat": -0.0024
+   },
+   "0.005": {
+    "power": 0.0,
+    "mean_delta_hat": -0.0014
+   },
+   "0.008": {
+    "power": 0.0,
+    "mean_delta_hat": -0.0005
+   },
+   "0.01": {
+    "power": 0.008,
+    "mean_delta_hat": 0.0007
+   },
+   "0.015": {
+    "power": 0.025,
+    "mean_delta_hat": 0.0013
+   },
+   "0.02": {
+    "power": 0.05,
+    "mean_delta_hat": 0.003
+   },
+   "0.03": {
+    "power": 0.175,
+    "mean_delta_hat": 0.0061
+   }
+  },
+  "balanced_dense": {
+   "0.0": {
+    "power": 0.0,
+    "mean_delta_hat": -0.0028
+   },
+   "0.005": {
+    "power": 0.0,
+    "mean_delta_hat": 0.0002
+   },
+   "0.008": {
+    "power": 0.017,
+    "mean_delta_hat": 0.002
+   },
+   "0.01": {
+    "power": 0.05,
+    "mean_delta_hat": 0.0035
+   },
+   "0.015": {
+    "power": 0.258,
+    "mean_delta_hat": 0.0077
+   },
+   "0.02": {
+    "power": 0.308,
+    "mean_delta_hat": 0.009
+   },
+   "0.03": {
+    "power": 0.733,
+    "mean_delta_hat": 0.0164
+   }
+  }
+ },
+ "pass_threshold": 0.01,
+ "observed_dynamics_delta": 0.0004,
+ "ADJUDICATOR_power_frozen_form_at_0.01": 0.258,
+ "adjudicator_sentence": "At the frozen +0.01 substantive threshold, the exact UCSC pipeline had 26% probability of detecting an injected interaction of the preregistered (frozen coupling) form."
+}

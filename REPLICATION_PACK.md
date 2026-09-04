@@ -117,6 +117,10 @@ The 54 above are the experiments packaged with their own `results/<name>/RESULT.
 
 ---
 
+| `person_content_interaction` (PSG) | PersuasionForGood (public, ConvoKit) | cc_psg_interaction.py | The frozen person by content interaction is null on real donation over personality, content and a modern embedding (increment about -0.001, intervals spanning zero). |
+| `person_content_interaction` (UCSC) | UCSC Persuasion and Personality (public) | cc_ucsc_interaction.py, cc_ucsc_power.py | Interaction near zero, but the reference interaction fails in sample (F p = 0.73) and a frozen power injection gives only 26 per cent power at the +0.01 threshold; non adjudicative, zero evidence either way. |
+| `person_content_interaction` (severe test) | design and simulation only | cc_experiment_power_design.py | The frozen, ready to run randomised severe test and its sample size study; the experiment that could adjudicate the effect side causal claim, awaiting a partner. |
+
 ## 5. How to reproduce a single experiment, worked example
 
 Take `reduction_elm`. Its data is IBM ArgQ (public). Fetch or locate the held character scores of ArgQ; if regenerating, score the ArgQ texts with `cc_found_human_score.py`. Build the matter versus manner ruler by singular value decomposition of `cc_v3.domain_char8_expanded` oriented rigour plus depth positive (the script does this). Run `results/reduction_elm/scripts/elm_reduction.py`. Expected: the central pair (rigour plus depth) partial Spearman correlation against the human argument quality label, controlling length, near +0.159, with affect the only negative axis. That pattern is the reduction. Every other row follows the same shape: locate or regenerate the data, rebuild the ruler, run the named analysis script, compare to the headline result.
@@ -163,9 +167,20 @@ Five things are held for commercial protection, and none of them is in the paper
 
 The tension this resolves. Making the science reproducible for reviewers does not thin the moat, because a reviewer who reproduces a headline on a public benchmark obtains none of the five: not the production scorer, not the scored web, not the coordinates, not the platform, not the roadmap. Publishing the science is therefore safe for the business exactly as long as those five stay held. This pack ships reproducible science and holds all five by construction; a release decision should weigh all four axes at once, public science, privacy held data, government sword, and commercial moat, and confirm that the five commercial holds remain out of whatever is shipped.
 
+---
 
-### Addendum, later 3 September 2026: the keystone re-survey
+## Archival, DOIs and cross reference
 
-- `results/ashlar_atlas/` the full eight by eight disposition to character coupling (the Ashlar map), within room differenced, with a per cell interval and two cross reader legs; richer than the single matter against manner slice and stable across a reader swap.
-- `results/d8_robustness/` the disposition instrument's reliability: split half per axis and two reader agreement across model families, with the four reader dependent axes named.
-- `results/scale_invariance_matrix/` the four scale test behind the directionally fractal verdict.
+The peer facing papers are archived on Zenodo under Jason Duke, CC BY 4.0, and every record cross references this
+replication repository (`https://github.com/JasonDD/dynamics-web-replication`) as its supporting material; the
+repository in turn lists the record DOIs below. The two papers with a prior published record are uploaded as new
+versions of that record so the DOI version chain holds; the rest mint fresh records on first upload.
+
+| paper | Zenodo record |
+|---|---|
+| Paper 3, DYNAMICS-8 | new version of `10.5281/zenodo.19361059` |
+| Paper 7, PCAA | new version of `10.5281/zenodo.20601300` |
+| Papers 1, 2, 4A, 4B, 4C, 5, 6, 8 | fresh records, DOIs assigned on first upload and recorded here |
+
+The upload package with per record metadata is `exports/zenodo/ZENODO_UPLOAD_PACKAGE.md`. The repository is private
+until release; it is made public at the moment of the Zenodo deposit so the paper to repository to DOI links resolve.

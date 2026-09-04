@@ -1,0 +1,21 @@
+{
+ "n": 2000,
+ "workers": 80,
+ "arguments": 100,
+ "blocks": {
+  "baseline": 0.0549,
+  "+embedding": 0.0131,
+  "+content": 0.01,
+  "+interaction": 0.0104
+ },
+ "interaction_delta": 0.0004,
+ "boot_lo": -0.0016,
+ "boot_hi": 0.0021,
+ "perm_p": 0.1443,
+ "verdict": "NULL: the interaction is redundant given person + content",
+ "positive_control_bigfive_x_ff": {
+  "delta": -0.0003,
+  "perm_p": 0.4527,
+  "r2": 0.0097
+ }
+}

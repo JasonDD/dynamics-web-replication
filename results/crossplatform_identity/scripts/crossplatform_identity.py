@@ -4,7 +4,7 @@
 Question: given two pieces of writing from two DIFFERENT platforms, can we decide
 whether they are the same pseudonymous person, from the writing alone?
 
-Ground truth: cc_v3.crosssite_authorship. A cross site identity key (type withheld as commercial IP) that appears on 2+ distinct domains is the SAME person seen on 2+ platforms.
+Ground truth: the internal cross site corpus. A cross site identity key (type withheld as commercial IP) that appears on 2+ distinct domains is the SAME person seen on 2+ platforms.
 The table already carries the 8 axis DYNAMICS-WEB character vector (char_dweb, 7B scorer).
 
 Signals compared:
@@ -14,7 +14,7 @@ Signals compared:
   3. COMBINED   : logistic fusion, plus the decomposition (what character adds over
                   stylometry and the reverse).
 
-Everything is read only. Runs on DL580 against the local tfs DB. No scoring calls.
+Everything is read only. Runs on the internal host against the local tfs DB. No scoring calls.
 """
 import os, sys, json, math, random, re, time
 from collections import Counter, defaultdict
@@ -61,7 +61,7 @@ def load_units():
     con = db(); cur = con.cursor("csa_stream"); cur.itersize = 20000
     cur.execute("""
         SELECT key_type, ident, domain, char_dweb, left(body, 4000)
-        FROM cc_v3.crosssite_authorship
+        FROM the internal cross site corpus
         WHERE char_dweb IS NOT NULL AND body IS NOT NULL AND length(body) > 100
     """)
     raw = defaultdict(lambda: {"chars": [], "bodies": []})
@@ -352,7 +352,7 @@ def main():
         "base_rate_precision":base,
     }
     outp=os.environ.get("OUT","/home/jason/projects/kronaxis/docs/papers/dynamics_web_series/results/crossplatform_identity/stats.json")
-    # if run on DL580, write to a stable local path too
+    # if run on the internal host, write to a stable local path too
     try:
         json.dump(out, open(outp,"w"), indent=2)
     except Exception:

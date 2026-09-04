@@ -3,7 +3,7 @@
 PUBLIC tier. Aggregate only, no individual named. PUBLIC track paper, DYNAMICS-WEB series.
 
 Paper 4's two core results were first measured on the internally held cross site
-authorship corpus (`cc_v3.crosssite_authorship`, the pseudonymous person seen writing
+authorship corpus (`the internal cross site corpus`, the pseudonymous person seen writing
 across many separate sites), which is a held asset (tier two) and is not distributed.
 For reviewability this experiment runs the identical two analyses on a public reviewable
 substitute: journalists seen writing across several editorial sections of the press. One
@@ -30,9 +30,9 @@ production scorer weights, no training corpus, no operational calibration is pre
   manner, and originality), with each author averaged over their sections so performed state
   cancels.
 
-## Headline result (reproduced on DL580, 2 September 2026)
+## Headline result (reproduced on the internal host, 2 September 2026)
 
-Corpus `cc_v3.news_topic`: 33,920 scored articles, 1,367 authors; 1,355 authors seen across
+Corpus `an internal table`: 33,920 scored articles, 1,367 authors; 1,355 authors seen across
 two or more distinct sections (33,785 articles).
 
 - **Trait fraction (mean disposition ICC): about 0.12** (0.116 article level, 0.122 section
@@ -51,9 +51,9 @@ two or more distinct sections (33,785 articles).
 
 `paper4_public_proxy.py` in this directory (and committed in the main repository at
 `docs/papers/dynamics_web_series/repro/paper4_public_proxy.py`). It needs python3 with numpy
-and psycopg2, read access to the `cc_v3` schema, and the DB password read from `~/.pgpass`
+and psycopg2, read access to the internal schema, and the DB password read from `~/.pgpass`
 (no secret in the script). Run it, and it prints the ICC table, the person level bridge, and
-the article level contrast. `run_output.txt` here is the captured run. `cc_v3.news_topic` is
+the article level contrast. `run_output.txt` here is the captured run. `an internal table` is
 a held crawl derivative (tier two); a reviewer with a comparable public news corpus scored by
 the shared apparatus (the character scorer `cc_found_human_score.py` and the disposition
 scorer `pandora_d8_score.py`) reproduces the same coupling.

@@ -1,4 +1,4 @@
-web PC1 reference: SVD on cc_v3.domain_char8_expanded (n=2648406 domains); + = matter pole (rigour+depth)
+web PC1 reference: SVD on the internal reference table (n=2648406 domains); + = matter pole (rigour+depth)
 PC1 axis loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
 
 ==============================================================================
@@ -53,9 +53,9 @@ web(baseline)   2648406        en-web      0.47   0.42   0.32   0.57   0.39   0.
 (b) ZHANGUO CE — persuasion character -> outcome (soundings, crude coding)
 ==============================================================================
   n episodes = 445
-  qwen outcome dist: {'accept': 205, 'unknown': 196, 'reject': 44}
+  an internal model outcome dist: {'accept': 205, 'unknown': 196, 'reject': 44}
   lex  outcome dist: {'accept': 108, 'unknown': 256, 'reject': 81}
-  qwen vs lex agreement (where both decisive): 92/124 = 74%
+  an internal model vs lex agreement (where both decisive): 92/124 = 74%
 
   --- coder=outcome_qwen: accept n=205  reject n=44 ---
     PC1 (matter/manner): accept mean=+4.11  reject mean=+3.14  Welch t=+2.88 p=0.005
@@ -87,5 +87,5 @@ HONEST CAVEATS
   -   treat the Chinese profile as 'the instrument returns a coherent reading', not a calibrated measurement.
   - Demosthenes/Cicero are ENGLISH TRANSLATIONS (Vince / Yonge) — translator voice is confounded with orator voice.
   - Outcome coding is crude: the recorded ruler-response is a proxy for persuasion success, coded two noisy ways
-  -   (qwen classification + a classical-Chinese lexical heuristic). Many episodes have no stated outcome (unknown).
+  -   (an internal model classification + a classical-Chinese lexical heuristic). Many episodes have no stated outcome (unknown).
   - PC1 is the web-derived matter/manner axis; projecting ancient texts onto it is a transfer, not a native fit.

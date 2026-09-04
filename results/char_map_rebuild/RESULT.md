@@ -1,7 +1,7 @@
 # Character map rebuild: held out validation of the two hop propagation
 
 *DYNAMICS-WEB series, 3 September 2026. Script `char_propagate_2hop.py` (copy in this directory), run
-on DL580 against the 118,760,321 vertex, 4,343,610,896 edge Common Crawl host graph. Pass mark fixed
+on the internal host against the 118,760,321 vertex, 4,343,610,896 edge Common Crawl host graph. Pass mark fixed
 before the run: mean held out r above 0.36 AND the calibrated estimate beats the seed mean on both
 MAE and RMSE on every axis. Seeds: 3,136,616 scored domains; 10% (313,662) masked and held out.*
 
@@ -61,19 +61,19 @@ Confidence bands, both directions hop 2 (what a consumer should attach to each e
 
 ## What was built from it
 
-The full build (`--mode full --dirs both`) writes `cc_v3.domain_char8_2hop` (domain, eight axes,
+The full build (`--mode full --dirs both`) writes `the internal reference table` (domain, eight axes,
 hop reached, number of valued contributors, total weight). Seeds keep their scored value at hop 0.
 The protected tables (`domain_char8_full`, `domain_char8_scored`, `domain_indegree_full`,
 `domain_ranks_cc`, `domain_char8_holdout`) are untouched. The failed first build's values are not
 used anywhere.
 
 Files: `validate_in.json`, `validate_both.json` (per axis grades, calibration slopes and intercepts,
-confidence bands), `calibration_in.json`, `calibration_both.json`, run logs on DL580 at
+confidence bands), `calibration_in.json`, `calibration_both.json`, run logs on the internal host at
 `~/.kx-daemon/char2hop-val-in.log`, `char2hop-val-both.log`, `char2hop-full-both.log`.
 
 ## The map, sized by evidence (full build, 3 September 2026)
 
-`cc_v3.domain_char8_2hop` holds 111,269,676 valued domains of the 118,760,321 in the host graph; 7,490,645
+`the internal reference table` holds 111,269,676 valued domains of the 118,760,321 in the host graph; 7,490,645
 have no valued neighbour within two hops and carry no value. By the evidence each value rests on, with the
 held out correlation of that band from the validation above:
 

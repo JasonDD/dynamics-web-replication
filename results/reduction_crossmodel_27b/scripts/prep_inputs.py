@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""prep_inputs.py — build the three 27B re-score input JSONLs (RUN ON DL580, DB is local there).
+"""prep_inputs.py — build the three 27B re-score input JSONLs (RUN ON the internal host, DB is local there).
 
-Writes to WD (default /mnt/nas/kronaxis/crossmodel_27b):
+Writes to WD (default the internal storecrossmodel_27b):
   elm_input.jsonl      {id, text, outcome, kind}          all 2500 IBM ArgQ items (from the benchmark text file)
   biber_input.jsonl    {id, text, subreddit}              stratified reddit_wide: up to PER_SUB per subreddit
   fleeson_input.jsonl  {id, text, ident, domain}          multi-site persons: 1 block per domain, up to MAXDOM domains
@@ -16,7 +16,7 @@ Sample designs (stated for the honest bound):
 """
 import os, json, psycopg2
 
-WD      = os.environ.get("WD", "/mnt/nas/kronaxis/crossmodel_27b")
+WD      = os.environ.get("WD", "the internal storecrossmodel_27b")
 PER_SUB = int(os.environ.get("PER_SUB", "25"))
 NPERS   = int(os.environ.get("NPERS", "6000"))
 MAXDOM  = int(os.environ.get("MAXDOM", "5"))
@@ -46,7 +46,7 @@ def biber(c):
       WITH scored AS (
         SELECT id, subreddit, body,
                row_number() OVER (PARTITION BY subreddit ORDER BY md5(id)) rn
-        FROM cc_v3.reddit_wide
+        FROM the internal Reddit corpus
         WHERE char IS NOT NULL AND char ? 'rigour' AND length(body) >= 200
       )
       SELECT id, subreddit, body FROM scored WHERE rn <= {PER_SUB}
@@ -63,7 +63,7 @@ def fleeson(c):
     out = os.path.join(WD, "fleeson_input.jsonl")
     c.execute(f"""
       WITH multi AS (
-        SELECT ident FROM cc_v3.crosssite_authorship
+        SELECT ident FROM the internal cross site corpus
         WHERE body IS NOT NULL
         GROUP BY ident HAVING count(distinct domain) >= 2
       ),
@@ -72,7 +72,7 @@ def fleeson(c):
         SELECT a.id, a.ident, a.domain, a.body,
                row_number() OVER (PARTITION BY a.ident, a.domain ORDER BY md5(a.id::text)) rn_dom,
                dense_rank() OVER (PARTITION BY a.ident ORDER BY a.domain)          dr
-        FROM cc_v3.crosssite_authorship a JOIN picked p USING (ident)
+        FROM the internal cross site corpus a JOIN picked p USING (ident)
         WHERE a.body IS NOT NULL
       )
       SELECT id, ident, domain, body FROM one_per_dom WHERE rn_dom = 1 AND dr <= {MAXDOM}

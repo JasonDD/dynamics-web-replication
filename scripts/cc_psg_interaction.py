@@ -17,18 +17,18 @@ from sklearn.model_selection import KFold
 import psycopg2
 
 DWEB=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
-BASE=os.environ.get("BASE","/mnt/nas/kronaxis/corpora/human_persuasion")
+BASE=os.environ.get("BASE","the internal corpus store/human_persuasion")
 SCORES=os.path.join(BASE,"psg_scores.jsonl"); INPUT=os.path.join(BASE,"psg_input.jsonl")
 INFO=os.path.join(BASE,"persuasionforgood/data/FullData/full_info.csv")
 CACHE=os.environ.get("EMB_CACHE",os.path.join(BASE,"psg_nomic_emb.json"))
-OLLAMA=os.environ.get("OLLAMA","http://127.0.0.1:11434/api/embeddings"); EMB_MODEL=os.environ.get("EMB_MODEL","nomic-embed-text")
+OLLAMA=os.environ.get("OLLAMA","http://127.0.0.1/api/embeddings"); EMB_MODEL=os.environ.get("EMB_MODEL","nomic-embed-text")
 OUT=os.environ.get("OUT","/tmp/psg_interaction.json"); SEED=20260903
 def log(*a): print(*a, flush=True)
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 
 # ---- frozen content geometry (SVD on the domain reference, NOT on PSG) ----
 c=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float); MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD,full_matrices=False); PC1=Vt[0]
 if PC1[0]+PC1[1]<0: PC1=-PC1
@@ -101,7 +101,7 @@ _U,_S,_Vt=np.linalg.svd(EZ,full_matrices=False); EMB=EZ@_Vt[:50].T
 # classical textual of persuader turns
 WORD=re.compile(r"[a-z]+(?:'[a-z]+)?"); SENT=re.compile(r"[.!?]+"); VOW=re.compile(r"[aeiouy]+")
 F2=set("i me my we us our you your".split()); EMO=set("love hate great awful terrible amazing best worst good bad wrong right must should".split())
-INT=set("very really so totally completely absolutely extremely clearly obviously certainly".split()); PREP=set("of in to for with on at by from about as into than".split()); ART=set("the a an".split())
+INT=set("very really so totally completely absolutely extremely clearly obviously certainly".split()); PREP=set("of in to for with on at by from about as into than".split()); ART=set("the an".split())
 def syll(w): n=len(VOW.findall(w)); return max(1,n-1 if w.endswith("e") else n)
 def feats(t):
     tk=WORD.findall(t.lower()); n=max(len(tk),1); s=max(len([x for x in SENT.split(t) if x.strip()]),1)

@@ -36,9 +36,9 @@ def log(*a): print(f"[{time.time()-t0:6.1f}s]", *a, flush=True)
 
 DWEB = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]
 D8 = ["discipline", "yielding", "novelty", "acuity", "mercuriality", "impulsivity", "candour", "sociability"]
-SCORES = "/mnt/nas/kronaxis/corpora/cmv_winning_args/cmv_scores.jsonl"
-CDIR = "/mnt/nas/kronaxis/corpora/cmv_winning_args/winning-args-corpus"
-CAUSAL = "/mnt/nas/kronaxis/corpora/causal"
+SCORES = "the internal corpus store/cmv_winning_args/cmv_scores.jsonl"
+CDIR = "the internal corpus store/cmv_winning_args/winning-args-corpus"
+CAUSAL = "the internal corpus store/causal"
 OUT = os.environ.get("OUT", "/home/jason/effect_confound/who_reader_grouped.json")
 FOLDS = int(os.environ.get("FOLDS", "5"))
 NPERM = int(os.environ.get("NPERM", "600"))
@@ -52,7 +52,7 @@ PW = [l.split("=", 1)[1].strip().strip('"').strip("'")
       for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 db = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs")
 cur = db.cursor()
-cur.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+cur.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc = np.array([[float(v) for v in r] for r in cur.fetchall()], float)
 db.close()
 CMEAN, CSTD = allc.mean(0), allc.std(0) + 1e-9

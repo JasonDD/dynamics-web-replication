@@ -6,7 +6,7 @@ Full text + institution + Year + Month are all present in the dataset."""
 import os, json, urllib.request, sys
 import pandas as pd
 
-OUT="/mnt/nas/kronaxis/corpora/comms_scout"
+OUT="the internal corpus store/comms_scout"
 os.makedirs(OUT, exist_ok=True)
 PARQ=os.path.join(OUT,"bis_speeches.parquet")
 URL="https://huggingface.co/datasets/samchain/bis_central_bank_speeches/resolve/refs%2Fconvert%2Fparquet/default/train/0000.parquet"

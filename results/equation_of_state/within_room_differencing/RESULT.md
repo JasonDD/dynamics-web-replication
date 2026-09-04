@@ -1,6 +1,6 @@
 # Within room differencing: does the coupling survive as invariant?
 
-*The Paper 4 closure experiment. Every earlier equation of state run fitted LEVELS, so the state term h(S) had to be estimated and could quietly absorb error. Differencing removes h. For two persons i and j writing in the SAME room the room offset cancels exactly, so C_i − C_j = g(P_i) − g(P_j), and for a linear g that is dC = W dP with no intercept and W constant across rooms. This run tests that by transfer: fit W on training rooms, predict dC in rooms never seen in training. Script: `truthometer/scripts/cc_state_diff_invariance.py`. Substrate: cc_v3.crosssite_authorship, the same leak free cross site corpus and the same person, disposition and character extraction as `cc_state_fit_multi.py`. Internal hold, analysis only, no scoring.*
+*The Paper 4 closure experiment. Every earlier equation of state run fitted LEVELS, so the state term h(S) had to be estimated and could quietly absorb error. Differencing removes h. For two persons i and j writing in the SAME room the room offset cancels exactly, so C_i − C_j = g(P_i) − g(P_j), and for a linear g that is dC = W dP with no intercept and W constant across rooms. This run tests that by transfer: fit W on training rooms, predict dC in rooms never seen in training. Script: `truthometer/scripts/cc_state_diff_invariance.py`. Substrate: the internal cross site corpus, the same leak free cross site corpus and the same person, disposition and character extraction as `cc_state_fit_multi.py`. Internal hold, analysis only, no scoring.*
 
 ## Headline
 
@@ -10,7 +10,7 @@ Alongside that, a correction to the earlier level runs that matters more than th
 
 ## Design
 
-Room is the site (domain). Each person is aggregated within each room, giving 214,004 person room records. Rooms are kept when they hold at least 5 distinct persons. Disposition P is the DeYoung Big Two read off DYNAMICS 8 (plasticity = novelty + sociability, stability = discipline + yielding − mercuriality). Character C is the canonical matter against manner ruler (PC1 of the 8 axes over 2,648,406 rows of cc_v3.domain_char8_expanded) plus originality. Both P and C are standardised over person room records, so W is in z units.
+Room is the site (domain). Each person is aggregated within each room, giving 214,004 person room records. Rooms are kept when they hold at least 5 distinct persons. Disposition P is the DeYoung Big Two read off DYNAMICS 8 (plasticity = novelty + sociability, stability = discipline + yielding − mercuriality). Character C is the canonical matter against manner ruler (PC1 of the 8 axes over 2,648,406 rows of the internal reference table) plus originality. Both P and C are standardised over person room records, so W is in z units.
 
 Within each room, unordered person pairs are formed, sampled at a cap of 200 per room where the room is larger, and **both orderings of every pair are kept**, so the intercept is zero by construction. W is fitted with no intercept, pooled across rooms. Uncertainty comes from a room block bootstrap of 400 draws.
 

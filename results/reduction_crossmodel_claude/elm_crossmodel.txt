@@ -1,7 +1,7 @@
 IBM ArgQ ELM reduction — second-lineage re-score  n=460
 quality label range 0.180..1.000  mean 0.793  sd 0.191
 length rho with quality = +0.232
-PC1 built on cc_v3.domain_char8_expanded n=2648406
+PC1 built on the internal reference table n=2648406
 matter axes (PC1 positive): rigour, depth, originality, candour, stance
 manner axes (PC1 negative): affect, commercial_drive, register
 

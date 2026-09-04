@@ -16,7 +16,7 @@ Predictions are written here BEFORE the numbers are read (PREDICT below), includ
   Affective/social (emotion, exclaim, pronouns):  matter DOWN, manner UP (manner's bright cell)
 
 All external measures are surface or lexicon, no model in the loop, so they are independent of the
-character scorer. Grice cells reuse the held cc_v3.reddit_grice judgements (Mistral, a different family).
+character scorer. Grice cells reuse the held an internal table judgements (Mistral, a different family).
 Item level and within room (demeaned) correlations; analysis only.
 """
 import os, re, json, math
@@ -28,7 +28,7 @@ OUT=os.path.expanduser("~/manner_mirror_out"); os.makedirs(OUT, exist_ok=True)
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 conn=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs"); c=conn.cursor()
 
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float); MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 def zc(ch,a): return (float(ch[a])-MEAN[DWEB.index(a)])/STD[DWEB.index(a)]
 
@@ -75,7 +75,7 @@ PREDICT={"matter":{"Complexity":"UP","Cohesion":"~0","Affective_social":"DOWN","
          "manner":{"Complexity":"~0","Cohesion":"~0","Affective_social":"UP","grice_QR":"~0/down","grice_manner":"~0"}}
 
 c.execute("SELECT w.id, w.subreddit, w.body, w.char, g.quantity, g.relation, g.manner "
-          "FROM cc_v3.reddit_wide w LEFT JOIN cc_v3.reddit_grice g ON g.id=w.id "
+          "FROM the internal Reddit corpus w LEFT JOIN an internal table g ON g.id=w.id "
           "WHERE w.char IS NOT NULL AND w.char ? 'rigour' AND length(w.body)>=200")
 rows=c.fetchall(); print(f"fetched {len(rows)}", flush=True)
 subs=[]; matter=[]; manner=[]; aff=[]; reg=[]; X=[]; GQR=[]; GMAN=[]; hasg=[]

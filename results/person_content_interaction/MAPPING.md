@@ -30,14 +30,14 @@ demographics enter only as baseline main effect controls, never in the interacti
 
 The persuader's concatenated turns are already character scored on the eight axes (psg_scores.jsonl, scored
 2026-08-29, before this registration). From those eight axes we take, with the identical SVD recipe used in
-every prior test (fit on cc_v3.domain_char8_expanded, never on this corpus):
+every prior test (fit on the internal reference table, never on this corpus):
 
     MM   = matter/manner PC1     (how much substance relative to how much heat)
     OR2  = the second axis        (the originality facing projection)
 
 ## The preregistered interaction (the headline)
 
-The equation of state atlas predicts a specific off diagonal coupling: plasticity couples to originality,
+The equation of state internal model predicts a specific off diagonal coupling: plasticity couples to originality,
 stability couples to matter/manner. Carried to the person by content interaction, the directional prediction
 is:
 
@@ -46,7 +46,7 @@ is:
 
 Both diagonal terms are predicted to carry. The two off diagonal terms (P_plas x MM, P_stab x OR2) are
 included so the block is complete and the prediction can fail in a readable way (if the off diagonal carries
-and the diagonal does not, the atlas prediction is wrong).
+and the diagonal does not, the internal model prediction is wrong).
 
 Interaction block = { P_plas x OR2, P_stab x MM, P_plas x MM, P_stab x OR2 }.
 

@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""cc_ashlar_atlas.py -- the full Ashlar atlas: the 8x8 disposition to character coupling, surveyed.
+"""cc_ashlar_atlas.py -- the full Ashlar internal model: the 8x8 disposition to character coupling, surveyed.
 
 Ashlar is the keystone, the map between a person's eight disposition axes (DYNAMICS-8) and the eight
 character axes of the writing (DYNAMICS-WEB), two genuinely different objects that share only candour.
 The recent equation of state work collapsed that map to a single matter against manner ruler; this
-re-surveys the WHOLE atlas, every disposition axis against every character axis, so the trade secret is
+re-surveys the WHOLE internal model, every disposition axis against every character axis, so the trade secret is
 measured cell by cell rather than represented by one principal slice.
 
 Method, the same falsifiable core as the equation of state. Each person is aggregated within each room
 (domain), so the room is fixed; persons in the same room are differenced, which cancels the room offset
 exactly (dC = W dP, no intercept); W is the 8x8 coupling. A room block bootstrap gives a confidence
-interval per cell, so the atlas reports which cells are real. Run on three reader legs to break
+interval per cell, so the internal model reports which cells are real. Run on three reader legs to break
 circularity: A both axes by the first reader, and the two cross legs where disposition and character are
 read by DIFFERENT model families. The matter against manner and originality projection is reported
-alongside so the atlas reconciles with the equation of state's 2x2. Aggregate, no keys, analysis only.
+alongside so the internal model reconciles with the equation of state's 2x2. Aggregate, no keys, analysis only.
 """
 import os, sys, json, time
 import numpy as np, psycopg2
@@ -33,7 +33,7 @@ def obj(x): return x if isinstance(x,dict) else (json.loads(x) if x else None)
 
 jt=f"JOIN {SAMPLE} s USING (id)" if SAMPLE else ""
 log(f"pull leg={LEG} disp={DISPCOL} char={CHARCOL} sample={SAMPLE or 'full'}")
-cur.execute(f"SELECT a.ident, a.domain, a.{DISPCOL}, a.{CHARCOL} FROM cc_v3.crosssite_authorship a {jt} "
+cur.execute(f"SELECT a.ident, a.domain, a.{DISPCOL}, a.{CHARCOL} FROM the internal cross site corpus a {jt} "
             f"WHERE a.{DISPCOL} IS NOT NULL AND a.{CHARCOL} IS NOT NULL")
 idents,rooms,P,C=[],[],[],[]
 for ident,dom,dd,cw in cur:
@@ -96,7 +96,7 @@ for bk in range(NBOOT):
     boot[bk]=fit(dP[idx],dC[idx])
 lo=np.percentile(boot,2.5,0); hi=np.percentile(boot,97.5,0); sd=boot.std(0)
 sig=(lo>0)|(hi<0)
-atlas={"leg":LEG,"disp_col":DISPCOL,"char_col":CHARCOL,"n_pairs":int(len(A)),"n_rooms":len(ROOMS),
+internal model={"leg":LEG,"disp_col":DISPCOL,"char_col":CHARCOL,"n_pairs":int(len(A)),"n_rooms":len(ROOMS),
        "n_person_rooms":int(len(Pz)),"D8":D8,"CHAR":CHAR,
        "W":W.tolist(),"lo":lo.tolist(),"hi":hi.tolist(),"sd":sd.tolist(),"sig":sig.astype(int).tolist()}
 # reconcile with the equation of state 2x2 (plasticity/stability -> matter-manner PC1 / originality)
@@ -104,17 +104,17 @@ i8={a:k for k,a in enumerate(D8)}
 plas=Pz[:,i8["novelty"]]+Pz[:,i8["sociability"]]; stab=Pz[:,i8["discipline"]]+Pz[:,i8["yielding"]]-Pz[:,i8["mercuriality"]]
 # matter/manner PC1 on the char reference
 cur2=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-cur2.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+cur2.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in cur2.fetchall()],float); M=allc.mean(0); S=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-M)/S,full_matrices=False); PC1=Vt[0]
 if PC1[0]+PC1[1]<0: PC1=-PC1
 MM=((rC-M)/S)@PC1; MMz=(MM-MM.mean())/(MM.std()+1e-9); ORIG=Cz[:,CHAR.index("originality")]
 Pm=np.column_stack([plas,stab]); Cm=np.column_stack([MMz,ORIG])
 dPm=Pm[A]-Pm[B]; dCm=Cm[A]-Cm[B]; Wm=fit(dPm,dCm)
-atlas["metatrait_2x2"]={"rows":["plasticity","stability"],"cols":["matter_manner_PC1","originality"],"W":Wm.tolist()}
-json.dump(atlas,open(OUT,"w"),indent=1)
-# print the atlas
-log("=== ASHLAR ATLAS: 8x8 within-room coupling W (rows=disposition, cols=character); * = CI excludes 0 ===")
+internal model["metatrait_2x2"]={"rows":["plasticity","stability"],"cols":["matter_manner_PC1","originality"],"W":Wm.tolist()}
+json.dump(internal model,open(OUT,"w"),indent=1)
+# print the internal model
+log("=== ASHLAR internal model: 8x8 within-room coupling W (rows=disposition, cols=character); * = CI excludes 0 ===")
 print("               "+" ".join(f"{c[:6]:>7}" for c in CHAR),flush=True)
 for i,d in enumerate(D8):
     cells=" ".join((f"{W[i,j]:+.2f}"+("*" if sig[i,j] else " ") for j in range(len(CHAR))))

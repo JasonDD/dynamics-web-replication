@@ -27,7 +27,7 @@ Frozen before any outcome is read, and tagged:
 
 1. The eight axis character scores of every message (already computed; PersuasionForGood at `psg_scores.jsonl`,
    scored 2026-08-29, long before this registration). Never refitted to the outcome.
-2. The matter/manner PC1 recipe (SVD on `cc_v3.domain_char8_expanded`), identical to every prior test.
+2. The matter/manner PC1 recipe (SVD on `the internal reference table`), identical to every prior test.
 3. The person to person space mapping: the published Ashlar coupling direction from the disposition axes to the
    character axes, used to build the interaction terms. The mapping from each corpus's native person
    instrument (Big Five, Schwartz values, decision style) into the DYNAMICS-8 disposition frame is written

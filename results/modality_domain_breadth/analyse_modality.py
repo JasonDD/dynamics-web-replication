@@ -6,12 +6,12 @@ each NEW register, then places it: matter/manner (PC1 proxy), the affect-to-matt
 PCA-PC1 over all corpus means, and the nearest held anchor + distance. Reports which registers land in a
 sparse region (far from every held anchor) = genuinely new map territory.
 
-Reads scored jsonl on the NAS; writes a compact analysis block to stdout (captured into RESULT.md).
+Reads scored jsonl on the internal store; writes a compact analysis block to stdout (captured into RESULT.md).
 """
 import os, json, math
 import numpy as np
 
-BASE = "/mnt/nas/kronaxis/corpora"
+BASE = "the internal corpus store"
 AXES = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]
 MATTER = ["rigour", "depth", "originality"]   # substance
 MANNER = ["affect", "stance", "register"]      # heat / delivery

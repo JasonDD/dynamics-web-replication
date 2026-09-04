@@ -1,7 +1,7 @@
 # MANIFESTOS x ELECTIONS: does campaign character predict electoral success?
 
 DYNAMICS-WEB series, PUBLIC track, across countries and across eras. Full text campaign manifestos scored
-on the eight axis DWEB character instrument (shared 7B teacher on :8301), then joined to each party's
+on the eight axis DWEB character instrument (shared 7B teacher on ), then joined to each party's
 election outcome. **Character summary** `manner_minus_matter` = mean(affect, register, commercial_drive,
 stance) minus mean(rigour, depth, originality, candour): higher means a more manner/affect voice, lower
 means a more matter/substance voice.

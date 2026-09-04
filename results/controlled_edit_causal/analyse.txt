@@ -49,4 +49,4 @@ MATTER-NEEDS-BANDWIDTH: matter_insert MATTER-shift by BASE length (short bases h
   long  (> median base wc)   n= 90  affect_insert ->affect  +0.286* CI[+0.248,+0.321]
   long  (> median base wc)   n= 90  affect_rewrite->affect  +0.197* CI[+0.159,+0.233]
 
-wrote /mnt/nas/kronaxis/corpora/controlled_edit/stats.json
+wrote the internal corpus store/controlled_edit/stats.json

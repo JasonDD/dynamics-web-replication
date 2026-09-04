@@ -7,10 +7,10 @@ commercial stakes. It reports effect sizes, the signature and the trajectory sha
 threshold, detector weight or targeting read is withheld under the restricted track (see Disclosure).*
 
 Scorer: `truthometer/scripts/cc_found_human_score.py` (8 axis DYNAMICS character instrument,
-qwen2.5-7b-atlas on DL580 :8301, the free 7B teacher used across the series, identical system prompt,
+an internal 7B instruct model on the internal host , the free 7B teacher used across the series, identical system prompt,
 vocabulary line and parse, so every scale matches). Prep: `cc_radicalisation_prep.py`. Analysis:
-`cc_radicalisation_analyse.py` in this directory. All inputs on the DL580 held Reddit corpus
-(`cc_v3.reddit_wide`) and the already scored deception corpora on NAS.
+`cc_radicalisation_analyse.py` in this directory. All inputs on the internal host held Reddit corpus
+(`the internal Reddit corpus`) and the already scored deception corpora on internal store.
 
 ---
 
@@ -69,7 +69,7 @@ This is sensitive work and the discipline is part of the result, not a preface t
 
 ## 3. Data, and what is missing
 
-The held corpus is `cc_v3.reddit_wide`, a 20.1 million row sample of Reddit comments across 50,123
+The held corpus is `the internal Reddit corpus`, a 20.1 million row sample of Reddit comments across 50,123
 subreddits, of which a subset carry the 8 axis character score. It is a **per subreddit sample, not a
 per author longitudinal crawl**: each community is sampled to a few hundred to a few thousand
 comments, and an individual author appears only a handful of times. That distinction decides which leg
@@ -107,7 +107,7 @@ sizes below to the manosphere and conspiracy band; the true extreme is likely st
   (hashtext order, so the run reproduces), body length at least 120 characters, `[deleted]` and
   `[removed]` dropped, capped at 6,000 characters. One `{id, text, outcome, kind}` row per comment,
   where outcome is the tier and kind is the subreddit. 2,860 comments, balanced across communities.
-- Scoring hits the shared :8301 endpoint, self queued at a modest worker count behind the other jobs
+- Scoring hits the shared  endpoint, self queued at a modest worker count behind the other jobs
   holding the endpoint, so neither this job nor the others were starved.
 - Per text metrics mirror `manner_inflation_deception`: matter is the mean of rigour and depth, manner
   is the mean of affect, stance and register, the affect gap is affect minus matter, the residual is

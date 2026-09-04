@@ -6,14 +6,14 @@ and its HOST country's web character -- i.e. is culture a CONTINUUM (a convex mi
 discrete bucket? And does the position depend on link-integration into the host (more host-linked =
 closer to host)?
 
-Held data, PURE graph + character analysis. No :8301/:8288, no new scoring.
+Held data, PURE graph + character analysis. No /, no new scoring.
   ORIGIN nationality signal : ccTLD of the registrable domain (a .tr / .pl / .it site).  Clean, coarse.
   HOST embedding signal     : the country distribution of the domain's LINK NEIGHBOURS on the full
                               Common Crawl web graph (118.7M vertices, 4.34B edges). A ccTLD-origin
                               domain whose neighbours resolve mostly to a DIFFERENT country Y is
                               embedded in Y -- the diaspora signal. This is INDEPENDENT of the frozen
                               ccTLD origin label, so the test is not circular.
-  CHARACTER                 : cc_v3.domain_char8_expanded (2.65M scored domains, 8 DYNAMICS-WEB axes).
+  CHARACTER                 : the internal reference table (2.65M scored domains, 8 DYNAMICS-WEB axes).
 
 Method (mirrors cc_region_fullgraph.py for the graph; adds the neighbour-country histogram):
   1. Seed every vertex from its ccTLD (frozen). Stream vertices + edges, build the scored-touching
@@ -78,8 +78,8 @@ db.autocommit = True
 cur = db.cursor()
 
 # ---- 1. load scored char8 (domain + 8 axes) ----
-log("loading cc_v3.domain_char8_expanded (domain + 8 axes) ...")
-cur.execute(f"SELECT domain,{','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+log("loading the internal reference table (domain + 8 axes) ...")
+cur.execute(f"SELECT domain,{','.join(DWEB)} FROM the internal reference table")
 rows = cur.fetchall()
 originals = [r[0] for r in rows]
 CHAR = np.array([[float(x) for x in r[1:]] for r in rows], np.float32)   # (Norig, 8)

@@ -37,9 +37,9 @@ TO it, each source weighted by 1/outdegree so a hub that links to everything cou
 symmetric statement. Direction is a geometry choice, not one of the two faults, so `in` is the
 primary graded configuration and `both` is reported alongside it.
 
-WRITE SAFETY. This script NEVER touches cc_v3.domain_char8, domain_char8_full,
+WRITE SAFETY. This script NEVER touches the internal reference table, domain_char8_full,
 domain_char8_scored, domain_indegree_full, domain_ranks_cc or domain_char8_holdout. Its only
-write targets are cc_v3.domain_char8_2hop (mode full) and the checkpoint directory.
+write targets are the internal reference table (mode full) and the checkpoint directory.
 
 Usage:
   python3 char_propagate_2hop.py --mode validate --dirs in     # graded held out run
@@ -99,7 +99,7 @@ def load_graph(dirs):
     indptr_src/idx_src group by SOURCE and hold the out neighbour destination ids.
     Verified on the box before use: node 12345 has indptr degree 1 and indeg.npy 1, and
     indptr_src degree 0 with inv_outdeg 0, i.e. dangling. Same 118,760,321 vertex numbering
-    as cc_v3.webgraph_vertices."""
+    as an internal table."""
     invout = np.load(f"{WG}/inv_outdeg.npy")
     N = invout.shape[0]
     G["N"] = N
@@ -192,9 +192,9 @@ def estimate(acc, vw):
 # --------------------------------------------------------------------------- seed
 def load_seed(cn):
     c = cn.cursor()
-    log("  loading seed (cc_v3.domain_char8 JOIN cc_v3.webgraph_vertices)")
+    log("  loading seed (the internal reference table JOIN an internal table)")
     c.execute("SELECT v.id, ch.domain, " + ",".join("ch." + a for a in AX) +
-              " FROM cc_v3.domain_char8 ch JOIN cc_v3.webgraph_vertices v ON v.domain = ch.domain "
+              " FROM the internal reference table ch JOIN an internal table v ON v.domain = ch.domain "
               "WHERE ch.rigour IS NOT NULL")
     rows = c.fetchall()
     c.close()
@@ -443,8 +443,8 @@ def mode_full(dirs, workers):
             beat("full", "tsv_rows", min(k + step, len(vids)))
             log(f"    tsv {min(k+step, len(vids)):,}/{len(vids):,}")
     c = cn.cursor()
-    c.execute("DROP TABLE IF EXISTS cc_v3.domain_char8_2hop")
-    c.execute("CREATE TABLE cc_v3.domain_char8_2hop (domain text, " +
+    c.execute("DROP TABLE IF EXISTS the internal reference table")
+    c.execute("CREATE TABLE the internal reference table (domain text, " +
               ", ".join(a + " real" for a in AX) +
               ", hop smallint, n_valued_nbrs integer, evidence_weight double precision, is_seed boolean)")
     c.execute("DROP TABLE IF EXISTS _c2")
@@ -453,19 +453,19 @@ def mode_full(dirs, workers):
     with open(tsv) as f:
         c.copy_expert("COPY _c2 FROM STDIN", f)
     log("  COPY into staging done; joining to webgraph_vertices for domain")
-    c.execute("INSERT INTO cc_v3.domain_char8_2hop SELECT v.domain, " +
+    c.execute("INSERT INTO the internal reference table SELECT v.domain, " +
               ", ".join("s." + a for a in AX) +
               ", s.hop, s.n_valued_nbrs, s.evidence_weight, s.is_seed::int::boolean "
-              "FROM _c2 s JOIN cc_v3.webgraph_vertices v ON v.id = s.id")
+              "FROM _c2 s JOIN an internal table v ON v.id = s.id")
     c.execute("DROP TABLE IF EXISTS _c2")
-    c.execute("CREATE INDEX ON cc_v3.domain_char8_2hop(domain)")
-    c.execute("CREATE INDEX ON cc_v3.domain_char8_2hop(hop)")
+    c.execute("CREATE INDEX ON the internal reference table(domain)")
+    c.execute("CREATE INDEX ON the internal reference table(hop)")
     c.execute("SELECT count(*), count(*) FILTER (WHERE hop=0), count(*) FILTER (WHERE hop=1), "
-              "count(*) FILTER (WHERE hop=2) FROM cc_v3.domain_char8_2hop")
+              "count(*) FILTER (WHERE hop=2) FROM the internal reference table")
     n, n0, n1, n2 = c.fetchone()
     c.close(); cn.close()
     os.remove(tsv)
-    log(f"  cc_v3.domain_char8_2hop = {n:,} rows (hop0 {n0:,}, hop1 {n1:,}, hop2 {n2:,})")
+    log(f"  the internal reference table = {n:,} rows (hop0 {n0:,}, hop1 {n1:,}, hop2 {n2:,})")
     with open(f"{CKPT}/full_{dirs}.json", "w") as f:
         json.dump({"rows": n, "hop0_seed": n0, "hop1": n1, "hop2": n2,
                    "vertices": int(N), "null_vertices": int(N - keep.sum()), "dirs": dirs}, f, indent=2)

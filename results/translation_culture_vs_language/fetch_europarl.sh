@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-D=/mnt/nas/kronaxis/corpora/europarl_v7
+D=the internal corpus store/europarl_v7
 mkdir -p "$D"
 cd "$D"
 for pr in de-en fr-en es-en it-en fi-en pl-en el-en; do

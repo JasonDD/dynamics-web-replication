@@ -1,8 +1,8 @@
 # The controlled edit causal test
 
 **Track:** PUBLIC. **Date:** 2026-08-30. **Branch:** ops/gh-treasure-discovery.
-**Scorer:** the frozen 7B character instrument on :8301 (`qwen2.5-7b-atlas`, same system prompt, vocab line and
-parse as every other DYNAMICS-WEB result). **PC1 basis:** SVD on `cc_v3.domain_char8_expanded`
+**Scorer:** the frozen 7B character instrument on  (`an internal 7B instruct model`, same system prompt, vocab line and
+parse as every other DYNAMICS-WEB result). **PC1 basis:** SVD on `the internal reference table`
 (n=2,648,406 domains), standardised, oriented so rigour and depth load positive (identical construction to
 `length_mechanism.py`).
 
@@ -158,14 +158,14 @@ control rather than mere observation.
 ```
 # prep the base texts and the six matched variants (deterministic, seed 1729)
 python3 truthometer/scripts/cc_controlled_edit_prep.py
-# score all 1,080 records on :8301 (self queued behind the shared scoring jobs)
-INPUT=/mnt/nas/kronaxis/corpora/controlled_edit/score_input.jsonl \
-OUT=/mnt/nas/kronaxis/corpora/controlled_edit/scored.jsonl WORKERS=6 \
+# score all 1,080 records on  (self queued behind the shared scoring jobs)
+INPUT=the internal corpus store/controlled_edit/score_input.jsonl \
+OUT=the internal corpus store/controlled_edit/scored.jsonl WORKERS=6 \
   python3 truthometer/scripts/cc_found_human_score.py
 # paired shift table, length control, asymmetry, bootstrap CIs
 python3 truthometer/scripts/cc_controlled_edit_analyse.py
 ```
 
 Artefacts in this directory: `analyse.txt` (full run log), `stats.json` (every shift with CIs),
-`scripts/` (copies of the prep and analysis scripts). Scored corpora live on the NAS at
-`/mnt/nas/kronaxis/corpora/controlled_edit/`.
+`scripts/` (copies of the prep and analysis scripts). Scored corpora live in
+`the internal corpus store/controlled_edit/`.

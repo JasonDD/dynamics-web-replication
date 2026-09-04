@@ -32,7 +32,7 @@ def sb(r): return 2*r/(1+r) if r>0 else r   # Spearman Brown, two halves -> full
 
 # ---- SPLIT HALF on the full crosssite (person = ident), disp_d8 ----
 log("pull disp_d8 rows for split half ...")
-c.execute("SELECT ident, disp_d8 FROM cc_v3.crosssite_authorship WHERE disp_d8 IS NOT NULL")
+c.execute("SELECT ident, disp_d8 FROM the internal cross site corpus WHERE disp_d8 IS NOT NULL")
 byp={}
 for ident,dd in c:
     dd=obj(dd)
@@ -60,7 +60,7 @@ mt_split={"plasticity":dict(half_r=(rp:=pear(mp_plasA,mp_plasB)),reliability=sb(
 # ---- TWO READER on the cross lineage sample ----
 log("pull two-reader agreement (disp_d8 vs disp_d8_mist) on the xlineage sample ...")
 cols=", ".join("(a.%s->>'%s')::float8" % ("disp_d8",k) for k in D8)+", "+", ".join("(a.%s->>'%s')::float8" % ("disp_d8_mist",k) for k in D8)
-c.execute(f"SELECT {cols} FROM cc_v3.crosssite_authorship a JOIN cc_v3.xlineage_diff_sample s USING (id) "
+c.execute(f"SELECT {cols} FROM the internal cross site corpus a JOIN an internal table s USING (id) "
           f"WHERE a.disp_d8 IS NOT NULL AND a.disp_d8_mist IS NOT NULL")
 M=np.array([r for r in c.fetchall() if all(x is not None for x in r)],float)
 log(f"two-reader rows: {len(M):,}")

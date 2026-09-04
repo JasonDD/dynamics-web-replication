@@ -1,5 +1,5 @@
 ==============================================================================
-MANNER-INFLATION DECEPTION TEST  —  8-axis DWEB character scorer (qwen2.5-7b-atlas)
+MANNER-INFLATION DECEPTION TEST  —  8-axis DWEB character scorer (an internal 7B instruct model)
 ==============================================================================
 
 === domain sizes (deceptive / honest) ===

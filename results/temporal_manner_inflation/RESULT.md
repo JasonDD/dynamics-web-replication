@@ -18,9 +18,9 @@ moves. Manipulation, measured as inflated affect, is not the axis that changes o
 ## Data and method
 
 Pure read on already scored data. Four Common Crawl snapshots, 8 axis character per domain:
-`cc_v3.domain_char8_cc{2020,2022,2024,2026}` (50,855 / 56,330 / 73,935 / 94,677 domains). No new
-character scoring, no :8301, no :8288, Postgres :5432 only. Script:
-`analyse_temporal_manner_inflation.py` in this directory (runs on DL580).
+`the internal reference table{2020,2022,2024,2026}` (50,855 / 56,330 / 73,935 / 94,677 domains). No new
+character scoring, no , no , Postgres :5432 only. Script:
+`analyse_temporal_manner_inflation.py` in this directory (runs on the internal host).
 
 - 8 axes: rigour, depth, originality, candour, affect, commercial_drive, stance, register.
 - **matter = rigour + depth ; manner = affect + stance + register** (spec definition).
@@ -142,5 +142,5 @@ single most stable thing across everything measured.
 
 ## Reproduce
 
-`analyse_temporal_manner_inflation.py` in this directory. Runs on DL580, reads Postgres :5432 for the
-four `cc_v3.domain_char8_cc{year}` tables. Pure read, no scoring, no :8301 or :8288.
+`analyse_temporal_manner_inflation.py` in this directory. Runs on the internal host, reads Postgres :5432 for the
+four `the internal reference table{year}` tables. Pure read, no scoring, no  or .

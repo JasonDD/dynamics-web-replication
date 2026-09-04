@@ -37,10 +37,10 @@ The target was a clean clustering by heritage or region. That is not what the da
 
 ## Reproduce
 
-All on DL580, corpora on the NAS, scored on the on box 7B at :8301 (self queued behind the other scorers), identical prompt and contract to the held ParlaMint and UNGD scoring.
+All on the internal host, corpora on the internal store, scored on the on box 7B at  (self queued behind the other scorers), identical prompt and contract to the held ParlaMint and UNGD scoring.
 
-- `build.py` builds the length banded balanced sample (55 speeches per legislature, 400 to 6000 characters) to `/mnt/nas/kronaxis/corpora/results/global_legislature_matrix/sample.jsonl`.
-- `score.py` scores the eight axes via :8301 (temperature 0, resumable) to `sample_scored.jsonl` (committed here).
+- `build.py` builds the length banded balanced sample (55 speeches per legislature, 400 to 6000 characters) to `the internal corpus store/results/global_legislature_matrix/sample.jsonl`.
+- `score.py` scores the eight axes via  (temperature 0, resumable) to `sample_scored.jsonl` (committed here).
 - `analyse.py` builds the matrix, the universal voice check, the clustering tests, and the length and translation controls; its full output is `analysis_out.txt` (committed here, reproduced below).
 
 ## Appendix: full analyser output
@@ -48,7 +48,7 @@ All on DL580, corpora on the NAS, scored on the on box 7B at :8301 (self queued 
 ```text
 # Global Legislature Character Matrix — RESULT
 
-Instrument: 8-axis DYNAMICS-WEB character, scored on the on-box 7B (qwen2.5-7b-atlas, :8301, temp 0),
+Instrument: 8-axis DYNAMICS-WEB character, scored on the on-box 7B (an internal 7B instruct model, , temp 0),
 identical prompt/contract to the held ParlaMint + UNGD scoring. PC1 (+ = MATTER, - = MANNER).
 PC1 loadings: rigour+0.49  depth+0.55  originality+0.55  candour+0.29  affect-0.03  commercial_drive+0.26  stance+0.11  register+0.07
 

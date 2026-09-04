@@ -14,7 +14,7 @@ language or translation house style.
 
 - **Discourse corpus**: UN General Debate Corpus, 1946 to 2022, one speech per country per year, one
   controlled venue. Scored on the eight axes plus the matter versus manner PC1 (the same SVD on
-  `cc_v3.domain_char8_expanded`, oriented so rigour plus depth is the matter pole). **Full coverage:
+  `the internal reference table`, oriented so rigour plus depth is the matter pole). **Full coverage:
   all 10,556 scored speeches, 200 countries** (every country year the corpus holds; the earlier 1,594
   speech stratified snapshot was rescored to completeness and this document reports the full set).
 - **Conflict dates**: UCDP/PRIO Armed Conflict Dataset **v26.1** (static, free, CC BY 4.0, 1946 to
@@ -147,10 +147,10 @@ is a usable, publishable signal.
 
 ## Reproduce
 
-- Analysis: `truthometer/scripts/ungd_crisis_barometer.py` (PC1 from `cc_v3.domain_char8_expanded`,
-  UCDP join, within country FE with country clustered SE, paired consistency test). Run on DL580.
-- Scoring: `truthometer/scripts/ungd_score.py` (eight axis, shared 7B endpoint on :8301). Full corpus
+- Analysis: `truthometer/scripts/ungd_crisis_barometer.py` (PC1 from `the internal reference table`,
+  UCDP join, within country FE with country clustered SE, paired consistency test). Run on the internal host.
+- Scoring: `truthometer/scripts/ungd_score.py` (eight axis, shared 7B endpoint on ). Full corpus
   scored to completeness (10,556 speeches) via the `ungd-full-score` daemon run.
-- Conflict data: UCDP/PRIO ACD v26.1 CSV at `/mnt/nas/kronaxis/corpora/ucdp/UcdpPrioConflict_v26_1.csv`
+- Conflict data: UCDP/PRIO ACD v26.1 CSV at `the internal corpus store/ucdp/UcdpPrioConflict_v26_1.csv`
   (downloaded from ucdp.uu.se, CC BY 4.0).
-- Scores: `/mnt/nas/kronaxis/corpora/ungd/ungd_char8.jsonl`.
+- Scores: `the internal corpus store/ungd/ungd_char8.jsonl`.

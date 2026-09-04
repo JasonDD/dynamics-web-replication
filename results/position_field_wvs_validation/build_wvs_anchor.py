@@ -13,13 +13,13 @@ substantive codes (Don't know / No answer / Missing), and take the country mean 
 respondents. Countries with fewer than MIN_N substantive responses on an item are
 dropped as unreliable.
 
-Output: /mnt/nas/kronaxis/corpora/wvs_position/wvs_country_items.csv (long) plus a
-wide pivot, on the NAS (persistent).
+Output: the internal corpus store/wvs_position/wvs_country_items.csv (long) plus a
+wide pivot, on the internal store (persistent).
 """
 import os, re, pandas as pd
 
 SRC = "/tmp"  # wvs_train.parquet + wvs_test.parquet staged here
-OUT = "/mnt/nas/kronaxis/corpora/wvs_position"
+OUT = "the internal corpus store/wvs_position"
 MIN_N = 15
 os.makedirs(OUT, exist_ok=True)
 

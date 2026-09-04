@@ -34,9 +34,9 @@ is the recipe: a reviewer reproduces the coupling geometry without it.
   person produces (matter versus manner, and originality), with each author
   averaged over their sections so the performed state cancels.
 
-### Result (reproduced on DL580, 2 September 2026)
+### Result (reproduced on the internal host, 2 September 2026)
 
-Corpus `cc_v3.news_topic`: 33,920 scored articles, 1,367 authors; 1,355 authors
+Corpus `an internal table`: 33,920 scored articles, 1,367 authors; 1,355 authors
 seen across two or more distinct sections (33,785 articles).
 
 - **Trait fraction (mean disposition ICC): about 0.12** (0.116 at article level,
@@ -58,13 +58,13 @@ r about +0.39, trait fraction about 0.12.
 ### How to run
 
 ```bash
-# needs: python3 with numpy and psycopg2; read access to the cc_v3 schema;
+# needs: python3 with numpy and psycopg2; read access to the internal schema;
 # the DB password read from ~/.pgpass (no secret in the script).
 python3 paper4_public_proxy.py
 ```
 
 It prints the ICC table, the person level bridge, and the article level contrast.
-The numbers are deterministic given the same scored corpus. `cc_v3.news_topic` is
+The numbers are deterministic given the same scored corpus. `an internal table` is
 a held crawl derivative (tier two, reported not released, see the pack): a
 reviewer with a comparable public news corpus scored by the shared apparatus
 (`../../../../truthometer/scripts/cc_found_human_score.py` and

@@ -1,4 +1,4 @@
-<!-- generated 2026-08-30T23:35Z by results/crossplatform_identity/scripts/crossplatform_identity.py against cc_v3.crosssite_authorship (tfs, DL580), 7B char_dweb scores. Read only. -->
+<!-- generated 2026-08-30T23:35Z by results/crossplatform_identity/scripts/crossplatform_identity.py against the internal cross site corpus (tfs, the internal host), 7B char_dweb scores. Read only. -->
 
 # Cross platform identity linkage from writing alone
 
@@ -10,7 +10,7 @@ stylometry get us, and which of the two is actually carrying identity.
 
 ## Ground truth
 
-`cc_v3.crosssite_authorship` links pseudonyms across sites by a shared identity key (key type withheld as commercial IP) recovered from Common Crawl. A key that appears on two or more
+`the internal cross site corpus` links pseudonyms across sites by a shared identity key (key type withheld as commercial IP) recovered from Common Crawl. A key that appears on two or more
 distinct domains is the **same person seen on two or more platforms**. The table already carries the
 8 axis DYNAMICS-WEB character vector (`char_dweb`, 7B scorer): depth, affect, rigour, stance, candour,
 register, originality, commercial_drive. Nothing was scored again here.
@@ -125,8 +125,8 @@ the false link rate is high, so every hit is a prior for a human to corroborate,
 ### Reproduce
 
 ```
-# on DL580 (local tfs), read only
+# on the internal host (local tfs), read only
 OUT=$HOME/crossplatform_id_run/stats.json python3 scripts/crossplatform_identity.py
 ```
 
-Full machine readable numbers in `stats.json` beside this file. Runtime about 11 minutes on DL580 CPU.
+Full machine readable numbers in `stats.json` beside this file. Runtime about 11 minutes on the internal host CPU.

@@ -40,7 +40,7 @@ mean arm CTR: 0.0138  (1.38%)   axes are 0..1 decimals
   axes that CAUSALLY LOWER click-through (p<0.05): none
 
   CONFOUNDS / CAVEATS (honest):
-  - Character is scored by a 7B model (qwen2.5-7b-atlas, temp 0). Scorer noise attenuates coefficients
+  - Character is scored by a 7B model (an internal 7B instruct model, temp 0). Scorer noise attenuates coefficients
     toward zero (errors-in-variables); true effects are at least this large, not smaller.
   - Randomisation is WITHIN test only. It licenses the causal claim about headline character; it does
     NOT say the population is representative (Upworthy's 2013-15 progressive/viral audience).

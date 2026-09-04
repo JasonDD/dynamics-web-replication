@@ -1,9 +1,9 @@
 # Paper 4 coupling: cross lineage and scale robustness
 
 INTERNAL analysis. Aggregate only, no keys, no names. PUBLIC track paper, DYNAMICS-WEB series.
-Corpus: `cc_v3.crosssite_authorship` on DL580 (the same pseudonymous person seen writing across many
-separate sites). Two scoring lineages: the 7B (`qwen2.5-7b-atlas`, port 8301, the lineage that produced
-`disp_d8` and `char_dweb`) and a second, unrelated generation, the 27B (`qwen38-extract`, Qwen3.8-27B W4A16,
+Corpus: `the internal cross site corpus` on the internal host (the same pseudonymous person seen writing across many
+separate sites). Two scoring lineages: the 7B (`an internal 7B instruct model`, port 8301, the lineage that produced
+`disp_d8` and `char_dweb`) and a second, unrelated generation, the 27B (`an internal model`, an internal model W4A16,
 port 8288, written to `disp_d8_27b` and `char_dweb_27b`).
 
 Two Paper 4 claims were put to a robustness test at the manipulation programme standard, by two moves:
@@ -29,7 +29,7 @@ number does not, and Paper 4 should correct it.
 
 ## Move 1: cross lineage confirmation (7B vs 27B on the same blocks)
 
-A fixed balanced sample of people seen on two or more distinct sites was drawn (`cc_v3.xlineage_sample`, one
+A fixed balanced sample of people seen on two or more distinct sites was drawn (`an internal table`, one
 strongest block per site per person). Both lineages scored the identical blocks. Estimates below are on the
 subset carrying both lineages' scores, at 433 people (1,237 blocks), and are stable against the earlier reads
 at 172 and 258 people, so the story does not move as the sample grows. Scoring continues under `kx-daemon`
@@ -39,8 +39,8 @@ at 172 and 258 people, so the story does not move as the sample grows. Scoring c
 
 | lineage | mean disposition ICC | trait fraction | performed fraction |
 |---|---|---|---|
-| 7B (qwen2.5-7b-atlas) | +0.507 | ~0.51 | ~0.49 |
-| 27B (qwen38-extract) | +0.577 | ~0.58 | ~0.42 |
+| 7B (an internal 7B instruct model) | +0.507 | ~0.51 | ~0.49 |
+| 27B (an internal model) | +0.577 | ~0.58 | ~0.42 |
 
 Both lineages agree the read is majority trait, near 0.51 to 0.58. Neither is anywhere near the documented
 0.24. The rank pattern of which axes are more trait like is now clearly shared between the readers (per axis ICC
@@ -145,8 +145,8 @@ disposition read is majority trait.
   8288, thinking off, body capped to the 2048 token context), `cc_crosssite_xlineage.py` (the 7B against 27B
   agreement on the split and the bridge), `cc_crosssite_scale.py` (the scale ladder), and
   `cc_crosssite_split_breakdown.py` (the split by estimator and key type).
-- Data added this run: `disp_d8_27b`, `char_dweb_27b` columns and the `cc_v3.xlineage_sample` table on the
-  DL580 tfs database; the 27B scoring of the sample continues under `kx-daemon` job `xlineage-27b`, self queued
+- Data added this run: `disp_d8_27b`, `char_dweb_27b` columns and the `an internal table` table on the
+  the internal host tfs database; the 27B scoring of the sample continues under `kx-daemon` job `xlineage-27b`, self queued
   behind the running 8288 jobs.
 - Caveats: the 27B saw a shorter slice of each text than the 7B (1200 against 6000 characters) to fit its 2048
   token context, a mild confound on the reader comparison; the cross lineage numbers are at 433 people while the

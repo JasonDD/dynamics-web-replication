@@ -17,7 +17,7 @@ the WHO link survives when legislators are compared INSIDE the same country.
 
 Room = country (which also holds language fixed, the confound the original run named).
 Person = speaker. Disposition P = lr (left to right, party level). Character C = the canonical
-matter against manner ruler, PC1 of the eight axes built on cc_v3.domain_char8_expanded, the
+matter against manner ruler, PC1 of the eight axes built on the internal reference table, the
 same ruler the rest of the series uses. Secondary outcomes: stance, affect.
 
 Traps carried, matching the production side test:
@@ -46,7 +46,7 @@ t0 = time.time()
 def log(*a): print(f"[{time.time()-t0:6.1f}s]", *a, flush=True)
 
 CHAR = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]
-SRC = os.environ.get("SRC", "/mnt/nas/kronaxis/corpora/parlamint/sample_scored.jsonl")
+SRC = os.environ.get("SRC", "the internal corpus store/parlamint/sample_scored.jsonl")
 OUT = os.environ.get("OUT", "/home/jason/effect_confound/who_legislator.json")
 NBOOT = int(os.environ.get("NBOOT", "4000"))
 SEED = int(os.environ.get("SEED", "20260903"))
@@ -60,7 +60,7 @@ PW = [l.split("=", 1)[1].strip().strip('"').strip("'")
 db = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs")
 cur = db.cursor()
 log("building the canonical matter against manner ruler ...")
-cur.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+cur.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc = np.array([[float(v) for v in r] for r in cur.fetchall()], float)
 MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
 _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False); PC1 = Vt[0]

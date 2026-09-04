@@ -1,7 +1,7 @@
 # RESONANCE = fit between content character (DYNAMICS-WEB) and audience disposition (DYNAMICS-8)
 
 PUBLIC track. Analysis only. No fresh scoring: reuses the held DYNAMICS-WEB character scores and DYNAMICS-8
-disposition scores already on `cc_v3.reddit_wide` (DL580).
+disposition scores already on `the internal Reddit corpus` (the internal host).
 
 ## The question
 
@@ -110,4 +110,4 @@ community out map, a room shuffle null, and control for the universal DW main ef
 
 - `truthometer/scripts/resonance_dwxd8.py` — the four models and the within room out engagement contrast.
 - `truthometer/scripts/resonance_confirm.py` — the collapse, room shuffle, and increment permutation checks.
-- Both read `cc_v3.reddit_wide` on DL580 (`char`, `disp_d8_behav_27b`, `score`). Run on DL580.
+- Both read `the internal Reddit corpus` on the internal host (`char`, `disp_d8_behav_27b`, `score`). Run on the internal host.

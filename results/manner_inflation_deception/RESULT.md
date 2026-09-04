@@ -5,8 +5,8 @@ the expanded manipulation taxonomy. The pattern to persona coupling table is mea
 separate restricted track and is deliberately absent here (see Disclosure below).*
 
 Scorer: `truthometer/scripts/cc_found_human_score.py` (8 axis DWEB character instrument,
-qwen2.5-7b-atlas on DL580 :8301). Analysis: `analyse_manner_inflation.py` in this directory.
-Data prep: `prep_deception.py`. All inputs on NAS `/mnt/nas/kronaxis/corpora/`.
+an internal 7B instruct model on the internal host ). Analysis: `analyse_manner_inflation.py` in this directory.
+Data prep: `prep_deception.py`. All inputs on internal store `the internal corpus store`.
 
 ---
 
@@ -138,7 +138,7 @@ signal to DSTL, SBRI and serious investors, not a limitation.
   class, for phishing, dark (RachitD), LIAR, plus the Mathur strings with a metadata sidecar
   (`mathur_meta.jsonl`) carrying surface type, category, and word count. IRA and CMV are already
   scored and are folded in at analysis time.
-- Scoring hits the shared :8301 endpoint. The run coordinated with a concurrent `manip-score`
+- Scoring hits the shared  endpoint. The run coordinated with a concurrent `manip-score`
   job: scoring paused while that job held the endpoint and resumed at full worker count once it
   finished, so neither job was starved.
 - Classifiers are numpy logistic regression with five fold cross validation; AUC is the
@@ -348,7 +348,7 @@ Two guards sit alongside this result and should be read with it:
 
 - `RESULT_27b_confirmation.md`, the cross lineage panel check (never one scorer; agreement across
   models is the credibility asset). The troll signature was rescored on an independent 27B lineage
-  (:8288) with thinking off and the identical prompt and parse. Absolute levels differ by
+  () with thinking off and the identical prompt and parse. Absolute levels differ by
   calibration, but the sign and ordering are identical on both scorers: trolls are lowest on
   matter, highest on affect, most inflated on the residual. The signature is not an artefact of one
   model.

@@ -3,8 +3,8 @@
 *DYNAMICS-WEB series, 3 September 2026. Preregistration and its three amendments in `PREREGISTRATION.md`,
 each committed before the line it governs. Script `truthometer/scripts/cc_competitor_test.py`. Held out
 gain = 1 − SSE(model) / SSE(room mean) over the eight character axes, five person grouped folds, room
-block bootstrap of 500 for every interval. Web domains: `cc_v3.crosssite_authorship`, 1,008 rooms,
-161,867 person room records, 48,293 persons. Subreddits: `cc_v3.reddit_wide`, 400 rooms, 50,346
+block bootstrap of 500 for every interval. Web domains: `the internal cross site corpus`, 1,008 rooms,
+161,867 person room records, 48,293 persons. Subreddits: `the internal Reddit corpus`, 400 rooms, 50,346
 records, 47,514 persons. JSONs: `crosssite_v3.json`, `reddit_v3.json` (corrected run), `*_v4_tau0.json`
 (the test 2 interval), `*_v1_blind_injection.json` (the first run, kept).*
 

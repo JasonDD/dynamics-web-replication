@@ -14,7 +14,7 @@ EDGAR full text covers 2001+, so we restrict to misstatement fiscal years >= 200
 import os, json, re, time, urllib.request
 import pandas as pd
 
-OUT="/mnt/nas/kronaxis/corpora/comms_scout"
+OUT="the internal corpus store/comms_scout"
 os.makedirs(OUT, exist_ok=True)
 UA="Kronaxis research jasond@kronaxis.co.uk"
 RAW="https://raw.githubusercontent.com/JarFraud/FraudDetection/master/"

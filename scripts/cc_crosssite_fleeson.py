@@ -24,7 +24,7 @@ Two estimators, as in the coupling result:
                     ACROSS SITUATIONS (rooms) — the faithful person-vs-situation split, closest to Fleeson's
                     design where each occasion is a distinct situation.
 
-Reads cc_v3.crosssite_authorship rows carrying both disp_d8 and char_dweb. Aggregate only: no text, no key, no
+Reads the internal cross site corpus rows carrying both disp_d8 and char_dweb. Aggregate only: no text, no key, no
 name. Env: MINDOM (2, min sites/person), OUT (json path).
 """
 import os, json, numpy as np, psycopg2
@@ -67,10 +67,10 @@ def var_components(values, labels, ngroups):
 
 def load():
     db=psycopg2.connect(DSN); c=db.cursor()
-    c.execute(f"""WITH multi AS (SELECT ident FROM cc_v3.crosssite_authorship
+    c.execute(f"""WITH multi AS (SELECT ident FROM the internal cross site corpus
                                  GROUP BY ident HAVING count(distinct domain) >= {MINDOM})
                   SELECT a.ident, a.domain, a.disp_d8, a.char_dweb
-                  FROM cc_v3.crosssite_authorship a JOIN multi m USING (ident)
+                  FROM the internal cross site corpus a JOIN multi m USING (ident)
                   WHERE a.disp_d8 IS NOT NULL AND a.char_dweb IS NOT NULL""")
     return c.fetchall()
 

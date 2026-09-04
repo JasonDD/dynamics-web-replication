@@ -1,4 +1,4 @@
-# The Ashlar atlas: the full 8x8 disposition to character map, re-surveyed
+# The Ashlar internal model: the full 8x8 disposition to character map, re-surveyed
 
 *DYNAMICS-WEB series, 3 September 2026. Script `cc_ashlar_atlas.py`. Ashlar is the keystone, the map from
 the eight disposition axes (DYNAMICS-8) to the eight character axes of the writing (DYNAMICS-WEB). The
@@ -38,11 +38,11 @@ principal component collapse hid.
 
 ## Reconciliation with the equation of state
 
-Projected onto the two metatraits and the matter against manner and originality pair, the atlas gives the
+Projected onto the two metatraits and the matter against manner and originality pair, the internal model gives the
 same off diagonal coupling the equation of state found, on all three legs: plasticity to originality
 (+0.098 / +0.055 / +0.041 across A, Xpb, Xpa) and stability to matter against manner (+0.101 / +0.036 /
-+0.089), with the diagonal near zero. So the equation of state is the two metatrait shadow of this atlas,
-and the atlas is the object the coupling paper should carry, with matter against manner as its leading
++0.089), with the diagonal near zero. So the equation of state is the two metatrait shadow of this internal model,
+and the internal model is the object the coupling paper should carry, with matter against manner as its leading
 slice rather than its whole.
 
 ## Bounds

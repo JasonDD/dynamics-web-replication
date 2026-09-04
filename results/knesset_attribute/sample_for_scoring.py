@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """sample_for_scoring.py — pick a within-room gender-balanced sample to score, so scoring stays polite on the
-shared GPU while every scored turn sits in a room that also contains the other gender (the atlas control).
+shared GPU while every scored turn sits in a room that also contains the other gender (the internal model control).
 
 For each room (plenary sitting): take up to FCAP female turns, and match an equal number of male turns from
 the SAME room by length bucket (so within-room male/female are length-comparable by construction). Rooms with
@@ -12,8 +12,8 @@ Env: IN(turns_all), OUT(sample), FCAP(6), NB(6 length buckets), TOTALCAP(3600), 
 import os, json, random, collections
 import numpy as np
 
-IN = os.environ.get("IN", "/mnt/nas/kronaxis/corpora/knesset_corpus/knesset_attribute_turns_all.jsonl")
-OUT = os.environ.get("OUT", "/mnt/nas/kronaxis/corpora/knesset_corpus/knesset_attribute_sample.jsonl")
+IN = os.environ.get("IN", "the internal corpus store/knesset_corpus/knesset_attribute_turns_all.jsonl")
+OUT = os.environ.get("OUT", "the internal corpus store/knesset_corpus/knesset_attribute_sample.jsonl")
 FCAP = int(os.environ.get("FCAP", "6"))
 NB = int(os.environ.get("NB", "6"))
 TOTALCAP = int(os.environ.get("TOTALCAP", "3600"))

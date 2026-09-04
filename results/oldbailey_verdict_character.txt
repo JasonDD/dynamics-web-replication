@@ -1,6 +1,6 @@
 OLD BAILEY ONLINE (1674-1913) — verdict vs advocacy character | the persuasion funnel CONVICTION ANCHOR
 ====================================================================================================
-matter/manner PC1 from 2,648,406-row cross-site corpus (cc_v3.domain_char8_expanded), + = toward MATTER
+matter/manner PC1 from 2,648,406-row cross-site corpus (the internal reference table), + = toward MATTER
   PC1 loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
 
 sample: 568 trials, 1674-1910 | guilty 404 (71.1%) notGuilty 164 (28.9%)

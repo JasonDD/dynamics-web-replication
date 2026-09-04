@@ -8,7 +8,7 @@ ANALYSIS ONLY: reuses the held 8-axis character scores from the instrument
 external-validity run (/mnt/external/benchmarks/scored/ibm_argq.jsonl). No scoring.
 
 Anchors the matter/manner split on the SAME PC1 the rest of the series uses
-(SVD on cc_v3.domain_char8_expanded). Reports:
+(SVD on the internal reference table). Reports:
   1. per-axis Spearman/Pearson/partial-for-length vs the human quality label
   2. matter-composite vs manner-composite (PC1 sign groups)
   3. the theory-clean central pair (rigour+depth) vs peripheral pair (affect)
@@ -36,14 +36,14 @@ def db_pw():
 def build_pc1():
     conn = psycopg2.connect(host="127.0.0.1", port=5432, user="titan", dbname="tfs", password=db_pw())
     c = conn.cursor()
-    c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+    c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
     allc = np.array(c.fetchall(), float)
     conn.close()
     MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
     _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False); PC1 = Vt[0]
     if (PC1[DWEB.index("rigour")] + PC1[DWEB.index("depth")]) < 0:
         PC1 = -PC1
-    print(f"PC1 built on cc_v3.domain_char8_expanded n={len(allc)}", flush=True)
+    print(f"PC1 built on the internal reference table n={len(allc)}", flush=True)
     load = {a: float(PC1[i]) for i, a in enumerate(DWEB)}
     print("  PC1 loadings: " + ", ".join(f"{a}={v:+.2f}" for a, v in load.items()), flush=True)
     return MEAN, STD, PC1, load

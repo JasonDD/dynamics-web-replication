@@ -20,7 +20,7 @@ from concurrent.futures import ThreadPoolExecutor
 import requests, psycopg2, numpy as np, math
 
 URLS=[u.strip() for u in os.environ.get("SCORER_URLS",
-      "http://127.0.0.1:8289/v1/chat/completions,http://127.0.0.1:8290/v1/chat/completions").split(",") if u.strip()]
+      "an internal model endpoint").split(",") if u.strip()]
 MODEL=os.environ.get("SCORER_MODEL","mistralai/Mistral-7B-Instruct-v0.2")
 WORKERS=int(os.environ.get("WORKERS","48"))
 CAP=int(os.environ.get("CAP","15000"))
@@ -66,7 +66,7 @@ def score_one(rid, body):
     try:
         v=ask(body)
         if v is None: return False
-        cur().execute("INSERT INTO cc_v3.reddit_grice(id, quantity, quality, relation, manner) VALUES(%s,%s,%s,%s,%s) "
+        cur().execute("INSERT INTO an internal table(id, quantity, quality, relation, manner) VALUES(%s,%s,%s,%s,%s) "
                       "ON CONFLICT (id) DO UPDATE SET quantity=EXCLUDED.quantity, quality=EXCLUDED.quality, "
                       "relation=EXCLUDED.relation, manner=EXCLUDED.manner", (rid, v["quantity"], v["quality"], v["relation"], v["manner"]))
         return True
@@ -75,9 +75,9 @@ def score_one(rid, body):
 
 def main():
     db=psycopg2.connect(DSN); db.autocommit=True; c=db.cursor()
-    c.execute("CREATE TABLE IF NOT EXISTS cc_v3.reddit_grice(id text PRIMARY KEY, quantity real, quality real, relation real, manner real)")
-    c.execute("""SELECT w.id, w.body FROM cc_v3.reddit_wide w
-                 LEFT JOIN cc_v3.reddit_grice gg ON gg.id=w.id
+    c.execute("CREATE TABLE IF NOT EXISTS an internal table(id text PRIMARY KEY, quantity real, quality real, relation real, manner real)")
+    c.execute("""SELECT w.id, w.body FROM the internal Reddit corpus w
+                 LEFT JOIN an internal table gg ON gg.id=w.id
                  WHERE w.char IS NOT NULL AND w.char ? 'rigour' AND length(w.body)>=200 AND gg.id IS NULL
                  ORDER BY md5(w.id) LIMIT %s""",(CAP,))
     todo=c.fetchall(); print(f"[grice] {len(todo)} comments to judge (cap {CAP}, workers {WORKERS})", flush=True)
@@ -92,7 +92,7 @@ def main():
 
 def analyse(c):
     c.execute("SELECT gg.quantity, gg.quality, gg.relation, gg.manner, w.char, w.subreddit "
-              "FROM cc_v3.reddit_grice gg JOIN cc_v3.reddit_wide w ON w.id=gg.id WHERE w.char ? 'rigour'")
+              "FROM an internal table gg JOIN the internal Reddit corpus w ON w.id=gg.id WHERE w.char ? 'rigour'")
     Q=[]; CH=[]; subs=[]
     for q,ql,rel,man,ch,sub in c.fetchall():
         ch=ch if isinstance(ch,dict) else json.loads(ch)
@@ -101,7 +101,7 @@ def analyse(c):
     Q=np.array(Q,float); CH=np.array(CH,float); subs=np.array(subs)
     n=len(Q); print(f"\n[grice] analysing {n} judged comments", flush=True)
     # PC1
-    dref=psycopg2.connect(DSN).cursor(); dref.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+    dref=psycopg2.connect(DSN).cursor(); dref.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
     allc=np.array([[float(x) for x in r] for r in dref.fetchall()],float); MEAN=allc.mean(0); STD=allc.std(0)+1e-9
     _,_,Vt=np.linalg.svd((allc-MEAN)/STD, full_matrices=False); PC1=Vt[0]
     if (PC1[DWEB.index("rigour")]+PC1[DWEB.index("depth")])<0: PC1=-PC1

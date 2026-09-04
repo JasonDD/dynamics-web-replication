@@ -8,7 +8,7 @@ Coh-Metrix itself is licensed; the indices below are the free equivalents (the T
 computed from surface text with no external tool and no model in the loop.
 
 Corpus: the held reddit_wide comments already scored on the eight axis instrument (same set as the Biber
-reduction), so this is analysis only, CPU and DB on DL580, no scoring service. Each index is correlated
+reduction), so this is analysis only, CPU and DB on the internal host, no scoring service. Each index is correlated
 with the eight axes and with the matter against manner PC1, at the item level and within a subreddit
 (both demeaned by room), and the depth/rigour correlations are disattenuated with the same single read
 reliability the Biber within unit run measured (0.42 for the ruler; per axis reliabilities are not held,
@@ -23,14 +23,14 @@ OUT = os.path.expanduser("~/cohmetrix_out"); os.makedirs(OUT, exist_ok=True)
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 conn=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs"); c=conn.cursor()
 
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float)
 MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD, full_matrices=False); PC1=Vt[0]
 if (PC1[DWEB.index("rigour")]+PC1[DWEB.index("depth")])<0: PC1=-PC1
 def pc1_of(ch): return float(((np.array([ch[a] for a in DWEB],float)-MEAN)/STD) @ PC1)
 
-c.execute("SELECT id, subreddit, body, char FROM cc_v3.reddit_wide WHERE char IS NOT NULL AND char ? 'rigour' AND length(body) >= 200")
+c.execute("SELECT id, subreddit, body, char FROM the internal Reddit corpus WHERE char IS NOT NULL AND char ? 'rigour' AND length(body) >= 200")
 rows=c.fetchall(); print(f"fetched {len(rows)} scored comments", flush=True)
 
 # ---- indices, all closed form, no tagger ----

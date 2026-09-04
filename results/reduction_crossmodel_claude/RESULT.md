@@ -25,7 +25,7 @@ stated.
 ## ELM (IBM ArgQ): central route vs peripheral cue
 
 n = 460 argument texts, stratified across the quality range (label 0.180..1.000,
-mean 0.793). PC1 built by SVD on the reference matrix `cc_v3.domain_char8_expanded`
+mean 0.793). PC1 built by SVD on the reference matrix `the internal reference table`
 (n = 2,648,406 domains), oriented so rigour+depth load positive. Partial Spearman rho
 controls for text length. Full table in `elm_crossmodel.txt`.
 
@@ -64,7 +64,7 @@ the same construct where it counts.
 
 ---
 
-## Biber (cc_v3.reddit_wide): matter/manner PC1 vs Dimension 1
+## Biber (the internal Reddit corpus): matter/manner PC1 vs Dimension 1
 
 42 subreddits x 25 comments = 1050, body length >= 200; 1029 usable after the
 30 word floor. PC1 built by SVD on the second lineage's own eight axis scores

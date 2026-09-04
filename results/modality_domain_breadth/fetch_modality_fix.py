@@ -5,7 +5,7 @@ customer complaints, and a deeper CUAD contract pull (first pass deduped to only
 """
 import os, json, re, urllib.request
 
-BASE = "/mnt/nas/kronaxis/corpora"
+BASE = "the internal corpus store"
 
 def outdir(n):
     d = os.path.join(BASE, n); os.makedirs(d, exist_ok=True); return d

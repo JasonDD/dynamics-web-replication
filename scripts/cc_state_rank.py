@@ -20,7 +20,7 @@ db=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=t
 def obj(x): return x if isinstance(x,dict) else (json.loads(x) if x else None)
 
 # canonical matter/manner PC1 for reference direction
-c.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc=np.array([[float(v) for v in r] for r in c.fetchall()],float)
 MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD,full_matrices=False); PC1=Vt[0]
@@ -41,7 +41,7 @@ def group_offsets(rows, keyfn):
 offsets={}
 # genre offsets (reddit communities -> genre)
 gmap=json.load(open(GENRE_JSON))
-c.execute("SELECT subreddit,char FROM cc_v3.reddit_wide WHERE char IS NOT NULL")
+c.execute("SELECT subreddit,char FROM the internal Reddit corpus WHERE char IS NOT NULL")
 rr=[]
 for sub,ch in c.fetchall():
     ch=obj(ch)
@@ -52,7 +52,7 @@ offsets["genre"]=group_offsets(rr, None);
 print(f"[rank] genre offsets: {0 if offsets['genre'] is None else len(offsets['genre'])} groups",flush=True)
 
 # site + language offsets (crosssite)
-c.execute("SELECT domain,lang,char_dweb FROM cc_v3.crosssite_authorship WHERE char_dweb IS NOT NULL")
+c.execute("SELECT domain,lang,char_dweb FROM the internal cross site corpus WHERE char_dweb IS NOT NULL")
 site_rows=[]; lang_rows=[]
 for dom,lang,ch in c.fetchall():
     ch=obj(ch)

@@ -17,7 +17,7 @@ This slots straight into the four axis release governance: the aged world map is
 Directly scoring every domain is astronomical and is not the method. The method, already built, is to score a seed on the eight axis instrument and propagate character across the Common Crawl web graph, whose correlation length is about two hops.
 
 Current position:
-- about 2.6 million domains directly scored (`cc_v3.domain_char8_expanded`);
+- about 2.6 million domains directly scored (`the internal reference table`);
 - the full web graph, 118.7 million domains and 4.34 billion links;
 - character propagated across it to about 75 million domains;
 - the United Kingdom corpus is the full UK namespace, link derived, of which a slice is directly scored and the rest propagated.
@@ -32,7 +32,7 @@ From that measured rate:
 - **A full re score of the 2.6 million seed** takes about 1 to 2 days on one endpoint, about half that across both GPUs. This is the worst case and is not what a release needs.
 - **A delta re score**, only the domains that are new or materially changed since the last crawl, is the real per release cost. At an estimated 15 to 20 per cent churn that is about 400 to 520 thousand domains, roughly 5 to 12 hours of scoring depending on GPU count.
 - **Propagation** across the 118 million vertex, 4.34 billion edge graph ran in hours in the prior run with the ping pong buffer that fixed the earlier out of memory failure.
-- **Storage.** The domain character map is tens of gigabytes per release; the page lake is terabyte scale and stays as Parquet on the NAS, never in Postgres.
+- **Storage.** The domain character map is tens of gigabytes per release; the page lake is terabyte scale and stays as Parquet on the internal store, never in Postgres.
 
 **Net per monthly release: on the order of one day of compute end to end, dominated by the delta re score and the propagation, well within the box.** It is a recurring batch job, not a moon shot, and it gets cheaper as delta scoring replaces full re scoring.
 

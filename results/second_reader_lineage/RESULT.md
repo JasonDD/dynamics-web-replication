@@ -1,9 +1,9 @@
 # The second reader lineage: does the coupling survive a different model reading the same text?
 
 *DYNAMICS-WEB series, 3 September 2026. The within room differencing analysis rerun with disposition and
-character re read by Mistral 7B Instruct v0.2 (a different pretraining lineage from the Qwen readers that
+character re read by Mistral 7B Instruct v0.2 (a different pretraining lineage from the an internal model readers that
 produced every earlier number), on a matched sample of 45,502 rows, 23,412 persons, 300 rooms of the cross
-site corpus (`cc_v3.xlineage_diff_sample`). Legs: A both by the first reader; B both by Mistral; X the
+site corpus (`an internal table`). Legs: A both by the first reader; B both by Mistral; X the
 cross legs, disposition by one reader and character by the other, so neither side can copy the other.
 JSONs in this directory; scoring scripts `cc_crosssite_score_xlineage_mistral.py`, driver
 `cc_diff_xlineage_driver.sh`.*

@@ -1,6 +1,6 @@
 # PF-4B-GENRE — CLAUDE second-lineage replication attempt: INCONCLUSIVE (reported honestly)
 
-Operator chose Claude as the independent disposition scorer (vs 7B) because the 27B qwen teacher is blocked
+Operator chose Claude as the independent disposition scorer (vs 7B) because the 27B an internal model teacher is blocked
 by disk corruption (~/.cache/flashinfer I/O error, needs fsck). Claude read 112 communities (8 per genre x 14),
 6 longest comments each, and scored community PLASTICITY (Extraversion+Openness) BLIND to matter/manner and to
 the 7B scores (claude_plasticity_scores.json). Character = existing instrument community-mean (canonical PC1).

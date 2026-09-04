@@ -1,7 +1,7 @@
 ==========================================================================================
 PART A — the shared CENTRE and the global matter/manner axis
 ==========================================================================================
-[load] cc_v3.domain_char8_expanded ...
+[load] the internal reference table ...
 [load] 2,648,406 domains x 8 axes
 [pc1] PC1 var%=56.1  PC2 var%=21.2  (top-2 = 77.3%)
 [pc1] loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34

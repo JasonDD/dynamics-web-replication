@@ -22,7 +22,7 @@ conn = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbna
 c = conn.cursor()
 
 # ---- matter/manner PC1 reference (same recipe as truthometer/scripts/manip_analyse.py)
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc = np.array([[float(x) for x in r] for r in c.fetchall()], float)
 MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
 _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False)
@@ -40,7 +40,7 @@ def pc1_of(ch):
 # ---- pull held reddit_wide docs: text + char + subreddit
 c.execute("""
   SELECT id, subreddit, body, char
-  FROM cc_v3.reddit_wide
+  FROM the internal Reddit corpus
   WHERE char IS NOT NULL AND char ? 'rigour' AND length(body) >= 200
 """)
 rows = c.fetchall()
@@ -66,7 +66,7 @@ POSS = set("can could may might will would shall should".split())
 PREP = set(("of in to for with on at by from as into about over under between through during "
     "before after above below against among around upon within without toward towards than "
     "onto off per via across behind beside beyond near").split())
-ARTICLE = set("the a an".split())
+ARTICLE = set("the an".split())
 NOMSUF = ("tion", "sion", "ment", "ness", "ity", "ance", "ence", "ism", "ation")
 
 WORD = re.compile(r"[a-zA-Z]+(?:'[a-z]+)?")
@@ -233,8 +233,8 @@ print(f"  D1 split half (alternate sentences, within room): r_half {r_half:+.3f}
 
 # PC1 reliability from the two reader agreement on the cross site rows (same text, two readers)
 conn = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs"); c = conn.cursor()   # fresh connection: the first one idles past the server timeout
-c.execute("""SELECT a.char_dweb, a.char_dweb_mist, a.domain FROM cc_v3.crosssite_authorship a
-             JOIN cc_v3.xlineage_diff_sample s USING (id)
+c.execute("""SELECT a.char_dweb, a.char_dweb_mist, a.domain FROM the internal cross site corpus a
+             JOIN an internal table s USING (id)
              WHERE a.char_dweb IS NOT NULL AND a.char_dweb_mist IS NOT NULL""")
 xa, xb, xd = [], [], []
 for a_, b_, d_ in c.fetchall():

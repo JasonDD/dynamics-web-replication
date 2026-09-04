@@ -7,8 +7,8 @@ manipulation result.*
 
 The manipulation result, that Internet Research Agency political trolls read as affect inflated and
 starved of matter against sincere Change My View argument, was so far measured on one scorer only:
-the free 7B (`qwen2.5-7b-atlas`, :8301). This file rescores the SAME items on a second, independent
-lineage, the 27B (`qwen3.8-27B`, :8288, served as `qwen38-extract`), and asks whether the two
+the free 7B (`an internal 7B instruct model`, ). This file rescores the SAME items on a second, independent
+lineage, the 27B (`an internal model`, , served as `an internal model`), and asks whether the two
 lineages agree on the signature in direction and rough magnitude.
 
 ## 1. Method
@@ -28,9 +28,9 @@ lineages agree on the signature in direction and rough magnitude.
   and the PolitiFact statements are far shorter than the budget and are untouched. See the caveat in
   Section 4.
 - The matter and manner PC1 axis is the first principal component of the web character reference
-  (`cc_v3.domain_char8_expanded`, 2.6M rows), oriented so rigour plus depth is positive. It is a
+  (`the internal reference table`, 2.6M rows), oriented so rigour plus depth is positive. It is a
   fixed reference axis, computed once and applied to both lineages, so PC1 scores are comparable.
-- The scoring ran on :8288 only and never touched :8301, so it did not compete with the running 7B
+- The scoring ran on  only and never touched , so it did not compete with the running 7B
   scoring jobs.
 
 Matter is the mean of rigour and depth. Manner is the mean of affect, stance and register. The
@@ -38,7 +38,7 @@ residual is manner minus matter (positive means manner is inflated past what the
 
 ## 2. Group means, both lineages (450 per group)
 
-**7B (`qwen2.5-7b-atlas`)**
+**7B (`an internal 7B instruct model`)**
 
 | group | rigour | depth | orig | candour | affect | comm | stance | register | PC1 | matter | manner | resid |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -46,7 +46,7 @@ residual is manner minus matter (positive means manner is inflated past what the
 | SINCERE | 0.576 | 0.577 | 0.532 | 0.853 | 0.544 | 0.184 | 0.575 | 0.495 | +3.01 | 0.576 | 0.538 | -0.039 |
 | SHORTPOL | 0.448 | 0.456 | 0.356 | 0.796 | 0.493 | 0.166 | 0.578 | 0.558 | +1.17 | 0.452 | 0.543 | +0.091 |
 
-**27B (`qwen3.8-27B`, thinking off)**
+**27B (`an internal model`, thinking off)**
 
 | group | rigour | depth | orig | candour | affect | comm | stance | register | PC1 | matter | manner | resid |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -139,5 +139,5 @@ strict invariance. Here the second lineage confirms and sharpens. The manipulati
 ---
 
 *Scorer: `score_27b.py` (thinking disabled, same rubric as `cc_found_human_score.py`). Prep:
-`prep_27b.py`. Analysis: `analyse_27b.py`. Data on NAS: `input_27b.jsonl`, `baseline_7b.jsonl`,
+`prep_27b.py`. Analysis: `analyse_27b.py`. Data on internal store: `input_27b.jsonl`, `baseline_7b.jsonl`,
 `scored_27b.jsonl` under `corpora/ira_troll/work/`.*

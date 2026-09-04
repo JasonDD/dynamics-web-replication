@@ -5,7 +5,7 @@ Reads scored.jsonl {id:"<item>__<lang>", char:{8 axes}}. Two questions:
  (A) Does character SURVIVE translation? -> per-item agreement across languages (ICC, mean cross-language r).
  (B) Content vs target-language split -> balanced two-way random-effects variance decomposition
      y_{item,lang} = mu + item + lang + resid  (one obs/cell; interaction = residual).
-Uses the SAME matter/manner PC1 (SVD on cc_v3.domain_char8_expanded, rigour+depth positive) as the series.
+Uses the SAME matter/manner PC1 (SVD on the internal reference table, rigour+depth positive) as the series.
 """
 import os, json, numpy as np, psycopg2
 from collections import defaultdict
@@ -14,11 +14,11 @@ from scipy import stats
 
 DWEB=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 LANGS=["en","de","fr","es","it","fi","pl","el"]
-SCORED=os.environ.get("SCORED","/mnt/nas/kronaxis/corpora/europarl_multiway/scored.jsonl")
+SCORED=os.environ.get("SCORED","the internal corpus store/europarl_multiway/scored.jsonl")
 
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 c=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float)
 MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD,full_matrices=False); PC1=Vt[0]

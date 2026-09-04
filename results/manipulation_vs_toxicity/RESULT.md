@@ -26,7 +26,7 @@ toxicity, high manipulation quadrant.
 
 **Ours.** The 8 axis DYNAMICS-WEB character instrument (rigour, depth, originality, candour,
 affect, commercial_drive, stance, register), scored by an internal 7B model tuned on web
-character (`truthometer/scripts/cc_found_human_score.py`, :8301). The manipulation detector is
+character (`truthometer/scripts/cc_found_human_score.py`, ). The manipulation detector is
 a logistic regression on those 8 axes, the same construction that reached AUC 0.925 separating
 IRA political trolls from length matched political statements
 (`results/manipulation_character/RESULT.md`). Higher score means more manipulative.
@@ -216,6 +216,6 @@ into this quadrant. That is the gap, and it is measurable, not a claim.
   assemble the combined pool joined by id to the 8 axis scores.
 - `detox_score.py`: the two toxicity comparators (Detoxify original and s-nlp RoBERTa), on CPU.
 - `analyse_manip_vs_tox.py`: the manipulation logistic, leave one domain out AUCs, in domain CV,
-  miss rates, orthogonality and the 2x2. Reads the 8 axis scores on the NAS and the toxicity
+  miss rates, orthogonality and the 2x2. Reads the 8 axis scores on the internal store and the toxicity
   scores from `detox_scores.jsonl`.
 - `run_output.txt`: the captured console output behind every number above.

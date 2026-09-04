@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """genre_calib.py — GENRE BASELINE CALIBRATION for the manner-inflation detector.
 
-PURE ANALYSIS on already-scored data. No new scoring; does not touch :8301/:8288.
+PURE ANALYSIS on already-scored data. No new scoring; does not touch /.
 
 Calibration base: the FROZEN 400-community reddit genre taxonomy (genre_assign_400_FROZEN.json)
-joined to per-item 8-axis character scores in cc_v3.reddit_wide (80,138 items, 400 communities,
+joined to per-item 8-axis character scores in the internal Reddit corpus (80,138 items, 400 communities,
 14 usable genres after excluding other_misc). This is the only scored corpus carrying a clean,
-purpose-built genre label. The 2.65M-domain cc_v3.domain_char8_expanded carries NO genre column,
+purpose-built genre label. The 2.65M-domain the internal reference table carries NO genre column,
 and the web topic tables (pld_content_topic, pld_topicality) either do not join to it (3 rows) or
 carry mixed, junk-laden vocab (topicality) — so a clean WEB genre calibration is not available;
 that limitation is reported, not papered over.
@@ -28,7 +28,7 @@ CHAR = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive
 MATTER = ["rigour", "depth"]
 MANNER = ["affect", "stance", "register"]
 GENRE_JSON = "/home/jason/projects/kronaxis/truthometer/results/prereg_genre_PF-4B/genre_assign_400_FROZEN.json"
-IRA = "/mnt/nas/kronaxis/corpora/ira_troll/work/scored.jsonl"
+IRA = "the internal corpus store/ira_troll/work/scored.jsonl"
 POL = {"RightTroll", "LeftTroll", "Fearmonger"}
 MANNER_INFL = "manner inflation = mean(affect,stance,register) - mean(rigour,depth)"
 
@@ -40,7 +40,7 @@ def manner(ch): return float(np.mean([ch[a] for a in MANNER]))
 def mi(ch):     return manner(ch) - matter(ch)
 
 # ---- canonical PC1 (matter<->manner) ruler for the robustness cross-check ----
-cur.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+cur.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc = np.array([[float(x) for x in r] for r in cur.fetchall()], float)
 CMEAN = allc.mean(0); CSTD = allc.std(0) + 1e-9
 _, _, Vt = np.linalg.svd((allc - CMEAN) / CSTD, full_matrices=False); PC1 = Vt[0]
@@ -52,7 +52,7 @@ for a, m, s in zip(CHAR, CMEAN, CSTD):
 
 # ---- load reddit_wide items + genre ----
 gmap = json.load(open(GENRE_JSON))
-cur.execute("SELECT subreddit, char FROM cc_v3.reddit_wide WHERE char IS NOT NULL")
+cur.execute("SELECT subreddit, char FROM the internal Reddit corpus WHERE char IS NOT NULL")
 items = []            # (subreddit, genre, mi, matter, manner, pc1(-> matter+, so manner = -pc1 side))
 by_comm = {}          # subreddit -> list of mi
 for sub, ch in cur.fetchall():

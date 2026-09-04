@@ -17,7 +17,7 @@ Tasks:
 """
 import os, json, numpy as np
 
-NAS = "/mnt/nas/kronaxis/corpora"
+internal store = "the internal corpus store"
 DWEB = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]
 rng = np.random.default_rng(1729)
 
@@ -35,16 +35,16 @@ def has_char(r):
 
 # ---------- 8-axis char per corpus ----------
 POL = {"RightTroll", "LeftTroll", "Fearmonger"}
-ira_all = load_jsonl(f"{NAS}/ira_troll/work/scored.jsonl")
+ira_all = load_jsonl(f"{internal store}/ira_troll/work/scored.jsonl")
 ira = [r for r in ira_all if r.get("kind") == "ira" and r.get("outcome") in POL and has_char(r)]
-cmv = [r for r in load_jsonl(f"{NAS}/cmv_winning_args/cmv_scores.jsonl") if has_char(r)]
+cmv = [r for r in load_jsonl(f"{internal store}/cmv_winning_args/cmv_scores.jsonl") if has_char(r)]
 
-mi = [r for r in load_jsonl(f"{NAS}/manner_inflation/scored.jsonl") if has_char(r)]
+mi = [r for r in load_jsonl(f"{internal store}/manner_inflation/scored.jsonl") if has_char(r)]
 dark = [r for r in mi if r.get("kind") == "dark"]
 phish = [r for r in mi if r.get("kind") == "phish"]
 
-tox_char = {r["id"]: r for r in load_jsonl(f"{NAS}/toxicity_civilcomments/scored.jsonl") if has_char(r)}
-tox_gold = {r["id"]: r["gold"] for r in load_jsonl(f"{NAS}/toxicity_civilcomments/input.jsonl")}
+tox_char = {r["id"]: r for r in load_jsonl(f"{internal store}/toxicity_civilcomments/scored.jsonl") if has_char(r)}
+tox_gold = {r["id"]: r["gold"] for r in load_jsonl(f"{internal store}/toxicity_civilcomments/input.jsonl")}
 
 def X(rows):
     return np.array([[r["char"][a] for a in DWEB] for r in rows], float)
@@ -128,7 +128,7 @@ def auc(y, s):
     return (r[pos].sum() - pos.sum() * (pos.sum() + 1) / 2.0) / (pos.sum() * neg.sum())
 
 # ---------- toxicity tool scores, joined by id ----------
-detox = {r["id"]: r for r in load_jsonl(f"{NAS}/manip_vs_tox/detox_scores.jsonl")}
+detox = {r["id"]: r for r in load_jsonl(f"{internal store}/manip_vs_tox/detox_scores.jsonl")}
 
 def join_scores(rows, model=None):
     """Return (manip_prob, detox_tox, snlp_tox, kept rows) for rows that have all three.

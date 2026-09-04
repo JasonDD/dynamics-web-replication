@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """score_posts.py — score the 8-axis DWEB character of forum posts, preserving every input field.
 
-Identical instrument to the rest of the series: same free 7B on :8301, same system prompt, same vocab
+Identical instrument to the rest of the series: same free 7B on , same system prompt, same vocab
 line, same parse as truthometer/scripts/cc_found_human_score.py, so every scale matches. Passes the whole
 input record through and adds `char`. Resumable by id. Self queues behind the running jobs via a modest
 worker count so it is polite on the shared GPU.
@@ -12,8 +12,8 @@ import os, re, json, threading
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
-TEACHER = os.environ.get("TEACHER_URL", "http://127.0.0.1:8301/v1/chat/completions")
-MODEL = os.environ.get("TEACHER_MODEL", "qwen2.5-7b-atlas")
+TEACHER = os.environ.get("TEACHER_URL", "an internal model endpoint")
+MODEL = os.environ.get("TEACHER_MODEL", "an internal 7B instruct model")
 WORKERS = int(os.environ.get("WORKERS", "4"))
 BODYMAX = int(os.environ.get("BODYMAX", "6000"))
 INPUT = os.environ["INPUT"]

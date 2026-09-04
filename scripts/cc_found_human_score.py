@@ -11,8 +11,8 @@ import os, re, json, threading
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
-TEACHER = os.environ.get("TEACHER_URL", "http://127.0.0.1:8301/v1/chat/completions")
-MODEL = os.environ.get("TEACHER_MODEL", "qwen2.5-7b-atlas")
+TEACHER = os.environ.get("TEACHER_URL", "an internal model endpoint")
+MODEL = os.environ.get("TEACHER_MODEL", "an internal 7B instruct model")
 WORKERS = int(os.environ.get("WORKERS", "12"))
 BODYMAX = int(os.environ.get("BODYMAX", "6000"))
 INPUT = os.environ["INPUT"]

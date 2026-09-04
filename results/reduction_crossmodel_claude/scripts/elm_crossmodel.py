@@ -7,10 +7,10 @@ an independent frontier model family (a different scorer lineage from the 7B tea
 by reading each text. Tests whether the ELM central-route result (rigour+depth track
 argument quality; the peripheral affect cue does not) survives a change of scorer lineage.
 
-Inputs (on DL580):
+Inputs (on the internal host):
   SCORES  = second-lineage scores jsonl {id, c:[8 in DWEB order]}
   SAMPLE  = {id, text, outcome} for the scored sample
-  QWEN    = held 7B scores /mnt/external/benchmarks/scored/ibm_argq.jsonl (for agreement)
+  an internal model    = held 7B scores /mnt/external/benchmarks/scored/ibm_argq.jsonl (for agreement)
 """
 import os, json
 import numpy as np
@@ -20,7 +20,7 @@ from scipy.stats import spearmanr, pearsonr
 DWEB = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]
 SCORES = os.environ["SCORES"]
 SAMPLE = os.environ["SAMPLE"]
-QWEN = os.environ.get("QWEN", "/mnt/external/benchmarks/scored/ibm_argq.jsonl")
+an internal model = os.environ.get("an internal model", "/mnt/external/benchmarks/scored/ibm_argq.jsonl")
 OUT = os.environ.get("OUT", os.path.dirname(SCORES))
 
 
@@ -34,7 +34,7 @@ def db_pw():
 def build_pc1():
     conn = psycopg2.connect(host="127.0.0.1", port=5432, user="titan", dbname="tfs", password=db_pw())
     c = conn.cursor()
-    c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+    c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
     allc = np.array(c.fetchall(), float)
     conn.close()
     MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
@@ -127,18 +127,18 @@ def main():
     ]
 
     # --- inter-lineage agreement on raw axes (shared ids with 7B) ---
-    qwen_ch = {}
-    for l in open(QWEN):
+    an internal model = {}
+    for l in open(an internal model):
         r = json.loads(l)
         ch = r.get("char")
         if ch and all(a in ch for a in DWEB):
-            qwen_ch[r["id"]] = ch
-    shared = [i for i in ids if i in qwen_ch]
+            an internal model[r["id"]] = ch
+    shared = [i for i in ids if i in an internal model]
     agree_lines = []
     if shared:
         for a in DWEB:
             cv = np.array([my_ch[i][a] for i in shared])
-            qv = np.array([float(qwen_ch[i][a]) for i in shared])
+            qv = np.array([float(an internal model[i][a]) for i in shared])
             pear = pearsonr(cv, qv)[0]
             spear = spearmanr(cv, qv).correlation
             mad = float(np.mean(np.abs(cv - qv)))
@@ -147,7 +147,7 @@ def main():
     txt = [f"IBM ArgQ ELM reduction — second-lineage re-score  n={n}",
            f"quality label range {y.min():.3f}..{y.max():.3f}  mean {y.mean():.3f}  sd {y.std():.3f}",
            f"length rho with quality = {spearmanr(L, y).correlation:+.3f}",
-           f"PC1 built on cc_v3.domain_char8_expanded n={nref}",
+           f"PC1 built on the internal reference table n={nref}",
            "matter axes (PC1 positive): " + ", ".join(matter_axes),
            "manner axes (PC1 negative): " + ", ".join(manner_axes),
            "",
@@ -171,8 +171,8 @@ def main():
         "matter_comp_partial_rho": corr_row("m", matter_comp, y, L)[5],
         "manner_comp_partial_rho": corr_row("m", manner_comp, y, L)[5],
         "pc1_partial_rho": corr_row("pc1", pc1v, y, L)[5],
-        "qwen7b_central_pair_partial_rho": 0.159,
-        "qwen7b_affect_partial_rho": -0.087,
+        "an internal model": 0.159,
+        "an internal model": -0.087,
         "interlineage_shared_n": len(shared),
     }
     json.dump(summary, open(os.path.join(OUT, "elm_crossmodel_summary.json"), "w"), indent=2)

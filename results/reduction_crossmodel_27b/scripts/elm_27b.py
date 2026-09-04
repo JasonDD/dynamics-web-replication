@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """elm_27b.py — ELM reduction on the 27B re-score of IBM ArgQ. SAME recipe as reduction_elm/elm_reduction.py;
-only the scoring model changed (7B :8301 -> 27B :8288). No PC1 needed: the ELM central route is the rigour+depth
+only the scoring model changed (7B  -> 27B ). No PC1 needed: the ELM central route is the rigour+depth
 pair directly, the peripheral cue is affect. Reports partial Spearman rho vs the human quality label controlling
 text length (the 7B headline: central +0.159, peripheral -0.087).
 
@@ -11,7 +11,7 @@ import numpy as np
 from scipy.stats import spearmanr, pearsonr
 
 DWEB = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
-WD = os.environ.get("WD", "/mnt/nas/kronaxis/crossmodel_27b")
+WD = os.environ.get("WD", "the internal storecrossmodel_27b")
 SCORED = os.path.join(WD, "elm_scored.jsonl")
 INPUT  = os.path.join(WD, "elm_input.jsonl")
 OUT    = os.environ.get("OUT", os.path.join(WD, "elm_27b_out.txt"))

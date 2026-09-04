@@ -5,8 +5,8 @@ rather than a bucket, by asking whether a diaspora community's web character sit
 character of its origin country and that of its host country, and whether its position depends on
 how deeply it links into the host (more host integrated should mean closer to the host).*
 
-Data (all held, no new scoring, no `:8301` / `:8288`):
-- **Character**: `cc_v3.domain_char8_expanded`, 2,648,406 scored domains, the 8 DYNAMICS-WEB axes.
+Data (all held, no new scoring, no `` / ``):
+- **Character**: `the internal reference table`, 2,648,406 scored domains, the 8 DYNAMICS-WEB axes.
 - **Origin nationality signal**: the country code TLD of the registrable domain (a `.gr`, `.mx`,
   `.it` site is seeded to GR, MX, IT). Clean but coarse.
 - **Host embedding signal**: the country distribution of each domain's LINK NEIGHBOURS on the full
@@ -17,8 +17,8 @@ Data (all held, no new scoring, no `:8301` / `:8288`):
 
 Method file: `scripts/cc_diaspora_gradient.py` (graph machinery mirrors `truthometer/scripts/cc_region_fullgraph.py`).
 Result artifact: `diaspora_result.json` (this directory); per domain embedding `diaspora_embedding.npz`
-(143 MB, on DL580 `~/diaspora_gradient_out/`). PC1 reference is the first principal component of
-`cc_v3.domain_char8_expanded`, oriented rigour plus depth positive, the series convention.
+(143 MB, on the internal host `~/diaspora_gradient_out/`). PC1 reference is the first principal component of
+`the internal reference table`, oriented rigour plus depth positive, the series convention.
 
 ---
 
@@ -182,8 +182,8 @@ the naive integration gradient is a null.
 
 ---
 
-*Regenerate: `OUT=~/diaspora_gradient_out python3 scripts/cc_diaspora_gradient.py` on DL580 (reads
-the web graph at `/mnt/external/webgraph`, the character table `cc_v3.domain_char8_expanded`). The
+*Regenerate: `OUT=~/diaspora_gradient_out python3 scripts/cc_diaspora_gradient.py` on the internal host (reads
+the web graph at `/mnt/external/webgraph`, the character table `the internal reference table`). The
 run resolves every vertex by label propagation, histograms each scored domain's neighbour countries,
 lifts the embedding to the character originals, and writes `diaspora_result.json` plus the per domain
 `diaspora_embedding.npz`.*

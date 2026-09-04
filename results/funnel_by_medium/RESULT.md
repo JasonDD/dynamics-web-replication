@@ -8,12 +8,12 @@ manner's attention advantage survive?
 
 **Axes.** matter = mean(rigour, depth). manner = mean(affect, stance, register). This is the
 task definition of the two poles. It lines up with the matter/manner PC1 used elsewhere in
-the series (SVD on `cc_v3.domain_char8_expanded`, rigour and depth positive, affect and
+the series (SVD on `the internal reference table`, rigour and depth positive, affect and
 register negative).
 
 **Data.** Five already scored outcome corpora, each with an 8 axis character score, one real
-human outcome, and a recoverable word count. No new scoring was run; nothing touched :8301
-or :8288. The corpora span very short to very long, and the outcome is either an ATTENTION
+human outcome, and a recoverable word count. No new scoring was run; nothing touched 
+or . The corpora span very short to very long, and the outcome is either an ATTENTION
 signal (a click, a signature) or a CONVICTION signal (a mind changed, an answer accepted, a
 verdict).
 
@@ -133,6 +133,6 @@ earns more conviction, not more attention; manner's attention pull was short tex
 
 ## Reproduce
 
-`scripts/funnel_by_medium.py` in this directory. Runs on DL580 (Postgres only for the optional
-PC1 reference, NAS for the corpora, `~/kc-dwpaper` for Upworthy). Pure read, no scoring, no
-:8301 or :8288 calls.
+`scripts/funnel_by_medium.py` in this directory. Runs on the internal host (Postgres only for the optional
+PC1 reference, internal store for the corpora, `~/kc-dwpaper` for Upworthy). Pure read, no scoring, no
+ or  calls.

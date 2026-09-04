@@ -5,7 +5,7 @@ Research Agency political trolls) carry a rhetorical character signature that is
 distinct from sincere argument, once you remove the obvious confound that trolls write short
 posts and the sincere baseline writes long essays? The character instrument is the eight axis
 DYNAMICS-WEB scorer (an internal 7B model tuned on web character), and the matter versus manner
-reference is the first principal component of the web character space (`cc_v3.domain_char8_expanded`,
+reference is the first principal component of the web character space (`the internal reference table`,
 2.65M domains), oriented so rigour and depth are positive.
 
 **Verdict:** the signature **survives the length control, and comfortably**. Against a length
@@ -49,8 +49,8 @@ account pool.
 | IRA_OTHER | IRA news feed, commercial, hashtag gamer (within IRA, non political) | 1,000 |
 
 All four scored on the same eight axis instrument at port 8301. Score store:
-`/mnt/nas/kronaxis/corpora/ira_troll/work/scored.jsonl` (13,000 IRA plus LIAR rows) and
-`/mnt/nas/kronaxis/corpora/cmv_winning_args/cmv_scores.jsonl` (sincere reference).
+`the internal corpus store/ira_troll/work/scored.jsonl` (13,000 IRA plus LIAR rows) and
+`the internal corpus store/cmv_winning_args/cmv_scores.jsonl` (sincere reference).
 
 ---
 
@@ -157,6 +157,6 @@ pool as a whole; the political content adds the high affect edge on top of that 
 
 - `truthometer/scripts/manip_analyse.py`: groups, means, Cohen's d, logistic classifiers with
   five fold cross validation and per axis univariate AUC (numpy, no sklearn). Reads the score
-  store on the NAS and the PC1 reference from Postgres `cc_v3.domain_char8_expanded`.
-- Score store (persistent, NAS): `/mnt/nas/kronaxis/corpora/ira_troll/work/scored.jsonl` and
-  `/mnt/nas/kronaxis/corpora/cmv_winning_args/cmv_scores.jsonl`.
+  store on the internal store and the PC1 reference from Postgres `the internal reference table`.
+- Score store (persistent, internal store): `the internal corpus store/ira_troll/work/scored.jsonl` and
+  `the internal corpus store/cmv_winning_args/cmv_scores.jsonl`.

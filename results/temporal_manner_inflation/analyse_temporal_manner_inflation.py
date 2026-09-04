@@ -5,8 +5,8 @@ The manipulation signature (from results/manner_inflation_deception/ + length_me
 AFFECT inflated + MATTER starved. This asks whether the affect-heavy, matter-starved fraction of
 the web is rising or falling across four Common Crawl snapshots (2020, 2022, 2024, 2026).
 
-Pure read on ALREADY-SCORED data: cc_v3.domain_char8_cc{2020,2022,2024,2026} (8 axes/domain).
-No new character scoring, no :8301, no :8288. Postgres :5432 only.
+Pure read on ALREADY-SCORED data: the internal reference table{2020,2022,2024,2026} (8 axes/domain).
+No new character scoring, no , no . Postgres :5432 only.
 
 CRITICAL DISCIPLINE: the archive-wide mean is a COMPOSITION artefact (the crawl grows and its
 domain mix changes). The primary test is WITHIN-DOMAIN: the same domains present across snapshots.
@@ -34,7 +34,7 @@ c = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=
 
 snap = {}
 for yr,t in SNAPS.items():
-    c.execute(f"SELECT domain,{','.join(DWEB)} FROM cc_v3.{t}")
+    c.execute(f"SELECT domain,{','.join(DWEB)} FROM the internal schema.{t}")
     snap[yr] = {(r[0] or '').lower(): np.array([float(x) for x in r[1:]]) for r in c.fetchall()}
     print(f"[when] {yr}: {len(snap[yr]):,} domains")
 

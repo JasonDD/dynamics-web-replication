@@ -7,7 +7,7 @@
   "matter_comp_partial_rho": 0.14384745568345564,
   "manner_comp_partial_rho": -0.12349055946015507,
   "pc1_partial_rho": 0.18343054903412107,
-  "qwen7b_central_pair_partial_rho": 0.159,
-  "qwen7b_affect_partial_rho": -0.087,
+  "internal7b_central_pair_partial_rho": 0.159,
+  "internal7b_affect_partial_rho": -0.087,
   "interlineage_shared_n": 460
 }

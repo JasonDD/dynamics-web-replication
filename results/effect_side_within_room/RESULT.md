@@ -2,7 +2,7 @@
 
 *DYNAMICS-WEB series, 3 September 2026. The composition confound test the production side has just
 been through, run on the effect side: the five clauses of Paper 4B. Scripts in `scripts/`, run on
-DL580 against the held corpora and `cc_v3`. Every figure below is recomputed here, not copied.*
+the internal host against the held corpora and the internal schema. Every figure below is recomputed here, not copied.*
 
 ## Why this exists
 
@@ -30,7 +30,7 @@ raw and corrected numbers side by side.
 | 3 | **WHO** the reader's disposition predicts which character wins their thread | ChangeMyView, 19,430 scored arguments, 4,263 matched strata, 3,044 threads with a scored asker, 2,613 distinct askers | only **0.8%** of the winning direction variance is between topic rooms | held out r **+0.068** person grouped (p=0.002), **+0.058** topic grouped (p=0.005), **+0.055** within topic and person grouped (p=0.005), against **+0.064** for the published design | **1 SURVIVES** |
 | 4 | **WHO** the manner advantage depends on the reader's disposition (authored panel) | 5 views x 4 coordinates x 4 personas; 240 judgements on one lineage, 80 on the other | the contrast is **entirely** between person by construction; disposition is constant inside a persona | one lineage −0.143 (wild bootstrap over views p=0.0002), the other **−0.028, p=0.32**; plasticity null on both | **4 INSUFFICIENT** |
 | 5 | **WHO** the person carries a winning character across rooms (the two clean tests already in the record) | 262 recurring askers on ChangeMyView; 269 on the questions and answers network | not applicable | within person cohesion **+0.602 against a null of +0.614, p=0.879**; and **+0.568 against +0.573, p=0.702** | **3 COMPOSITION** |
-| 6 | **WHERE** forums have their own character, roughly half the matter against manner variance sitting between them | `cc_v3.forum_threads`, now 244,322 scored threads, 1,096 forums with at least 50 | **48.4%** between forum (published 49.3%) | **47.8%** after a topic room is taken out; the topic instrument is weak, see the bound below | **2 ATTENUATED BUT SURVIVES** |
+| 6 | **WHERE** forums have their own character, roughly half the matter against manner variance sitting between them | `an internal table`, now 244,322 scored threads, 1,096 forums with at least 50 | **48.4%** between forum (published 49.3%) | **47.8%** after a topic room is taken out; the topic instrument is weak, see the bound below | **2 ATTENUATED BUT SURVIVES** |
 | 7 | **WHERE** forums differ in the character they reward | 327 forums with a usable reward gradient | mean gradient +0.060 | spread of the per room gradients **0.195** raw, **0.194** topic controlled, **0.215** curvature controlled, against a wild bootstrap null whose own spread is **0.082** (95th percentile 0.088), **p=0.0025** | **1 SURVIVES** |
 | 8 | **WHERE** two unrelated forum families reward opposite characters | 2 rooms; and the 5 room within platform version | the flip **is** the between room contrast, n=2 | within one platform, 5 rooms, F=1.45, **perm p=0.0905** (`results/se_arbiter_where.txt`) | **2 ATTENUATED BUT SURVIVES** |
 | 9 | **HOW** a balanced argument beats a one sided one | authored panel, 5 views, 4 personas, two scoring lineages | view paired +0.098 and +0.066 | positive **inside every one of the four personas** on both lineages (+0.124, +0.105, +0.032, +0.129 and +0.133, +0.013, +0.113, +0.003) | **1 SURVIVES** |
@@ -291,4 +291,4 @@ archive size rather than the analysis size and remains a separate correction owe
   between test against within test split, and the United Nations within country drift.
 - `scripts/effect_when_ungd_within_country.py`, the diplomacy leg: within country against
   between country, the curvature term in year, and the wild bootstrap over countries.
-- Run logs and JSON on DL580 at `/home/jason/effect_confound/`.
+- Run logs and JSON on the internal host at `/home/jason/effect_confound/`.

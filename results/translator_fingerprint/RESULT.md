@@ -32,18 +32,18 @@ commercial signal it is usable in aggregate (many sentences), not on a single se
 same scorer, same eight axes.
 
 1. **Europarl multiway** (held, `results/translation_culture_vs_language`):
-   `/mnt/nas/kronaxis/corpora/europarl_multiway/`. 800 English source sentences, each
+   `the internal corpus store/europarl_multiway/`. 800 English source sentences, each
    present and aligned in all 8 languages (English, German, French, Spanish, Italian,
    Finnish, Polish, Greek) = 6,400 scored versions. A balanced item x language design.
 2. **Multilingual Bible** (independent replication):
-   `/mnt/nas/kronaxis/corpora/bible_multilingual/`. Verse aligned bilingual pairs
+   `the internal corpus store/bible_multilingual/`. Verse aligned bilingual pairs
    (English against each target). Seven well populated target languages sampled
    (German, French, Spanish, Portuguese, Arabic, Chinese, Swahili), ~200 verses per
    pair, each verse scored in English and its target = a PAIRED within verse contrast.
    Overlap with Europarl for direct replication: German, French, Spanish.
 
 **Scoring.** Identical to the series: `truthometer/scripts/cc_found_human_score.py`,
-the free internal 7B character model (`qwen2.5-7b-atlas` on the shared :8301 endpoint),
+the free internal 7B character model (`an internal 7B instruct model` on the shared  endpoint),
 same system prompt, same vocabulary line, same parse. Eight axes: rigour, depth,
 originality, candour, affect, commercial drive, stance, register (each 0 to 1).
 
@@ -232,8 +232,8 @@ not a European artefact.
 
 ## Artefacts
 
-- **Data (NAS):** `/mnt/nas/kronaxis/corpora/europarl_multiway/scored.jsonl` (6,400
-  scored versions, held); `/mnt/nas/kronaxis/corpora/bible_multilingual/fingerprint_scored.jsonl`
+- **Data (internal store):** `the internal corpus store/europarl_multiway/scored.jsonl` (6,400
+  scored versions, held); `the internal corpus store/bible_multilingual/fingerprint_scored.jsonl`
   (Bible paired scores, this test) with `fingerprint_score_input.jsonl`.
 - **Scripts (this folder):** `fingerprint_analyse.py` (per language offset decomposition,
   translationese split, cross corpus replication), `build_bible_input.py` (Bible pair

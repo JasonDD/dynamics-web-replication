@@ -2,7 +2,7 @@
 """Measure AAER (2015-2022 firm respondents) x S&P500 earnings-call transcript universe intersection."""
 import os, json, re, urllib.request
 import pandas as pd
-OUT="/mnt/nas/kronaxis/corpora/comms_scout"; os.makedirs(OUT,exist_ok=True)
+OUT="the internal corpus store/comms_scout"; os.makedirs(OUT,exist_ok=True)
 UA="Kronaxis research jasond@kronaxis.co.uk"
 PARQ=os.path.join(OUT,"bose_sp500_calls.parquet")
 URL="https://huggingface.co/datasets/Bose345/sp500_earnings_transcripts/resolve/main/"

@@ -6,7 +6,7 @@ tests whether the WINNING advocacy character differs by system (does affect help
 an adversarial court but hurt in an inquisitorial one).
 
 Instrument: identical 8-axis DWEB 7B scores across all four. matter/manner PC1 uses
-the fixed series projection (cc_v3.domain_char8_expanded, 2,648,406 rows).
+the fixed series projection (the internal reference table, 2,648,406 rows).
 
 Corpora (all pre-scored, reused; nothing rescored):
   OldBailey  568  adversarial UK criminal, verdict 1=guilty(prosecution wins)/0=acquittal, year 1674-1910
@@ -52,7 +52,7 @@ def load(path, system, tradition, region, outcome_key=None, nwords_key=None, yea
         rows.append(rec)
     return rows
 
-BASE="/mnt/nas/kronaxis/corpora"
+BASE="the internal corpus store"
 rows=[]
 rows+=load(f"{BASE}/oldbailey/oldbailey_scored.jsonl","OldBailey","adversarial","UK",
            outcome_key="verdict", nwords_key="nwords", year_key="year")

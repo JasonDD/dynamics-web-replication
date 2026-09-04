@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""Score the world-legislature sample on the 8-axis DWEB character via the on-box 7B (:8301, temp 0).
+"""Score the world-legislature sample on the 8-axis DWEB character via the on-box 7B (, temp 0).
 
 Identical contract to parlamint/pm_score.py so scores are directly comparable to the held
 ParlaMint + UNGD references. Resumable (key = legislature|i). Low worker count to SELF-QUEUE
-politely behind other :8301 jobs.
+politely behind other  jobs.
 """
 import os, re, json, threading
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
-TEACHER = os.environ.get("TEACHER_URL", "http://127.0.0.1:8301/v1/chat/completions")
-MODEL = os.environ.get("TEACHER_MODEL", "qwen2.5-7b-atlas")
+TEACHER = os.environ.get("TEACHER_URL", "an internal model endpoint")
+MODEL = os.environ.get("TEACHER_MODEL", "an internal 7B instruct model")
 WORKERS = int(os.environ.get("WORKERS", "3"))
 BODYMAX = int(os.environ.get("BODYMAX", "6000"))
-BASE = "/mnt/nas/kronaxis/corpora/results/global_legislature_matrix"
+BASE = "the internal corpus store/results/global_legislature_matrix"
 INP = os.environ.get("INP", f"{BASE}/sample.jsonl")
 OUT = os.environ.get("OUT", f"{BASE}/sample_scored.jsonl")
 DWEB = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]

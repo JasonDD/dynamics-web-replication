@@ -23,14 +23,14 @@ DISP="disp_d8_behav_27b"
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 db=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs"); c=db.cursor()
 def obj(x): return x if isinstance(x,dict) else (json.loads(x) if x else None)
-c.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 A0=np.array([[float(v) for v in r] for r in c.fetchall()],float); MEAN=A0.mean(0); STD=A0.std(0)+1e-9
 _,_,Vt=np.linalg.svd((A0-MEAN)/STD,full_matrices=False); PC1=Vt[0]
 if PC1[0]+PC1[1]<0: PC1=-PC1
 print(f"[who] PC1 loaded",flush=True)
 
 print("[who] pulling reddit_wide (id, author, parent_id, char, disp) ...",flush=True)
-c.execute(f"SELECT id,author,parent_id,char,{DISP} FROM cc_v3.reddit_wide WHERE char IS NOT NULL AND {DISP} IS NOT NULL AND author IS NOT NULL")
+c.execute(f"SELECT id,author,parent_id,char,{DISP} FROM the internal Reddit corpus WHERE char IS NOT NULL AND {DISP} IS NOT NULL AND author IS NOT NULL")
 rows=c.fetchall()
 print(f"[who] {len(rows):,} scored comments",flush=True)
 id2auth={}; auth_plas={}; auth_n={}; post=[]

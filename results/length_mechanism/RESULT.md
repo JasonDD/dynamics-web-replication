@@ -6,7 +6,7 @@ express their variance once a text is long enough to build an argument; manner a
 (affect, stance, register) saturate almost immediately in a phrase.
 
 **Axes.** matter pole = rigour + depth. manner pole = affect + stance + register.
-matter/manner PC1 = SVD on `cc_v3.domain_char8_expanded` (n=2,648,406), standardised,
+matter/manner PC1 = SVD on `the internal reference table` (n=2,648,406), standardised,
 oriented rigour+depth positive. PC1 loadings confirm the axis: rigour +0.44, depth +0.40,
 candour +0.39, stance +0.37 on the positive (matter) side; affect -0.35, register -0.34,
 commercial_drive -0.26 on the negative (manner) side.
@@ -150,5 +150,5 @@ series has seen elsewhere.
 
 ## Reproduce
 
-`scripts/length_mechanism.py` in this directory. Runs on DL580 (Postgres for the PC1
-reference, NAS for the four corpora). Pure read, no scoring, no :8301 or :8288 calls.
+`scripts/length_mechanism.py` in this directory. Runs on the internal host (Postgres for the PC1
+reference, internal store for the four corpora). Pure read, no scoring, no  or  calls.

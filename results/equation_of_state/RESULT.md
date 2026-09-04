@@ -1,6 +1,6 @@
 # Equation of state, first per state variable identification run
 
-*The first pass of the equation of state programme: for each state variable we can label, does it enter the disposition to character coupling as a LOCATION (an affine offset, the coupling invariant), a ROTATION (it modulates the slope, a genuine interaction), contribute nothing, or leave residual structure. Extends the genre result (cc_genre_state_fit.py, genre = location) to the other Five Ws. Script: `truthometer/scripts/cc_state_fit_multi.py`. Substrate: cc_v3.crosssite_authorship, internal hold, analysis only, no scoring.*
+*The first pass of the equation of state programme: for each state variable we can label, does it enter the disposition to character coupling as a LOCATION (an affine offset, the coupling invariant), a ROTATION (it modulates the slope, a genuine interaction), contribute nothing, or leave residual structure. Extends the genre result (cc_genre_state_fit.py, genre = location) to the other Five Ws. Script: `truthometer/scripts/cc_state_fit_multi.py`. Substrate: the internal cross site corpus, internal hold, analysis only, no scoring.*
 
 ## Method
 

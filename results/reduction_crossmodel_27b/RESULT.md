@@ -6,7 +6,7 @@ The three reduction results (ELM central route, Biber genre axis, Fleeson trait
 versus situation) were first measured with the 7B lineage scorer. A fair question
 is whether those results are an artefact of one model. This test re runs the
 identical reduction recipes on scores produced by a heavier model, the 27B
-lineage (served model name qwen38-extract, W4A16 AWQ, thinking disabled so it
+lineage (served model name an internal model, W4A16 AWQ, thinking disabled so it
 behaves like the non thinking 7B). Only the scoring model changes. Same rubric,
 same system prompt, same vocabulary, same parse, same downstream analysis code.
 If the reductions are real they should survive the model swap with the same sign
@@ -121,11 +121,11 @@ identical across lineages, but their direction and significance are.
 
 ## Reproduce
 
-On DL580 (scorer at 127.0.0.1:8288, served model qwen38-extract):
+On the internal host (scorer at 127.0.0.1, served model an internal model):
 
 ```
 export PATH=$HOME/bin:$PATH
-WD=/mnt/nas/kronaxis/crossmodel_27b
+WD=the internal storecrossmodel_27b
 # scoring (already staged + running under kx-daemon; resumable by id)
 python3 $WD/scripts/prep_inputs.py                         # build the 3 input JSONLs from the DB
 kx-daemon ensure x27-elm     --stale 1200 -- env INPUT=$WD/elm_input.jsonl     OUT=$WD/elm_scored.jsonl     RUBRIC=char WORKERS=8 python3 $WD/scripts/score_27b_generic.py

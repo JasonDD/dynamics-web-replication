@@ -2,8 +2,8 @@
 
 Generated 2026-08-30. Analyser `truthometer/scripts/cc_invariant_core.py`, raw console
 `invariant_core.txt`, machine readable `invariant_core_stats.json` (this directory).
-Data already scored, no new model scoring: `cc_v3.domain_char8_expanded` (2,648,406 domains, eight
-character axes), `cc_v3.domain_region_full` (country and continent labels), `cc_v3.reddit_wide`
+Data already scored, no new model scoring: `the internal reference table` (2,648,406 domains, eight
+character axes), `an internal table` (country and continent labels), `the internal Reddit corpus`
 (80,138 comments, 400 subreddits). The matter/manner axis is PC1 of the standardised eight axis matrix,
 oriented so rigour and depth load positive (the recipe from `cc_culture_regional.py`).
 

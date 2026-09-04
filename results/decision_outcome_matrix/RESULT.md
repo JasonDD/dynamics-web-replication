@@ -18,7 +18,7 @@ single decisions are the outliers. This document assembles every held outcome co
 answers those three questions directly.
 
 The ruler is fixed throughout: the matter against manner axis (PC1) is the singular vector fit once on
-2,648,406 web domains (`cc_v3.domain_char8_expanded`), rigour and depth oriented positive, so **+ is
+2,648,406 web domains (`the internal reference table`), rigour and depth oriented positive, so **+ is
 MATTER, - is MANNER**. Loadings: rigour +0.44, depth +0.40, candour +0.39, stance +0.37, originality +0.23,
 commercial_drive -0.26, register -0.34, affect -0.35. The same eight axes and the same web tuned 7B rater
 read every corpus, so the corpora share a measurement frame and differ only in the decision.
@@ -36,10 +36,10 @@ control and its evidence tier. Two rows are causal (randomised assignment); the 
 |---|---|---|---|---|---|
 | **Upworthy** | click on a headline (randomised A/B) | originality +0.092, affect +0.054, commercial +0.036, register +0.028 | **MANNER** (causal PC1 -0.051) | within test fixed effect: same article + image, exposure randomised | **causal / settled** |
 | **Reddit** (pending) | comment upvote score (spread) | self queued, `third_outcome_spread.py` running | pending | within subreddit + thread | pending |
-| **Amazon** (pending) | helpful vote on a review (attention) | self queued, small sample scoring at :8301 | pending | within product (parent_asin), rating + length held | pending |
+| **Amazon** (pending) | helpful vote on a review (attention) | self queued, small sample scoring at  | pending | within product (parent_asin), rating + length held | pending |
 | **UK petitions** | signatures on a reworded ask | originality +0.157, depth +0.091 (joint originality +0.171\*, depth +0.325\*) | ~neutral to MATTER (PC1 +0.076 ns) | within same ask cluster, session year + log days open | ecological, thin (n=240 in 109 clusters) |
 | **Kickstarter** | project funded (1/0) | originality +0.169\*\*\*, commercial +0.111\*\*\*, affect -0.086\*\* | ~neutral (PC1 +0.026\*) | none within group (topic mix named) | firm (n=6,000) |
-| **DonorsChoose** (pending) | project approved (institutional gate) | self queued scoring at :8301 | pending | within grade + subject | pending |
+| **DonorsChoose** (pending) | project approved (institutional gate) | self queued scoring at  | pending | within grade + subject | pending |
 | **Persuasion for good** | a donation given (donated >0) | rigour +0.222\*\* | MANNER to neutral (PC1 -0.042 ns) | none; capped $2 task | suggestive (n=1,017) |
 | **Milkman megastudy** | flu shot taken (randomised nudge) | reserved institutional reminder +; surprising / interactive / casual - | **MATTER** (direction only, no axis scores) | patients randomised to arm | causal but coarse (19 arms) |
 | **ChangeMyView** | a mark for a changed mind (delta) | stance -0.20\*\*\* (balance), depth +0.10\*\*\*, affect +0.08\*\*\* | **MANNER** (PC1 -0.074\*\*\*) | matched pairs: persuadee, topic, moment fixed | firm (recovers Tan 2016) |
@@ -215,7 +215,7 @@ structure: a two dimensional map of what wins, indexed by the kind of decision.
   finds the manner attention effect is a short format law while the matter conviction effect is bandwidth
   gated, consistent with Dimension A here.
 - **Pending rows.** Reddit spread (`third_outcome_spread.py`), Amazon helpful vote and DonorsChoose approval
-  are self queued behind the running fleet at :8301; they slot into the ATTENTION and FUNDING/ACTION regimes
+  are self queued behind the running fleet at ; they slot into the ATTENTION and FUNDING/ACTION regimes
   and are marked pending, not claimed. The free but unfetched extensions (Manifesto Project to election
   result, Retraction Watch to abstracts, OpenReview to accept/reject) are named in the acquisition ledger as
   the next widening, not run here.
@@ -225,6 +225,6 @@ structure: a two dimensional map of what wins, indexed by the kind of decision.
 - Grid numbers: the per corpus result files listed under THE GRID, all in
   `docs/papers/dynamics_web_series/results/`.
 - Clustering and the two dimensions: `cluster.py` (pure numpy, reads the held effect vectors inline).
-- Pending rows: `matrix_aux.py` on DL580 (small self queued scoring of Amazon and DonorsChoose at :8301,
+- Pending rows: `matrix_aux.py` on the internal host (small self queued scoring of Amazon and DonorsChoose at ,
   WORKERS 4, reuses the exact `cc_found_human_score.py` scoring contract), writing `aux_amazon_donors.txt`
   in this directory when complete.

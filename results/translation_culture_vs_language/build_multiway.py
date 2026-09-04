@@ -13,8 +13,8 @@ Out:
 import os, json, random
 from collections import Counter
 
-D = "/mnt/nas/kronaxis/corpora/europarl_v7"
-OUT = "/mnt/nas/kronaxis/corpora/europarl_multiway"
+D = "the internal corpus store/europarl_v7"
+OUT = "the internal corpus store/europarl_multiway"
 os.makedirs(OUT, exist_ok=True)
 PAIRS = {"de":"de-en","fr":"fr-en","es":"es-en","it":"it-en","fi":"fi-en","pl":"pl-en","el":"el-en"}
 LANGS = ["en","de","fr","es","it","fi","pl","el"]

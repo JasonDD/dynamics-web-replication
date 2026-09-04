@@ -2,8 +2,8 @@
 """analyse_27b.py — cross-lineage confirmation of the manipulation signature.
 
 Reads the SAME 1350 items scored by two independent lineages:
-  7B  = baseline_7b.jsonl   (qwen2.5-7b-atlas, :8301)
-  27B = scored_27b.jsonl    (qwen38-27B extract, :8288, thinking disabled)
+  7B  = baseline_7b.jsonl   (an internal 7B instruct model, )
+  27B = scored_27b.jsonl    (an internal model extract, , thinking disabled)
 
 Groups: MANIP (ira POL) / SINCERE (cmv args) / SHORTPOL (liar). For each lineage it prints group
 means (8 axis + matter/manner PC1 + residual), Cohen's d (MANIP vs SINCERE, MANIP vs SHORTPOL) and
@@ -15,12 +15,12 @@ DWEB=["rigour","depth","originality","candour","affect","commercial_drive","stan
 MATTER=["rigour","depth"]; MANNER=["affect","stance","register"]
 POL={"RightTroll","LeftTroll","Fearmonger"}
 rng=np.random.default_rng(1729)
-W="/mnt/nas/kronaxis/corpora/ira_troll/work"
+W="the internal corpus store/ira_troll/work"
 
 # ---- PC1 (SVD on web character reference), oriented rigour+depth positive ----
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 c=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float)
 MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD,full_matrices=False); PC1=Vt[0]
@@ -99,8 +99,8 @@ def lineage(tag,path):
         print(f"    classifier AUC MANIP vs {bn}: {a:.3f} +/- {s:.2f}")
     return out
 
-o7=lineage("7B (qwen2.5-7b-atlas)", f"{W}/baseline_7b.jsonl")
-o27=lineage("27B (qwen3.8-27B, thinking off)", f"{W}/scored_27b.jsonl")
+o7=lineage("7B (an internal 7B instruct model)", f"{W}/baseline_7b.jsonl")
+o27=lineage("27B (an internal model, thinking off)", f"{W}/scored_27b.jsonl")
 
 print(f"\n{'='*86}\nAGREEMENT: 7B vs 27B\n{'='*86}")
 for bn in ("SINCERE","SHORTPOL"):

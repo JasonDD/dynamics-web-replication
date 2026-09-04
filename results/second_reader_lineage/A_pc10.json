@@ -13,7 +13,7 @@
     "ordered_pairs": 27000,
     "dispcol": "disp_d8",
     "charcol": "char_dweb",
-    "sample_table": "cc_v3.xlineage_diff_sample",
+    "sample_table": "internal_table",
     "rulersrc": "expanded",
     "pc1": {
       "rigour": 0.442,

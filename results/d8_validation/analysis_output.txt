@@ -1,7 +1,7 @@
 === DYNAMICS-8 PERSON instrument vs personality gold labels (PANDORA/MBTI) ===
 corpus: Kaggle datasnaek/mbti-type (PersonalityCafe posts + self reported four letter type)
 posts scored: 11164   authors: 450   mean posts/author: 24.8
-instrument: DYNAMICS-8 person prompt (disp_d8_behav), qwen2.5-7b-atlas, temp 0
+instrument: DYNAMICS-8 person prompt (disp_d8_behav), an internal 7B instruct model, temp 0
 
 === TIER 1  PER TEXT (single post = a performed state; predicted attenuated)  (Pearson point biserial r; * p<.01  ** p<1e-4)  n=11164 ===
   D8 axis            Extraversion(E/I)         Openness(N/S)    Agreeableness(F/T)    Conscientious(J/P)

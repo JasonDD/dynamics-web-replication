@@ -158,7 +158,7 @@
 [  116.0s]    POWER dPlasticity->dOriginality: sampling sd=0.1061  min detectable tau=0.0495  observed excess=0.0543  (to halve the floor: 524 persons per room at 387 rooms, or 6192 rooms at 131 persons)
 [  116.0s]    POWER dStability->dMatterManner: sampling sd=0.1059  min detectable tau=0.0485  observed excess=0.0888  (to halve the floor: 524 persons per room at 387 rooms, or 6192 rooms at 131 persons)
 [  116.0s]    POWER dStability->dOriginality: sampling sd=0.1140  min detectable tau=0.0507  observed excess=0.0736  (to halve the floor: 524 persons per room at 387 rooms, or 6192 rooms at 131 persons)
-[  116.0s] wrote /mnt/nas/kronaxis/corpora/exp_diff_invariance_rep/panel_reddit_sweep.json
+[  116.0s] wrote internal_store/exp_diff_invariance_rep/panel_reddit_sweep.json
 [  116.0s] done
 ###### news sweep 2026-09-03T10:03:18+00:00
 [    0.0s] building the canonical matter against manner ruler ...
@@ -312,6 +312,6 @@
 [   45.7s]    POWER dPlasticity->dOriginality: sampling sd=0.1167  min detectable tau=0.1194  observed excess=0.1243  (to halve the floor: 648 persons per room at 20 rooms, or 320 rooms at 162 persons)
 [   45.7s]    POWER dStability->dMatterManner: sampling sd=0.1067  min detectable tau=0.1144  observed excess=0.0000  (to halve the floor: 648 persons per room at 20 rooms, or 320 rooms at 162 persons)
 [   45.7s]    POWER dStability->dOriginality: sampling sd=0.1114  min detectable tau=0.1179  observed excess=0.0636  (to halve the floor: 648 persons per room at 20 rooms, or 320 rooms at 162 persons)
-[   45.7s] wrote /mnt/nas/kronaxis/corpora/exp_diff_invariance_rep/panel_news_sweep.json
+[   45.7s] wrote internal_store/exp_diff_invariance_rep/panel_news_sweep.json
 [   45.7s] done
 SWEEPDONE

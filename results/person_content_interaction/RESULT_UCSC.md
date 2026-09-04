@@ -35,7 +35,7 @@ discards much of the within person heterogeneity an interaction lives in. A coef
 and still carry almost no out of sample incremental variance at this sample size.
 
 A second limitation, stated plainly: the content was scored on this corpus by a different model from the one
-that built the reference geometry (the atlas scorer was not serving; a 7B was used), so the content axes are
+that built the reference geometry (the internal model scorer was not serving; a 7B was used), so the content axes are
 noisier here and the frozen direction was applied after within corpus standardisation. A weaker content
 instrument attenuates any content signal, including the interaction. This alone would soften any negative
 claim.

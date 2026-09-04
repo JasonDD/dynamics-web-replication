@@ -29,7 +29,7 @@ two or more time points might not exist. **It does exist**, and that is the main
   drift (same 50,462 domains present in both 2020 and 2026) is real and strong (mean PC1
   +0.031 -> +0.106, paired t = +11.55, p = 7.9e-31, drift toward matter). The per country
   breakdown gives 33 nations with at least 40 within domain pairs. **Nothing was scored again for
-  this work** (per the brief: no new character scoring, :8301 and :8288 untouched); the per country drift
+  this work** (per the brief: no new character scoring,  and  untouched); the per country drift
   numbers are read straight from the committed result file.
 
 - **SURVEY side, 2+ time points: YES, via a route that is free and needs no login.** We held only

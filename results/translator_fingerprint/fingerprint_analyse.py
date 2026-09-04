@@ -7,13 +7,13 @@ from scipy import stats
 
 DWEB=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 EP_LANGS=["en","de","fr","es","it","fi","pl","el"]
-EP_SCORED="/mnt/nas/kronaxis/corpora/europarl_multiway/scored.jsonl"
-BIB_SCORED="/mnt/nas/kronaxis/corpora/bible_multilingual/fingerprint_scored.jsonl"
+EP_SCORED="the internal corpus store/europarl_multiway/scored.jsonl"
+BIB_SCORED="the internal corpus store/bible_multilingual/fingerprint_scored.jsonl"
 
 # --- series PC1 basis from DB ---
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 c=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float)
 MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD,full_matrices=False); PC1=Vt[0]

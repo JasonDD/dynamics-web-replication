@@ -1,8 +1,8 @@
 # Genre baseline calibration for the manner inflation detector
 
 *PUBLIC track (Appendix B, tested). Pure analysis on already scored data. No new character
-scoring was run; the :8301 and :8288 endpoints were not touched. Scripts:
-`scratchpad genre_calib.py` + `genre_var.py` (reproducible against `cc_v3.reddit_wide` and the
+scoring was run; the  and  endpoints were not touched. Scripts:
+`scratchpad genre_calib.py` + `genre_var.py` (reproducible against `the internal Reddit corpus` and the
 frozen taxonomy).*
 
 ## Why this exists
@@ -28,10 +28,10 @@ genre baseline   = the distribution of manner inflation within a genre
 
 The only scored corpus that carries a clean, purpose built genre label is the frozen 400 community
 reddit taxonomy (`genre_assign_400_FROZEN.json`, sha256 2d701e0c) joined to the per item 8 axis
-character scores in `cc_v3.reddit_wide`: 78,938 items, 394 communities, 14 genres after excluding
+character scores in `the internal Reddit corpus`: 78,938 items, 394 communities, 14 genres after excluding
 `other_misc`.
 
-The 2.65M domain web corpus (`cc_v3.domain_char8_expanded`) cannot supply this baseline. It carries
+The 2.65M domain web corpus (`the internal reference table`) cannot supply this baseline. It carries
 no genre column, and the web topic tables do not rescue it: `pld_content_topic` has clean labels
 (Online Casinos, Local News, Programming Languages) but joins to the scored domains on only 3 rows
 (the two tables were built from different crawls), and `pld_topicality` joins on 135k rows but its

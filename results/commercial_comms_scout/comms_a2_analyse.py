@@ -2,7 +2,7 @@
 """Experiment A2 analysis: does the manipulation signature rise in earnings calls BEFORE fraud exposure?
 Compares fraud_pre (calls in [t0-2y,t0)) vs fraud_base (same firm, earlier) vs control (same-SIC S&P500)."""
 import json, statistics as st, math, collections
-D="/mnt/nas/kronaxis/corpora/comms_scout"
+D="the internal corpus store/comms_scout"
 AXES=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 def load(p):
     o=[]

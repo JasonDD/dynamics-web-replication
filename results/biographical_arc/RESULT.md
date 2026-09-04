@@ -2,7 +2,7 @@
 
 **Track:** PUBLIC. **Status:** lab result, cross scorer confirmed (7B + 27B panel).
 **Author studied:** Charles Darwin (born 12 February 1809), 451 dated letters he wrote between 1828 and 1882, ages 19 to 73.
-**Instrument:** the frozen 8 axis DYNAMICS-WEB character rubric, scored twice for the never one scorer rule (fabric #19098): `qwen2.5-7b-atlas` on DL580 :8301 (canonical) and `qwen38-extract` 27B on :8288 (second lineage).
+**Instrument:** the frozen 8 axis DYNAMICS-WEB character rubric, scored twice for the never one scorer rule (fabric #19098): `an internal 7B instruct model` on the internal host  (canonical) and `an internal model` 27B on  (second lineage).
 
 ## The gap this fills
 
@@ -10,7 +10,7 @@ The programme has measured the person's stability ACROSS CONTEXTS (the coupling 
 
 ## Data and cleaning
 
-Source: the two Gutenberg volumes of *The Life and Letters of Charles Darwin* (ed. Francis Darwin), held on the NAS at `corpora/darwin_letters/` (pg2087, pg2088). Each letter carries a one line header `CHARLES DARWIN TO <RECIPIENT>. <place>, <date>.`, so the letters carve cleanly and every one is dated. We kept only letters Darwin himself wrote (535 headers), pulled the year and, where a month name is present, the month (433 of 453), and set age at writing from his birth date.
+Source: the two Gutenberg volumes of *The Life and Letters of Charles Darwin* (ed. Francis Darwin), held in `corpora/darwin_letters/` (pg2087, pg2088). Each letter carries a one line header `CHARLES DARWIN TO <RECIPIENT>. <place>, <date>.`, so the letters carve cleanly and every one is dated. We kept only letters Darwin himself wrote (535 headers), pulled the year and, where a month name is present, the month (433 of 453), and set age at writing from his birth date.
 
 The editor (his son) inserts footnotes and narrative in his own voice. Left in, that would score Darwin's son, not Darwin. `clean_darwin.py` strips editorial parentheticals (tell words: father, published, volume, page, or any parenthetical over 30 words) and truncates the trailing editorial narrative at the last valediction. The removed fraction does not track age (r = 0.07), so the residue is noise that pulls toward the null, not a bias that fakes a trend. 453 letters survive at 40 words or more; two failed to score, leaving 451 on the canonical run.
 
@@ -100,7 +100,7 @@ There may be a very weak genuine maturation toward matter on the composite dimen
 
 ## Second author (the matrix)
 
-Not built. No second dated single author lifetime corpus was on the NAS, and fetching and date parsing a fresh diarist or letter writer is bespoke work that would add date noise rather than a clean second row. The single author Darwin result is complete and stands on its own; a second author (a diarist with per entry dates spanning a life) is the obvious next row and is left as a flagged follow up.
+Not built. No second dated single author lifetime corpus was on the internal store, and fetching and date parsing a fresh diarist or letter writer is bespoke work that would add date noise rather than a clean second row. The single author Darwin result is complete and stands on its own; a second author (a diarist with per entry dates spanning a life) is the obvious next row and is left as a flagged follow up.
 
 ## Reproduce
 
@@ -111,12 +111,12 @@ All paths absolute, on the laptop working tree unless noted.
 python3 scripts/extract_darwin.py          # -> meta.jsonl, score_in.jsonl
 # 2. strip the editor's voice
 python3 scripts/clean_darwin.py            # -> meta_clean.jsonl, score_in_clean.jsonl
-# 3. score on the panel (run on DL580; self queued behind the shared scorers)
-#    7B  :8301  -> bioarc_scored.jsonl        (WORKERS=3, cc_found_human_score.py)
-#    27B :8288  -> bioarc_scored_27b.jsonl    (WORKERS=6, score_27b.py, qwen38-extract)
+# 3. score on the panel (run on the internal host; self queued behind the shared scorers)
+#    7B    -> bioarc_scored.jsonl        (WORKERS=3, cc_found_human_score.py)
+#    27B   -> bioarc_scored_27b.jsonl    (WORKERS=6, score_27b.py, an internal model)
 # 4. regress axes + PC1 + matter minus manner on age, length controlled, correspondent fixed
 python3 scripts/analyse_bioarc.py          # -> stats_7b.json / stats_27b.json
 python3 scripts/bioarc_supplement.py       # -> supplement_7b.json / supplement_27b.json (composition test, decade trajectory)
 ```
 
-Scored inputs staged at `/mnt/nas/kronaxis/corpora/darwin_letters/bioarc_score_in.jsonl`; both scored outputs live beside it and are copied into this directory.
+Scored inputs staged at `the internal corpus store/darwin_letters/bioarc_score_in.jsonl`; both scored outputs live beside it and are copied into this directory.

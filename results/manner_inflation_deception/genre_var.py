@@ -10,7 +10,7 @@ PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expand
 cur=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
 gmap=json.load(open(GJ))
 def mi(ch): return float(np.mean([ch[a] for a in MANNER]))-float(np.mean([ch[a] for a in MATTER]))
-cur.execute("SELECT subreddit,char FROM cc_v3.reddit_wide WHERE char IS NOT NULL")
+cur.execute("SELECT subreddit,char FROM the internal Reddit corpus WHERE char IS NOT NULL")
 items=[]; comm={}
 for sub,ch in cur.fetchall():
     ch=ch if isinstance(ch,dict) else json.loads(ch)

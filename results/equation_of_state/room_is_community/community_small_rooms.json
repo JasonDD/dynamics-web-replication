@@ -158,7 +158,7 @@
       "max_entropy": 3.1780538303479458
     },
     "platform": {
-      "declared_table": "cc_v3.forum_domains",
+      "declared_table": "internal_table",
       "declared_rooms_covered": 2,
       "derived_from_url_shape": {
         "page": 1370,

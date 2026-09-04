@@ -12,11 +12,11 @@ kind = ISO 639-3 config code (amh, hau, swa, ...). outcome unused here (set to g
 import os, json, random, collections
 random.seed(1729)
 
-OUT = "/mnt/nas/kronaxis/corpora/african_charmatrix"
+OUT = "the internal corpus store/african_charmatrix"
 os.makedirs(OUT, exist_ok=True)
 
-MNEWS = "/mnt/nas/kronaxis/corpora/masakhanews/masakhanews.jsonl"
-AFRIS = "/mnt/nas/kronaxis/corpora/afrisenti/afrisenti.jsonl"
+MNEWS = "the internal corpus store/masakhanews/masakhanews.jsonl"
+AFRIS = "the internal corpus store/afrisenti/afrisenti.jsonl"
 
 def nwords(t): return len((t or "").split())
 

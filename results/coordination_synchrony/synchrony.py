@@ -23,8 +23,8 @@ import os, json, csv, collections, datetime as dt, numpy as np
 
 DWEB = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 rng = np.random.default_rng(1729)
-IRA = "/mnt/nas/kronaxis/corpora/ira_troll"
-CMV = "/mnt/nas/kronaxis/corpora/cmv_winning_args"
+IRA = "the internal corpus store/ira_troll"
+CMV = "the internal corpus store/cmv_winning_args"
 
 def vec(ch): return np.array([ch[a] for a in DWEB], float)
 

@@ -11,7 +11,7 @@ import os, re, json, numpy as np
 from collections import defaultdict
 
 DWEB = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
-WD = os.environ.get("WD", "/mnt/nas/kronaxis/crossmodel_27b")
+WD = os.environ.get("WD", "the internal storecrossmodel_27b")
 SCORED = os.path.join(WD, "biber_scored.jsonl")
 INPUT  = os.path.join(WD, "biber_input.jsonl")
 MINSUB = int(os.environ.get("MINSUB", "20"))     # min docs for a subreddit to enter the centroid test
@@ -36,7 +36,7 @@ POSS = set("can could may might will would shall should".split())
 PREP = set(("of in to for with on at by from as into about over under between through during "
     "before after above below against among around upon within without toward towards than "
     "onto off per via across behind beside beyond near").split())
-ARTICLE = set("the a an".split())
+ARTICLE = set("the an".split())
 NOMSUF = ("tion", "sion", "ment", "ness", "ity", "ance", "ence", "ism", "ation")
 WORD = re.compile(r"[a-zA-Z]+(?:'[a-z]+)?")
 ALPHA = re.compile(r"[a-zA-Z]+")

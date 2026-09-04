@@ -3,11 +3,11 @@ DWEB=["rigour","depth","originality","candour","affect","commercial_drive","stan
 MAX=["quantity","quality","relation","manner"]
 pw=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 c=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={pw} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float);M=allc.mean(0);S=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-M)/S,full_matrices=False);PC1=Vt[0]
 if PC1[0]+PC1[1]<0:PC1=-PC1
-c.execute("SELECT g.quantity,g.quality,g.relation,g.manner,w.char,length(w.body) FROM cc_v3.reddit_grice g JOIN cc_v3.reddit_wide w ON w.id=g.id WHERE w.char ? 'rigour'")
+c.execute("SELECT g.quantity,g.quality,g.relation,g.manner,w.char,length(w.body) FROM an internal table g JOIN the internal Reddit corpus w ON w.id=g.id WHERE w.char ? 'rigour'")
 Q=[];PCv=[];L=[]
 for q,ql,rel,man,ch,ln in c.fetchall():
     ch=ch if isinstance(ch,dict) else json.loads(ch)

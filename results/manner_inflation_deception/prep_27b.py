@@ -17,11 +17,11 @@ N_PER = 450
 POL = {"RightTroll", "LeftTroll", "Fearmonger"}
 DWEB = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 
-W = "/mnt/nas/kronaxis/corpora/ira_troll/work"
-CMV_SCORES = "/mnt/nas/kronaxis/corpora/cmv_winning_args/cmv_scores.jsonl"
-CMV_UTT = "/mnt/nas/kronaxis/corpora/cmv_winning_args/winning-args-corpus/utterances.jsonl"
-OUT_IN = "/mnt/nas/kronaxis/corpora/ira_troll/work/input_27b.jsonl"
-OUT_B7 = "/mnt/nas/kronaxis/corpora/ira_troll/work/baseline_7b.jsonl"
+W = "the internal corpus store/ira_troll/work"
+CMV_SCORES = "the internal corpus store/cmv_winning_args/cmv_scores.jsonl"
+CMV_UTT = "the internal corpus store/cmv_winning_args/winning-args-corpus/utterances.jsonl"
+OUT_IN = "the internal corpus store/ira_troll/work/input_27b.jsonl"
+OUT_B7 = "the internal corpus store/ira_troll/work/baseline_7b.jsonl"
 
 def has8(ch): return ch and all(a in ch for a in DWEB)
 

@@ -4,7 +4,7 @@
 occupies the substance subspaces. This is the symmetric test, and its predictions, including the dark cells,
 were written into the script before the numbers were read: if the geometry is structured rather than a
 single quality axis, the manner pole must occupy the complementary territory, dark where matter is bright,
-bright on affective and social constructs. 77,182 held `cc_v3.reddit_wide` comments (14,461 with a Grice
+bright on affective and social constructs. 77,182 held `the internal Reddit corpus` comments (14,461 with a Grice
 judgement). matter = mean z(rigour, depth); manner = mean z(affect, register). All external measures are
 surface or lexicon, independent of the character scorer.*
 

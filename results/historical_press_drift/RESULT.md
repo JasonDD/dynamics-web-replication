@@ -1,6 +1,6 @@
 # Historical press drift matrix — did the character of the press change over 1800 to 1960, and does it differ by country?
 
-*DYNAMICS-WEB daughter result, PUBLIC track. Scored on the eight axis character instrument (:8301, Qwen2.5-7B-atlas), same
+*DYNAMICS-WEB daughter result, PUBLIC track. Scored on the eight axis character instrument (, an internal 7B instruct model), same
 scorer, same prompt, same vocabulary line as the rest of the series, so every scale matches. 31 August 2026.*
 
 ## The question
@@ -133,7 +133,7 @@ was then carried as a covariate.
 
 OCR is therefore not the driver of what little movement there is. The larger caveat is not legibility but the scorer: it is one
 7B model tuned on the modern English web, reading nineteenth century French full issues that mix front page prose with
-advertisements and notices. That is out of its training distribution, and only the English leg carries the earlier Qwen plus
+advertisements and notices. That is out of its training distribution, and only the English leg carries the earlier an internal model plus
 Claude panel cross check. The French and Norwegian legs are one scorer, and should be read as directional, not precise.
 
 ## Verdict
@@ -173,4 +173,4 @@ cross country regularity is that affect never inflated; and the apparent long ru
 - `scripts/prep_worldpress.py` — builds the within title samples for France and Norway with the OCR floor and per title decade caps.
 - `scripts/analyse_press_drift.py` — the matrix, the within title slopes, the per axis slopes, the OCR confound check and the cross country consistency read.
 - `analysis_output.txt` — the full captured run.
-- Scored issues live on the NAS at `/mnt/nas/kronaxis/corpora/results/historical_press_drift/scored.jsonl` (1276 issues, resumable), England reuses the held `histchar/within_source_articles_only.jsonl`.
+- Scored issues live in `the internal corpus store/results/historical_press_drift/scored.jsonl` (1276 issues, resumable), England reuses the held `histchar/within_source_articles_only.jsonl`.

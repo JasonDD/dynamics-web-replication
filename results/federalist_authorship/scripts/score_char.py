@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """score_char.py — score the 8-axis DWEB character of each Federalist paper.
-Identical instrument to the series: same :8301 free 7B, same system prompt, same vocab line,
+Identical instrument to the series: same  free 7B, same system prompt, same vocab line,
 same parse. Passes every input field through and adds `char`. Resumable by id. Polite worker count.
 """
 import os, re, json, threading
 from concurrent.futures import ThreadPoolExecutor
 import requests
-TEACHER = os.environ.get("TEACHER_URL", "http://192.168.50.129:8301/v1/chat/completions")
-MODEL = os.environ.get("TEACHER_MODEL", "qwen2.5-7b-atlas")
+TEACHER = os.environ.get("TEACHER_URL", "an internal model endpoint")
+MODEL = os.environ.get("TEACHER_MODEL", "an internal 7B instruct model")
 WORKERS = int(os.environ.get("WORKERS", "3"))
 BODYMAX = int(os.environ.get("BODYMAX", "6000"))
 INPUT = os.environ["INPUT"]; OUT = os.environ["OUT"]

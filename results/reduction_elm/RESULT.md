@@ -30,9 +30,9 @@ emotional tone) not carrying quality at all. That is what the numbers are read a
   (PERSUADE, ASAP) score essay quality, a related but different construct.
 - **Analysis only.** Reuses the held 8 axis character scores from the instrument external
   validity run (`/mnt/external/benchmarks/scored/ibm_argq.jsonl`), produced by the same free
-  7B (qwen2.5-7b-atlas) that serves the instrument across the series. No new scoring.
+  7B (an internal 7B instruct model) that serves the instrument across the series. No new scoring.
 - **matter versus manner axis.** The `matter_manner_PC1` ruler is built exactly as the rest
-  of the series: SVD on the standardised `cc_v3.domain_char8_expanded` table (n = 2,648,406
+  of the series: SVD on the standardised `the internal reference table` table (n = 2,648,406
   domains), oriented so rigour and depth load positive. Loadings:
 
   | axis | PC1 loading | pole |
@@ -155,6 +155,6 @@ significant and correctly directed effect size.
 ---
 
 *Files: `elm_reduction.txt` (raw per axis and composite tables), `scripts/elm_reduction.py`
-(the analysis). Held scores at `/mnt/external/benchmarks/scored/ibm_argq.jsonl` on DL580.
+(the analysis). Held scores at `/mnt/external/benchmarks/scored/ibm_argq.jsonl` on the internal host.
 Companion breadth result across four corpora: `truthometer/results/instrument_external_validity/`.
 Reduction test 2 of `RELATED_WORK_unification.md`.*

@@ -4,7 +4,7 @@
 Reads the scored variants (cc_found_human_score.py output, id="<base>__<variant>") and reports, PAIRED
 within each base text:
   1. per-axis mean shift (variant - base) with bootstrap 95% CIs, for each variant
-  2. PC1 shift (same SVD basis as length_mechanism.py: cc_v3.domain_char8_expanded, standardised, oriented
+  2. PC1 shift (same SVD basis as length_mechanism.py: the internal reference table, standardised, oriented
      rigour+depth positive) -- the falsification kill-test axis
   3. the LENGTH control contrast: matter_insert vs placebo_insert on the MATTER axes (is it the marker or
      just the added words?)
@@ -15,8 +15,8 @@ Emits a JSON stats blob + a human table to stdout.
 """
 import os, json, numpy as np, psycopg2
 
-SCORED = os.environ.get("SCORED", "/mnt/nas/kronaxis/corpora/controlled_edit/scored.jsonl")
-STATS_OUT = os.environ.get("STATS_OUT", "/mnt/nas/kronaxis/corpora/controlled_edit/stats.json")
+SCORED = os.environ.get("SCORED", "the internal corpus store/controlled_edit/scored.jsonl")
+STATS_OUT = os.environ.get("STATS_OUT", "the internal corpus store/controlled_edit/stats.json")
 NBOOT = int(os.environ.get("NBOOT", "5000"))
 
 DWEB   = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
@@ -27,7 +27,7 @@ VARIANTS = ["matter_insert","placebo_insert","affect_insert","affect_rewrite","m
 # ---- PC1 basis (identical construction to length_mechanism.py)
 PW = [l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 c = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc = np.array([[float(x) for x in r] for r in c.fetchall()], float)
 MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
 _,_,Vt = np.linalg.svd((allc-MEAN)/STD, full_matrices=False); PC1 = Vt[0]
@@ -128,7 +128,7 @@ for v, ax in pairs:
 
 # ---- length-conditioned: can matter_insert move MATTER in SHORT vs LONG bases equally? (matter needs bandwidth)
 # recover base word count from the scored input if available; otherwise skip gracefully.
-INPUT = os.environ.get("INPUT", "/mnt/nas/kronaxis/corpora/controlled_edit/score_input.jsonl")
+INPUT = os.environ.get("INPUT", "the internal corpus store/controlled_edit/score_input.jsonl")
 basewc = {}
 if os.path.exists(INPUT):
     for l in open(INPUT):

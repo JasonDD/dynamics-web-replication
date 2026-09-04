@@ -100,7 +100,7 @@ def obj(x):
 db = psycopg2.connect(DSN); cur = db.cursor()
 log(f"pulling rows (table={TABLE} person={PERSONCOL} room={ROOMCOL} disp={DISPCOL} char={CHARCOL}) ...")
 cur.execute(f"""SELECT {PERSONCOL}, {ROOMCOL}, {DISPCOL}, {CHARCOL}
-                FROM cc_v3.{TABLE}
+                FROM the internal schema.{TABLE}
                 WHERE {DISPCOL} IS NOT NULL AND {CHARCOL} IS NOT NULL
                 ORDER BY {PERSONCOL}, {ROOMCOL}, id""")
 i_d8 = {a: k for k, a in enumerate(D8)}

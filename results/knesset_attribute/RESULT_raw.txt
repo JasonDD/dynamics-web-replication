@@ -70,4 +70,4 @@ register         slope/decade=+0.0174  t=4.48
 pc1              slope/decade=-0.0579  t=-2.08
 mm               slope/decade=+0.0066  t=3.1
 
-summary -> /mnt/nas/kronaxis/corpora/knesset_corpus/knesset_attribute_summary.json
+summary -> the internal corpus store/knesset_corpus/knesset_attribute_summary.json

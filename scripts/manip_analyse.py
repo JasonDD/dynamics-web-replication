@@ -18,8 +18,8 @@ No sklearn: logistic regression, k-fold CV and AUC are implemented in numpy here
 import os, json, numpy as np, psycopg2
 
 DWEB = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]
-W = "/mnt/nas/kronaxis/corpora/ira_troll/work"
-CMV = "/mnt/nas/kronaxis/corpora/cmv_winning_args/cmv_scores.jsonl"
+W = "the internal corpus store/ira_troll/work"
+CMV = "the internal corpus store/cmv_winning_args/cmv_scores.jsonl"
 POL = {"RightTroll", "LeftTroll", "Fearmonger"}
 OTHER = {"NewsFeed", "Commercial", "HashtagGamer"}
 rng = np.random.default_rng(1729)
@@ -27,7 +27,7 @@ rng = np.random.default_rng(1729)
 # ---- matter/manner PC1 (SVD on the web character reference), oriented rigour+depth positive
 PW = [l.split("=", 1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 c = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc = np.array([[float(x) for x in r] for r in c.fetchall()], float)
 MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
 _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False); PC1 = Vt[0]

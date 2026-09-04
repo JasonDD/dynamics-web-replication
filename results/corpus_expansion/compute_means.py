@@ -1,5 +1,5 @@
 import json, glob, os
-BASE="/mnt/nas/kronaxis/corpora"
+BASE="the internal corpus store"
 AX=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 CORP=["fw2_indonesian","fw2_thai","fw2_vietnamese","fw2_filipino","fw2_kazakh","fw2_uzbek",
       "fw2_samoan","fw2_maori","fw2_fijian","fw2_amharic","fw2_somali",

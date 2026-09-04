@@ -27,7 +27,7 @@ This mirrors the settled DYNAMICS-WEB manipulation result. There, a state troll 
 to catch than any one of its posts (post level cross validated AUC 0.878, account level AUC 0.996,
 fabric #19301), and the tell was the VARIANCE of the account's character, not its average. The present
 study asks whether ROLE inside a criminal community leaves the same kind of account level fingerprint,
-and whether it survives the room control that the atlas discipline demands.
+and whether it survives the room control that the internal model discipline demands.
 
 ---
 
@@ -89,14 +89,14 @@ but each is weaker than CrimeBB on either role clarity or freshness.
 
 ## 3. Feasibility sample, what this scout actually confirmed
 
-Honest state, no full pull attempted (heavy ingest belongs on DL580 with NAS storage, not in a scout):
+Honest state, no full pull attempted (heavy ingest belongs on the internal host with internal store storage, not in a scout):
 
 - **Gwern DNM archive is live and enumerable.** The Internet Archive item `dnmarchives` lists 183
   files, including named forum tarballs (`agora-forums`, `abraxas-forums`, `andromeda-forums`,
   `alphabay` and more) sitting beside the market tarballs. The split of forum files from market files is
   itself the first cut of the role structure. Direct small `curl` pulls to the Internet Archive storage
-  node returned transient 500s during the scout, so the real ingest is a resumable job on DL580 into
-  `/mnt/nas/kronaxis/corpora/dnm_archives/`, not a laptop side download.
+  node returned transient 500s during the scout, so the real ingest is a resumable job on the internal host into
+  `the internal corpus store/dnm_archives/`, not a laptop side download.
 - **HuggingFace has no role labelled forum text.** Verified by pulling the actual schemas:
   `dreadit-train` is `{text, label}` with 2,842 rows and no author; the high download `darkweb` set is
   network flow features. Both ruled out.
@@ -119,7 +119,7 @@ The design imports three settled DYNAMICS-WEB disciplines and adds one role spec
 Every post is scored on the eight axis character instrument (the internal 7B web character scorer, the
 same one behind the manipulation results): **affect, rigour, depth, originality, candour, commercial
 drive, stance, register**, each 0 to 1. The matter versus manner axis, PC1, is the first principal
-component of the web character space (`cc_v3.domain_char8_expanded`, 2.65M domains), oriented so rigour
+component of the web character space (`the internal reference table`, 2.65M domains), oriented so rigour
 and depth are positive, the identical reference the flagship used. Scoring is a panel (an internal model
 plus a second scorer) per house rule, never a single scorer.
 
@@ -138,10 +138,10 @@ membership. In the Gwern DNM set it comes from the market's own structure (vendo
 absent, staff flag). Label rules and any manual adjudication of ambiguous accounts live in the
 restricted file so the exact heuristic cannot be gamed.
 
-### 4.3 Room control, the atlas discipline (this is the core)
+### 4.3 Room control, the internal model discipline (this is the core)
 
 The whole point. The disposition you read from one text is about one quarter the person and three
-quarters the room they were in (the atlas result). So a naive contrast, a vendor in the "product
+quarters the room they were in (the internal model result). So a naive contrast, a vendor in the "product
 listings" room against a newbie in the "help" room, would confound ROLE with ROOM and produce a signal
 that is really just topic. The study controls the room in a nested ladder, weakest to strongest, and
 only believes the effect if it survives the strongest tier available:
@@ -265,8 +265,8 @@ principle both.
 ## 6. Ready to run checklist (gated on September access)
 
 1. Sussex access lands, CrimeBB (and companion sets) available under the partnership terms, data at rest
-   encrypted on NAS.
-2. Ingest and score: run the eight axis panel scorer over the forum and market posts on DL580, store
+   encrypted on internal store.
+2. Ingest and score: run the eight axis panel scorer over the forum and market posts on the internal host, store
    scores keyed by account and thread, exactly as the manipulation corpora were scored.
 3. Derive role labels from forum rank, reputation, vendor and staff structure; adjudicate ambiguous
    accounts per the restricted heuristic.
@@ -276,8 +276,8 @@ principle both.
 6. Write the public result to this directory as `RESULT.md`; keep weights, thresholds, and label
    heuristics in the restricted file.
 
-**Interim, now, no access needed:** stand up the Gwern DNM ingest on DL580 into
-`/mnt/nas/kronaxis/corpora/dnm_archives/`, parse a single small forum plus its market to confirm the
+**Interim, now, no access needed:** stand up the Gwern DNM ingest on the internal host into
+`the internal corpus store/dnm_archives/`, parse a single small forum plus its market to confirm the
 scoring shape (posts, a role label, enough text to score eight axes at account level), and prove the
 room control harness on real data before the primary corpus arrives.
 

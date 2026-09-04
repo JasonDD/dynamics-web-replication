@@ -59,6 +59,6 @@
     "INF:nominalisations": 0.0885636764319384,
     "INF:article_density": 0.18429881357988592
   },
-  "qwen7b_genre_centroid_pearson": -0.6,
-  "qwen7b_item_pearson": -0.14
+  "internal7b_genre_centroid_pearson": -0.6,
+  "internal7b_item_pearson": -0.14
 }

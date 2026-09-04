@@ -11,7 +11,7 @@ Reads detector_scored.jsonl (this run) + boe_scored.jsonl (reused from Experimen
 """
 import json, statistics as st, collections, math
 
-NAS="/mnt/nas/kronaxis/corpora/comms_scout"
+internal store="the internal corpus store/comms_scout"
 AXES=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 
 # t0 = reversal / own-credibility-loss month per institution
@@ -25,14 +25,14 @@ def cred_index(a): return a["candour"]+a["rigour"]+a["depth"]-a["affect"]-a["com
 
 def load():
     recs=[]
-    for l in open(f"{NAS}/detector_scored.jsonl"):
+    for l in open(f"{internal store}/detector_scored.jsonl"):
         try:
             r=json.loads(l)
             if "axes" in r and r.get("inst") in T0: recs.append(r)
         except Exception: pass
     # reuse BoE scored from Experiment B (has bank/year/month)
     try:
-        for l in open(f"{NAS}/boe_scored.jsonl"):
+        for l in open(f"{internal store}/boe_scored.jsonl"):
             r=json.loads(l)
             if "axes" not in r: continue
             y=int(r.get("year",0)); m=int(r.get("month",0) or 0)

@@ -20,8 +20,8 @@ body when tripped, so retries back off hard and a bin count of zero is retried.
 """
 import os, sys, time, json, csv, urllib.request, urllib.parse
 
-WVS = "/mnt/nas/kronaxis/corpora/wvs_position/wvs_country_items.csv"
-OUT = "/mnt/nas/kronaxis/corpora/gdelt_position"
+WVS = "the internal corpus store/wvs_position/wvs_country_items.csv"
+OUT = "the internal corpus store/gdelt_position"
 os.makedirs(OUT, exist_ok=True)
 OUTCSV = f"{OUT}/gdelt_country_tone.csv"
 # The DOC API cannot serve a single 6-year TimelineTone call (it times out well past

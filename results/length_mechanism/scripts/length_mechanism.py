@@ -6,7 +6,7 @@ Matter axes (rigour, depth) can only express their variance once a text is long
 enough to build an argument; manner axes (affect, stance, register) saturate
 almost immediately in a phrase.
 
-PURE ANALYSIS on already-scored data. No new scoring. No :8301/:8288 calls.
+PURE ANALYSIS on already-scored data. No new scoring. No / calls.
 
 Sources (each already has an 8-axis char score AND a recoverable word count):
   ira        IRA troll tweets   -- scored.jsonl char x score_input.jsonl text  (SHORT)
@@ -19,12 +19,12 @@ import os, json, numpy as np, psycopg2
 DWEB   = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 MATTER = ["rigour","depth"]
 MANNER = ["affect","stance","register"]
-NASC   = "/mnt/nas/kronaxis/corpora"
+NASC   = "the internal corpus store"
 
-# ---- matter/manner PC1 (SVD on cc_v3.domain_char8_expanded), oriented rigour+depth positive
+# ---- matter/manner PC1 (SVD on the internal reference table), oriented rigour+depth positive
 PW = [l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 c = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc = np.array([[float(x) for x in r] for r in c.fetchall()], float)
 MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
 _,_,Vt = np.linalg.svd((allc-MEAN)/STD, full_matrices=False); PC1 = Vt[0]

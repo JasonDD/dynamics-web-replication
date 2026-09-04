@@ -2,7 +2,7 @@
 """fetch_ted.py — TED prepared-monologue transcripts. opus_tedtalks stores text inside a translation dict
 (the English side), so pull that; group consecutive segments per talk into a scorable passage."""
 import os, json
-BASE = "/mnt/nas/kronaxis/corpora"
+BASE = "the internal corpus store"
 n = "ted_talks_spoken"
 d = os.path.join(BASE, n); os.makedirs(d, exist_ok=True)
 p = os.path.join(d, f"{n}.jsonl")

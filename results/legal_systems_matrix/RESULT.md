@@ -25,7 +25,7 @@ the run only reads scores off disk.
 | ECHR | inquisitorial (European Court of Human Rights) | 700 | outcome: 1 violation (applicant wins) / 0 no violation | the court's judgment | c. 2000 to 2019 |
 | ParlaMint | legislative (multi country EU) | 530 | none (no binary win) | a member's floor speech | c. 2015 to 2022 |
 
-Data on disk: `/mnt/nas/kronaxis/corpora/{oldbailey/oldbailey_scored.jsonl, legal_matrix/scotus_scored.jsonl,
+Data on disk: `the internal corpus store{oldbailey/oldbailey_scored.jsonl, legal_matrix/scotus_scored.jsonl,
 legal_matrix/echr_scored.jsonl, parlamint/legislative_pole_frozen.jsonl}`. The legislative pole is a frozen
 snapshot of a ParlaMint sample scored on the identical axes (a sibling run is still appending to the live
 file; the snapshot fixes the reproducible N at 530). Analysis script and full console output sit beside this

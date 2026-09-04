@@ -10,7 +10,7 @@ import os, json, numpy as np
 from collections import defaultdict
 
 D8 = ["discipline","yielding","novelty","acuity","mercuriality","impulsivity","candour","sociability"]
-WD = os.environ.get("WD", "/mnt/nas/kronaxis/crossmodel_27b")
+WD = os.environ.get("WD", "the internal storecrossmodel_27b")
 SCORED = os.path.join(WD, "fleeson_scored.jsonl")
 
 

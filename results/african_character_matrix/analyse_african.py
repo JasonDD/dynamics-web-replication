@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """analyse_african.py -- the AFRICAN LANGUAGES CHARACTER MATRIX.
 
-Inputs (scored by cc_found_human_score.py on the free 7B :8301, same instrument as the whole series):
+Inputs (scored by cc_found_human_score.py on the free 7B , same instrument as the whole series):
   scored_news.jsonl   masakhanews, 16 languages (genre = news, held constant)
   scored_tweet.jsonl  afrisenti, 15 languages (genre = social, robustness panel)
 Each row: {id, outcome, kind(lang), char:{8 axes}}.  Also reads the score_input_*.jsonl to compute
@@ -24,7 +24,7 @@ import os, json, sys, collections, numpy as np
 DWEB   = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 MATTER = ["rigour","depth"]
 MANNER = ["affect","stance","register"]
-D = "/mnt/nas/kronaxis/corpora/african_charmatrix"
+D = "the internal corpus store/african_charmatrix"
 
 # ---- language metadata (Africa) ----
 FAMILY = {"amh":"Semitic","tir":"Semitic","orm":"Cushitic","som":"Cushitic","hau":"Chadic",

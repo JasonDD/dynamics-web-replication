@@ -1,7 +1,7 @@
 # Master corpus index — DYNAMICS-WEB
 
 *The single place to see every corpus we hold and where the gaps are. Compiled 30 August 2026 from the definitive
-on disk state at /mnt/nas/kronaxis/corpora/ on DL580. Per dataset URLs, row counts and blocked reasons live in
+on disk state at the internal corpus store on the internal host. Per dataset URLs, row counts and blocked reasons live in
 DATASET_ACQUISITION_LEDGER.md; per region source depth in REGION_COVERAGE_MAP.md. 80 corpus directories, ~66 GB (82 held ledger rows across five acquisition passes; the fifth was the corpus universe expansion adding 16 new coordinates for the empty map regions).*
 
 ## Decision corpora (a real human choice tied to a text)

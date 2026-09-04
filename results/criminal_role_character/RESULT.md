@@ -17,7 +17,7 @@ the state troll result, does NOT beat scoring a single post. The headline hypoth
 sell harder (high commercial drive) is refuted here: commercial drive is if anything lower in
 enablers than users.
 
-This is exactly the outcome the design said it must be able to return. The atlas discipline warns
+This is exactly the outcome the design said it must be able to return. The internal model discipline warns
 that three quarters of what you read from one text is the room, not the person; this cut shows that
 warning biting on a real criminal forum sample.
 
@@ -113,7 +113,7 @@ thread the USER is often the hotter voice (complaint, excitement, urgency), and 
 is calmer. The strongest available room control turns the effect off.
 
 Caveat held in the open: 58 mixed threads is a small sample and this is the number the September
-CrimeBB data must settle at scale. But the direction is unambiguous and it is the direction the atlas
+CrimeBB data must settle at scale. But the direction is unambiguous and it is the direction the internal model
 discipline predicted.
 
 ---
@@ -207,5 +207,5 @@ to return this null rather than a flattering false positive.
 
 Artefacts (this directory): `parse_dnm_forum.py` (structural role parser), `score_posts.py` (eight
 axis scorer, field preserving), `analyse_role.py` (room control ladder and k sweep), `summary.json`
-and `analysis_raw.txt` (the numbers behind every table). Source posts and scores on the NAS at
-`/mnt/nas/kronaxis/corpora/dnm_archives/`.
+and `analysis_raw.txt` (the numbers behind every table). Source posts and scores in
+`the internal corpus store/dnm_archives/`.

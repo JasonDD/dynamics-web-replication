@@ -18,7 +18,7 @@ that do not clear during the run), so the full five item validation is deferred,
 block is itself a pass 1 finding on free tier viability, discussed in the Results section.
 
 **Budget:** zero. All data is free and machine readable. No OCR. No Google BigQuery. No paid
-API. All fetched data lives on the NAS at `/mnt/nas/kronaxis/corpora/` (persistent).
+API. All fetched data lives in `the internal corpus store` (persistent).
 
 ---
 
@@ -89,7 +89,7 @@ responses):
 The country coverage is uneven because the SFT sample held different items out at different rates;
 immigration and religion are well covered, the three 4 point and 1 to 10 battery items thinner.
 
-Files: `/mnt/nas/kronaxis/corpora/wvs_position/wvs_country_items.csv` (long),
+Files: `the internal corpus store/wvs_position/wvs_country_items.csv` (long),
 `wvs_country_wide.csv` (pivot).
 
 ---
@@ -119,7 +119,7 @@ religion and democracy, if the topic is discussed more warmly where it matters m
 r. For confidence, more negative corruption tone would go with lower trust, so a *positive* r
 (tone and trust fall together). These are hypotheses; tone is sentiment, so any of them can fail.
 
-File: `/mnt/nas/kronaxis/corpora/gdelt_position/gdelt_country_tone.csv`.
+File: `the internal corpus store/gdelt_position/gdelt_country_tone.csv`.
 
 ---
 
@@ -211,9 +211,9 @@ for or against reading.
 
 ## 5. Method files
 
-- `build_wvs_anchor.py`: parses the WVS7 SFT mirror to per country item means (on the NAS).
+- `build_wvs_anchor.py`: parses the WVS7 SFT mirror to per country item means (on the internal store).
 - `fetch_gdelt_tone.py`: pulls GDELT theme filtered average tone per country (free DOC API).
 - `validate.py`: joins on country and reports Pearson and Spearman per item and theme.
 
-Data (persistent, NAS): `/mnt/nas/kronaxis/corpora/wvs_position/` and
-`/mnt/nas/kronaxis/corpora/gdelt_position/`.
+Data (persistent, internal store): `the internal corpus store/wvs_position/` and
+`the internal corpus store/gdelt_position/`.

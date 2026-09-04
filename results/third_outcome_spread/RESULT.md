@@ -27,11 +27,11 @@ new, felt and substantial travels, what is formal or salesy does not.
 ## 1. What SPREAD is measured on, and why reddit not the troll dump
 
 Spread needs a real amplification count on already scored content. The corpus is
-`cc_v3.reddit_wide`: 80,138 reddit comments that already carry an eight axis character score and
+`the internal Reddit corpus`: 80,138 reddit comments that already carry an eight axis character score and
 a **score** (net upvotes), the canonical reddit virality proxy. A highly upvoted comment is
 surfaced to more readers by the ranking, so it travels. The corpus spans 400 subreddits, 47,515
 authors and 30,935 threads, median 62 words per comment. An independent 18,000 comment sample
-(`cc_v3.reddit_char`) is used as a replication.
+(`an internal table`) is used as a replication.
 
 Score is heavily skewed and can be negative (minimum -230, tenth percentile 1, median 4,
 ninetieth percentile 25, ninety ninth percentile 121, maximum 2,293). The outcome is therefore
@@ -51,7 +51,7 @@ Pure analysis on already scored character. No new scoring, nothing sent to the s
 
 Per corpus the eight axes are standardised, matter is the mean of rigour and depth, manner the
 mean of affect, stance and register, and PC1 is the single matter versus manner axis of the web
-character space (`cc_v3.domain_char8_expanded`, 2.65M domains, oriented so rigour and depth are
+character space (`the internal reference table`, 2.65M domains, oriented so rigour and depth are
 positive). PC1 is fit once on that external reference and reused everywhere, so it is defined
 independently of any outcome corpus. Outcome, axes and log length are demeaned within a design
 group, then the standardised outcome is regressed on the eight axes and log word count with
@@ -228,11 +228,11 @@ audience and the thread fixed, those are the axes that consistently tilt it that
 
 - Analysis: `scripts/third_outcome_spread.py` in this directory. numpy, scipy and psycopg2 only:
   fractional rank within group, within group demeaning, cluster robust (author and subreddit)
-  regression. Runs on DL580, pure read, no scoring, scoring endpoints not touched.
-- Spread: `cc_v3.reddit_wide` (`char`, `score`, `subreddit`, `author`, `link_id`, `body`),
-  80,138 rows with character; replication `cc_v3.reddit_char`.
+  regression. Runs on the internal host, pure read, no scoring, scoring endpoints not touched.
+- Spread: `the internal Reddit corpus` (`char`, `score`, `subreddit`, `author`, `link_id`, `body`),
+  80,138 rows with character; replication `an internal table`.
 - Attention and conviction: the five Paper 4B corpora (Upworthy `~/kc-dwpaper`, petitions, CMV,
-  StackExchange, on the NAS).
-- PC1 reference: `cc_v3.domain_char8_expanded` (2.65M domains), rigour and depth oriented
+  StackExchange, on the internal store).
+- PC1 reference: `the internal reference table` (2.65M domains), rigour and depth oriented
   positive, fit independently of every outcome corpus.
 - Results: `results.json` in this directory (PC1 loading plus every coefficient).

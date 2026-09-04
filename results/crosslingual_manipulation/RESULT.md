@@ -5,9 +5,9 @@
 other languages, as the translation result predicts it should.*
 
 Scorer: `truthometer/scripts/cc_found_human_score.py` (8 axis DWEB character instrument,
-qwen2.5-7b-atlas on DL580 :8301, same prompt, vocabulary and parse as the rest of the series).
-Build: `build_crosslingual.py`. Analysis: `analyse_crosslingual.py`. Inputs on NAS
-`/mnt/nas/kronaxis/corpora/`.
+an internal 7B instruct model on the internal host , same prompt, vocabulary and parse as the rest of the series).
+Build: `build_crosslingual.py`. Analysis: `analyse_crosslingual.py`. Inputs on internal store
+`the internal corpus store`.
 
 ---
 
@@ -166,11 +166,11 @@ on absolute magnitude, which does not touch the cross language consistency or th
 
 ## 8. Artefacts
 
-- **Data (NAS):** `/mnt/nas/kronaxis/corpora/crosslingual_manip/score_input.jsonl` (4,649 rows),
+- **Data (internal store):** `the internal corpus store/crosslingual_manip/score_input.jsonl` (4,649 rows),
   `scored.jsonl` (4,649 scored). Reused: `europarl_multiway/scored.jsonl` (sincere baselines),
   `ira_troll/work/scored.jsonl` (English trolls), `persian_daily_news/` and `ira_troll/` raw.
 - **Scripts (this folder):** `build_crosslingual.py`, `analyse_crosslingual.py`.
 - **Output:** `analysis_output.txt` (full run), `summary.json` (machine readable).
 - **Scorer:** `truthometer/scripts/cc_found_human_score.py` (unchanged), endpoint the internal
-  7B character model on :8301, workers 12. Scoring was self queued behind the concurrent
+  7B character model on , workers 12. Scoring was self queued behind the concurrent
   `manip-score` and `mi-score` jobs so neither was starved.

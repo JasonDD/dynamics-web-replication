@@ -6,7 +6,7 @@ quality judgements that people made independently, on corpora the instrument was
 This is convergent validity. It is not proof, and it is done on zero budget: public corpora that
 other people already labelled, scored on compute we own.
 
-**Date.** 2026-08-30. Scored by qwen2.5-7b-atlas (the same free 7B that serves the instrument
+**Date.** 2026-08-30. Scored by an internal 7B instruct model (the same free 7B that serves the instrument
 across the series) on the internal endpoint, identical system prompt, vocab line and parse as the
 rest of the character work.
 
@@ -29,7 +29,7 @@ range (ASAP scores min max normalised within prompt set because the eight sets u
 
 Scored via the existing `cc_found_human_score.py` against the served instrument. matter versus
 manner PC1 built exactly as the rest of the series: SVD on the standardised
-`cc_v3.domain_char8_expanded` table (n = 2,648,406 domains), oriented so rigour and depth load
+`the internal reference table` table (n = 2,648,406 domains), oriented so rigour and depth load
 positive. PC1 loadings: rigour +0.44, depth +0.40, candour +0.39, stance +0.37, originality +0.23,
 commercial_drive -0.26, register -0.34, affect -0.35. So high PC1 means matter (rigorous, deep,
 candid, committed) and low PC1 means manner (affective, conversational, selling).
@@ -137,5 +137,5 @@ essay quality.
 
 Files: `correlation_matrix.md` (both matrices), `corr_<corpus>.md` (per corpus full tables with
 Pearson and partial columns). Scripts: `truthometer/scripts/cc_extval_prep.py` (fetch and sample),
-`truthometer/scripts/cc_extval_analyse.py` (PC1 and correlations). Raw corpora on DL580 at
+`truthometer/scripts/cc_extval_analyse.py` (PC1 and correlations). Raw corpora on the internal host at
 `/mnt/external/benchmarks/`.

@@ -4,8 +4,8 @@ DYNAMICS-WEB, PUBLIC track, INTERNATIONAL. The hardest cross language generality
 programme: does the character instrument, and the matter and manner structure it measures, hold in
 African language text, most of it low resource and two of it written in a script other than Latin?
 
-Scored on the same 8 axis instrument as the whole series (the free Qwen2.5-7B on :8301,
-`qwen2.5-7b-atlas`, identical system prompt, vocab line and parser as `cc_found_human_score.py`).
+Scored on the same 8 axis instrument as the whole series (the free an internal model on ,
+`an internal 7B instruct model`, identical system prompt, vocab line and parser as `cc_found_human_score.py`).
 Two panels, each a language by axis matrix:
 
 - **Panel A, news (primary, genre held constant).** MasakhaNEWS, 16 languages, 600 items per
@@ -16,10 +16,10 @@ Two panels, each a language by axis matrix:
 - **Panel B, tweets (robustness, different genre).** AfriSenti, 15 languages, 400 items per
   language (6,000 scored). Short social text, a deliberate genre contrast.
 
-Corpora were held, unused, on the NAS (`/mnt/nas/kronaxis/corpora/masakhanews`, `/afrisenti`).
+Corpora were held, unused, on the internal store (`the internal corpus store/masakhanews`, `/afrisenti`).
 Reproduce with `build_african.py` then `cc_found_human_score.py` then `analyse_african.py`; the full
-run is saved in `analysis_output.txt`. Scored data on the NAS at
-`/mnt/nas/kronaxis/corpora/african_charmatrix/`.
+run is saved in `analysis_output.txt`. Scored data in
+`the internal corpus store/african_charmatrix/`.
 
 Languages (ISO 639-3): amh Amharic, tir Tigrinya (both Ge'ez script), orm Oromo, som Somali (Horn,
 Cushitic), hau Hausa (Chadic), ibo Igbo, yor Yoruba (Volta Niger), lin Lingala, lug Luganda, run

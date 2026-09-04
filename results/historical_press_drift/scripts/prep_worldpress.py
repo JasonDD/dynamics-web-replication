@@ -13,8 +13,8 @@ Output: INPUT jsonl for cc_found_human_score.py -> {id, text, outcome, kind}
 """
 import json, re, collections, os, random
 
-BASE = "/mnt/nas/kronaxis/corpora"
-OUT_DIR = "/mnt/nas/kronaxis/corpora/results/historical_press_drift"
+BASE = "the internal corpus store"
+OUT_DIR = "the internal corpus store/results/historical_press_drift"
 os.makedirs(OUT_DIR, exist_ok=True)
 random.seed(17)
 

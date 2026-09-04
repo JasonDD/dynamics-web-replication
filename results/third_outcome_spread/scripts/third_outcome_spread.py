@@ -6,17 +6,17 @@ Paper 4B measures two funnel outcomes:
   CONVICTION (does it change a mind)   -- ChangeMyView deltas, StackExchange accepted answers
 The third distinct outcome is SPREAD / virality: what travels, what gets amplified.
 
-SPREAD data (already scored, DL580):
-  reddit_wide   score (net upvotes) of a comment, cc_v3.reddit_wide, 80k with 8-axis char,
+SPREAD data (already scored, the internal host):
+  reddit_wide   score (net upvotes) of a comment, the internal Reddit corpus, 80k with 8-axis char,
                 400 subreddits, ~47k authors, thread ids (link_id).   PRIMARY spread corpus.
-  reddit_char   an independent 18k reddit sample (cc_v3.reddit_char) with score + char.  REPLICATION.
+  reddit_char   an independent 18k reddit sample (an internal table) with score + char.  REPLICATION.
 
 Reddit score is the closest available spread proxy: a highly upvoted comment is surfaced to
 more readers = it travels. NOTE (honest): the FiveThirtyEight IRA troll dump carries NO
 per-post retweet/share count (its `retweet` column is a 0/1 is-a-retweet flag; followers/updates
 are account-level), so it cannot supply a spread OUTCOME and is not used here.
 
-PURE ANALYSIS on already-scored character. No new scoring, no :8301/:8288.
+PURE ANALYSIS on already-scored character. No new scoring, no /.
 
 Method (mirrors funnel_by_medium.py):
   8 axes standardised within corpus; matter=mean(rigour,depth), manner=mean(affect,stance,register);
@@ -36,7 +36,7 @@ import psycopg2
 AXES   = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 MATTER = ["rigour","depth"]
 MANNER = ["affect","stance","register"]
-NASC   = "/mnt/nas/kronaxis/corpora"
+NASC   = "the internal corpus store"
 KCDW   = os.path.expanduser("~/kc-dwpaper")
 
 def matter_of(ch): return float(np.mean([ch[a] for a in MATTER]))
@@ -57,11 +57,11 @@ def tfs_conn():
 
 # ---------------------------------------------------------------- loaders (spread)
 def load_reddit(table, limit=None):
-    """cc_v3.<table>: score = spread; group = subreddit; cluster by author & subreddit; thread=link_id."""
+    """the internal schema.<table>: score = spread; group = subreddit; cluster by author & subreddit; thread=link_id."""
     has_author = (table=="reddit_wide")
     cols = "id, subreddit, score, char, "+("author, link_id, " if has_author else "NULL author, NULL link_id, ")+\
            "coalesce(array_length(regexp_split_to_array(btrim(body),'\\s+'),1),0) AS nw"
-    q=f"SELECT {cols} FROM cc_v3.{table} WHERE char IS NOT NULL AND score IS NOT NULL"
+    q=f"SELECT {cols} FROM the internal schema.{table} WHERE char IS NOT NULL AND score IS NOT NULL"
     if limit: q+=f" LIMIT {limit}"
     rows=[]
     with tfs_conn() as c, c.cursor() as cur:
@@ -182,11 +182,11 @@ def cluster_robust(X, y, cl):
 def stars(p): return "***" if p<0.001 else "**" if p<0.01 else "*" if p<0.05 else ""
 
 # ---------------------------------------------------------------- fixed PC1 (matter/manner)
-# canonical series reference: SVD on the web character space cc_v3.domain_char8_expanded
+# canonical series reference: SVD on the web character space the internal reference table
 # (2.65M domains), NOT any outcome corpus, so PC1 is defined independently of spread/attention.
 def fit_pc1_canonical(sample=400000):
     with tfs_conn() as c, c.cursor() as cur:
-        cur.execute(f"SELECT {','.join(AXES)} FROM cc_v3.domain_char8_expanded "
+        cur.execute(f"SELECT {','.join(AXES)} FROM the internal reference table "
                     f"WHERE rigour IS NOT NULL ORDER BY domain LIMIT {sample}")
         M=np.array(cur.fetchall(),float)
     mu=M.mean(0); sd=M.std(0); sd[sd<1e-12]=1
@@ -268,7 +268,7 @@ def main():
 
     # canonical PC1 from the web character space (independent of every outcome corpus)
     load,_,_=fit_pc1_canonical()
-    print("[canonical PC1 loading fit on cc_v3.domain_char8_expanded, oriented matter-positive]:")
+    print("[canonical PC1 loading fit on the internal reference table, oriented matter-positive]:")
     for a,l in zip(AXES,load): print(f"     {a:18s} {l:+.3f}")
     # PRIMARY spread corpus
     rw=load_reddit("reddit_wide")

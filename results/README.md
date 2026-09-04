@@ -2,8 +2,8 @@
 
 Saved outputs of the analysers behind the figures in the series. Each file carries a header stamping the
 generation time and the data state it was run against (some corpora were still scoring). Regenerate any of
-these with `truthometer/scripts/run_all_results.sh`. Source scores live on the NAS
-(`/mnt/nas/kronaxis/corpora/`); source tables in `cc_v3` (tfs). These files are the saved artifact so every
+these with `truthometer/scripts/run_all_results.sh`. Source scores live on the internal store
+(`the internal corpus store`); source tables in the internal schema (tfs). These files are the saved artifact so every
 paper figure is recoverable without a re-run.
 
 | File | Analyser | What it holds |

@@ -6,7 +6,7 @@
 affect), and does a shift in that signature precede a loss of trust?
 
 **Instrument.** The 8 DYNAMICS axes (rigour, depth, originality, candour, affect, commercial_drive, stance,
-register), scored on the free 7B `qwen2.5-7b-atlas` at :8301, temperature 0, the same scorer the sibling
+register), scored on the free 7B `an internal 7B instruct model` at , temperature 0, the same scorer the sibling
 children use. Self queued behind the running D8 and coupling jobs at low worker count.
 
 **Corpus.** `samchain/bis_central_bank_speeches` (Hugging Face, 19,376 central bank speeches, each with
@@ -19,8 +19,8 @@ institution, Year, Month and full text). Two samples drawn:
 - **Bank of England timeline:** 247 BoE speeches scored, 2018 to 2025, to bracket the autumn 2022 gilt and
   liability driven investment episode as a trust loss anchor (t0 = 2022 Q3).
 
-Scripts: `comms_b_prep.py`, `comms_score.py`, `comms_b_analyse.py` (staged on DL580 `/tmp`, corpora on NAS
-`/mnt/nas/kronaxis/corpora/comms_scout/`).
+Scripts: `comms_b_prep.py`, `comms_score.py`, `comms_b_analyse.py` (staged on the internal host `/tmp`, corpora on internal store
+`the internal corpus store/comms_scout/`).
 
 ---
 

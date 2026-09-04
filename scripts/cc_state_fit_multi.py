@@ -34,7 +34,7 @@ def z(a): a=np.asarray(a,float); return (a-a.mean())/(a.std()+1e-9)
 def obj(x): return x if isinstance(x,dict) else (json.loads(x) if x else None)
 
 db=psycopg2.connect(DSN); cur=db.cursor()
-cur.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+cur.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc=np.array([[float(v) for v in r] for r in cur.fetchall()],float)
 MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD,full_matrices=False); PC1=Vt[0]
@@ -56,7 +56,7 @@ def host_tld(dom):
 
 print("[fit] pulling cross-site scored rows ...",flush=True)
 cur.execute("""SELECT ident,domain,topic,post_date,lang,disp_d8,char_dweb
-               FROM cc_v3.crosssite_authorship
+               FROM the internal cross site corpus
                WHERE disp_d8 IS NOT NULL AND char_dweb IS NOT NULL""")
 recs=[]
 for ident,dom,topic,pdate,lang,dd,cw in cur.fetchall():

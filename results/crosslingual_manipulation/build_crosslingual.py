@@ -19,13 +19,13 @@ import os, csv, json, random, collections
 
 csv.field_size_limit(10**7)
 random.seed(1729)
-OUT = "/mnt/nas/kronaxis/corpora/crosslingual_manip"
+OUT = "the internal corpus store/crosslingual_manip"
 os.makedirs(OUT, exist_ok=True)
 INP = os.path.join(OUT, "score_input.jsonl")
 
-IRA_CSVS = ["/mnt/nas/kronaxis/corpora/ira_troll/IRAhandle_tweets_1.csv",
-            "/mnt/nas/kronaxis/corpora/ira_troll/IRAhandle_tweets_2.csv"]
-PERSIAN = "/mnt/nas/kronaxis/corpora/persian_daily_news/persian_daily_news.jsonl"
+IRA_CSVS = ["the internal corpus store/ira_troll/IRAhandle_tweets_1.csv",
+            "the internal corpus store/ira_troll/IRAhandle_tweets_2.csv"]
+PERSIAN = "the internal corpus store/persian_daily_news/persian_daily_news.jsonl"
 
 # IRA language-field name -> our tag, with a per-language cap
 LANGMAP = {"German": "de", "Italian": "it", "French": "fr", "Spanish": "es",

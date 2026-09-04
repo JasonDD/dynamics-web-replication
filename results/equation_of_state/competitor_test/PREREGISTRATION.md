@@ -64,8 +64,8 @@ full rank state (if full rank wins, the rank two collapse is decoration, not str
 
 ## Corpora
 
-Run 1: `cc_v3.crosssite_authorship`, room = domain, the corpus every prior test used. Run 2:
-`cc_v3.reddit_wide`, room = subreddit, disposition from the 27B behavioural reader, the corpus on
+Run 1: `the internal cross site corpus`, room = domain, the corpus every prior test used. Run 2:
+`the internal Reddit corpus`, room = subreddit, disposition from the 27B behavioural reader, the corpus on
 which the rotation did not travel. The verdict is read on run 1; run 2 says whether it travels.
 
 ## What is and is not at risk

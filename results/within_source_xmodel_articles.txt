@@ -1,4 +1,4 @@
-# cross-model rater panel (Qwen 7B + Claude) on articles-only within-source items
+# cross-model rater panel (an internal model 7B + Claude) on articles-only within-source items
 # 2026-08-29T00:25Z | 24 issues, 6 titles, early vs late, 1810s-1961
 
 [xm] 24 issues scored by BOTH raters across 6 titles

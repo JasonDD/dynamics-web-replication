@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Paper 4 PUBLIC proxy coupling: run the two core analyses on the public
-journalists-across-editorial-sections corpus (cc_v3.news_topic), the reviewable
+journalists-across-editorial-sections corpus (an internal table), the reviewable
 substitute for the internally held cross site corpus (linkage method withheld).
 
 Analyses:
@@ -19,13 +19,13 @@ import psycopg2
 import numpy as np
 
 PW = open(os.path.expanduser("~/.pgpass")).readline().strip().split(":")[4]
-conn = psycopg2.connect(host="192.168.50.129", port=5432, dbname="tfs", user="titan", password=PW)
+conn = psycopg2.connect(host="an internal address", port=5432, dbname="tfs", user="titan", password=PW)
 cur = conn.cursor()
 
 # pull scored articles with an author and a section, both score blobs present
 cur.execute("""
   select author, topic, disp_d8, char_dweb
-  from cc_v3.news_topic
+  from an internal table
   where disp_d8 is not null and char_dweb is not null
     and author is not null and author <> '' and topic is not null and topic <> ''
 """)

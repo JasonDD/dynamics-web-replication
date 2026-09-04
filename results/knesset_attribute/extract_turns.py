@@ -8,7 +8,7 @@ attributed to a Knesset member and carrying that member's GROUND-TRUTH attribute
   gender (from GenderDesc), nationality (Jewish/Arab/Druze/Bedouin), religion, birth-year -> age at the sitting,
   party/faction (per-knesset, date-window matched), coalition-vs-opposition (per-knesset).
 
-room = protocol_name (one plenary sitting on one date = the atlas "room"). We hold this fixed downstream.
+room = protocol_name (one plenary sitting on one date = the internal model "room"). We hold this fixed downstream.
 
 Discipline:
   - numeric speaker_id only (== PersonID). UUID speaker_ids are non-MK guests/officials -> dropped.
@@ -21,7 +21,7 @@ coal, nationality, religion, birth_year, age, nchars, text).
 import os, json, csv, collections
 from datetime import datetime
 
-BASE = "/mnt/nas/kronaxis/corpora/knesset_corpus"
+BASE = "the internal corpus store/knesset_corpus"
 CORPUS = os.path.join(BASE, "knesset_corpus.jsonl")
 OUT = os.path.join(BASE, "knesset_attribute_turns_all.jsonl")
 MINCHARS = int(os.environ.get("MINCHARS", "300"))

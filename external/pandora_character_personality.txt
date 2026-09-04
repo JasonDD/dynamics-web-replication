@@ -1,6 +1,6 @@
 === PANDORA/MBTI character->personality mapping ===
 dataset: Kaggle datasnaek/mbti-type (HF mirror jingjietan/kaggle-mbti); PANDORA form gated, this is the instructed fallback
-users scored: 1500   PC1 fit on cc_v3.domain_char8_expanded rows: 2648406
+users scored: 1500   PC1 fit on the internal reference table rows: 2648406
 label base rates (frac=1): E(Extraversion(E/I))=0.23  O(Openness(N/S))=0.87  A(Agreeableness(F/T))=0.54  C(Conscientious(J/P))=0.39
 
 === axis distribution (mean / sd across users) ===

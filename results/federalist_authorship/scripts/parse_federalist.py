@@ -11,7 +11,7 @@ Canonical attribution (Mosteller & Wallace 1964 / modern consensus):
 """
 import re, json, sys, os
 
-SRC = "/mnt/nas/kronaxis/corpora/federalist/federalist.txt"
+SRC = "the internal corpus store/federalist/federalist.txt"
 OUT = os.path.join(os.path.dirname(__file__), "..", "papers.jsonl")
 OUT = os.path.abspath(OUT)
 

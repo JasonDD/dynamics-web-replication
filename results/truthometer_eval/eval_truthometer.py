@@ -3,12 +3,12 @@
 truthometer register-anchored FACT verifier against independent ground truth.
 
 Ground truth used (independent of the truthometer):
-  1. cc_v3.claim_label_train  (66,957) — gold claim-TYPE labels (klass): whether a
+  1. an internal table  (66,957) — gold claim-TYPE labels (klass): whether a
      claim is a VERIFIABLE_FACT / EMPIRICAL / OPINION / PUFFERY / SUPERLATIVE / TRIVIAL.
      Drives the COVERAGE / verifiability-gate evaluation.
-  2. cc_v3.claimreview_claim  (92,357) — ClaimReview / PolitiFact gold verdicts
+  2. an internal table  (92,357) — ClaimReview / PolitiFact gold verdicts
      (rating). The public fact-check corpus (LIAR-family). Coverage stress test.
-  3. cc_v3.ch_company (5.70M live) + cc_v3.ch_dissolved (1.90M) — Companies House,
+  3. an internal table (5.70M live) + an internal table (1.90M) — Companies House,
      the INDEPENDENT register that is the gold truth for the register-checkable slice.
 
 Three legs, reported separately (coverage is NOT folded into accuracy):
@@ -124,7 +124,7 @@ OUT = {}
 # === LEG A: coverage / applicability over the public fact-check corpora ======
 print("LEG A: coverage over public fact-check corpora ...", flush=True)
 def coverage(table, textcol, extracols=""):
-    cur.execute(f"SELECT {textcol}{(','+extracols) if extracols else ''} FROM cc_v3.{table}")
+    cur.execute(f"SELECT {textcol}{(','+extracols) if extracols else ''} FROM the internal schema.{table}")
     rows = cur.fetchall()
     n = len(rows); att = 0; bykey = {}
     tagged = []
@@ -145,7 +145,7 @@ print(f"  claim_label_train: {att_cl}/{n_cl} = {att_cl/n_cl:.4%} register-checka
 print(f"  claimreview_claim: {att_cr}/{n_cr} = {att_cr/n_cr:.4%} register-checkable", flush=True)
 
 # coverage by gold klass (claim_label_train): how does the gate treat each type?
-cur.execute("SELECT klass, claim_text FROM cc_v3.claim_label_train")
+cur.execute("SELECT klass, claim_text FROM an internal table")
 byklass = {}
 for klass, text in cur.fetchall():
     k = (klass or "").strip()
@@ -161,7 +161,7 @@ OUT["legA"]["by_gold_klass"] = {k: {"n": v[0], "attemptable": v[1]} for k, v in 
 # the register keys (recall) and abstain on the political claims (specificity).
 print("LEG B: verifiability gate classifier ...", flush=True)
 # positives: reconstruct the natural-language claim the site made and re-detect.
-cur.execute("SELECT pld, key_type, stated FROM cc_v3.recog_web_uk_verdict WHERE key_type='company_number'")
+cur.execute("SELECT pld, key_type, stated FROM an internal table WHERE key_type='company_number'")
 pos = cur.fetchall()
 tp = fn = 0
 for pld, kt, stated in pos:
@@ -190,7 +190,7 @@ OUT["legB"]["false_positive_samples"] = fp_samples
 
 # === LEG C: verdict accuracy on the register-checkable slice vs CH ============
 print("LEG C: verdict accuracy vs Companies House (held-out) ...", flush=True)
-cur.execute("SELECT pld, stated, outcome, register_entry FROM cc_v3.recog_web_uk_verdict WHERE key_type='company_number'")
+cur.execute("SELECT pld, stated, outcome, register_entry FROM an internal table WHERE key_type='company_number'")
 allrows = cur.fetchall()
 ho = [r for r in allrows if held_out(f"{r[0]}|{r[1]}")]
 OUT["legC"] = {"total_company_number_verdicts": len(allrows), "held_out_n": len(ho)}
@@ -201,9 +201,9 @@ live, diss = set(), set()
 CHUNK = 5000
 for i in range(0, len(nums), CHUNK):
     batch = nums[i:i+CHUNK]
-    cur.execute("SELECT company_number FROM cc_v3.ch_company WHERE company_number = ANY(%s)", (batch,))
+    cur.execute("SELECT company_number FROM an internal table WHERE company_number = ANY(%s)", (batch,))
     live.update(x[0] for x in cur.fetchall())
-    cur.execute("SELECT company_number FROM cc_v3.ch_dissolved WHERE company_number = ANY(%s)", (batch,))
+    cur.execute("SELECT company_number FROM an internal table WHERE company_number = ANY(%s)", (batch,))
     diss.update(x[0] for x in cur.fetchall())
 
 def fresh(num):
@@ -260,12 +260,12 @@ print(f"  bridge floor: {own_hit}/{len(match_rows)} MATCH have domain~name token
 ne_rows = [r for r in ho if r[2] == "NONEXISTENT"]
 OUT["legC"]["accusatory"] = {"nonexistent_held_out": len(ne_rows)}
 try:
-    cur.execute("SELECT column_name FROM information_schema.columns WHERE table_schema='cc_v3' AND table_name='stated_identity_v2'")
+    cur.execute("SELECT column_name FROM information_schema.columns WHERE table_schema='the internal schema' AND table_name='stated_identity_v2'")
     si_cols = [c[0] for c in cur.fetchall()]
     OUT["legC"]["accusatory"]["stated_identity_v2_cols"] = si_cols
     # tier distribution overall (context on how rare a corroborated nonexistent is)
     if "tier" in si_cols:
-        cur.execute("SELECT tier, count(*) FROM cc_v3.stated_identity_v2 GROUP BY tier ORDER BY 2 DESC")
+        cur.execute("SELECT tier, count(*) FROM an internal table GROUP BY tier ORDER BY 2 DESC")
         OUT["legC"]["accusatory"]["stated_identity_v2_tiers"] = dict(cur.fetchall())
 except Exception as e:
     OUT["legC"]["accusatory"]["stated_identity_v2_error"] = str(e)

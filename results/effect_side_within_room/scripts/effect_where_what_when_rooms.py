@@ -2,7 +2,7 @@
 """effect_where_what_when_rooms.py -- the between room against within room split for the WHERE,
 WHAT and remaining WHEN legs of Paper 4B's five clauses.
 
-WHERE  798 independent forums (cc_v3.forum_threads). Paper 4B rests the clause on two numbers:
+WHERE  798 independent forums (an internal table). Paper 4B rests the clause on two numbers:
        (1) 49.3 per cent of matter against manner variance sits BETWEEN forums, stated in the
            source RESULT.md as an upper bound because there is NO TOPIC CONTROL, and
        (2) the spread of per room reward gradients beats a shuffled room null, p=0.0025.
@@ -49,7 +49,7 @@ PW = [l.split("=", 1)[1].strip().strip('"').strip("'")
       for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 DSN = f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs"
 db = psycopg2.connect(DSN); cur = db.cursor()
-cur.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+cur.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc = np.array([[float(v) for v in r] for r in cur.fetchall()], float)
 MEAN, STD = allc.mean(0), allc.std(0) + 1e-9
 _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False); PC1 = Vt[0]
@@ -61,7 +61,7 @@ RES["ruler"] = dict(rows=int(len(allc)), pc1=dict(zip(CHAR, [round(float(x), 3) 
 log("\n" + "=" * 90)
 log("WHERE -- 798 forums: how much of the between room reading is subject matter?")
 log("=" * 90)
-cur.execute("""SELECT dom, software, title, replies, char FROM cc_v3.forum_threads
+cur.execute("""SELECT dom, software, title, replies, char FROM an internal table
                WHERE char IS NOT NULL AND dom IS NOT NULL""")
 doms, softs, titles, reps, vecs = [], [], [], [], []
 for dom, soft, title, rep, ch in cur:
@@ -276,7 +276,7 @@ log("\n" + "=" * 90)
 log("WHEN -- the web leg and the UN leg, between room beside within room")
 log("=" * 90)
 # --- UN general debate
-UNG = "/mnt/nas/kronaxis/corpora/ungd/ungd_char8.jsonl"
+UNG = "the internal corpus store/ungd/ungd_char8.jsonl"
 if os.path.exists(UNG):
     rows = []
     for line in open(UNG):
@@ -338,8 +338,8 @@ else:
 # --- the web leg
 db = psycopg2.connect(DSN); cur = db.cursor()
 cur.execute("""SELECT table_name FROM information_schema.tables
-               WHERE table_schema='cc_v3' AND table_name ~ 'char8'""")
-log("  cc_v3 char8 tables: " + ", ".join(r[0] for r in cur.fetchall()))
+               WHERE table_schema='the internal schema' AND table_name ~ 'char8'""")
+log("  the internal schema char8 tables: " + ", ".join(r[0] for r in cur.fetchall()))
 db.close()
 
 json.dump(RES, open(OUT, "w"), indent=1)

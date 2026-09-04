@@ -20,14 +20,14 @@ GENRE_JSON=os.environ.get("GENRE_JSON","/home/jason/projects/kronaxis/truthomete
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 DSN=f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs"
 db=psycopg2.connect(DSN); c=db.cursor()
-c.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float)
 MEAN=allc.mean(0); STD=allc.std(0)+1e-9
 _,_,Vt=np.linalg.svd((allc-MEAN)/STD,full_matrices=False); PC1=Vt[0]
 if (PC1[CHAR.index("rigour")]+PC1[CHAR.index("depth")])<0: PC1=-PC1
 print(f"[closure] PC1 rigour={PC1[0]:+.2f} depth={PC1[1]:+.2f} affect={PC1[4]:+.2f}",flush=True)
 
-c.execute(f"SELECT subreddit,char,{DISP_COL} FROM cc_v3.reddit_wide WHERE char IS NOT NULL AND {DISP_COL} IS NOT NULL")
+c.execute(f"SELECT subreddit,char,{DISP_COL} FROM the internal Reddit corpus WHERE char IS NOT NULL AND {DISP_COL} IS NOT NULL")
 by={}
 for sub,ch,dp in c.fetchall():
     ch=ch if isinstance(ch,dict) else json.loads(ch); dp=dp if isinstance(dp,dict) else json.loads(dp)

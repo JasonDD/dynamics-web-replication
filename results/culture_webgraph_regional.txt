@@ -1,4 +1,4 @@
-[load] reading cc_v3.domain_char8_expanded ...
+[load] reading the internal reference table ...
 [load] 2,648,406 domains x 8 axes
 [pc1] PC1 loadings: rigour=+0.44, depth=+0.40, originality=+0.23, candour=+0.39, affect=-0.35, commercial_drive=-0.26, stance=+0.37, register=-0.34
 
@@ -99,7 +99,7 @@
     within-anglo mean distance = 2.999   to-rest = 3.744   ratio=0.80
     perm p (anglo tighter than a random 7-country set) = 0.1294
 
-[ext] loading cc_v3.domain_linkcc_full (link-geo, resolves US/.com) ...
+[ext] loading an internal table (link-geo, resolves US/.com) ...
 [ext] 357,403 resolved domains; US cell = 67,235
 
 === COUNTRY (link-geo, +US/.com): variance decomposition (63 groups, n=357,403, min 40) ===

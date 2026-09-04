@@ -2,7 +2,7 @@
 
 **Track:** PUBLIC (Papers 5 and 6 robustness pass).
 **Date:** 30 August 2026. **Branch:** `ops/gh-treasure-discovery`.
-**Reproduce:** `eval_truthometer.py` in this folder, read only against `tfs` on DL580; raw
+**Reproduce:** `eval_truthometer.py` in this folder, read only against `tfs` on the internal host; raw
 output frozen in `eval_raw_output.json`.
 
 ## What was measured, and against what gold
@@ -15,9 +15,9 @@ against three independent sources of truth.
 
 | Gold source | Rows | Role |
 |---|---|---|
-| `cc_v3.claim_label_train` (gold claim type `klass`) | 66,957 | which claims are even checkable |
-| `cc_v3.claimreview_claim` (ClaimReview / PolitiFact gold `rating`) | 92,357 | the public fact check corpus, LIAR family |
-| `cc_v3.ch_company` (5.70M live) + `cc_v3.ch_dissolved` (1.90M) | 7.60M | the register that settles the checkable slice |
+| `an internal table` (gold claim type `klass`) | 66,957 | which claims are even checkable |
+| `an internal table` (ClaimReview / PolitiFact gold `rating`) | 92,357 | the public fact check corpus, LIAR family |
+| `an internal table` (5.70M live) + `an internal table` (1.90M) | 7.60M | the register that settles the checkable slice |
 
 The verifier under test is the deployed FACT verdict (`run_verdict.sql` +
 `verdict.go`): it reads a company number a site states about itself and returns MATCH,

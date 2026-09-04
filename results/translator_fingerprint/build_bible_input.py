@@ -1,6 +1,6 @@
 import json, random
-SRC="/mnt/nas/kronaxis/corpora/bible_multilingual/bible_multilingual.jsonl"
-OUT="/mnt/nas/kronaxis/corpora/bible_multilingual/fingerprint_score_input.jsonl"
+SRC="the internal corpus store/bible_multilingual/bible_multilingual.jsonl"
+OUT="the internal corpus store/bible_multilingual/fingerprint_score_input.jsonl"
 # well-populated pairs; target-language codes
 WANT={"eng-deu":"deu","eng-fra":"fra","eng-spa":"spa","eng-por":"por",
       "eng-arb":"arb","eng-cmn":"cmn","eng-swh":"swh"}

@@ -1,4 +1,4 @@
-[pc1] basis from cc_v3.domain_char8_expanded n=2648406  PC1 var=56.1%  loadings=rigour:+0.44 depth:+0.40 originality:+0.23 candour:+0.39 affect:-0.35 commercial_drive:-0.26 stance:+0.37 register:-0.34
+[pc1] basis from the internal reference table n=2648406  PC1 var=56.1%  loadings=rigour:+0.44 depth:+0.40 originality:+0.23 candour:+0.39 affect:-0.35 commercial_drive:-0.26 stance:+0.37 register:-0.34
 [data] scored clustered petitions: 824
 [data] opened+signed petitions in same-ask clusters (>=2 opened): 240 in 109 clusters
 [data] signature_count: median=1578 max=906624  within-cluster log10 range test follows

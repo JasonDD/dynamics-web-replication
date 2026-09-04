@@ -1,10 +1,10 @@
 # Validating the DYNAMICS-8 person instrument against real personality labels
 
 **Track:** PUBLIC. **Date:** 2026-08-31. **Branch:** ops/gh-treasure-discovery.
-**Scorer:** the frozen 7B person instrument on :8301 (`qwen2.5-7b-atlas`), the DYNAMICS-8 disposition prompt
+**Scorer:** the frozen 7B person instrument on  (`an internal 7B instruct model`), the DYNAMICS-8 disposition prompt
 (`disp_d8_behav` from `reddit_wide_dispbehav.py`), temperature 0, same system prompt, vocabulary line and JSON
 parse as every other person side DYNAMICS-WEB result.
-**Data:** MBTI author corpus on the DL580 NAS (`/mnt/nas/kronaxis/corpora/pandora/`), the Kaggle
+**Data:** MBTI author corpus on the internal host (`the internal corpus store/pandora/`), the Kaggle
 `datasnaek/mbti-type` mirror: PersonalityCafe authors, each with their posts and a self reported four letter
 type. 450 authors, 11,164 individual posts scored.
 **Scripts:** `truthometer/scripts/pandora_d8_score.py` (per post scoring),
@@ -29,7 +29,7 @@ new levers built for digital and economic behaviour:
 | impulsivity | new lever, no ancestor | none |
 
 D8 is a specification with its derivations asserted, not yet validated. A prior empirical bridge attempt
-failed at n=117 (Atlas). Because the six inherited D8 factors ARE the established factors, a properly sized
+failed at n=117 (internal model). Because the six inherited D8 factors ARE the established factors, a properly sized
 validation should succeed. The test is a multitrait multimethod check: does the D8 scorer read the MATCHING
 personality factor off an author's text (convergent, expect strong on the diagonal) while NOT reading the
 non matching factors (discriminant, expect weak off the diagonal)?
@@ -109,7 +109,7 @@ The person signal is built by pooling posts, and it climbs monotonically with th
 From k = 1 to k = 21 the mean convergent correlation rises from 0.089 to 0.263, a climb of +0.175, and every
 one of the four factors climbs on its own. This is the aggregation story made visible: a single post reads the
 trait weakly, and pooling an author's posts recovers it. It validates the D8 instrument and re confirms the
-atlas scorer in the same figure.
+internal model scorer in the same figure.
 
 ## Result 3: the causal kill test
 
@@ -135,7 +135,7 @@ by causal edit, with mercuriality and candour resting on the edit alone).
 
 ## The n = 117 failure, resolved
 
-The prior Atlas bridge returned a null at n = 117. Re running the person tier at the true n = 450 makes the
+The prior internal model bridge returned a null at n = 117. Re running the person tier at the true n = 450 makes the
 resolution concrete. Recomputing each diagonal correlation's confidence interval at the old n = 117:
 
 | factor | r | 95% CI at n = 450 | 95% CI at n = 117 | clears zero at 117? |

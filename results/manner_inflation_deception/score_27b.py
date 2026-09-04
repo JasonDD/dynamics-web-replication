@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""score_27b.py — score input_27b.jsonl on the 27B (:8288, qwen38-extract) with the SAME char
+"""score_27b.py — score input_27b.jsonl on the 27B (, an internal model) with the SAME char
 rubric/system/vocab/parse as cc_found_human_score.py. The 27B is a THINKING model, so we disable
 thinking (chat_template_kwargs.enable_thinking=false) to get the same direct-JSON behaviour as the
 non-thinking 7B — the fair cross-lineage analog. max_model_len=2048, so BODYMAX is trimmed and a
@@ -9,8 +9,8 @@ import os, re, json, threading
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
-TEACHER = os.environ.get("TEACHER_URL", "http://127.0.0.1:8288/v1/chat/completions")
-MODEL   = os.environ.get("TEACHER_MODEL", "qwen38-extract")
+TEACHER = os.environ.get("TEACHER_URL", "an internal model endpoint")
+MODEL   = os.environ.get("TEACHER_MODEL", "an internal model")
 WORKERS = int(os.environ.get("WORKERS", "6"))
 BODYMAX = int(os.environ.get("BODYMAX", "4500"))
 INPUT   = os.environ["INPUT"]; OUT = os.environ["OUT"]

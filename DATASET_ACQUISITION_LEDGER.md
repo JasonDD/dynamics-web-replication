@@ -3,7 +3,7 @@
 *Closes the standing "get ALL the datasets and report back" task. This walks every concretely named
 corpus in `DATASET_CATALOGUE_free_human_persuasion.md` and `DATASET_CATALOGUE_original_language.md`,
 records its real status, and where fetchable actually pulls the file to disk. Built 2026-08-30. All data
-lives on the NAS at `/mnt/nas/kronaxis/corpora/` (persistent, per house rule). Status legend:
+lives in `the internal corpus store` (persistent, per house rule). Status legend:
 **HELD** already on disk before this run · **FETCHED** pulled in full this run · **SAMPLED** a documented
 representative sample pulled (whole corpus too large for zero budget mirror) · **BLOCKED** no clean free
 route (login wall, geo block, PDF only, no open dump), reason stated.*
@@ -52,7 +52,7 @@ level:
   **No row remains DEFERRED or FETCHING** — every named dataset is HELD, FETCHED, SAMPLED, or BLOCKED with a
   reason.
 
-Total corpora footprint on NAS after this pass: **~65 GB** across 64 dataset directories.
+Total corpora footprint on internal store after this pass: **~65 GB** across 64 dataset directories.
 
 ---
 

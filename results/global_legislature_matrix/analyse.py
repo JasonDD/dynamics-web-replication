@@ -9,7 +9,7 @@ import os, json, math
 from collections import defaultdict, Counter
 import numpy as np
 
-BASE = "/mnt/nas/kronaxis/corpora"
+BASE = "the internal corpus store"
 NEW = f"{BASE}/results/global_legislature_matrix/sample_scored.jsonl"
 PARLA = f"{BASE}/parlamint/sample_scored.jsonl"
 UNGD = f"{BASE}/ungd/ungd_char8.jsonl"
@@ -141,7 +141,7 @@ def main():
 
     print("# Global Legislature Character Matrix — RESULT")
     print()
-    print("Instrument: 8-axis DYNAMICS-WEB character, scored on the on-box 7B (qwen2.5-7b-atlas, :8301, temp 0),")
+    print("Instrument: 8-axis DYNAMICS-WEB character, scored on the on-box 7B (an internal 7B instruct model, , temp 0),")
     print("identical prompt/contract to the held ParlaMint + UNGD scoring. PC1 (+ = MATTER, - = MANNER).")
     print(f"PC1 loadings: " + "  ".join(f"{a}{pc1_load[a]:+.2f}" for a in AX))
     print()

@@ -6,7 +6,7 @@
 down) in the filings issued while a fraud is live, BEFORE the fraud is exposed, relative to the same firm's
 clean years and to control firms?
 
-**Instrument.** The 8 DYNAMICS axes on the free 7B `qwen2.5-7b-atlas` at :8301, temperature 0, same scorer
+**Instrument.** The 8 DYNAMICS axes on the free 7B `an internal 7B instruct model` at , temperature 0, same scorer
 as the sibling children. Self queued behind the running jobs at low worker count.
 
 **Data and join.**

@@ -32,7 +32,7 @@ Two units, one instrument.
 
 The manipulative class is IRA accounts, per post scores joined back to the account handle through
 the raw corpus (`author`, `tweet_id`). The organic class is real reddit accounts from
-`cc_v3.reddit_wide`, per post scores grouped by `author`, bots removed. Both classes are scored on
+`the internal Reddit corpus`, per post scores grouped by `author`, bots removed. Both classes are scored on
 the identical eight axis instrument, so the account versus post comparison is internal: any
 distribution difference between tweets and reddit comments (length, platform) sits under both units
 equally, and the honest quantity is the DELTA between them, not the absolute number.
@@ -45,10 +45,10 @@ Groups:
 | Class | Source | Accounts | Posts |
 |---|---|---|---|
 | MANIP | IRA accounts (all categories), joined to handle | 206 | 9,000 |
-| ORGANIC | reddit accounts (`cc_v3.reddit_wide`, bots removed) | 47,513 | 77,083 |
+| ORGANIC | reddit accounts (`the internal Reddit corpus`, bots removed) | 47,513 | 77,083 |
 
 The matter versus manner axis (PC1) is the first principal component of the web character space
-(`cc_v3.domain_char8_expanded`, 2.65M domains), oriented so rigour and depth are positive, the
+(`the internal reference table`, 2.65M domains), oriented so rigour and depth are positive, the
 same reference the flagship used.
 
 ---
@@ -208,8 +208,8 @@ pool is what gives itself away.
 ### Reproduction
 
 - Analysis: `truthometer/scripts/account_analyse.py` (numpy only: logistic, grouped CV, AUC).
-- IRA per post scores: `/mnt/nas/kronaxis/corpora/ira_troll/work/scored.jsonl`, joined to
+- IRA per post scores: `the internal corpus store/ira_troll/work/scored.jsonl`, joined to
   `author` and `account_category` through `IRAhandle_tweets_{1,2}.csv` on `tweet_id`.
-- Organic per post scores: `cc_v3.reddit_wide` (`author`, `char`), bots removed.
-- PC1 reference: `cc_v3.domain_char8_expanded` (2.65M domains), rigour and depth oriented positive.
+- Organic per post scores: `the internal Reddit corpus` (`author`, `char`), bots removed.
+- PC1 reference: `the internal reference table` (2.65M domains), rigour and depth oriented positive.
 - Seed 1729. Scores reused, nothing rescored (scoring endpoint 8301 not touched).

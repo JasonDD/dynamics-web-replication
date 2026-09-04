@@ -121,5 +121,5 @@
 [   25.6s]    POWER dPlasticity->dOriginality: sampling sd=0.1233  min detectable tau=0.1251  observed excess=0.1205  (to halve the floor: 648 persons per room at 20 rooms, or 320 rooms at 162 persons)
 [   25.6s]    POWER dStability->dMatterManner: sampling sd=0.1092  min detectable tau=0.1157  observed excess=0.0000  (to halve the floor: 648 persons per room at 20 rooms, or 320 rooms at 162 persons)
 [   25.6s]    POWER dStability->dOriginality: sampling sd=0.1123  min detectable tau=0.1215  observed excess=0.0619  (to halve the floor: 648 persons per room at 20 rooms, or 320 rooms at 162 persons)
-[   26.6s] wrote /mnt/nas/kronaxis/corpora/exp_diff_invariance_rep/panel_news_large.json
+[   26.6s] wrote internal_store/exp_diff_invariance_rep/panel_news_large.json
 [   26.6s] done

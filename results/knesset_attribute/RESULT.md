@@ -2,17 +2,17 @@
 
 **DYNAMICS-WEB, PUBLIC track. Verdict: NO for gender. The who signal that survives the room is political position and age, not sex.**
 
-Almost all person side work in the programme scores an *inferred* disposition. This result tests the who leg on **ground truth speaker demographics**: the Knesset Corpus records each member's real gender, party, coalition or opposition status, nationality and date of birth. We ask the atlas question directly. Within the same plenary sitting (same day, same order paper, same chamber temperature), and length matched, does the eight axis character of a speech differ by the speaker's real attribute?
+Almost all person side work in the programme scores an *inferred* disposition. This result tests the who leg on **ground truth speaker demographics**: the Knesset Corpus records each member's real gender, party, coalition or opposition status, nationality and date of birth. We ask the internal model question directly. Within the same plenary sitting (same day, same order paper, same chamber temperature), and length matched, does the eight axis character of a speech differ by the speaker's real attribute?
 
 ---
 
 ## Data
 
-- **Corpus**: Knesset Corpus (HaifaCLGroup on Hugging Face), the 365 full plenary protocols we hold on the NAS. Every protocol in the held slice is the **13th Knesset (1993 to 1996)**, in Hebrew.
+- **Corpus**: Knesset Corpus (HaifaCLGroup on Hugging Face), the 365 full plenary protocols we hold on the internal store. Every protocol in the held slice is the **13th Knesset (1993 to 1996)**, in Hebrew.
 - **Turns**: a speaking turn is all sentences sharing `turn_num_in_protocol`, attributed to one member. We keep numeric `speaker_id` only (it equals `PersonID`; UUID speaker ids are non member guests and officials, dropped), require a valid speaker, drop chairman turns (procedural moderation, a role confound), and require at least 300 characters. **56,408 scoreable turns.**
 - **Real demographics joined by PersonID**: gender (`GenderDesc`), party and faction per Knesset (date window matched), coalition versus opposition per Knesset (`factions_coalition_opposition_membership`), nationality, and age from `DateOfBirth`. Coverage in the turn pool: gender 50,799 male / 5,609 female; coalition 29,096 / opposition 26,857; nationality 52,830 Jewish / 2,081 Arab / 959 Druze / 538 Bedouin; party on 56,079; age on all. **351 of the 365 sittings contain both a male and a female speaking turn**, so the room control is available for gender across the whole term.
 - **Scored sample**: to stay polite on the shared GPU we scored a room balanced set of **3,604 turns, exactly 1,802 female and 1,802 male**, where each female turn is paired to a male turn drawn from the **same sitting** and the **same length bucket**. Every scored turn still carries party, position, nationality and age, so the same run feeds the secondary legs.
-- **Instrument**: `qwen2.5-7b-atlas` on port 8301, the identical eight axis prompt, vocabulary and parse used across the whole series (rigour, depth, originality, candour, affect, commercial drive, stance, register). PC1 is fit by PCA on the eight standardised axes and oriented matter positive; `mm` is the matter minus manner composite (a robust proxy for the matter versus manner pole).
+- **Instrument**: `an internal 7B instruct model` on port 8301, the identical eight axis prompt, vocabulary and parse used across the whole series (rigour, depth, originality, candour, affect, commercial drive, stance, register). PC1 is fit by PCA on the eight standardised axes and oriented matter positive; `mm` is the matter minus manner composite (a robust proxy for the matter versus manner pole).
 - **The room** is the protocol (one sitting). Every test below is inside a room. We never compare a speaker in one sitting to a speaker in another.
 
 ---
@@ -58,7 +58,7 @@ Opposition minus coalition:
 | PC1 | +0.29 | 0.15 | .0005 | 0.64 |
 | mm | −0.021 | −0.15 | .0005 | 0.61 |
 
-Opposition speech runs hotter (affect, d = 0.34), more polemical (stance, d = 0.24), more institutional in register, slightly less rigorous, and leans to manner over matter (mm negative). Effects are small to moderate but, unlike gender, they are **consistent across rooms** (0.71 to 0.77 on the top axes). This is a genuine person side signal that survives the atlas control, and it is a **political role**, not a sex.
+Opposition speech runs hotter (affect, d = 0.34), more polemical (stance, d = 0.24), more institutional in register, slightly less rigorous, and leans to manner over matter (mm negative). Effects are small to moderate but, unlike gender, they are **consistent across rooms** (0.71 to 0.77 on the top axes). This is a genuine person side signal that survives the internal model control, and it is a **political role**, not a sex.
 
 ### Age (room demeaned, length controlled): a small but coherent gradient
 
@@ -74,7 +74,7 @@ Slope per decade of age within a room: older speakers show lower affect (−0.01
 ## Robustness and honesty
 
 - **Internal control for the null**: the gender null is measured on the same turns, rooms, instrument and sample size that resolve position (d = 0.34) and age (t = 6.3). The scorer is not blind to a within room difference; there simply is not one for sex.
-- **Cross lineage panel not achieved**: the intended second scorer (a Qwen 27B on port 8288) degenerated on truncated Hebrew, returning the schema's default 0.5 on every axis (72 of 600 parsed, all degenerate). We report this rather than manufacture agreement. A proper second scorer needs a Hebrew capable model with enough context to read a full turn; that is the follow up before this goes to print.
+- **Cross lineage panel not achieved**: the intended second scorer (an internal model 27B on port 8288) degenerated on truncated Hebrew, returning the schema's default 0.5 on every axis (72 of 600 parsed, all degenerate). We report this rather than manufacture agreement. A proper second scorer needs a Hebrew capable model with enough context to read a full turn; that is the follow up before this goes to print.
 - **Confounds stated**: one institution, one term (the 13th Knesset, 1993 to 1996), one language scored by a multilingual seven billion parameter model. Women were about ten percent of speaking turns in this term, so gender is entangled with era and with committee and seniority structure. Within room length matching removes the room and the length; the age leg removes part of the seniority story; we cannot fully separate committee assignment. Chairman turns are removed. Gender is binary in the source, no third category is recorded.
 
 ---

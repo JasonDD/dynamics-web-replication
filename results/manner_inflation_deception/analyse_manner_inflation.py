@@ -25,11 +25,11 @@ MATTER = ["rigour", "depth"]
 MANNER = ["affect", "stance", "register"]
 rng = np.random.default_rng(1729)
 
-SCORED = "/mnt/nas/kronaxis/corpora/manner_inflation/scored.jsonl"
-INPUT = "/mnt/nas/kronaxis/corpora/manner_inflation/input.jsonl"
-IRA = "/mnt/nas/kronaxis/corpora/ira_troll/work/scored.jsonl"
-CMV = "/mnt/nas/kronaxis/corpora/cmv_winning_args/cmv_scores.jsonl"
-IRA_RAW = "/mnt/nas/kronaxis/corpora/ira_troll/IRAhandle_tweets_1.csv"
+SCORED = "the internal corpus store/manner_inflation/scored.jsonl"
+INPUT = "the internal corpus store/manner_inflation/input.jsonl"
+IRA = "the internal corpus store/ira_troll/work/scored.jsonl"
+CMV = "the internal corpus store/cmv_winning_args/cmv_scores.jsonl"
+IRA_RAW = "the internal corpus store/ira_troll/IRAhandle_tweets_1.csv"
 POL = {"RightTroll", "LeftTroll", "Fearmonger"}
 CMV_CAP = 2000
 
@@ -38,7 +38,7 @@ def load_pc1():
     PW = [l.split("=", 1)[1].strip().strip('"').strip("'")
           for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
     c = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-    c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+    c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
     allc = np.array([[float(x) for x in r] for r in c.fetchall()], float)
     MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
     _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False); PC1 = Vt[0]
@@ -136,7 +136,7 @@ def balance(rows):
     return X, y
 
 print("=" * 78)
-print("MANNER-INFLATION DECEPTION TEST  —  8-axis DWEB character scorer (qwen2.5-7b-atlas)")
+print("MANNER-INFLATION DECEPTION TEST  —  8-axis DWEB character scorer (an internal 7B instruct model)")
 print("=" * 78)
 print("\n=== domain sizes (deceptive / honest) ===")
 for k in DOM_ORDER:
@@ -275,7 +275,7 @@ for k in DOM_ORDER:
 print("\n" + "=" * 78)
 print("MATHUR 2019 per-surface-form signature  (does each pattern carry the predicted form?)")
 print("=" * 78)
-meta = {r["id"]: r for r in (json.loads(l) for l in open("/mnt/nas/kronaxis/corpora/manner_inflation/mathur_meta.jsonl"))}
+meta = {r["id"]: r for r in (json.loads(l) for l in open("the internal corpus store/manner_inflation/mathur_meta.jsonl"))}
 dm = [r for r in sc if r["kind"] == "darkm" and r["id"] in meta]
 for r in dm:
     r["_m"] = meta[r["id"]]

@@ -121,7 +121,7 @@
       "sign_match": 1.0
     },
     {
-      "name": "CORPUS (atlas segments)",
+      "name": "CORPUS (internal_model segments)",
       "n": 2070,
       "pc1": [
         0.4089980753675269,
@@ -242,7 +242,7 @@
     "POST",
     "COMMUNITY",
     "DOMAIN",
-    "CORPUS [atlas]",
+    "CORPUS [internal_model]",
     "CORPUS [cur]"
   ],
   "min_pairwise_pc1_cos": 0.45211015208727146,

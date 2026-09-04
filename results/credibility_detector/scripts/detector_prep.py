@@ -19,7 +19,7 @@ Institutions + t0 (reversal / own-credibility-loss month):
 import os, json, collections
 import pandas as pd
 
-OUT="/mnt/nas/kronaxis/corpora/comms_scout"
+OUT="the internal corpus store/comms_scout"
 PARQ=os.path.join(OUT,"bis_speeches.parquet")
 
 df=pd.read_parquet(PARQ)

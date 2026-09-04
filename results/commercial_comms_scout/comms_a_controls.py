@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Top up Experiment A control-firm filings using a recent window (in EDGAR's 'recent' slice)."""
 import urllib.request, json, re, time, os
-UA="Kronaxis research jasond@kronaxis.co.uk"; OUT="/mnt/nas/kronaxis/corpora/comms_scout"
+UA="Kronaxis research jasond@kronaxis.co.uk"; OUT="the internal corpus store/comms_scout"
 def get(u):
     req=urllib.request.Request(u,headers={"User-Agent":UA})
     with urllib.request.urlopen(req,timeout=60) as r: return r.read().decode("utf-8","ignore")

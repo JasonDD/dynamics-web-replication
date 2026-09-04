@@ -20,20 +20,20 @@ DWEB = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive
 rng = np.random.default_rng(1729)
 
 # ---- matter/manner PC1 (SVD on the web character reference), oriented rigour+depth positive.
-# Needs the tfs DB (DL580 local); if unreachable, PC1 degrades to NaN and the candour verdict,
+# Needs the tfs DB (the internal host local); if unreachable, PC1 degrades to NaN and the candour verdict,
 # which does not depend on PC1, still stands.
 PC1 = None; MEAN = STD = None
 try:
     PW = [l.split("=", 1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
     dbhost = os.environ.get("PGHOST", "127.0.0.1")
     c = psycopg2.connect(f"host={dbhost} port=5432 user=titan password={PW} dbname=tfs").cursor()
-    c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+    c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
     allc = np.array([[float(x) for x in r] for r in c.fetchall()], float)
     MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
     _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False); PC1 = Vt[0]
     if (PC1[DWEB.index("rigour")] + PC1[DWEB.index("depth")]) < 0:
         PC1 = -PC1
-    print("[PC1] loaded matter/manner reference from cc_v3.domain_char8_expanded", flush=True)
+    print("[PC1] loaded matter/manner reference from the internal reference table", flush=True)
 except Exception as e:
     print(f"[PC1] DB unreachable ({e}); PC1 columns will be NaN (candour verdict unaffected)", flush=True)
 def pc1(ch):
@@ -61,7 +61,7 @@ def load(path, kind=None, outcomes=None, cap=None):
         out = [out[i] for i in idx]
     return out
 
-C = "/mnt/nas/kronaxis/corpora"
+C = "the internal corpus store"
 # ----- LEGITIMATE PERSUASION (open about intent -> predicted HIGH candour) -----
 psg     = load(f"{C}/human_persuasion/psg_scores.jsonl", kind="psg")                 # charity donation dialogue
 donors  = load(f"{C}/candour_line/scored.jsonl", kind="donorschoose")                # charity funding appeals
@@ -227,7 +227,7 @@ for i in np.argsort(-np.abs(coefs)):
 with open(os.path.join(os.path.dirname(__file__), "plane_data.json"), "w") as f:
     json.dump(plane, f, indent=2)
 print("\n[wrote] plane_data.json")
-print("\n[note] one scorer lineage (7B qwen2.5-7b-atlas). Manipulation groups are IRA (one actor,")
+print("\n[note] one scorer lineage (7B an internal 7B instruct model). Manipulation groups are IRA (one actor,")
 print("       one era, Twitter), dark patterns and phishing (English). Legit persuasion spans")
 print("       charity, crowdfunding, reviews and sincere reasoning. Candour is the scorer's read")
 print("       of transparency (0 opaque -> 1 transparent), not a ground truth intent label.")

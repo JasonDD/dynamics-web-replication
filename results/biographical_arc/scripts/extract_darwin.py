@@ -18,7 +18,7 @@ Darwin born 12 Feb 1809.  age = (year - 1809) + (month-1)/12 when month known.
 """
 import os, re, json
 
-SRC = "/mnt/nas/kronaxis/corpora/darwin_letters"
+SRC = "the internal corpus store/darwin_letters"
 OUTDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VOLS = {"pg2087.txt": "LL1", "pg2088.txt": "LL2"}
 

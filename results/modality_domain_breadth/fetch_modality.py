@@ -3,14 +3,14 @@
 character instrument has barely seen (spoken, creative, technical/professional, customer/transactional).
 
 Each fetcher is independent and failure tolerant: a wall on one target never blocks the others. Every
-corpus lands at /mnt/nas/kronaxis/corpora/<name>/<name>.jsonl as {"id","text",...}. Song LYRICS are
+corpus lands at the internal corpus store/<name>/<name>.jsonl as {"id","text",...}. Song LYRICS are
 deliberately excluded (copyright). Samples target a few hundred to ~1000 substantive items each.
 
-Run on DL580 (native venv + internet). Emits STATUS|name|status|rows|path|note lines.
+Run on the internal host (native venv + internet). Emits STATUS|name|status|rows|path|note lines.
 """
 import os, json, re, io, gzip, zipfile, urllib.request, urllib.parse, random, time
 
-BASE = "/mnt/nas/kronaxis/corpora"
+BASE = "the internal corpus store"
 random.seed(17)
 
 def outdir(n):
@@ -89,13 +89,13 @@ def f_scotus_oral():
     n = "scotus_oral_spoken"
     if already(path(n)): status(n, "HELD", already(path(n)), path(n), "exists"); return
     utt = None
-    for cand in ["/mnt/nas/kronaxis/corpora/supreme/supreme-corpus/utterances.jsonl",
-                 "/mnt/nas/kronaxis/corpora/supreme/supreme-corpus/utterances.json"]:
+    for cand in ["the internal corpus store/supreme/supreme-corpus/utterances.jsonl",
+                 "the internal corpus store/supreme/supreme-corpus/utterances.json"]:
         if os.path.exists(cand):
             utt = cand; break
     if not utt:
         g = None
-        for root, _, files in os.walk("/mnt/nas/kronaxis/corpora/supreme"):
+        for root, _, files in os.walk("the internal corpus store/supreme"):
             for fn in files:
                 if fn.startswith("utterances"):
                     g = os.path.join(root, fn); break

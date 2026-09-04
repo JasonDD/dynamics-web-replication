@@ -26,12 +26,12 @@ reasons named below.**
 
 ## Method
 
-- **Corpus.** 79,814 held `cc_v3.reddit_wide` comments already scored on the 8 axis instrument, body
+- **Corpus.** 79,814 held `the internal Reddit corpus` comments already scored on the 8 axis instrument, body
   at least 200 characters and at least 30 words, spread across 399 subreddits with 50 or more scored
   comments each. One sampling frame, so no cross corpus clustering is manufactured. Text and character
   scores sit in the same row, no join.
 - **Our axis.** matter/manner PC1 built exactly as `truthometer/scripts/manip_analyse.py` builds it:
-  standardise the 8 axes against the web character reference (2,648,406 `cc_v3.domain_char8_expanded`
+  standardise the 8 axes against the web character reference (2,648,406 `the internal reference table`
   domain vectors), take the first right singular vector, orient rigour plus depth positive, project
   each comment onto it. PC1 loadings (matter pole positive): rigour +0.44, depth +0.40, candour +0.39,
   stance +0.37, originality +0.23; manner pole negative: affect -0.35, register -0.34,
@@ -113,6 +113,6 @@ is the binding limit and should be reported as such.
 
 ## Reproduce
 
-`biber_reduction.py` in this directory. Runs on DL580 (local Postgres plus the rendered env for
+`biber_reduction.py` in this directory. Runs on the internal host (local Postgres plus the rendered env for
 `TFS_DB_PASSWORD`), CPU only, about a minute. No scoring service, no GPU. Writes `summary.json` with
 every figure quoted above.

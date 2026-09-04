@@ -19,14 +19,14 @@ from sklearn.model_selection import GroupKFold
 import psycopg2
 
 DWEB=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
-B="/mnt/nas/kronaxis/corpora/human_persuasion"; D=B+"/ucsc_persuasion_personality/"
+B="the internal corpus store/human_persuasion"; D=B+"/ucsc_persuasion_personality/"
 OUT=os.environ.get("OUT","/tmp/ucsc_interaction.json"); SEED=20260903
 def log(*a): print(*a, flush=True)
 PW=[l.split("=",1)[1].strip().strip('"').strip("'") for l in open(os.path.expanduser("~/.kronaxis/env")) if l.startswith("TFS_DB_PASSWORD=")][0]
 
 # frozen PC1/PC2 DIRECTIONS from the domain reference (loading vectors only)
 c=psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs").cursor()
-c.execute(f"SELECT {','.join(DWEB)} FROM cc_v3.domain_char8_expanded")
+c.execute(f"SELECT {','.join(DWEB)} FROM the internal reference table")
 allc=np.array([[float(x) for x in r] for r in c.fetchall()],float)
 _,_,Vt=np.linalg.svd((allc-allc.mean(0))/(allc.std(0)+1e-9),full_matrices=False)
 PC1=Vt[0]; PC1=PC1 if PC1[0]+PC1[1]>=0 else -PC1; PC2=Vt[1]
@@ -60,7 +60,7 @@ groups=resp["WorkerId"].to_numpy()
 
 WORD=re.compile(r"[a-z]+(?:'[a-z]+)?"); SENT=re.compile(r"[.!?]+"); VOW=re.compile(r"[aeiouy]+")
 F2=set("i me my we us our you your".split()); EMO=set("love hate great awful terrible amazing best worst good bad wrong right must should".split())
-INT=set("very really so totally completely absolutely extremely clearly obviously certainly".split()); PREP=set("of in to for with on at by from about as into than".split()); ART=set("the a an".split())
+INT=set("very really so totally completely absolutely extremely clearly obviously certainly".split()); PREP=set("of in to for with on at by from about as into than".split()); ART=set("the an".split())
 argtext={}  # for classical + embedding: r_text per aid
 ff2=pd.read_csv(D+"ffpage.csv")
 for _,r in ff2.iterrows(): argtext[f"ucsc_{int(r.pg_id)}_{int(r.q_num)}"]=str(r.r_text)
@@ -80,7 +80,7 @@ except Exception: eall={}
 for a in set(resp["aid"]):
     if a in eall: continue
     bd=json.dumps({"model":"nomic-embed-text","prompt":"search_document: "+argtext.get(a,"")[:2000]}).encode()
-    r=urllib.request.urlopen(urllib.request.Request("http://127.0.0.1:11434/api/embeddings",data=bd,headers={"Content-Type":"application/json"}),timeout=60)
+    r=urllib.request.urlopen(urllib.request.Request("http://127.0.0.1/api/embeddings",data=bd,headers={"Content-Type":"application/json"}),timeout=60)
     eall[a]=np.array(json.loads(r.read())["embedding"],np.float32)
 json.dump({k:v.tolist() for k,v in eall.items()},open(ecache,"w"))
 EMBraw=np.array([eall[a] for a in resp["aid"]],float)

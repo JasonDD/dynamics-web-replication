@@ -24,7 +24,7 @@ OUT: a JSONL of {id, text, outcome, kind} consumable UNCHANGED by cc_found_human
 """
 import os, re, json, html, random, hashlib
 
-NASC = os.environ.get("NASC", "/mnt/nas/kronaxis/corpora")
+NASC = os.environ.get("NASC", "the internal corpus store")
 CMV  = f"{NASC}/cmv_winning_args/winning-args-corpus/utterances.jsonl"
 OUT  = os.environ.get("OUT", f"{NASC}/controlled_edit/score_input.jsonl")
 SEED = int(os.environ.get("SEED", "1729"))

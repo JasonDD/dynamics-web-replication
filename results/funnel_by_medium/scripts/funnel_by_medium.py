@@ -6,7 +6,7 @@ measured mostly on short form. Question tested here: on a LONG form medium, does
 start earning attention too? If the attention/conviction split is conditional on text
 LENGTH, the funnel is a law of FORMAT, not of persuasion.
 
-PURE ANALYSIS on already-scored outcome corpora. No new character scoring. No :8301/:8288.
+PURE ANALYSIS on already-scored outcome corpora. No new character scoring. No /.
 
 matter = mean(rigour, depth). manner = mean(affect, stance, register). (task definition)
 Each corpus has an 8-axis character score, one real human outcome, and a word count.
@@ -31,7 +31,7 @@ from scipy import stats
 AXES   = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 MATTER = ["rigour","depth"]
 MANNER = ["affect","stance","register"]
-NASC   = "/mnt/nas/kronaxis/corpora"
+NASC   = "the internal corpus store"
 KCDW   = os.path.expanduser("~/kc-dwpaper")
 
 def matter_of(ch):  return float(np.mean([ch[a] for a in MATTER]))

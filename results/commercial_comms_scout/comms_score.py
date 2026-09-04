@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""comms_score.py — generic 8-axis character scorer over a JSONL file, same instrument (:8301, qwen2.5-7b-atlas).
+"""comms_score.py — generic 8-axis character scorer over a JSONL file, same instrument (, an internal 7B instruct model).
 Reads INPUT jsonl (each row must have 'id' and 'text'), writes OUTPUT jsonl adding 'axes'.
 Self queues behind the running jobs: low WORKERS, resumable (skips ids already in OUTPUT)."""
 import os, re, json, sys, time
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
-TEACHER=os.environ.get("TEACHER_URL","http://127.0.0.1:8301/v1/chat/completions")
-MODEL=os.environ.get("TEACHER_MODEL","qwen2.5-7b-atlas")
+TEACHER=os.environ.get("TEACHER_URL","an internal model endpoint")
+MODEL=os.environ.get("TEACHER_MODEL","an internal 7B instruct model")
 WORKERS=int(os.environ.get("WORKERS","4"))
 AXES=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 SYSTEM=("You analyse the VOICE a web page projects, the character of the writing itself, not the "

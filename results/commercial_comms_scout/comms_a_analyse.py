@@ -2,7 +2,7 @@
 """comms_a_analyse.py — Experiment A analysis. Does the manipulation signature (affect up, candour down)
 rise in fraud-active-year filings vs the same firms' clean years and vs control firms?"""
 import json, statistics as st, math, collections
-D="/mnt/nas/kronaxis/corpora/comms_scout"
+D="the internal corpus store/comms_scout"
 AXES=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 
 def load(p):

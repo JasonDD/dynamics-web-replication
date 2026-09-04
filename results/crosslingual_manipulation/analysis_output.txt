@@ -1,5 +1,5 @@
 ============================================================================================
-CROSS-LINGUAL MANIPULATION SIGNATURE  -  8-axis DWEB character (qwen2.5-7b-atlas :8301)
+CROSS-LINGUAL MANIPULATION SIGNATURE  -  8-axis DWEB character (an internal 7B instruct model )
 ============================================================================================
 
 lang       baseline       n_troll   n_sinc

@@ -33,7 +33,7 @@ shows up BEFORE t0 would make credibility drift a leading indicator.
 | Bank of England | 2021-12 | first hike; transitory framing walked back |
 | Reserve Bank of Australia | 2022-05 | abandons its "no rate rise until 2024" guidance; the RBA Review follows |
 
-**Instrument.** The same 8 DYNAMICS axes on the free 7B `qwen2.5-7b-atlas` at :8301, temperature 0, the
+**Instrument.** The same 8 DYNAMICS axes on the free 7B `an internal 7B instruct model` at , temperature 0, the
 scorer every sibling child uses. Self queued at 3 workers behind the running jobs.
 
 **Corpus.** `samchain/bis_central_bank_speeches`. 644 speeches scored across the Fed (272), ECB (267) and RBA
@@ -41,7 +41,7 @@ scorer every sibling child uses. Self queued at 3 workers behind the running job
 institution, year and month; date granularity is year and month, no day.
 
 Scripts: `scripts/detector_prep.py`, `scripts/detector_analyse.py` (scorer `comms_score.py` reused). Corpora
-on NAS `/mnt/nas/kronaxis/corpora/comms_scout/`, full run log in `analysis_output.txt`.
+on internal store `the internal corpus store/comms_scout/`, full run log in `analysis_output.txt`.
 
 ---
 

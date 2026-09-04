@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """detox_score.py — run two toxicity comparators (the incumbents) over the combined
-manipulation + toxicity pool, on CPU so they never fight the GPU scorer at :8301.
+manipulation + toxicity pool, on CPU so they never fight the GPU scorer at .
 
 Tool 1: Detoxify 'original' (unitary/toxic-bert) — the open reproduction of Google
         Jigsaw / Perspective API's toxicity model.

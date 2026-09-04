@@ -13,9 +13,9 @@ finding and is reported plainly.
 import csv, math
 from collections import defaultdict
 
-WVS = "/mnt/nas/kronaxis/corpora/wvs_position/wvs_country_items.csv"
-GDELT = "/mnt/nas/kronaxis/corpora/gdelt_position/gdelt_country_tone.csv"
-OUT = "/mnt/nas/kronaxis/corpora/gdelt_position/validation_table.csv"
+WVS = "the internal corpus store/wvs_position/wvs_country_items.csv"
+GDELT = "the internal corpus store/gdelt_position/gdelt_country_tone.csv"
+OUT = "the internal corpus store/gdelt_position/validation_table.csv"
 
 def pearson(x, y):
     n = len(x)

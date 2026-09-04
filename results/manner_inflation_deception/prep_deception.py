@@ -7,12 +7,12 @@ IRA (troll vs CMV sincere) is already scored elsewhere and is folded in at analy
 not here.
 
 outcome is the honesty label per genre: a *_DECEPT value = deceptive, a *_HONEST value =
-honest control. kind is the genre. Balanced, capped per class to keep the :8301 pass small.
+honest control. kind is the genre. Balanced, capped per class to keep the  pass small.
 """
 import os, csv, json, random, sys
 
 random.seed(1729)
-OUT = "/mnt/nas/kronaxis/corpora/manner_inflation/input.jsonl"
+OUT = "the internal corpus store/manner_inflation/input.jsonl"
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 CAP = {"phish": 700, "liar": 550, "dark": 100000}  # dark: take all (single clean source, cheap)
 
@@ -26,7 +26,7 @@ def add(kind, outcome, text, i):
 
 # ---- PHISHING: Kaggle phishing-email set, "Email Text" + "Email Type" gold ----
 phish, safe = [], []
-for l in open("/mnt/nas/kronaxis/corpora/phishing_email/phishing_email.jsonl"):
+for l in open("the internal corpus store/phishing_email/phishing_email.jsonl"):
     try:
         r = json.loads(l)
     except Exception:
@@ -46,7 +46,7 @@ print(f"phish: {k}/class (pool phish={len(phish)} safe={len(safe)})", flush=True
 # ---- DARK PATTERNS: RachitD set, target 1=dark microcopy 0=neutral UI/product copy ----
 dk_d, dk_h = [], []
 for fn in ("train.csv", "test.csv", "validation.csv"):
-    p = f"/mnt/nas/kronaxis/corpora/dark_patterns/{fn}"
+    p = f"the internal corpus store/dark_patterns/{fn}"
     if not os.path.exists(p):
         continue
     with open(p, newline="") as f:
@@ -67,7 +67,7 @@ print(f"dark: dark={len(dk_d)} normal={len(dk_h)}", flush=True)
 
 # ---- LIAR: PolitiFact claims, deceptive = false/pants-fire, honest = true ----
 li_d, li_h = [], []
-for l in open("/mnt/nas/kronaxis/corpora/liar/train.tsv"):
+for l in open("the internal corpus store/liar/train.tsv"):
     p = l.rstrip("\n").split("\t")
     if len(p) < 3:
         continue
@@ -87,8 +87,8 @@ print(f"liar: {k}/class (pool false+pf={len(li_d)} true={len(li_h)})", flush=Tru
 # ---- MATHUR 2019 dark patterns WITH surface-form labels (per-category signature test) ----
 # outcome = Pattern Category; a sidecar carries Type + Deceptive? + word count for the
 # signature-by-surface-form analysis. Empty (visual/structural) strings are dropped.
-META = "/mnt/nas/kronaxis/corpora/manner_inflation/mathur_meta.jsonl"
-mcsv = "/mnt/nas/kronaxis/corpora/dark_patterns/mathur_dark_patterns.csv"
+META = "the internal corpus store/manner_inflation/mathur_meta.jsonl"
+mcsv = "the internal corpus store/dark_patterns/mathur_dark_patterns.csv"
 nm = 0
 with open(mcsv, newline="") as f, open(META, "w") as mf:
     for i, r in enumerate(csv.DictReader(f)):

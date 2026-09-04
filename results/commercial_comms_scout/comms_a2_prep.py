@@ -5,7 +5,7 @@ with t0 = earliest AAER release date. For each: pre-exposure calls [t0-2y, t0), 
 and sector-matched (same 2-digit SIC) S&P500 controls over the same absolute windows."""
 import os, json, re, datetime, urllib.request, time, collections
 import pandas as pd
-OUT="/mnt/nas/kronaxis/corpora/comms_scout"
+OUT="the internal corpus store/comms_scout"
 UA="Kronaxis research jasond@kronaxis.co.uk"
 PARQ=os.path.join(OUT,"bose_sp500_calls.parquet")
 

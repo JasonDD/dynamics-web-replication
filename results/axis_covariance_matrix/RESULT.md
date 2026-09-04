@@ -1,12 +1,12 @@
 # Axis covariance by domain: the internal grammar of character
 
-**Track:** PUBLIC. **Mode:** analysis only on already scored 8 axis character. No scoring, no GPU, DB plus NAS files, all compute server side.
-**Script:** `truthometer/scripts/cc_axis_covariance.py` (run on DL580).
+**Track:** PUBLIC. **Mode:** analysis only on already scored 8 axis character. No scoring, no GPU, DB plus internal store files, all compute server side.
+**Script:** `truthometer/scripts/cc_axis_covariance.py` (run on the internal host).
 **Raw run:** `docs/papers/dynamics_web_series/results/axis_covariance_matrix/covout.txt`.
 
 ## The question
 
-The atlas maps where corpora **sit**: their mean character on the eight axes (rigour, depth, originality, candour, affect, commercial_drive, stance, register). This maps something the atlas cannot see: the internal **grammar** of character. Within a single domain, how do the eight axes co vary? Does rigour rise with depth? Does affect trade against substance? Does the sell push out candour? And, the real question, is that grammar the **same everywhere**, or does it **re wire by context**?
+The internal model maps where corpora **sit**: their mean character on the eight axes (rigour, depth, originality, candour, affect, commercial_drive, stance, register). This maps something the internal model cannot see: the internal **grammar** of character. Within a single domain, how do the eight axes co vary? Does rigour rise with depth? Does affect trade against substance? Does the sell push out candour? And, the real question, is that grammar the **same everywhere**, or does it **re wire by context**?
 
 Method: for each domain we take the item level eight vectors and compute the 8x8 Pearson correlation matrix of the axes. We then compare those correlation structures across domains. Universal couplings hold sign and magnitude nearly everywhere. Couplings that vary by domain, or flip sign in particular genres, are the re wiring. Finally we summarise each domain by its 28 upper triangle correlations and cluster the domains by how their character is wired, a second order map that groups domains not by where they sit but by how they are built.
 
@@ -31,7 +31,7 @@ Method: for each domain we take the item level eight vectors and compute the 8x8
 | kickstarter | 6,000 | commercial |
 | darknet_market | 545 | commercial |
 
-The two open web tables are sampled; the NAS corpora are read in full up to a cap. Four corpora are modest (oldbailey 568, darknet 545, classical 479, parlamint 1,675) so their exact couplings are indicative, but they turn out to be the structural outliers and their coupling magnitudes are large, so the signal survives the noise.
+The two open web tables are sampled; the internal store corpora are read in full up to a cap. Four corpora are modest (oldbailey 568, darknet 545, classical 479, parlamint 1,675) so their exact couplings are indicative, but they turn out to be the structural outliers and their coupling magnitudes are large, so the signal survives the noise.
 
 ## 1. The 28 axis couplings across domains
 
@@ -127,7 +127,7 @@ Average linkage hierarchical clustering on the same structural distances. Merge 
 At the clean cut (distance < 0.5) the domains fall into six groups:
 
 - **Modern discourse** (the big cluster): reddit_social, cmv_args, stackexchange, ddo_debate, parlamint, ira_trolls, liar_claims, toxic_comments. Social, argument, deception and one modern parliament, all wired alike: substance moves as a block, affect trades against rigour, register stays low.
-- **The persuasion and sell cluster**: historical_text, phishing, kickstarter, darknet_market. This is the striking one. **historical_text and darknet_market merge first of all, at distance 0.041**, near identical internal grammar despite being about as far apart in content as two corpora can be. What binds them is the wiring: register moves with substance, and commercial_drive pulls against candour. Narrative prose and a drug listing are built the same way even though they sit nowhere near each other on the atlas.
+- **The persuasion and sell cluster**: historical_text, phishing, kickstarter, darknet_market. This is the striking one. **historical_text and darknet_market merge first of all, at distance 0.041**, near identical internal grammar despite being about as far apart in content as two corpora can be. What binds them is the wiring: register moves with substance, and commercial_drive pulls against candour. Narrative prose and a drug listing are built the same way even though they sit nowhere near each other on the internal model.
 - **web_open** stands alone: its stance~register at -0.80 and its register against substance make its grammar unlike the curated corpora.
 - **ungd_speeches** stands alone: diplomatic speech wires its own way.
 - **oldbailey_court** and **classical_persu** form their own branch and only join the rest at the very top (distance 0.78). In these older corpora affect couples **with** depth and rigour, the reverse of the modern web, so they are the true structural outsiders.
@@ -146,7 +146,7 @@ The point the clustering makes: the deception genre is **split across three diff
 
 - **Why the re wiring is real and not an instrument artefact.** A single scorer could induce a fixed halo, for example always rating rigour and depth together. That would show up as **constant** couplings. It cannot produce the opposite sign in two different domains from the same rubric. The universal spine could carry some instrument halo, so treat its exact magnitude with care. But the domain specific re wiring, the sign flips, cannot be the ruler moving, because the ruler is the same in every cell. The variance across domains is the signal, and it is a property of the text.
 
-- **What it means for the programme.** The matter axes are a genuine invariant and safe to treat as one construct across corpora. The manner axes are not portable: any detector, atlas coordinate or transfer claim that leans on register, affect, commercial_drive or stance must be read within its domain, because those axes mean different things, structurally, in different places. The clustering also hands us a usable object: a second order map that puts a darknet listing next to a historical narrative because they are built the same way, which is exactly the kind of grouping a "where does this text really belong" tool would want.
+- **What it means for the programme.** The matter axes are a genuine invariant and safe to treat as one construct across corpora. The manner axes are not portable: any detector, internal model coordinate or transfer claim that leans on register, affect, commercial_drive or stance must be read within its domain, because those axes mean different things, structurally, in different places. The clustering also hands us a usable object: a second order map that puts a darknet listing next to a historical narrative because they are built the same way, which is exactly the kind of grouping a "where does this text really belong" tool would want.
 
 ### Honest limits
 

@@ -1,8 +1,8 @@
 # Grice reduction: does the character instrument recover the maxims of the cooperative principle?
 
 *DYNAMICS-WEB series, 3 September 2026. Scripts `grice_reduction.py` (judge) and `grice_length_control.py`.
-A capped sample of 15,000 held `cc_v3.reddit_wide` comments already scored on the eight axis instrument was
-judged by Mistral 7B Instruct, a different pretraining lineage from the Qwen reader that produced the
+A capped sample of 15,000 held `the internal Reddit corpus` comments already scored on the eight axis instrument was
+judged by Mistral 7B Instruct, a different pretraining lineage from the an internal model reader that produced the
 character scores, for how far each violates Grice's four maxims (0 observes, 1 flagrantly violates):
 quantity (the right amount of information), quality (backed by evidence), relation (relevant), manner
 (clear and brief). Violations are correlated with the eight axes and the matter against manner PC1. The

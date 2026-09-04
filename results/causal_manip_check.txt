@@ -11,4 +11,4 @@
     stance     A,B 0.710 | C,D 0.690
   per-view matter separation held in 5/5 views
   -> MANIPULATION OK: variants sit where intended, causal test is valid
-[wrote] /mnt/nas/kronaxis/corpora/causal/causal_char.jsonl
+[wrote] the internal corpus store/causal/causal_char.jsonl

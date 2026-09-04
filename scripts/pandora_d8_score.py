@@ -13,25 +13,25 @@ EACH INDIVIDUAL POST of each author (not the concatenation), so the analyse step
   3. the r vs k curve — correlation as more of the author's posts are pooled (predict climbs).
 
 Corpus: MBTI (PersonalityCafe posts + self reported four letter type, Kaggle datasnaek mirror). Each row is
-one author, text = up to 50 posts joined by triple pipe. Same 7B atlas model as the content baseline, so the
+one author, text = up to 50 posts joined by triple pipe. Same 7B internal model model as the content baseline, so the
 instrument is the only thing that changed.
 
 Output: one JSON line per (author, post) — {uid, pidx, ptype, O,C,E,A, axes:{...}} — resumable.
-Endpoint :8301, model qwen2.5-7b-atlas, temp 0.0, modest concurrency (shared 7B GPU).
+Endpoint , model an internal 7B instruct model, temp 0.0, modest concurrency (shared 7B GPU).
 """
 import os, json, time, random, threading, queue
 import pandas as pd
 import urllib.request
 
-CORP = "/mnt/nas/kronaxis/corpora/pandora"
+CORP = "the internal corpus store/pandora"
 OUT = os.path.join(CORP, "user_d8_perpost_scores.jsonl")
 N = int(os.environ.get("N", "800"))                 # authors sampled
 MAXPOSTS = int(os.environ.get("MAXPOSTS", "40"))    # cap posts scored per author (for the k curve)
 MINLEN = int(os.environ.get("MINLEN", "40"))        # skip near empty posts
 SEED = int(os.environ.get("SEED", "42"))
 WORKERS = int(os.environ.get("WORKERS", "8"))
-ALL_ENDPOINTS = ["http://127.0.0.1:8301/v1/chat/completions",
-                 "http://127.0.0.1:8302/v1/chat/completions"]
+ALL_ENDPOINTS = ["an internal model endpoint",
+                 "an internal model endpoint"]
 
 
 def live_endpoints():
@@ -63,7 +63,7 @@ VOCAB = ("discipline: 0 careless, unstructured -> 1 organised, diligent, prudent
 
 def score(text, ep):
     body = json.dumps({
-        "model": "qwen2.5-7b-atlas", "temperature": 0.0, "max_tokens": 200, "stream": False,
+        "model": "an internal 7B instruct model", "temperature": 0.0, "max_tokens": 200, "stream": False,
         "messages": [{"role": "system", "content": SYS},
                      {"role": "user", "content": VOCAB + "\n\nPOST:\n" + text[:1500]}],
     }).encode()

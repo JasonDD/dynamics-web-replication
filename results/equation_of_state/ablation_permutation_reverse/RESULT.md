@@ -2,8 +2,8 @@
 
 *DYNAMICS-WEB series, 3 September 2026. Script `cc_state_ablation.py` (built on the competitor test's data
 path, so folds, records and models are identical). Held out gain = 1 − SSE(model) / SSE(room mean), pooled
-over the eight character axes, five person grouped folds. Domains: `cc_v3.crosssite_authorship`, 1,008
-rooms, 161,867 person room records, 48,293 persons. Subreddits: `cc_v3.reddit_wide`, 400 rooms, 50,346
+over the eight character axes, five person grouped folds. Domains: `the internal cross site corpus`, 1,008
+rooms, 161,867 person room records, 48,293 persons. Subreddits: `the internal Reddit corpus`, 400 rooms, 50,346
 records, 47,514 persons.*
 
 ## Ablation: what each named part earns

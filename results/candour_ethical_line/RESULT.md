@@ -8,10 +8,10 @@ could be stated as "we flag low candour persuasion, not persuasion", which answe
 "you are just censoring marketing" objection.*
 
 Scorer: `truthometer/scripts/cc_found_human_score.py` (8 axis DWEB character instrument,
-qwen2.5-7b-atlas on DL580 :8301). Analysis: `analyse_candour.py` in this directory. New
+an internal 7B instruct model on the internal host ). Analysis: `analyse_candour.py` in this directory. New
 scoring for the two marquee legit persuasion groups (donorschoose, amazon): `prep_persuasion.py`,
-scores at `/mnt/nas/kronaxis/corpora/candour_line/scored.jsonl`. All other groups reuse the
-sibling scores already on the NAS.
+scores at `the internal corpus store/candour_line/scored.jsonl`. All other groups reuse the
+sibling scores already on the internal store.
 
 ---
 
@@ -206,7 +206,7 @@ openly commercial and substantive, and the calibration judges every genre agains
 
 ## 10. Caveats (kept honest)
 
-- **One scorer lineage.** All scores are the 7B qwen2.5-7b-atlas instrument. The sibling
+- **One scorer lineage.** All scores are the 7B an internal 7B instruct model instrument. The sibling
   manipulation result was confirmed on a second 27B lineage; this candour test has not been, and
   a candour negative on one scorer is weaker evidence than a positive confirmed on two. That
   said, a second lineage would have to move candour from 0.573 to a clean boundary to overturn
@@ -230,4 +230,4 @@ openly commercial and substantive, and the calibration judges every genre agains
 *Method files: `analyse_candour.py` (groups, means, univariate and multivariate AUC, threshold
 sweep, plane dump), `prep_persuasion.py` (donorschoose and amazon prep), `plane_data.json`
 (plane coordinates). PC1 reference is the first principal component of
-`cc_v3.domain_char8_expanded` (2.65M domains), oriented rigour plus depth positive.*
+`the internal reference table` (2.65M domains), oriented rigour plus depth positive.*

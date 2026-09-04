@@ -41,7 +41,7 @@ speech sentence present, unambiguously aligned, in all eight languages.
 (`truthometer/scripts/cc_found_human_score.py`, the free internal 7B character
 model, same system prompt, same vocabulary line, same parse). Every version scored
 on the eight axes: rigour, depth, originality, candour, affect, commercial drive,
-stance, register. Matter versus manner is PC1 (SVD on `cc_v3.domain_char8_expanded`,
+stance, register. Matter versus manner is PC1 (SVD on `the internal reference table`,
 standardised, oriented rigour plus depth positive), the same ruler as the rest of
 the series.
 
@@ -158,10 +158,10 @@ but minority contributor.
 
 ## Artefacts
 
-- **Data (NAS):** `/mnt/nas/kronaxis/corpora/europarl_multiway/` holds
+- **Data (internal store):** `the internal corpus store/europarl_multiway/` holds
   `items_meta.jsonl` (800 aligned items, all 8 languages), `score_input.jsonl`
   (6,400 scoring rows), `scored.jsonl` (6,400 scored versions).
-  Source pairs: `/mnt/nas/kronaxis/corpora/europarl_v7/`.
+  Source pairs: `the internal corpus store/europarl_v7/`.
 - **Scripts (this folder):** `fetch_europarl.sh` (download and extract v7 pairs),
   `build_multiway.py` (English pivot multi language build), `analyse_multiway.py`
   (survival plus variance decomposition).

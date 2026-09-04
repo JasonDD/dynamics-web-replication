@@ -1,7 +1,7 @@
 # Corpus universe expansion: new coordinates for the empty map regions
 
-*PUBLIC track. Built 2026-08-31 on DL580 (the box with internet; the control laptop is sandboxed). This pass
-expands the corpus universe beyond what the character atlas already holds, to give the instrument new
+*PUBLIC track. Built 2026-08-31 on the internal host (the box with internet; the control laptop is sandboxed). This pass
+expands the corpus universe beyond what the character internal model already holds, to give the instrument new
 coordinates where the map was empty. It finds, fetches (free, machine readable, login free, sampled) and
 sample scores new corpora that fill the biggest gaps, and adds every one to the ledger. Held index before this
 pass: `../../MASTER_CORPUS_INDEX.md` (~64 corpus directories) and `../../DATASET_ACQUISITION_LEDGER.md`.*
@@ -24,8 +24,8 @@ The `datasets` library is not installed on the box, so nothing here depends on i
 a few megabytes per language, no full shard download. Platform and era sets come from their own parquet, jsonl
 or csv files streamed to the sample size. Every row is normalised to `{id, text, region, platform, era,
 source}` so the standard 8 axis scorer consumes it unchanged. Fetch script:
-`../../acq_fetch_expansion.py` (runtime copy `/mnt/nas/kronaxis/corpora/fetch_expansion.py`). All data lives on
-the NAS at `/mnt/nas/kronaxis/corpora/<name>/` per the house rule.
+`../../acq_fetch_expansion.py` (runtime copy `the internal corpus store/fetch_expansion.py`). All data lives on
+the internal store at `the internal corpus store/<name>/` per the house rule.
 
 Every fetched corpus was verified real: 500 rows each, first record inspected to confirm it is native text and
 not an HTML error page (short form platforms use a 40 character floor, web and books a 120 character floor).
@@ -53,7 +53,7 @@ not an HTML error page (short form platforms use a 40 character floor, web and b
 
 ## The new coordinates (8 axis sample scored means)
 
-Scored on the same instrument as the whole series: the free Qwen2.5-7B on `:8301`, same system prompt and
+Scored on the same instrument as the whole series: the free an internal model on ``, same system prompt and
 vocabulary line as `score_turns.py`, self queued behind the running job at 6 workers. Each mean is over up to
 150 sampled records per corpus. Axes: **rigour** (unsourced to scholarly), **depth** (superficial to expert),
 **originality** (rehashed to primary source), **candour** (opaque to transparent), **affect** (neutral to
@@ -122,8 +122,8 @@ real position on the map, read with a wider error bar, not a precise point. This
 
 - Fetch: `../../acq_fetch_expansion.py`
 - Scorer (canonical, unchanged): `../../results/knesset_attribute/score_turns.py` (runtime copy
-  `/mnt/nas/kronaxis/corpora/score_turns.py`)
-- Scoring orchestrator: `/mnt/nas/kronaxis/corpora/score_expansion.sh`
-- Means: `/mnt/nas/kronaxis/corpora/expansion_means.json`
-- Per corpus data + scores: `/mnt/nas/kronaxis/corpora/<name>/{<name>.jsonl,char.jsonl}`
+  `the internal corpus store/score_turns.py`)
+- Scoring orchestrator: `the internal corpus store/score_expansion.sh`
+- Means: `the internal corpus store/expansion_means.json`
+- Per corpus data + scores: `the internal corpus store/<name>/{<name>.jsonl,char.jsonl}`
 - Ledger rows: `../../DATASET_ACQUISITION_LEDGER.md` (fifth pass); index: `../../MASTER_CORPUS_INDEX.md`

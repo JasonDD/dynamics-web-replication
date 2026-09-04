@@ -9,7 +9,7 @@
 
 ## 1. Data and labels (confirmed)
 
-Corpus: the Project Gutenberg edition (eBook 1404) on the DL580 NAS at `corpora/federalist/federalist.txt`, 1.1 MB, split into the 85 papers by the `FEDERALIST No. N` headers. Body text for every paper starts at "To the People of the State of New York", so the edition's own author byline sits **above** the text we analyse and never leaks into either instrument.
+Corpus: the Project Gutenberg edition (eBook 1404) on the internal host at `corpora/federalist/federalist.txt`, 1.1 MB, split into the 85 papers by the `FEDERALIST No. N` headers. Body text for every paper starts at "To the People of the State of New York", so the edition's own author byline sits **above** the text we analyse and never leaks into either instrument.
 
 Canonical attribution used (Mosteller and Wallace 1964 and the modern consensus):
 
@@ -31,7 +31,7 @@ Two instruments, run independently and blind to the byline.
 
 **A. Stylometry (the classic approach, no character model).** Relative frequencies of ~150 function words and high frequency non content markers, including the celebrated Hamilton and Madison discriminators (`upon`, `while`, `whilst`, `on`, `there`, `by`). Three standard classifiers: Burrows's Delta (nearest author over z scored most frequent words), Multinomial Naive Bayes on function word counts (the Mosteller and Wallace family), and logistic regression on relative frequencies. Ceiling is measured by leave one out cross validation on the 65 known papers, then each method is applied to the 12 disputed.
 
-**B. Character (our instrument).** The identical 8 axis DYNAMICS-WEB instrument used across the whole series (same free 7B on `:8301`, same system prompt, same vocabulary line, same parse), self queued politely on the shared GPU. Every paper scored on rigour, depth, originality, candour, affect, commercial drive, stance, register. Separation of the known authors measured per axis (Cohen d, AUC) and by a nearest centroid classifier under the same leave one out protocol, then applied to the disputed.
+**B. Character (our instrument).** The identical 8 axis DYNAMICS-WEB instrument used across the whole series (same free 7B on ``, same system prompt, same vocabulary line, same parse), self queued politely on the shared GPU. Every paper scored on rigour, depth, originality, candour, affect, commercial drive, stance, register. Separation of the known authors measured per axis (Cohen d, AUC) and by a nearest centroid classifier under the same leave one out protocol, then applied to the disputed.
 
 ## 3. Stylometry result: resolves to Madison, matches the consensus
 

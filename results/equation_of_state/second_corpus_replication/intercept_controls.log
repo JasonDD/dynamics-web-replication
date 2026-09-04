@@ -39,7 +39,7 @@
 [   26.7s]    location control: PASS
 [   26.7s]    rotation control tau=0.060: FAIL (underpowered)
 [   26.7s]    rotation control tau=0.150: PASS (has power)
-[   27.1s] wrote /mnt/nas/kronaxis/corpora/exp_diff_invariance_rep/icheck_news.json
+[   27.1s] wrote internal_store/exp_diff_invariance_rep/icheck_news.json
 [   27.1s] done
 ###### REDDIT intercept controls 2026-09-03T13:05:12+00:00
 [    0.1s] building the canonical matter against manner ruler ...
@@ -82,6 +82,6 @@
 [   88.3s]    location control: PASS
 [   88.3s]    rotation control tau=0.060: PASS (has power)
 [   88.3s]    rotation control tau=0.150: PASS (has power)
-[   88.7s] wrote /mnt/nas/kronaxis/corpora/exp_diff_invariance_rep/icheck_reddit.json
+[   88.7s] wrote internal_store/exp_diff_invariance_rep/icheck_reddit.json
 [   88.7s] done
 ICHECKDONE

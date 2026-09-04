@@ -8,7 +8,7 @@ intercept check). Compared throughout against the first run, commit `2759e8472`,
 
 The claim under test, from Paper 4: after differencing two persons inside the same room the room
 offset cancels exactly, so `dC = W dP` with no intercept, and `W` is INVARIANT across rooms. The
-first run refuted that on `cc_v3.crosssite_authorship` with room set to the web domain. Every
+first run refuted that on `the internal cross site corpus` with room set to the web domain. Every
 result this programme has reverted, it reverted because a second corpus or a second model
 disagreed, so the point of this run is to give that finding the same chance to fail.
 
@@ -16,7 +16,7 @@ disagreed, so the point of this run is to give that finding the same chance to f
 
 ## 1. Corpus choice, and why the preferred one was rejected
 
-**Preferred, and REJECTED: the forum corpus.** `cc_v3.forum_threads` holds 496,593 threads, of
+**Preferred, and REJECTED: the forum corpus.** `an internal table` holds 496,593 threads, of
 which 244,322 are scored, across 1,582 distinct forums. It is the ideal room in every respect
 except the one that matters: it has no person column and no disposition column. The table carries
 `dom, url, software, title, body, views, replies, posts, char, scored_at`. The within room
@@ -37,7 +37,7 @@ they fail differently.
 
 | | first run (baseline) | replication A | replication B |
 |---|---|---|---|
-| table | `cc_v3.crosssite_authorship` | `cc_v3.reddit_wide` | `cc_v3.news_topic` |
+| table | `the internal cross site corpus` | `the internal Reddit corpus` | `an internal table` |
 | room | web domain | subreddit community | editorial SECTION |
 | person | cross site identity key | account | journalist byline |
 | disposition | `disp_d8` | `disp_d8_behav_27b` (behavioural prompt) | `disp_d8` |
@@ -337,8 +337,8 @@ controls) was launched to answer.
 ## 9. Reproduction
 
 ```bash
-# on DL580, three cells plus the room size sweep
-OUTDIR=/mnt/nas/kronaxis/corpora/exp_diff_invariance_rep
+# on the internal host, three cells plus the room size sweep
+OUTDIR=the internal corpus store/exp_diff_invariance_rep
 TABLE=reddit_wide PERSONCOL=author ROOMCOL=subreddit DISPCOL=disp_d8_behav_27b CHARCOL=char \
   EXTRA_WHERE="AND author NOT IN ('[deleted]','AutoModerator')" DISPMIN=60 DISPCAPP=200 \
   HMINS="5,10,20,40,60,80" OUT="$OUTDIR/panel_reddit_sweep.json" \

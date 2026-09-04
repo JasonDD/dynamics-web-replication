@@ -6,7 +6,7 @@ import json, numpy as np
 
 AXES = ["rigour","depth","originality","candour","affect",
         "commercial_drive","stance","register"]
-BASE = "/mnt/nas/kronaxis/corpora/ira_troll/work"
+BASE = "the internal corpus store/ira_troll/work"
 
 def load(p):
     d={}

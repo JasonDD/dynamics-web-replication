@@ -8,7 +8,7 @@ persuasion groups the candour ethical line test still needs scored:
 
 Both are legitimate persuasion or commercial copy that is open about its intent, so both
 should read HIGH candour if candour is the ethical line. Balanced, capped to keep the
-:8301 pass small and not starve sibling jobs.
+ pass small and not starve sibling jobs.
 
 IRA / CMV / kickstarter / psg / dark / phish / LIAR / Mathur are already scored and folded
 in at analysis time, not here.
@@ -16,7 +16,7 @@ in at analysis time, not here.
 import os, json, random
 
 random.seed(1729)
-OUT = "/mnt/nas/kronaxis/corpora/candour_line/input.jsonl"
+OUT = "the internal corpus store/candour_line/input.jsonl"
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 CAP_DC = 600
 CAP_AZ = 600
@@ -30,7 +30,7 @@ def add(kind, outcome, text, i):
 
 # ---- DONORSCHOOSE: charity/education funding appeals ----
 dc_appr, dc_rej = [], []
-for l in open("/mnt/nas/kronaxis/corpora/donorschoose/donorschoose.jsonl"):
+for l in open("the internal corpus store/donorschoose/donorschoose.jsonl"):
     try:
         r = json.loads(l)
     except Exception:
@@ -56,7 +56,7 @@ print(f"donorschoose: approved pool={len(dc_appr)} rejected pool={len(dc_rej)}",
 
 # ---- AMAZON: product reviews (commercial genre, honest user copy) ----
 az = []
-for l in open("/mnt/nas/kronaxis/corpora/amazon_reviews/amazon_reviews.jsonl"):
+for l in open("the internal corpus store/amazon_reviews/amazon_reviews.jsonl"):
     try:
         r = json.loads(l)
     except Exception:

@@ -3,7 +3,7 @@
 INTERNAL analysis. Aggregate only, no keys, no names. PUBLIC track, DYNAMICS-WEB series. Reduction test 3 of the
 unification argument (`RELATED_WORK_unification.md`).
 
-Corpus: `cc_v3.crosssite_authorship` on DL580 (the same pseudonymous person seen writing across many separate
+Corpus: `the internal cross site corpus` on the internal host (the same pseudonymous person seen writing across many separate
 sites), 418,493 scored cross site blocks, 37,378 people with two or more sites, held `disp_d8` and `char_dweb`
 scores reused as is. No rescoring: this is analysis of the held scores.
 
@@ -101,7 +101,7 @@ internal, pending the legal and commercial review the corpus is held for.
 ## Method and provenance
 
 - Script: `truthometer/scripts/cc_crosssite_fleeson.py` (CPU only, analysis only, no scoring). Vectorised one way
-  random effects variance components via `np.bincount`; trait share = ICC(1). Run on DL580 tfs, `MINDOM=2`.
+  random effects variance components via `np.bincount`; trait share = ICC(1). Run on the internal host tfs, `MINDOM=2`.
 - Estimators match `truthometer/scripts/cc_crosssite_outcome.py` and the coupling result: all occasions and room
   level. The room level ICC cross checks the coupling result's 0.518 to within 0.002.
 - Numbers: `results/reduction_fleeson/fleeson_split.json` (full per axis components, both estimators, both

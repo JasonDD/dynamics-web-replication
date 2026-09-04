@@ -13,8 +13,8 @@ matrix on already scored data at four nested aggregation scales, across two subs
 
 | Substrate | Fine scale | Coarse scale |
 |---|---|---|
-| Reddit | POST, individual scored posts (`cc_v3.reddit_wide.char`, 80,138) | COMMUNITY, per subreddit means (400 subreddits, ~200 posts each) |
-| Web | DOMAIN, scored web domains (`cc_v3.domain_char8_expanded`, 2,648,406) | CORPUS, atlas segment means (2,070 topic/genre/quality/authority cells) + 17 curated corpus means |
+| Reddit | POST, individual scored posts (`the internal Reddit corpus.char`, 80,138) | COMMUNITY, per subreddit means (400 subreddits, ~200 posts each) |
+| Web | DOMAIN, scored web domains (`the internal reference table`, 2,648,406) | CORPUS, internal model segment means (2,070 topic/genre/quality/authority cells) + 17 curated corpus means |
 
 Note on the operator brief: the reddit set is 80,138 scored POSTS across exactly 400 subreddits
 (the "78k / community means" figure was the post count). Method: at each scale, standardise the
@@ -29,7 +29,7 @@ level differences between substrates, so only the correlation geometry, the shap
 | POST (reddit posts) | 80,138 | 30.2% | 18.4% | 48.6% | 5.63 | 6 | 75% |
 | COMMUNITY (subreddit means) | 400 | 39.0% | 19.9% | 58.9% | 4.19 | 5 | 50% |
 | DOMAIN (web domains) | 2,648,406 | 56.1% | 21.2% | 77.3% | 2.61 | 3 | 100% |
-| CORPUS (atlas segments) | 2,070 | 71.6% | 16.6% | 88.2% | 1.83 | 3 | 100% |
+| CORPUS (internal model segments) | 2,070 | 71.6% | 16.6% | 88.2% | 1.83 | 3 | 100% |
 | CORPUS (curated corpora) | 17 | 47.6% | 24.2% | 71.8% | 3.25 | 4 | 88% |
 
 Effective dimensionality is the participation ratio, (sum of eigenvalues) squared over sum of
@@ -44,17 +44,17 @@ candour, stance; manner pole: affect, commercial drive, register).
 | POST | +0.60 | +0.58 | +0.12 | +0.19 | -0.44 | +0.06 | +0.21 | +0.11 |
 | COMMUNITY | +0.53 | +0.49 | -0.18 | -0.05 | -0.51 | +0.09 | +0.29 | +0.29 |
 | DOMAIN | +0.44 | +0.40 | +0.23 | +0.39 | -0.35 | -0.26 | +0.37 | -0.34 |
-| CORPUS (atlas) | +0.41 | +0.37 | +0.27 | +0.37 | -0.31 | -0.36 | +0.35 | -0.37 |
+| CORPUS (internal model) | +0.41 | +0.37 | +0.27 | +0.37 | -0.31 | -0.36 | +0.35 | -0.37 |
 | CORPUS (curated) | +0.47 | +0.48 | +0.28 | +0.31 | -0.21 | -0.28 | +0.28 | +0.41 |
 
 ### Cross scale PC1 cosine (|cos| of the matter oriented loading vectors)
 
-|  | POST | COMMUNITY | DOMAIN | CORPUS atlas | CORPUS cur |
+|  | POST | COMMUNITY | DOMAIN | CORPUS internal model | CORPUS cur |
 |---|---:|---:|---:|---:|---:|
 | **POST** | 1.000 | 0.896 | 0.778 | 0.713 | 0.837 |
 | **COMMUNITY** | 0.896 | 1.000 | 0.535 | 0.452 | 0.707 |
 | **DOMAIN** | 0.778 | 0.535 | 1.000 | 0.991 | 0.692 |
-| **CORPUS atlas** | 0.713 | 0.452 | 0.991 | 1.000 | 0.672 |
+| **CORPUS internal model** | 0.713 | 0.452 | 0.991 | 1.000 | 0.672 |
 | **CORPUS cur** | 0.837 | 0.707 | 0.692 | 0.672 | 1.000 |
 
 Minimum pairwise PC1 cosine across scales = 0.452. Effective dimensionality range 1.83 to 5.63.
@@ -81,13 +81,13 @@ manifold than the individual items inside them do.
 ## Verdict: directionally fractal, not fully scale invariant
 
 **1. The leading axis is scale invariant within a substrate.** On the web, the domain axis and the
-atlas segment axis are the SAME matter/manner axis to within measurement noise (cosine 0.991, both
+internal model segment axis are the SAME matter/manner axis to within measurement noise (cosine 0.991, both
 100% sign match, near identical loadings). The rigour plus depth versus affect backbone is present
 at every scale in every substrate. In direction, the structure is self similar: the same ruler
 reads at post, community, domain and corpus scale.
 
 **2. The dimensionality is NOT scale invariant: the space flattens as you coarsen.** PC1 share
-climbs monotonically 30% (post) to 39% (community) to 56% (domain) to 72% (atlas), and effective
+climbs monotonically 30% (post) to 39% (community) to 56% (domain) to 72% (internal model), and effective
 dimensionality falls 5.63 to 4.19 to 2.61 to 1.83. Fine items fill a rich roughly 5 dimensional
 character space; coarse aggregates live on a nearly 1 dimensional matter/manner line. The control
 above shows this is real, not mechanical. A strict fractal would keep the SAME 2D shape at every
@@ -103,10 +103,10 @@ similar than the reddit to web comparison.
 ### Honest caveats
 
 - The reddit and web ladders are different substrates measured by the same 7B instrument; the
-  clean within substrate nesting is domain to atlas (cosine 0.991) and post to community (0.896),
+  clean within substrate nesting is domain to internal model (cosine 0.991) and post to community (0.896),
   not the reddit to web pairs.
-- The atlas segments are binned partly BY quality and authority, which themselves track matter/manner,
-  so some of the atlas collapse to 1.83 dimensions is by construction: those bins are chosen to
+- The internal model segments are binned partly BY quality and authority, which themselves track matter/manner,
+  so some of the internal model collapse to 1.83 dimensions is by construction: those bins are chosen to
   separate the very thing PC1 measures. The domain scale (2.6M unbinned domains, eff. dim 2.61) is
   the cleaner coarse web number and already shows the collapse.
 - Length is confounded with scale: coarser aggregates average over longer and more varied text. The

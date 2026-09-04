@@ -1,7 +1,7 @@
 # Is there a universal character of command across sacred and secular authority?
 
 DYNAMICS-WEB experiment child, PUBLIC track. Authority type by culture character matrix on the shared
-8 axis instrument (same 7B teacher on :8301, same system prompt and vocabulary line as every other child
+8 axis instrument (same 7B teacher on , same system prompt and vocabulary line as every other child
 in the series). Question: do the commanding registers of religion and of law and state share a character,
 or diverge, across cultures?
 
@@ -153,6 +153,6 @@ is thin and reads as an outlier and should not be over read.
 
 - `analysis_console.txt`: full analyser output for this run.
 - `matrix_stats.json`: machine readable source rows, Cohen d per axis, PC1 means, eta squared, permutation p.
-- Scores reused from `/mnt/nas/kronaxis/corpora/sacred_secular/sacred_scored.jsonl` (sacred) and the held
+- Scores reused from `the internal corpus store/sacred_secular/sacred_scored.jsonl` (sacred) and the held
   secular scores under `ungd/`, `parlamint/`, `oldbailey/`, `legal_matrix/`, `classical/`.
-- Scorer and analyser: `/mnt/nas/kronaxis/corpora/sacred_secular/{score.py,build_sacred.py,analyse_sacred_secular.py}`.
+- Scorer and analyser: `the internal corpus store/sacred_secular/{score.py,build_sacred.py,analyse_sacred_secular.py}`.

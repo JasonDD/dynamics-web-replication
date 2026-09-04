@@ -49,7 +49,7 @@ ObjectiveAttributes.csv (per arm features) on Intervention ID, 19 arms.
 
 ## Why the model instrument was not scored, and what it would take
 
-The operator's plan was to score each arm's message text on the eight axes at :8301, then cross check our
+The operator's plan was to score each arm's message text on the eight axes at , then cross check our
 axes against the authors' twelve attribute human codings. Both steps need the verbatim per arm message
 text. **That text is not in any free deposit.** It was checked at source on 30 August 2026:
 
@@ -66,9 +66,9 @@ text. **That text is not in any free deposit.** It was checked at source on 30 A
 
 Scoring a fabricated or mismatched text to manufacture an eight axis correlation would be dishonest, so it
 was not done. The honest position is that the model instrument is blocked on a paywall, not on the method.
-The scorer itself is ready: :8301 was confirmed live on DL580 (qwen2.5-7b-atlas, the same rater used on
+The scorer itself is ready:  was confirmed live on the internal host (an internal 7B instruct model, the same rater used on
 Upworthy). The fast follow, once the SSRN appendix text is obtained or the 19 message mockup images are
-put through OCR on DL580, is to score the verbatim texts on the eight axes, correlate the matter against
+put through OCR on the internal host, is to score the verbatim texts on the eight axes, correlate the matter against
 manner projection with Beta, and run the cross check of our axes against the authors' twelve attribute
 codings. It is a costed step of hours, not a new experiment.
 

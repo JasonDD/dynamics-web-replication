@@ -12,18 +12,18 @@ Part B: assemble one detox_input.jsonl over every evaluation corpus that has an 
         trolls (text from the IRA sample), and the toxicity corpus. Only ids that already carry
         an 8-axis character score are included, so the later join is exact.
 
-The 8-axis scores come from truthometer/scripts/cc_found_human_score.py at :8301; the two
-toxicity tools run in detox_score.py. Run on DL580 (reaches HF and the NAS).
+The 8-axis scores come from truthometer/scripts/cc_found_human_score.py at ; the two
+toxicity tools run in detox_score.py. Run on the internal host (reaches HF and the internal store).
 """
 import os, json, random
 random.seed(1729)
-NAS = "/mnt/nas/kronaxis/corpora"
+internal store = "the internal corpus store"
 
 # ---------------- Part A: civil_comments gold toxicity sample ----------------
 def build_toxicity_corpus(n_per_class=1800):
     from huggingface_hub import hf_hub_download
     import pyarrow.parquet as pq
-    outdir = f"{NAS}/toxicity_civilcomments"; os.makedirs(outdir, exist_ok=True)
+    outdir = f"{internal store}/toxicity_civilcomments"; os.makedirs(outdir, exist_ok=True)
     p = hf_hub_download("google/civil_comments", "data/test-00000-of-00001.parquet",
                         repo_type="dataset", cache_dir="/home/jason/detox-cache/hf")
     t = pq.read_table(p)
@@ -60,22 +60,22 @@ def scored_ids(p):
     return s
 
 def build_detox_input(ira_cap=4000):
-    out = f"{NAS}/manip_vs_tox"; os.makedirs(out, exist_ok=True)
-    mi_ids = scored_ids(f"{NAS}/manner_inflation/scored.jsonl")
-    ira_ids = scored_ids(f"{NAS}/ira_troll/work/scored.jsonl")
+    out = f"{internal store}/manip_vs_tox"; os.makedirs(out, exist_ok=True)
+    mi_ids = scored_ids(f"{internal store}/manner_inflation/scored.jsonl")
+    ira_ids = scored_ids(f"{internal store}/ira_troll/work/scored.jsonl")
     rows = []
-    for l in open(f"{NAS}/manner_inflation/input.jsonl"):
+    for l in open(f"{internal store}/manner_inflation/input.jsonl"):
         r = json.loads(l)
         if r["kind"] in ("dark", "phish") and r["id"] in mi_ids:
             rows.append({"id": r["id"], "kind": r["kind"], "outcome": r["outcome"], "text": r["text"]})
     POL = {"RightTroll", "LeftTroll", "Fearmonger"}
     ira = []
-    for l in open(f"{NAS}/ira_troll/work/ira_sample.jsonl"):
+    for l in open(f"{internal store}/ira_troll/work/ira_sample.jsonl"):
         r = json.loads(l)
         if r.get("outcome") in POL and r["id"] in ira_ids:
             ira.append({"id": r["id"], "kind": "ira", "outcome": r["outcome"], "text": r["text"]})
     random.shuffle(ira); rows += ira[:ira_cap]
-    for l in open(f"{NAS}/toxicity_civilcomments/input.jsonl"):
+    for l in open(f"{internal store}/toxicity_civilcomments/input.jsonl"):
         r = json.loads(l)
         rows.append({"id": r["id"], "kind": "toxicity", "outcome": r["outcome"], "gold": r["gold"], "text": r["text"]})
     random.shuffle(rows)

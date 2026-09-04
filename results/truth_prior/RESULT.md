@@ -20,10 +20,10 @@ verdicts are dropped). So character alone, with no fact database, beats chance a
 by a modest but genuine margin. That is a usable prior for the truthometer as one cheap feature,
 not as a standalone gate. Candour is load bearing and is not redundant with affect.
 
-Scorer: qwen2.5-7b-atlas on DL580 :8301, 8 axis DWEB instrument (shared `manip-score` run, no
+Scorer: an internal 7B instruct model on the internal host , 8 axis DWEB instrument (shared `manip-score` run, no
 competing job launched). Analysis: `truthometer/scripts/truth_prior_analyse.py`. Raw output:
 `truth_prior.txt` in this directory. LIAR verdicts joined from the PolitiFact label carried on
-each scored item (source `corpora/liar/{train,valid,test}.tsv` on the NAS).
+each scored item (source `corpora/liar/{train,valid,test}.tsv` on the internal store).
 
 ---
 
@@ -32,7 +32,7 @@ each scored item (source `corpora/liar/{train,valid,test}.tsv` on the NAS).
 The 8 axes: rigour, depth, originality, candour, affect, commercial_drive, stance, register.
 matter = rigour + depth; manner = affect + stance + register; manner inflation = mean(manner) -
 mean(matter). The matter/manner PC1 is the first singular vector of the web character reference
-(`cc_v3.domain_char8_expanded`), oriented so rigour and depth load positive; the PC1 recipe is
+(`the internal reference table`), oriented so rigour and depth load positive; the PC1 recipe is
 shared with `truthometer/scripts/manip_analyse.py`.
 
 The manipulation result (sibling `manner_inflation_deception`) showed this signature separates
@@ -194,6 +194,6 @@ cheap.
 
 ---
 
-*Reproduce:* `scp truthometer/scripts/truth_prior_analyse.py dl580:/tmp/ && ssh dl580 'cd /tmp
-&& python3 truth_prior_analyse.py'` (reads the shared scored output on the NAS; the PC1 reference
-needs the tfs database on DL580).
+*Reproduce:* `scp truthometer/scripts/truth_prior_analyse.py the internal host:/tmp/ && ssh the internal host 'cd /tmp
+&& python3 truth_prior_analyse.py'` (reads the shared scored output on the internal store; the PC1 reference
+needs the tfs database on the internal host).

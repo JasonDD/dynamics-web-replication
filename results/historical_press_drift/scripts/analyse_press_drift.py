@@ -18,8 +18,8 @@ from scipy import stats
 
 DWEB = ["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 IX = {a:i for i,a in enumerate(DWEB)}
-RES = "/mnt/nas/kronaxis/corpora/results/historical_press_drift"
-EN_PATH = "/mnt/nas/kronaxis/corpora/histchar/within_source_articles_only.jsonl"
+RES = "the internal corpus store/results/historical_press_drift"
+EN_PATH = "the internal corpus store/histchar/within_source_articles_only.jsonl"
 
 def as_vec(ch):
     if isinstance(ch, str):

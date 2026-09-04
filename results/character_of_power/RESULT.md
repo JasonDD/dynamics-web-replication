@@ -1,8 +1,8 @@
 # The character of power
 
 **Track:** PUBLIC. **Date:** 2026-08-31. **Branch:** ops/gh-treasure-discovery.
-**Scorer:** the frozen 7B character instrument on :8301 (`qwen2.5-7b-atlas`, same system prompt, vocab line
-and JSON parse as every other DYNAMICS-WEB result). **PC1 basis:** SVD on `cc_v3.domain_char8_expanded`
+**Scorer:** the frozen 7B character instrument on  (`an internal 7B instruct model`, same system prompt, vocab line
+and JSON parse as every other DYNAMICS-WEB result). **PC1 basis:** SVD on `the internal reference table`
 (2,648,406 domains), standardised, oriented so rigour and depth load positive (identical construction to
 `length_mechanism.py` and `manip_analyse.py`).
 
@@ -45,7 +45,7 @@ Six parliaments produced no crossers and sit out of the design: Great Britain, P
 populate the ParlaMint `Minister` field, so their ministers could not be identified, and Portugal contributed
 too few parsed regular speeches. This is a metadata coverage limit, not a null for those countries.
 
-Build: `truthometer/scripts/cc_power_build.py`. Score: `pm_score.py` on the NAS staging directory (the shared
+Build: `truthometer/scripts/cc_power_build.py`. Score: `pm_score.py` on the internal store staging directory (the shared
 ParlaMint scorer). Analysis: `truthometer/scripts/cc_power_analyse.py`. Full console dump: `power_shift.txt`.
 Machine readable: `power_result.json`.
 
@@ -161,5 +161,5 @@ countries.** The change is concentrated on the manner axes: the same person beco
 sensational in power, agreed in about four fifths of countries, while the register turns plainer and rigour
 rises. The matter versus manner composite does not move, so this is a specific re profiling of the voice, a
 cooling and a squaring up to the institution, rather than a swing along the main axis. The state dependent
-coupling that the atlas predicts holds at its sharpest test: the room a person speaks in reshapes the character
+coupling that the internal model predicts holds at its sharpest test: the room a person speaks in reshapes the character
 they show, and differencing out the person leaves the office standing.

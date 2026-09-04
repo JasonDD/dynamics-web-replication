@@ -28,7 +28,7 @@ exactly the one CMV cannot answer, because CMV winning is sincere mind change, n
 ## Feasibility gate: what conversational data we actually hold
 
 The test needs threaded data with turn order where a manipulative party engages a target across
-multiple turns toward an exploit, with a ground truth outcome. Audit of the NAS corpora and
+multiple turns toward an exploit, with a ground truth outcome. Audit of the internal store corpora and
 fabric:
 
 | Corpus | Threaded / turns? | Manipulation ground truth? | Usable for this test? |
@@ -53,8 +53,8 @@ already scored on the same 8 axis scale used across the series, so it is the par
   chain **WON** if that arguer earned a delta (`meta.success == 1`) anywhere in the thread, else
   **LOST**. 23,288 arguer chains have 3+ turns.
 - Balanced sample: 900 WON + 900 LOST (stable hash order). Score each turn's 8 axis character
-  with the identical rubric and free 7B teacher used across the series (`qwen2.5-7b-atlas` on
-  :8301), self queued at 4 workers behind the running jobs so it did not starve them. Existing
+  with the identical rubric and free 7B teacher used across the series (`an internal 7B instruct model` on
+  ), self queued at 4 workers behind the running jobs so it did not starve them. Existing
   root reply scores reused where ids overlapped; 6,045 new turns scored.
 - Usable chains (every turn scored): **1,387 (705 WON, 682 LOST)**.
 - Per chain, ordinary least squares slope of each axis and of PC1 (matter vs manner, same SVD
@@ -148,10 +148,10 @@ wanted.
 
 - Scorer: `truthometer/scripts/cc_cmv_escalation.py` (`prep` sizes, `score` runs).
 - Analysis: `truthometer/scripts/cc_cmv_escalation_analyse.py`.
-- Per turn scores: `/mnt/nas/kronaxis/corpora/cmv_winning_args/cmv_escalation_scores.jsonl` (NAS).
+- Per turn scores: `the internal corpus store/cmv_winning_args/cmv_escalation_scores.jsonl` (internal store).
 - Summary JSON: `docs/papers/dynamics_web_series/results/escalation_trajectory/cmv_escalation_summary.json`.
-- Reproduce: `NCHAINS=900 python3 truthometer/scripts/cc_cmv_escalation_analyse.py` on DL580
-  (needs the DB for the PC1 reference and the two score files on the NAS).
+- Reproduce: `NCHAINS=900 python3 truthometer/scripts/cc_cmv_escalation_analyse.py` on the internal host
+  (needs the DB for the PC1 reference and the two score files on the internal store).
 
 Data: ChangeMyView Winning Arguments corpus, Tan et al. 2016, Cornell ConvoKit (CC attributed,
 public). Scored on the free internal 7B teacher; no third party model, no PII.

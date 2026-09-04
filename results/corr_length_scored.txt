@@ -1,5 +1,5 @@
 # character-field correlation length on the AUDITED scored graph
-# 2026-08-28T23:48Z | cc_v3.domain_scored_edges 42.5M, post-webgraph-audit
+# 2026-08-28T23:48Z | an internal table 42.5M, post-webgraph-audit
 
 [cl] loading char8 + fitting PC1 ...
 [cl] 3,136,616 scored domains; staging domain->pc1 (vertices are normal-form) ...

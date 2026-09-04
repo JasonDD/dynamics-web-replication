@@ -39,9 +39,9 @@ def log(*a): print(f"[{time.time()-t0:6.1f}s]", *a, flush=True)
 
 CHAR = ["rigour", "depth", "originality", "candour", "affect", "commercial_drive", "stance", "register"]
 IX = {a: i for i, a in enumerate(CHAR)}
-EN_PATH = "/mnt/nas/kronaxis/corpora/histchar/within_source_articles_only.jsonl"
-EN_ALL = "/mnt/nas/kronaxis/corpora/histchar/within_source_curated.jsonl"
-PRESS = "/mnt/nas/kronaxis/corpora/results/historical_press_drift/scored.jsonl"
+EN_PATH = "the internal corpus store/histchar/within_source_articles_only.jsonl"
+EN_ALL = "the internal corpus store/histchar/within_source_curated.jsonl"
+PRESS = "the internal corpus store/results/historical_press_drift/scored.jsonl"
 OUT = os.environ.get("OUT", "/home/jason/effect_confound/when_press_ruler.json")
 SEED = int(os.environ.get("SEED", "20260903"))
 rng = np.random.default_rng(SEED)
@@ -88,7 +88,7 @@ PW = [l.split("=", 1)[1].strip().strip('"').strip("'")
 db = psycopg2.connect(f"host=127.0.0.1 port=5432 user=titan password={PW} dbname=tfs")
 cur = db.cursor()
 log("pulling the web character corpus for the web standardisation and the web PC1 ...")
-cur.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+cur.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc = np.array([[float(v) for v in r] for r in cur.fetchall()], float)
 db.close()
 WEB_MEAN, WEB_STD = allc.mean(0), allc.std(0) + 1e-9

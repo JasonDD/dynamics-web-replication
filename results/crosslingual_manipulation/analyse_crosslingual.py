@@ -34,9 +34,9 @@ MATTER = ["rigour", "depth"]
 MANNER = ["affect", "stance", "register"]
 rng = np.random.default_rng(1729)
 
-CL = "/mnt/nas/kronaxis/corpora/crosslingual_manip/scored.jsonl"
-EUP = "/mnt/nas/kronaxis/corpora/europarl_multiway/scored.jsonl"
-IRA_EN = "/mnt/nas/kronaxis/corpora/ira_troll/work/scored.jsonl"
+CL = "the internal corpus store/crosslingual_manip/scored.jsonl"
+EUP = "the internal corpus store/europarl_multiway/scored.jsonl"
+IRA_EN = "the internal corpus store/ira_troll/work/scored.jsonl"
 POL = {"RightTroll", "LeftTroll", "Fearmonger"}
 
 def load(p):
@@ -105,7 +105,7 @@ BASELINE = {"en": "Europarl", "de": "Europarl", "it": "Europarl", "fr": "Europar
             "es": "Europarl", "fa": "Persian news", "ru": "(none)"}
 
 print("=" * 92)
-print("CROSS-LINGUAL MANIPULATION SIGNATURE  -  8-axis DWEB character (qwen2.5-7b-atlas :8301)")
+print("CROSS-LINGUAL MANIPULATION SIGNATURE  -  8-axis DWEB character (an internal 7B instruct model )")
 print("=" * 92)
 print(f"\n{'lang':10s} {'baseline':13s} {'n_troll':>8s} {'n_sinc':>8s}")
 for lg in ["en", "de", "it", "fr", "es", "fa", "ru"]:

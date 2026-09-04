@@ -25,10 +25,10 @@ peripheral axes are scorer specific.
 The paired manipulation confirmation set: the same 1,350 items scored on the identical eight axis
 instrument by both lineages, matched one to one on item id (1,350 of 1,350 overlap, no schema drift).
 
-| Source | File (on NAS) | rows |
+| Source | File (on internal store) | rows |
 |---|---|---|
-| 7B lineage | `/mnt/nas/kronaxis/corpora/ira_troll/work/baseline_7b.jsonl` | 1,350 |
-| 27B lineage | `/mnt/nas/kronaxis/corpora/ira_troll/work/scored_27b.jsonl` | 1,350 |
+| 7B lineage | `the internal corpus store/ira_troll/work/baseline_7b.jsonl` | 1,350 |
+| 27B lineage | `the internal corpus store/ira_troll/work/scored_27b.jsonl` | 1,350 |
 
 The set is a deliberate three way spread across the character space: 450 Reddit Change My View
 winning arguments (`arg`, the matter pole), 450 IRA political troll posts (`ira`, the manner pole),
@@ -196,7 +196,7 @@ versus manner dimension, which is the core of the Paper 1 claim, not of every fi
   the rigour and depth pole, and computes the cross lineage axis cosine, per item PC1 score
   correlations, cross basis projections, per axis agreement, per item eight vector cosines and group
   PC1 means. Prints a single JSON block; the numbers in this document are that output rounded.
-- Score stores (persistent, on the NAS):
-  `/mnt/nas/kronaxis/corpora/ira_troll/work/baseline_7b.jsonl` (7B) and
-  `/mnt/nas/kronaxis/corpora/ira_troll/work/scored_27b.jsonl` (27B).
+- Score stores (persistent, on the internal store):
+  `the internal corpus store/ira_troll/work/baseline_7b.jsonl` (7B) and
+  `the internal corpus store/ira_troll/work/scored_27b.jsonl` (27B).
 - No fresh scoring was needed; both stores already existed from the manipulation confirmation run.

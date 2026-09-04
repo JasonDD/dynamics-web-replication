@@ -12,8 +12,8 @@ Argentina is EXCLUDED: its corpus file is session metadata only (no speech text)
 import os, re, json, random, zipfile, csv, io, sys
 
 random.seed(1729)
-ROOT = "/mnt/nas/kronaxis/corpora"
-OUT = "/mnt/nas/kronaxis/corpora/results/global_legislature_matrix/sample.jsonl"
+ROOT = "the internal corpus store"
+OUT = "the internal corpus store/results/global_legislature_matrix/sample.jsonl"
 CHAR_MIN = 400
 CHAR_MAX = 6000
 N_PER = 55

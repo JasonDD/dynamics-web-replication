@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """comms_b_analyse.py — Experiment B analysis. Credibility signature + trust-loss anchor (BoE autumn 2022)."""
 import json, statistics as st, collections, math
-D="/mnt/nas/kronaxis/corpora/comms_scout"
+D="the internal corpus store/comms_scout"
 AXES=["rigour","depth","originality","candour","affect","commercial_drive","stance","register"]
 
 def load(p):

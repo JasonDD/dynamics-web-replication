@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""score_27b_generic.py — score an input JSONL on the 27B (:8288, qwen38-extract) with the CANONICAL
+"""score_27b_generic.py — score an input JSONL on the 27B (, an internal model) with the CANONICAL
 rubric (RUBRIC=char | disp), byte-for-byte the same system/vocab/parse as the manipulation-programme
 second-lineage scorers (score_27b.py for char, cc_crosssite_score_27b.py for disp). Only the model differs
 from the 7B run, so this is a like-for-like cross-lineage re-score.
@@ -7,7 +7,7 @@ from the 7B run, so this is a like-for-like cross-lineage re-score.
 RUBRIC=char : DYNAMICS-WEB voice axes (rigour..register), max_tokens 150, BODYMAX 4500, short-body retry 1800.
 RUBRIC=disp : DYNAMICS-8 disposition axes (discipline..sociability), max_tokens 220, BODYMAX 3000.
 
-Qwen3.8 is a thinking model; thinking is DISABLED (chat_template_kwargs.enable_thinking=false) for the same
+an internal model is a thinking model; thinking is DISABLED (chat_template_kwargs.enable_thinking=false) for the same
 direct-JSON behaviour as the non-thinking 7B — the fair cross-lineage analog. Resumable by id; passes through
 every non-text field of the input record. Env: INPUT, OUT, RUBRIC(char), WORKERS(16), TEACHER_URL, TEACHER_MODEL.
 """
@@ -15,8 +15,8 @@ import os, re, json, threading
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
-TEACHER = os.environ.get("TEACHER_URL", "http://127.0.0.1:8288/v1/chat/completions")
-MODEL   = os.environ.get("TEACHER_MODEL", "qwen38-extract")
+TEACHER = os.environ.get("TEACHER_URL", "an internal model endpoint")
+MODEL   = os.environ.get("TEACHER_MODEL", "an internal model")
 WORKERS = int(os.environ.get("WORKERS", "16"))
 RUBRIC  = os.environ.get("RUBRIC", "char")
 INPUT   = os.environ["INPUT"]; OUT = os.environ["OUT"]

@@ -1,7 +1,7 @@
 # Coh-Metrix reduction: does the character instrument recover reading comprehension science?
 
 *DYNAMICS-WEB series, 3 September 2026. Script `cohmetrix_reduction.py`. Analysis only, CPU and DB, on the
-77,182 held `cc_v3.reddit_wide` comments already scored on the eight axis instrument (body at least 200
+77,182 held `the internal Reddit corpus` comments already scored on the eight axis instrument (body at least 200
 characters, 30 words, across 400 subreddits). The licensed Coh-Metrix tool is replaced by the free
 equivalents of its constructs (the TAALES and TAACO indices) computed from surface text with no model in
 the loop. Each index is correlated with the matter against manner PC1 at the item level, within a subreddit

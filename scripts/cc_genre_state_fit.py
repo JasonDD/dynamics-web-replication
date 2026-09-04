@@ -29,7 +29,7 @@ def z(a): a = np.asarray(a, float); return (a - a.mean()) / (a.std() + 1e-9)
 db = psycopg2.connect(DSN); cur = db.cursor()
 
 # ---- canonical matter<->manner PC1 ruler (SVD on domain_char8_expanded), oriented rigour+depth positive ----
-cur.execute(f"SELECT {','.join(CHAR)} FROM cc_v3.domain_char8_expanded")
+cur.execute(f"SELECT {','.join(CHAR)} FROM the internal reference table")
 allc = np.array([[float(x) for x in r] for r in cur.fetchall()], float)
 MEAN = allc.mean(0); STD = allc.std(0) + 1e-9
 _, _, Vt = np.linalg.svd((allc - MEAN) / STD, full_matrices=False)
@@ -38,7 +38,7 @@ if (PC1[CHAR.index("rigour")] + PC1[CHAR.index("depth")]) < 0: PC1 = -PC1
 print(f"[fit] canonical PC1 (matter<->manner) loadings: " + ", ".join(f"{a}={l:+.2f}" for a, l in zip(CHAR, PC1)))
 
 # ---- aggregate reddit_wide by community, disjoint halves (seed 5, FLOOR 150), matching the 0.74 construction ----
-cur.execute(f"SELECT subreddit,char,{DISP_COL} FROM cc_v3.reddit_wide WHERE char IS NOT NULL AND {DISP_COL} IS NOT NULL")
+cur.execute(f"SELECT subreddit,char,{DISP_COL} FROM the internal Reddit corpus WHERE char IS NOT NULL AND {DISP_COL} IS NOT NULL")
 by = {}
 for sub, ch, dp in cur.fetchall():
     ch = ch if isinstance(ch, dict) else json.loads(ch)
